@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wge.local/schemas/calibration-preflight-v1.json",
+  "title": "WGE Non-Rendering Calibration Preflight",
+  "type": "object",
+  "required": ["report_type", "policy", "motif_count", "projected_peak_distribution", "projected_rms_distribution", "finite_values", "diagnostic_intermediate", "playback_intensity_applied", "normalization_applied", "limiter_applied", "focus_role_applied", "relative_amplitude_preserved", "source_values_unchanged", "final_render_headroom_status", "render_certification_claimed"],
+  "properties": {
+    "report_type": {"const": "non_rendering_calibration_preflight"},
+    "policy": {"type": "object"},
+    "motif_count": {"const": 84},
+    "projected_peak_distribution": {"type": "object", "required": ["minimum", "maximum"]},
+    "projected_rms_distribution": {"type": "object", "required": ["minimum", "maximum"]},
+    "finite_values": {"const": true},
+    "diagnostic_intermediate": {"const": "float64"},
+    "playback_intensity_applied": {"const": false},
+    "normalization_applied": {"const": false},
+    "limiter_applied": {"const": false},
+    "focus_role_applied": {"const": false},
+    "relative_amplitude_preserved": {"const": true},
+    "source_values_unchanged": {"const": true},
+    "final_render_headroom_status": {"const": "not_assessable_without_event_gain_and_overlap_plan"},
+    "render_certification_claimed": {"const": false}
+  },
+  "additionalProperties": false
+}

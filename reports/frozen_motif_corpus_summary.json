@@ -1,0 +1,40 @@
+{
+  "report_type": "diagnostic_motif_corpus_summary",
+  "authority_claim": false,
+  "motif_count": 84,
+  "identity_verification": "all_matched",
+  "duration_seconds_distribution": {
+    "minimum": 0.0027291666666666666,
+    "median": 0.018375000000000002,
+    "maximum": 0.0355625,
+    "mean": 0.01819642857142857
+  },
+  "sample_count_distribution": {
+    "minimum": 131.0,
+    "median": 882.0,
+    "maximum": 1707.0,
+    "mean": 873.4285714285714
+  },
+  "sample_peak_distribution": {
+    "minimum": 2372.0,
+    "median": 6446.5,
+    "maximum": 7797.0,
+    "mean": 6232.107142857143
+  },
+  "rms_distribution": {
+    "minimum": 686.4399871308514,
+    "median": 1754.4527081958227,
+    "maximum": 3111.0584782630517,
+    "mean": 1810.405635029374
+  },
+  "dtype_distribution": {
+    "float32": 64,
+    "float64": 20
+  },
+  "shape_distribution": {
+    "dimensionality": "one_dimensional",
+    "distinct_shapes": 79,
+    "minimum_sample_count": 131,
+    "maximum_sample_count": 1707
+  }
+}

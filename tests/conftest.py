@@ -29,3 +29,30 @@ def authority_copy(tmp_path: Path, interchange_root: Path) -> Path:
     destination.parent.mkdir(parents=True, exist_ok=True)
     shutil.copy2(source, destination)
     return target
+
+
+@pytest.fixture(scope="session")
+def real_motif_bank():
+    from wave_generator_engine.motifs.loader import FrozenMotifBank
+
+    return FrozenMotifBank.load(INTERCHANGE_ROOT)
+
+
+@pytest.fixture
+def motif_authority_copy(tmp_path: Path, interchange_root: Path) -> Path:
+    target = tmp_path / "wave-gen-interchange"
+    shutil.copytree(interchange_root, target)
+    manifest = json.loads(
+        (target / "manifests/source_artifact_manifest.json").read_text()
+    )
+    for artifact_id in (
+        "frozen_84_morphology_archive",
+        "frozen_morphology_asset_manifest",
+        "frozen_morphology_renderer_contract",
+    ):
+        record = next(item for item in manifest["artifacts"] if item["id"] == artifact_id)
+        source = (interchange_root / record["path"]).resolve()
+        destination = (target / record["path"]).resolve()
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(source, destination)
+    return target

@@ -1,0 +1,37 @@
+{
+  "report_type": "non_rendering_calibration_preflight",
+  "motif_count": 84,
+  "finite_values": true,
+  "diagnostic_intermediate": "float64",
+  "playback_intensity_applied": false,
+  "normalization_applied": false,
+  "limiter_applied": false,
+  "focus_role_applied": false,
+  "relative_amplitude_preserved": true,
+  "source_values_unchanged": true,
+  "render_certification_claimed": false,
+  "final_render_headroom_status": "not_assessable_without_event_gain_and_overlap_plan",
+  "policy": {
+    "artifact_id": "x_alpha_reference_calibration_v1",
+    "reference_multiplier": 1.1,
+    "default_playback_intensity": 0.8,
+    "playback_intensity_stage": "post_calibration",
+    "per_motif_normalization": false,
+    "per_session_normalization": false,
+    "default_limiter": false,
+    "preserve_relative_amplitude_relationships": true,
+    "invalid_headroom_policy": "fail_validation",
+    "internal_intermediate": "float64",
+    "true_peak_ceiling_dbfs": -3.0,
+    "reserve_db": 3.0,
+    "delivery_24_bit_status": "pending_target_hardware_validation"
+  },
+  "projected_peak_distribution": {
+    "minimum": 2609.2000000000003,
+    "maximum": 8576.7
+  },
+  "projected_rms_distribution": {
+    "minimum": 755.0839858439366,
+    "maximum": 3422.164326089357
+  }
+}

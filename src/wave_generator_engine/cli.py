@@ -61,6 +61,30 @@ def build_parser() -> argparse.ArgumentParser:
     request_validate = request_commands.add_parser("validate")
     request_validate.add_argument("path", type=Path)
     _json_flag(request_validate)
+
+    motifs = commands.add_parser("motifs")
+    motif_commands = motifs.add_subparsers(dest="motif_command", required=True)
+    for name in ("validate", "list", "summarize"):
+        command = motif_commands.add_parser(name)
+        command.add_argument("--interchange-dir", type=Path)
+        _json_flag(command)
+    motif_show = motif_commands.add_parser("show")
+    motif_show.add_argument("motif_id")
+    motif_show.add_argument("--interchange-dir", type=Path)
+    _json_flag(motif_show)
+    motif_exact = motif_commands.add_parser("verify-exact")
+    motif_exact.add_argument("motif_id")
+    motif_exact.add_argument("--interchange-dir", type=Path)
+    _json_flag(motif_exact)
+
+    calibration = commands.add_parser("calibration")
+    calibration_commands = calibration.add_subparsers(
+        dest="calibration_command", required=True
+    )
+    for name in ("inspect", "preflight"):
+        command = calibration_commands.add_parser(name)
+        command.add_argument("--interchange-dir", type=Path)
+        _json_flag(command)
     return parser
 
 
@@ -140,6 +164,40 @@ def _request_command(args: argparse.Namespace) -> int:
     return 0
 
 
+def _motif_command(args: argparse.Namespace) -> int:
+    from wave_generator_engine.motifs.service import FrozenMotifService
+
+    service = FrozenMotifService.load(args.interchange_dir)
+    if args.motif_command == "validate":
+        payload = service.validate()
+    elif args.motif_command == "list":
+        payload = service.list_metadata()
+    elif args.motif_command == "show":
+        payload = service.show(args.motif_id)
+    elif args.motif_command == "verify-exact":
+        payload = service.verify_exact(args.motif_id)
+    else:
+        payload = service.summarize()
+    _emit(payload, args.json_output)
+    return 0
+
+
+def _calibration_command(args: argparse.Namespace) -> int:
+    from dataclasses import asdict
+    from wave_generator_engine.calibration.policy import load_calibration_policy
+    from wave_generator_engine.calibration.preflight import run_calibration_preflight
+    from wave_generator_engine.motifs.loader import FrozenMotifBank
+
+    policy = load_calibration_policy(args.interchange_dir)
+    if args.calibration_command == "inspect":
+        payload = asdict(policy)
+    else:
+        bank = FrozenMotifBank.load(args.interchange_dir)
+        payload = run_calibration_preflight(bank, policy)
+    _emit(payload, args.json_output)
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     try:
@@ -159,6 +217,10 @@ def main(argv: list[str] | None = None) -> int:
             return _lever_command(args)
         if args.command == "requests":
             return _request_command(args)
+        if args.command == "motifs":
+            return _motif_command(args)
+        if args.command == "calibration":
+            return _calibration_command(args)
     except WGEError as exc:
         if args.command == "validate-interchange":
             write_failure_report(args.report_dir, exc)

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wge.local/schemas/exact-identity-receipt-v1.json",
+  "title": "WGE Exact Identity Receipt",
+  "type": "object",
+  "required": ["motif_id", "archive_hash", "motif_hash", "identity_index_version", "operations", "exact_bypass", "randomness_used", "transform_path_entered", "source_dtype", "source_shape", "result_dtype", "result_shape", "bitwise_equal", "read_only", "provenance_references"],
+  "properties": {
+    "motif_id": {"type": "string"},
+    "archive_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "motif_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "identity_index_version": {"type": "string"},
+    "operations": {"const": []},
+    "exact_bypass": {"const": true},
+    "randomness_used": {"const": false},
+    "transform_path_entered": {"const": false},
+    "source_dtype": {"type": "string"},
+    "source_shape": {"type": "array", "items": {"type": "integer"}},
+    "result_dtype": {"type": "string"},
+    "result_shape": {"type": "array", "items": {"type": "integer"}},
+    "bitwise_equal": {"const": true},
+    "read_only": {"const": true},
+    "provenance_references": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

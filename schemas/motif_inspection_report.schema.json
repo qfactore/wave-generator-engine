@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wge.local/schemas/motif-inspection-report-v1.json",
+  "title": "WGE Motif Inspection Report",
+  "type": "object",
+  "required": ["metadata", "metrics"],
+  "properties": {
+    "metadata": {"type": "object", "required": ["motif_id", "source_order", "shape", "dtype", "sample_count", "sample_rate_hz", "duration_seconds", "source_hash", "archive_hash", "authority_tier", "read_only"]},
+    "metrics": {"type": "object", "required": ["sample_count", "duration_seconds", "minimum", "maximum", "sample_peak", "rms", "mean", "dc_offset", "zero_crossing_count", "zero_crossing_rate_hz", "dtype", "shape"]}
+  },
+  "additionalProperties": false
+}

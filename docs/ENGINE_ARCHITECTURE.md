@@ -1,9 +1,16 @@
 # Engine Architecture
 
-WGE-0 imports and validates authority. It has no behavior engine.
+WGE-2 adds a read-only authority boundary beneath the WGE-1 profile system:
 
-Future flow:
+`Interchange authority → hash gate → Frozen Motif Bank → Exact Identity Access`
 
-`Source Profile → Validated SessionPackPlan → SessionPlan → RenderPlan → Exporter`
+The bank verifies the whole archive before waveform access and returns immutable
+copies with identity metadata. Exact access bypasses transforms and randomness.
+Metrics and calibration preflight inspect values without persisting altered
+arrays.
 
-The types are inert seams. No plan can currently be built or executed.
+The future flow remains:
+
+`Source Profile → SessionPackPlan → SessionPlan → RenderPlan → Exporter`
+
+None of those planning or output stages is implemented in WGE-2.
