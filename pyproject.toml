@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wave-generator-engine"
+version = "0.1.0"
+description = "WGE-0 authority import and fail-closed validation scaffold"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["jsonschema>=4.18,<5"]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
+
+[project.scripts]
+wge = "wave_generator_engine.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]

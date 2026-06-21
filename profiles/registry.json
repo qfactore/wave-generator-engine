@@ -1,0 +1,27 @@
+{
+  "registry_version": "0.1.0",
+  "source_profiles": [
+    {
+      "id": "x_alpha_standard_v1",
+      "status": "reserved_locked_preset",
+      "executable": false,
+      "implementation_phase": "WGE-1",
+      "trust_level": "exact",
+      "source_kind": "frozen_alpha_corpus"
+    }
+  ],
+  "delivery_presets": {
+    "x_alpha25": {
+      "source_profile_id": "x_alpha_standard_v1",
+      "executable": false
+    },
+    "x_alpha45": {
+      "source_profile_id": "x_alpha_standard_v1",
+      "executable": false
+    },
+    "diagnostic_60s": {
+      "source_profile_id": "x_alpha_standard_v1",
+      "executable": false
+    }
+  }
+}

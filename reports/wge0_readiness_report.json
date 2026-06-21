@@ -1,0 +1,44 @@
+{
+  "audio_generated": false,
+  "authority_artifacts_validated": 5,
+  "authority_tiers_valid": true,
+  "engine_version": "0.1.0",
+  "final_status": "WGE0_ENGINE_SCAFFOLD_READY",
+  "frozen_authority": {
+    "archive_label": "tier-0-frozen-archive",
+    "hash_matches": true,
+    "identities_unique": true,
+    "identity_count": 84,
+    "sha256": "7e248804420fdcc75713fd3c232f6c97f5581d01be83526f0ea5770002fc29dd"
+  },
+  "gate_coverage": {
+    "count": 39,
+    "valid": true
+  },
+  "git_status": "## No commits yet on main...origin/main [gone]\n?? .gitignore\n?? README.md\n?? docs/\n?? profiles/\n?? pyproject.toml\n?? reports/\n?? src/\n?? tests/",
+  "interchange_manifest_version": "0.8.0",
+  "interchange_modified": false,
+  "interchange_phase": "WG-I8",
+  "interchange_readiness": "ready_for_human_approval",
+  "json_files_parsed": 35,
+  "naming_hygiene": {
+    "files_scanned": 59,
+    "valid": true
+  },
+  "playback_json_generated": false,
+  "profile_scaffold": {
+    "valid": true
+  },
+  "renderer_exists": false,
+  "required_paths_resolved": 76,
+  "scheduler_exists": false,
+  "schemas_compiled": 12,
+  "schemas_discovered": 12,
+  "transform_executor_exists": false,
+  "warnings": [
+    "Completed-phase narrative summary is stale; required arrays govern.",
+    "Checklist schema-count narrative is stale; discovered schemas govern.",
+    "Canonical fixture narrative predates WG-I8; fixture catalog governs."
+  ],
+  "wge1_started": false
+}
