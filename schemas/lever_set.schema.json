@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wge.local/schemas/lever-set-v1.json",
+  "title": "WGE LeverSet",
+  "type": "object",
+  "required": ["schema_version", "lever_set_id", "lever_registry_id", "trust_level", "immutable", "mutable", "values", "role_bindings", "provenance", "content_hash"],
+  "properties": {
+    "schema_version": {"const": "wge.lever_set.v1"},
+    "lever_set_id": {"type": "string"},
+    "lever_registry_id": {"type": "string"},
+    "trust_level": {"enum": ["exact", "bounded", "experimental", "research"]},
+    "immutable": {"type": "boolean"},
+    "mutable": {"type": "boolean"},
+    "values": {"type": "object"},
+    "role_bindings": {"type": "object"},
+    "provenance": {"type": "object"},
+    "content_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "additionalProperties": false
+}

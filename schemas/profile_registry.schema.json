@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wge.local/schemas/profile-registry-v1.json",
+  "title": "WGE Profile Registry",
+  "type": "object",
+  "required": ["schema_version", "registry_version", "entries"],
+  "properties": {
+    "schema_version": {"const": "wge.profile_registry.v1"},
+    "registry_version": {"type": "string"},
+    "entries": {"type": "array", "items": {"type": "object", "required": ["id", "kind", "path", "version", "status", "content_hash", "selectable", "executable"]}}
+  }
+}

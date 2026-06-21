@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wge.local/schemas/profile-fork-record-v1.json",
+  "title": "WGE Profile Fork Record",
+  "type": "object",
+  "required": ["schema_version", "record_id", "new_profile_id", "parent_profile_id", "parent_content_hash", "parent_profile_version", "forked_at", "requested_trust_level", "changed_fields", "authority_snapshot", "content_hash"],
+  "properties": {
+    "schema_version": {"const": "wge.profile_fork_record.v1"},
+    "record_id": {"type": "string"},
+    "new_profile_id": {"type": "string"},
+    "parent_profile_id": {"type": "string"},
+    "parent_content_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "parent_profile_version": {"type": "string"},
+    "forked_at": {"type": "string"},
+    "requested_trust_level": {"enum": ["exact", "bounded", "experimental", "research"]},
+    "changed_fields": {"type": "array", "items": {"type": "string"}},
+    "authority_snapshot": {"type": "object"},
+    "content_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "additionalProperties": false
+}

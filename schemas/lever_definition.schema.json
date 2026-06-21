@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wge.local/schemas/lever-registry-v1.json",
+  "title": "WGE Lever Registry",
+  "type": "object",
+  "required": ["schema_version", "registry_id", "registry_version", "content_hash", "levers"],
+  "properties": {
+    "schema_version": {"const": "wge.lever_registry.v1"},
+    "registry_id": {"type": "string"},
+    "registry_version": {"type": "string"},
+    "content_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "levers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["lever_id", "display_name", "description", "category", "value_type", "unit", "authority_tier", "authority_references", "minimum_trust_level", "availability", "default_value", "minimum", "maximum", "step", "allowed_values", "basic_visible", "advanced_visible", "locked_in_exact", "profile_mutable", "run_mutable", "dependencies", "incompatibilities", "safety_notes", "implementation_phase"],
+        "properties": {
+          "lever_id": {"type": "string"},
+          "display_name": {"type": "string"},
+          "description": {"type": "string"},
+          "category": {"enum": ["channel_roles", "packet_grammar", "pulse_pattern", "density", "timing", "motif_morphology", "calibration", "playback"]},
+          "value_type": {"enum": ["integer", "number", "logical_channel", "boolean", "enum"]},
+          "unit": {"type": ["string", "null"]},
+          "authority_tier": {"enum": ["tier_0", "tier_1", "tier_2", "tier_3", "tier_4"]},
+          "authority_references": {"type": "array", "items": {"type": "string"}},
+          "minimum_trust_level": {"enum": ["exact", "bounded", "experimental", "research"]},
+          "availability": {"enum": ["available", "locked", "future", "experimental_uncertified", "blocked"]},
+          "default_value": {},
+          "minimum": {"type": ["number", "null"]},
+          "maximum": {"type": ["number", "null"]},
+          "step": {"type": ["number", "null"]},
+          "allowed_values": {"type": ["array", "null"]},
+          "basic_visible": {"type": "boolean"},
+          "advanced_visible": {"type": "boolean"},
+          "locked_in_exact": {"type": "boolean"},
+          "profile_mutable": {"type": "boolean"},
+          "run_mutable": {"type": "boolean"},
+          "dependencies": {"type": "array"},
+          "incompatibilities": {"type": "array"},
+          "safety_notes": {"type": "array", "items": {"type": "string"}},
+          "implementation_phase": {"type": "string"}
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

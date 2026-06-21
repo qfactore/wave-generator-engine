@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "wave-generator-engine"
-version = "0.1.0"
-description = "WGE-0 authority import and fail-closed validation scaffold"
+version = "0.2.0"
+description = "WGE-1 non-executable profile, preset, lever, and request contracts"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = ["jsonschema>=4.18,<5"]

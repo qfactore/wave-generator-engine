@@ -1,0 +1,19 @@
+{
+  "schema_version": "wge.delivery_preset.v1",
+  "preset_id": "x_alpha25_v1",
+  "display_name": "X-Alpha25",
+  "preset_version": "1.0.0",
+  "status": "preset_locked",
+  "source_profile_id": "x_alpha_standard_v1",
+  "source_profile_content_hash": "41eeb636c411de429f316f0b84cbcd1ff0e4598400f4ee2d1e310582f44e0578",
+  "nominal_duration_seconds": 1500,
+  "default_playback_intensity": 0.8,
+  "session_selection_policy": "explicit_at_run_time",
+  "assembly_policy": "unresolved_future_assembler",
+  "allowed_overrides": ["selected_session_ids", "requested_duration_seconds", "playback_default_override"],
+  "executable": false,
+  "implementation_phase": "WGE-2-or-later",
+  "content_hash": "4f86083a43f5c6f8f9660eafae32dec4d16a3b168ecd156b9fbe030a43b0ed28",
+  "authority_snapshot": {"calibration_artifact_id": "x_alpha_reference_calibration_v1", "playback_stage": "post_calibration"},
+  "notes": ["Playback default is metadata in the engine safety range, not waveform calibration."]
+}

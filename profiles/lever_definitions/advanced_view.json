@@ -1,0 +1,11 @@
+{
+  "schema_version": "wge.lever_view.v1",
+  "view_id": "advanced",
+  "display_name": "Advanced View",
+  "lever_registry_id": "wge_lever_registry_v1",
+  "visible_lever_ids": ["focus_role_target", "trailing_event_count", "primary_to_trailing_gap", "trailing_event_spacing", "cycle_span", "continuation_probability", "pattern_contrast", "motif_time_scale_ratio"],
+  "presentation_only": true,
+  "may_override_authority": false,
+  "unavailable_controls_disabled": true,
+  "content_hash": "23803e3fa390ed5f830713f2b93f9d71749676aea4d1f903296de4f1a4f2df7c"
+}

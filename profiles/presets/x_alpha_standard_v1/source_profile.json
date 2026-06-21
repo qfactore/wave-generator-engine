@@ -1,0 +1,85 @@
+{
+  "schema_version": "wge.source_profile.v1",
+  "profile_id": "x_alpha_standard_v1",
+  "display_name": "X-Alpha Standard",
+  "profile_version": "1.0.0",
+  "profile_status": "preset_locked",
+  "trust_level": "exact",
+  "source_kind": "frozen_alpha_corpus",
+  "immutable": true,
+  "selectable": true,
+  "executable": false,
+  "implementation_phase": "WGE-2-or-later",
+  "content_hash": "41eeb636c411de429f316f0b84cbcd1ff0e4598400f4ee2d1e310582f44e0578",
+  "parent_profile_id": null,
+  "parent_content_hash": null,
+  "parent_profile_version": null,
+  "authority_snapshot": {
+    "interchange_manifest_version": "0.8.0",
+    "interchange_phase": "WG-I8",
+    "decision_ids": ["AD-013", "AD-015", "AD-016", "AD-017", "AD-019", "AD-020", "AD-021", "AD-022", "AD-023", "AD-024", "AD-025", "AD-026", "AD-027", "AD-028", "AD-029", "AD-030"],
+    "policy_artifact_ids": ["x_alpha_reference_calibration_v1", "x_alpha_carrier_frequency_policy_v1", "x_alpha_pulse_pattern_grammar_v1", "x_alpha_macro_density_state_model_v1", "x_alpha_timing_dependency_policy_v1"]
+  },
+  "frozen_authority": {
+    "archive_sha256": "7e248804420fdcc75713fd3c232f6c97f5581d01be83526f0ea5770002fc29dd",
+    "identity_count": 84,
+    "identity_index_reference": "bank/frozen_assets/frozen_motif_identity_index.json",
+    "asset_access": "prohibited_in_wge1"
+  },
+  "session_topology": {
+    "session_count": 7,
+    "selection": "run_request",
+    "sessions": [
+      {"session_id": 1, "mode_id": "baseline"},
+      {"session_id": 2, "mode_id": "baseline"},
+      {"session_id": 3, "mode_id": "baseline"},
+      {"session_id": 4, "mode_id": "baseline"},
+      {"session_id": 5, "mode_id": "dense"},
+      {"session_id": 6, "mode_id": "dense"},
+      {"session_id": 7, "mode_id": "complex"}
+    ]
+  },
+  "session_mode_assignments": "bank/mode_profiles/session_mode_profiles.json",
+  "channel_topology": {
+    "logical_channel_count": 8,
+    "indexing": "zero_based_0_7",
+    "logical_channel_ids": [0, 1, 2, 3, 4, 5, 6, 7],
+    "upstream_translation": "none",
+    "focus_role": {
+      "role_name": "focus_role",
+      "target_logical_channel": null,
+      "mapping_status": "unresolved_no_authoritative_default",
+      "associated_density_emphasis": true,
+      "role_bundle": "focus_with_density_emphasis",
+      "changes_global_playback_intensity": false,
+      "changes_render_calibration": false,
+      "fixed_physical_channel": false
+    }
+  },
+  "calibration_policy": {
+    "authority_artifact_id": "x_alpha_reference_calibration_v1",
+    "resolved_validation": {
+      "reference_multiplier": 1.1,
+      "preserve_relative_amplitude_relationships": true,
+      "per_motif_normalization": false,
+      "per_session_normalization": false,
+      "default_limiter": false,
+      "invalid_headroom_policy": "fail_validation"
+    }
+  },
+  "timing_policy": "x_alpha_carrier_frequency_policy_v1",
+  "pulse_pattern_policy": "x_alpha_pulse_pattern_grammar_v1",
+  "macro_density_policy": "x_alpha_macro_density_state_model_v1",
+  "dependency_policy": "x_alpha_timing_dependency_policy_v1",
+  "lever_set_id": "x_alpha_standard_lever_set_v1",
+  "allowed_delivery_presets": ["x_alpha25_v1", "x_alpha45_v1", "diagnostic_60s_v1"],
+  "permitted_configuration_surface": {
+    "focus_role_override": false,
+    "motif_timing_override": false,
+    "carrier_control": false,
+    "pulse_pattern_internal_override": false,
+    "calibration_override": false
+  },
+  "created_at": "2026-06-21T00:00:00Z",
+  "notes": ["Locked root source profile. Numeric Tier 2 mode distributions remain reference-only."]
+}

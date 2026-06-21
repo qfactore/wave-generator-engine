@@ -1,0 +1,26 @@
+{
+  "schema_version": "wge.lever_set.v1",
+  "lever_set_id": "x_alpha_standard_lever_set_v1",
+  "lever_registry_id": "wge_lever_registry_v1",
+  "trust_level": "exact",
+  "immutable": true,
+  "mutable": false,
+  "values": {},
+  "role_bindings": {
+    "focus_role": {
+      "target_logical_channel": null,
+      "mapping_status": "unresolved_no_authoritative_default",
+      "allowed_logical_channels": [0, 1, 2, 3, 4, 5, 6, 7],
+      "associated_density_emphasis": true,
+      "changes_global_playback_intensity": false,
+      "changes_render_calibration": false,
+      "locked": true
+    }
+  },
+  "provenance": {
+    "authority_reference": "AD-026",
+    "channel_fixture_convention": "zero_based_0_7",
+    "no_default_mapping_inferred": true
+  },
+  "content_hash": "b780fd41abb65a80a2cdfc83f19ac6904287534cc8992ffa9caa7148099a8c57"
+}

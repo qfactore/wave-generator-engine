@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wge.local/schemas/delivery-preset-v1.json",
+  "title": "WGE Delivery Preset",
+  "type": "object",
+  "required": ["schema_version", "preset_id", "display_name", "preset_version", "status", "source_profile_id", "source_profile_content_hash", "nominal_duration_seconds", "default_playback_intensity", "session_selection_policy", "assembly_policy", "allowed_overrides", "executable", "implementation_phase", "content_hash", "authority_snapshot", "notes"],
+  "properties": {
+    "schema_version": {"const": "wge.delivery_preset.v1"},
+    "preset_id": {"type": "string"},
+    "display_name": {"type": "string"},
+    "preset_version": {"type": "string"},
+    "status": {"enum": ["preset_locked", "draft", "active", "archived", "deprecated", "invalid"]},
+    "source_profile_id": {"type": "string"},
+    "source_profile_content_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "nominal_duration_seconds": {"type": "integer", "minimum": 1},
+    "default_playback_intensity": {"type": "number", "minimum": 0, "maximum": 1},
+    "session_selection_policy": {"const": "explicit_at_run_time"},
+    "assembly_policy": {"const": "unresolved_future_assembler"},
+    "allowed_overrides": {"type": "array", "items": {"type": "string"}},
+    "executable": {"const": false},
+    "implementation_phase": {"type": "string"},
+    "content_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "authority_snapshot": {"type": "object"},
+    "notes": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

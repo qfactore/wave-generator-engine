@@ -1,0 +1,19 @@
+{
+  "schema_version": "wge.delivery_preset.v1",
+  "preset_id": "diagnostic_60s_v1",
+  "display_name": "Diagnostic 60s",
+  "preset_version": "1.0.0",
+  "status": "preset_locked",
+  "source_profile_id": "x_alpha_standard_v1",
+  "source_profile_content_hash": "41eeb636c411de429f316f0b84cbcd1ff0e4598400f4ee2d1e310582f44e0578",
+  "nominal_duration_seconds": 60,
+  "default_playback_intensity": 0.8,
+  "session_selection_policy": "explicit_at_run_time",
+  "assembly_policy": "unresolved_future_assembler",
+  "allowed_overrides": ["selected_session_ids", "playback_default_override"],
+  "executable": false,
+  "implementation_phase": "WGE-2-or-later",
+  "content_hash": "a4ef29ecfa9c9d5f672565711e11a177cce67004afff7991f57da6feb2752426",
+  "authority_snapshot": {"calibration_artifact_id": "x_alpha_reference_calibration_v1", "playback_stage": "post_calibration"},
+  "notes": ["Validation-only preview metadata. No diagnostic output is created in WGE-1."]
+}

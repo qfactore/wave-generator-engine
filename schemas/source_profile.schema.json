@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wge.local/schemas/source-profile-v1.json",
+  "title": "WGE Source Profile",
+  "type": "object",
+  "required": ["schema_version", "profile_id", "display_name", "profile_version", "profile_status", "trust_level", "source_kind", "immutable", "selectable", "executable", "implementation_phase", "content_hash", "authority_snapshot", "frozen_authority", "session_topology", "session_mode_assignments", "channel_topology", "calibration_policy", "timing_policy", "pulse_pattern_policy", "macro_density_policy", "dependency_policy", "lever_set_id", "allowed_delivery_presets", "permitted_configuration_surface", "created_at", "notes"],
+  "properties": {
+    "schema_version": {"const": "wge.source_profile.v1"},
+    "profile_id": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"},
+    "display_name": {"type": "string", "minLength": 1},
+    "profile_version": {"type": "string", "minLength": 1},
+    "profile_status": {"enum": ["reserved", "preset_locked", "draft", "active", "archived", "deprecated", "invalid"]},
+    "trust_level": {"enum": ["exact", "bounded", "experimental", "research"]},
+    "source_kind": {"type": "string"},
+    "immutable": {"type": "boolean"},
+    "selectable": {"type": "boolean"},
+    "executable": {"const": false},
+    "implementation_phase": {"type": "string"},
+    "content_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "parent_profile_id": {"type": ["string", "null"]},
+    "parent_content_hash": {"type": ["string", "null"]},
+    "parent_profile_version": {"type": ["string", "null"]},
+    "authority_snapshot": {"type": "object"},
+    "frozen_authority": {"type": "object", "required": ["archive_sha256", "identity_count", "identity_index_reference"], "properties": {"archive_sha256": {"type": "string"}, "identity_count": {"const": 84}, "identity_index_reference": {"type": "string"}}},
+    "session_topology": {
+      "type": "object",
+      "required": ["session_count", "sessions"],
+      "properties": {
+        "session_count": {"const": 7},
+        "sessions": {
+          "type": "array",
+          "minItems": 7,
+          "maxItems": 7,
+          "items": {
+            "type": "object",
+            "required": ["session_id", "mode_id"],
+            "properties": {
+              "session_id": {"type": "integer", "minimum": 1, "maximum": 7},
+              "mode_id": {"enum": ["baseline", "dense", "complex"]}
+            }
+          }
+        }
+      }
+    },
+    "session_mode_assignments": {"type": "string"},
+    "channel_topology": {"type": "object"},
+    "calibration_policy": {"type": "object"},
+    "timing_policy": {"type": "string"},
+    "pulse_pattern_policy": {"type": "string"},
+    "macro_density_policy": {"type": "string"},
+    "dependency_policy": {"type": "string"},
+    "lever_set_id": {"type": "string"},
+    "allowed_delivery_presets": {"type": "array", "items": {"type": "string"}},
+    "permitted_configuration_surface": {"type": "object"},
+    "created_at": {"type": "string"},
+    "notes": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

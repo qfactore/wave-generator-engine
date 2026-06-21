@@ -1,0 +1,41 @@
+{
+  "report_id": "wge1_profile_system_readiness",
+  "final_status": "WGE1_PROFILE_SYSTEM_READY",
+  "engine_version": "0.2.0",
+  "starting_tag": "wge-0-ready",
+  "starting_commit": "a58f564",
+  "source_profile_count": 1,
+  "delivery_preset_count": 3,
+  "lever_definition_count": 8,
+  "basic_view_count": 1,
+  "advanced_view_count": 8,
+  "schema_count": 7,
+  "valid_registry_entries": 8,
+  "source_profile_content_hashes": {
+    "x_alpha_standard_v1": "41eeb636c411de429f316f0b84cbcd1ff0e4598400f4ee2d1e310582f44e0578"
+  },
+  "delivery_preset_content_hashes": {
+    "x_alpha25_v1": "4f86083a43f5c6f8f9660eafae32dec4d16a3b168ecd156b9fbe030a43b0ed28",
+    "x_alpha45_v1": "2cdf630880b66043a2cb5b9298b66ab5e86720d9d15401bc611bbc2ba4c80037",
+    "diagnostic_60s_v1": "a4ef29ecfa9c9d5f672565711e11a177cce67004afff7991f57da6feb2752426"
+  },
+  "fork_lifecycle_tests": "passed",
+  "interchange_validation": "passed",
+  "frozen_authority": {
+    "sha256_matches": true,
+    "identity_count": 84,
+    "archive_opened_as_arrays": false
+  },
+  "naming_hygiene": "passed",
+  "full_test_count": 100,
+  "git_status_at_report": "wge1_changes_ready_for_landmark_commit",
+  "all_profiles_non_executable": true,
+  "all_delivery_presets_non_executable": true,
+  "scheduler_exists": false,
+  "renderer_exists": false,
+  "audio_generated": false,
+  "wav_generated": false,
+  "playback_or_upload_json_generated": false,
+  "interchange_modified": false,
+  "wge2_started": false
+}

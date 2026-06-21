@@ -15,11 +15,15 @@ def test_required_profile_scaffold_exists() -> None:
 
 def test_reserved_profile_is_non_executable_and_shared() -> None:
     data = json.loads((ENGINE_ROOT / "profiles/registry.json").read_text())
-    source = data["source_profiles"][0]
-    assert source["id"] == "x_alpha_standard_v1"
+    source_entry = next(item for item in data["entries"] if item["id"] == "x_alpha_standard_v1")
+    source = json.loads((ENGINE_ROOT / "profiles" / source_entry["path"]).read_text())
+    assert source["profile_id"] == "x_alpha_standard_v1"
     assert source["executable"] is False
-    presets = data["delivery_presets"]
-    assert presets["x_alpha25"]["source_profile_id"] == presets["x_alpha45"]["source_profile_id"]
+    presets = [
+        json.loads((ENGINE_ROOT / "profiles" / item["path"]).read_text())
+        for item in data["entries"] if item["kind"] == "delivery_preset"
+    ]
+    assert {item["source_profile_id"] for item in presets} == {"x_alpha_standard_v1"}
 
 
 def test_inert_domain_types_cover_future_seams() -> None:
