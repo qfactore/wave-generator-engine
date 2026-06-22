@@ -1,7 +1,7 @@
 # Wave Generator Engine
 
-Version 0.4.0 implements WGE-3: deterministic, metadata-only Baseline Mode
-planning and diagnostic graphs.
+Version 0.4.1 implements WGE-3Q source-reference qualification above the
+deterministic, metadata-only Baseline Mode planner.
 
 The committed diagnostic run follows one common pipeline:
 
@@ -16,6 +16,9 @@ wge plans build --request examples/run_requests/x_alpha_session1_diagnostic_60s.
 wge plans validate runs/latest/session_pack_plan.json
 wge runs show latest --json
 wge diagnostics generate --plan runs/latest
+wge qualify baseline --run runs/latest
+wge qualification show runs/latest
+wge qualification validate runs/latest
 ```
 
 `runs/latest` contains plans, CSV, diagnostic JSON, and PNG figures only. Events
@@ -25,4 +28,5 @@ not a profile default.
 
 No renderer, audio exporter, transform executor, WAV, playback JSON, or audio
 buffer exists. Headroom is not certified before waveform render and overlap
-summation. WGE-4 will produce the first audible diagnostic render.
+summation. The current source qualification does not authorize WGE-4; no
+audible diagnostic render is implemented.

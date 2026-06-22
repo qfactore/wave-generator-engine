@@ -1,0 +1,87 @@
+{
+  "blocked_final_test_accessed": false,
+  "content_hash": "41ba1ca8d382c4f7a0be43cda2e21e26438e2ec147c59e825fe929392778ebe9",
+  "references": [
+    {
+      "artifact_id": "phase5e:shared_scheduling_model",
+      "authority_tier": "tier_1",
+      "classification_status": "include",
+      "hash_verified": true,
+      "scope": "shared_scheduler_contract",
+      "source_field": "timing_contract"
+    },
+    {
+      "artifact_id": "phase5e:scheduling_freeze_manifest",
+      "authority_tier": "tier_1",
+      "classification_status": "include",
+      "hash_verified": true,
+      "scope": "session_profiles",
+      "source_field": "profile_hashes"
+    },
+    {
+      "artifact_id": "phase4d_f:session_1_profile",
+      "authority_tier": "tier_1",
+      "classification_status": "include",
+      "hash_verified": true,
+      "scope": "source_session_1",
+      "source_field": "timing|packet|spatial"
+    },
+    {
+      "artifact_id": "phase5l_mode_specific_unit_grammar_profiles",
+      "authority_tier": "tier_2",
+      "classification_status": "include",
+      "hash_verified": true,
+      "scope": "baseline_sessions_1_4",
+      "source_field": "profiles.baseline_stochastic_texture"
+    },
+    {
+      "artifact_id": "phase5l_non_repetition_novelty_audit",
+      "authority_tier": "tier_2",
+      "classification_status": "include",
+      "hash_verified": true,
+      "scope": "baseline_sessions_1_4",
+      "source_field": "modes.baseline_stochastic_texture"
+    },
+    {
+      "artifact_id": "phase5e_channel_role_focus_contract",
+      "authority_tier": "tier_1",
+      "classification_status": "include",
+      "hash_verified": true,
+      "scope": "role_normalized",
+      "source_field": "guidance"
+    },
+    {
+      "artifact_id": "x_alpha_closure:data/pulse_pattern_analysis.json",
+      "authority_tier": "tier_2",
+      "classification_status": "include",
+      "hash_verified": true,
+      "scope": "session_1_and_baseline_aggregate",
+      "source_field": "by_session.1|by_mode.Baseline Mode"
+    },
+    {
+      "artifact_id": "x_alpha_closure:data/carrier_frequency_analysis.json",
+      "authority_tier": "tier_2",
+      "classification_status": "include",
+      "hash_verified": true,
+      "scope": "source_schedule_spectrum",
+      "source_field": "source_low_frequency_schedule_spectrum"
+    },
+    {
+      "artifact_id": "x_alpha_closure:data/macro_density_analysis.json",
+      "authority_tier": "tier_2",
+      "classification_status": "include",
+      "hash_verified": true,
+      "scope": "mode_architecture",
+      "source_field": "recommendation.standard_modes"
+    },
+    {
+      "artifact_id": "x_alpha_closure:methods/measurement_methods.md",
+      "authority_tier": "tier_1",
+      "classification_status": "include",
+      "hash_verified": true,
+      "scope": "reproducibility_method",
+      "source_field": "measurement_methods"
+    }
+  ],
+  "schema_version": "wge.source_reference_inventory.v1"
+}

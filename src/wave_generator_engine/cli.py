@@ -118,6 +118,23 @@ def build_parser() -> argparse.ArgumentParser:
     run_list = run_commands.add_parser("list")
     run_list.add_argument("--runs-dir", type=Path)
     _json_flag(run_list)
+
+    qualify = commands.add_parser("qualify")
+    qualify_commands = qualify.add_subparsers(dest="qualify_command", required=True)
+    baseline = qualify_commands.add_parser("baseline")
+    baseline.add_argument("--run", type=Path, required=True)
+    baseline.add_argument("--interchange-dir", type=Path)
+    baseline.add_argument("--report-dir", type=Path)
+    _json_flag(baseline)
+
+    qualification = commands.add_parser("qualification")
+    qualification_commands = qualification.add_subparsers(
+        dest="qualification_command", required=True
+    )
+    for name in ("show", "validate"):
+        command = qualification_commands.add_parser(name)
+        command.add_argument("run", type=Path)
+        _json_flag(command)
     return parser
 
 
@@ -302,6 +319,22 @@ def _run_command(args: argparse.Namespace) -> int:
     return 0
 
 
+def _qualification_command(args: argparse.Namespace) -> int:
+    from wave_generator_engine.qualification.service import BaselineQualificationService
+    if args.command == "qualify":
+        payload = BaselineQualificationService(args.interchange_dir).qualify(
+            args.run, args.report_dir
+        )
+    elif args.qualification_command == "validate":
+        payload = BaselineQualificationService.validate(args.run)
+    else:
+        payload = json.loads(
+            (args.run / "qualification/qualification_verdict.json").read_text()
+        )
+    _emit(payload, args.json_output)
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     try:
@@ -331,6 +364,8 @@ def main(argv: list[str] | None = None) -> int:
             return _diagnostic_command(args)
         if args.command == "runs":
             return _run_command(args)
+        if args.command in {"qualify", "qualification"}:
+            return _qualification_command(args)
     except WGEError as exc:
         if args.command == "validate-interchange":
             write_failure_report(args.report_dir, exc)

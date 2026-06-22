@@ -1,0 +1,122 @@
+{
+  "comparisons": [
+    {
+      "authority_tier": "tier_1",
+      "binding_status": "advisory",
+      "comparison_method": "not_assessable",
+      "comparison_result": "not_assessable",
+      "generated_value": {
+        "coefficient_of_variation": 0.16710447201440629,
+        "count": 118,
+        "maximum": 0.6492708333333326,
+        "mean": 0.5049521539548022,
+        "median": 0.5018541666666665,
+        "minimum": 0.36062500000000597,
+        "p10": 0.39163541666666574,
+        "p90": 0.6221187499999989,
+        "variance": 0.007119944417294232
+      },
+      "limitations": [
+        "No permitted raw Session 1 packet-onset schedule or interval quantiles are available."
+      ],
+      "metric_id": "packet_interval_distribution_session_1",
+      "qualification_weight": "none",
+      "source_artifact": "phase4d_f:session_1_profile",
+      "source_field": "timing|packet|spatial",
+      "source_scope": "source_session_1",
+      "source_value": "raw source intervals unavailable"
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "comparison_method": "generated_median_against_source_empirical_quantiles",
+      "comparison_result": "outside_source_reference",
+      "generated_value": 0.017291666666666667,
+      "limitations": [
+        "Source evidence is aggregate statistics, not raw per-grammar spacings."
+      ],
+      "metric_id": "continuation_spacing_median_session_1",
+      "qualification_weight": "major",
+      "source_artifact": "x_alpha_closure:data/pulse_pattern_analysis.json",
+      "source_field": "by_session.1|by_mode.Baseline Mode",
+      "source_scope": "source_session_1",
+      "source_value": {
+        "count": 747,
+        "maximum": 0.06702083333333334,
+        "mean": 0.04823771474788042,
+        "median": 0.054,
+        "minimum": 0.018041666666666668,
+        "p10": 0.028,
+        "p90": 0.067
+      }
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "comparison_method": "generated_median_against_source_empirical_quantiles",
+      "comparison_result": "near_source_reference",
+      "generated_value": 0.017291666666666667,
+      "limitations": [
+        "Per-grammar source spacing distributions are unavailable."
+      ],
+      "metric_id": "continuation_spacing_median_baseline",
+      "qualification_weight": "major",
+      "source_artifact": "x_alpha_closure:data/pulse_pattern_analysis.json",
+      "source_field": "by_session.1|by_mode.Baseline Mode",
+      "source_scope": "baseline_sessions_1_4",
+      "source_value": {
+        "count": 3114,
+        "maximum": 0.07889583333333333,
+        "mean": 0.04642812700706486,
+        "median": 0.0465,
+        "minimum": 0.001,
+        "p10": 0.028,
+        "p90": 0.067
+      }
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "comparison_method": "generated_median_against_source_empirical_quantiles",
+      "comparison_result": "near_source_reference",
+      "generated_value": 0.09204166666666666,
+      "limitations": [],
+      "metric_id": "cycle_span_median_session_1",
+      "qualification_weight": "major",
+      "source_artifact": "x_alpha_closure:data/pulse_pattern_analysis.json",
+      "source_field": "by_session.1|by_mode.Baseline Mode",
+      "source_scope": "source_session_1",
+      "source_value": {
+        "count": 752,
+        "maximum": 0.359875,
+        "mean": 0.25533385970744676,
+        "median": 0.2515833333333333,
+        "minimum": 0.0255,
+        "p10": 0.18952083333333333,
+        "p90": 0.326125
+      }
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "comparison_method": "generated_median_against_source_empirical_quantiles",
+      "comparison_result": "within_source_reference",
+      "generated_value": 0.09204166666666666,
+      "limitations": [],
+      "metric_id": "cycle_span_median_baseline",
+      "qualification_weight": "major",
+      "source_artifact": "x_alpha_closure:data/pulse_pattern_analysis.json",
+      "source_field": "by_session.1|by_mode.Baseline Mode",
+      "source_scope": "baseline_sessions_1_4",
+      "source_value": {
+        "count": 6112,
+        "maximum": 0.359875,
+        "mean": 0.11459044025414487,
+        "median": 0.08952083333333333,
+        "minimum": 0.0027291666666666666,
+        "p10": 0.022125,
+        "p90": 0.22804166666666667
+      }
+    }
+  ]
+}

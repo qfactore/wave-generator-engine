@@ -11,3 +11,8 @@ Planning uses identity-index metadata rather than waveform samples. The event
 plan contains sample-aligned timing, logical channels, grammar, roles, exact
 motif IDs and hashes, and neutral relative-gain metadata. It is explicitly
 non-executable for rendering.
+
+WGE-3Q adds an orthogonal, read-only qualification layer. It reads committed
+plans and manifest-permitted source statistics, writes only additive
+qualification artifacts, and verifies core plan hashes before and after. The
+qualification layer has no renderer or waveform access path.

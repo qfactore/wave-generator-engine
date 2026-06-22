@@ -1,0 +1,23 @@
+{
+  "assessable_metric_count": 16,
+  "audio_created": false,
+  "blocked_final_test_accessed": false,
+  "content_hash": "f2035dbc5f1aef44dc53d3a14f1ababcaf6195f31c0c4d6585a29202bc330fc8",
+  "core_plans_unchanged": true,
+  "exporter_created": false,
+  "major_outside_metrics": [
+    "packet_onset_schedule_spectrum",
+    "continuation_spacing_median_session_1",
+    "pulse_pattern_prevalence_session_1",
+    "unit_grammar_distribution_baseline",
+    "event_rate_session_1"
+  ],
+  "not_assessable_metric_count": 5,
+  "renderer_created": false,
+  "schema_version": "wge.source_qualification_report.v1",
+  "source_reference_count": 10,
+  "status": "REVISE_WGE3_SOURCE_QUALIFICATION",
+  "verdict": "not_qualified_for_render",
+  "wge4_authorized": false,
+  "wge4_started": false
+}

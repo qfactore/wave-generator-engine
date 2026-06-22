@@ -1,0 +1,32 @@
+{
+  "audio_created": false,
+  "content_hash": "7c7730ad0b6234a87356eb81f674dce0ab6627efb169185f253a30e1af8239f0",
+  "core_plans_unchanged": true,
+  "figure_files": [
+    "figures/channel_occupancy_comparison.png",
+    "figures/channel_transition_comparison.png",
+    "figures/continuation_count_comparison.png",
+    "figures/continuation_spacing_by_grammar_comparison.png",
+    "figures/density_comparison.png",
+    "figures/focus_role_ratio_comparison.png",
+    "figures/motif_usage_comparison.png",
+    "figures/packet_interval_quantiles.png",
+    "figures/packet_interval_source_comparison.png",
+    "figures/packet_onset_spectrum_comparison.png",
+    "figures/packet_span_comparison.png",
+    "figures/pulse_pattern_comparison.png",
+    "figures/repetition_distance_comparison.png",
+    "figures/unit_grammar_comparison.png"
+  ],
+  "metric_comparison_count": 21,
+  "qualification_id": "wge3q_baseline_source_qualification",
+  "raw_files": [
+    "raw/generated_plan_metrics.json",
+    "raw/source_reference_metrics.json"
+  ],
+  "run_id": "x_alpha_session1_diagnostic_60s",
+  "schema_version": "wge.qualification_manifest.v1",
+  "source_reference_count": 10,
+  "verdict": "not_qualified_for_render",
+  "wge4_authorized": false
+}

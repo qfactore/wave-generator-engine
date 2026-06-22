@@ -1,0 +1,200 @@
+{
+  "comparisons": [
+    {
+      "authority_tier": "tier_1",
+      "binding_status": "advisory",
+      "comparison_method": "not_assessable",
+      "comparison_result": "not_assessable",
+      "generated_value": {
+        "coefficient_of_variation": 0.16710447201440629,
+        "count": 118,
+        "maximum": 0.6492708333333326,
+        "mean": 0.5049521539548022,
+        "median": 0.5018541666666665,
+        "minimum": 0.36062500000000597,
+        "p10": 0.39163541666666574,
+        "p90": 0.6221187499999989,
+        "variance": 0.007119944417294232
+      },
+      "limitations": [
+        "No permitted raw Session 1 packet-onset schedule or interval quantiles are available."
+      ],
+      "metric_id": "packet_interval_distribution_session_1",
+      "qualification_weight": "none",
+      "source_artifact": "phase4d_f:session_1_profile",
+      "source_field": "timing|packet|spatial",
+      "source_scope": "source_session_1",
+      "source_value": "raw source intervals unavailable"
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "comparison_method": "dominant_schedule_frequency_against_empirical_source_band",
+      "comparison_result": "outside_source_reference",
+      "generated_value": {
+        "dominant_schedule_frequency_hz": 2.033333333333333,
+        "peak_power_fraction": 0.037780579834274346
+      },
+      "limitations": [
+        "Schedule spectrum is packet timing, not carrier frequency."
+      ],
+      "metric_id": "packet_onset_schedule_spectrum",
+      "qualification_weight": "major",
+      "source_artifact": "x_alpha_closure:data/carrier_frequency_analysis.json",
+      "source_field": "source_low_frequency_schedule_spectrum",
+      "source_scope": "source_session_1",
+      "source_value": {
+        "count": 8,
+        "maximum": 1.8202614379084967,
+        "mean": 1.1666666666666667,
+        "median": 0.869281045751634,
+        "minimum": 0.869281045751634,
+        "p10": 0.869281045751634,
+        "p90": 1.8202614379084967
+      }
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "comparison_method": "jensen_shannon_divergence",
+      "comparison_result": "outside_source_reference",
+      "generated_value": {
+        "burst cluster": 0.35294117647058826,
+        "clean sweep": 0.2857142857142857,
+        "partial sweep": 0.11764705882352941,
+        "scattered packet": 0.07563025210084033,
+        "sweep with repeats": 0.16806722689075632
+      },
+      "jensen_shannon_divergence": 0.36248314472252635,
+      "limitations": [
+        "0.05/0.1 bands are provisional diagnostic interpretation, not binding tolerances."
+      ],
+      "metric_id": "unit_grammar_distribution_baseline",
+      "qualification_weight": "major",
+      "source_artifact": "phase5l_mode_specific_unit_grammar_profiles",
+      "source_field": "profiles.baseline_stochastic_texture",
+      "source_scope": "baseline_sessions_1_4",
+      "source_value": {
+        "burst cluster": 0.0070921985815602835,
+        "clean sweep": 0.15760441292356187,
+        "partial sweep": 0.34515366430260047,
+        "scattered packet": 0.46256895193065406,
+        "sweep with repeats": 0.027580772261623327
+      }
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "comparison_method": "category_mapping_and_absolute_difference",
+      "comparison_result": "near_source_reference",
+      "generated_value": {
+        "plus_one_circular": 0.7100175746924429,
+        "reverse": 0.029876977152899824,
+        "same_channel": 0.10017574692442882,
+        "skip_or_scattered": 0.15992970123022848
+      },
+      "limitations": [
+        "Source categories include signed wrapped steps; engine summary groups skips."
+      ],
+      "metric_id": "wrapped_transition_mix_baseline",
+      "qualification_weight": "moderate",
+      "source_artifact": "phase5l_mode_specific_unit_grammar_profiles",
+      "source_field": "profiles.baseline_stochastic_texture",
+      "source_scope": "baseline_sessions_1_4",
+      "source_value": {
+        "-1": 0.009230769230769232,
+        "-2": 0.0028683181225554106,
+        "-3": 0.001408083441981747,
+        "0": 0.0003650586701434159,
+        "1": 0.9278748370273794,
+        "2": 0.038383311603650584,
+        "3": 0.013194263363754889,
+        "4": 0.005162972620599739,
+        "initial": 0.0015123859191655802
+      }
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "comparison_method": "quantile_context_only",
+      "comparison_result": "near_source_reference",
+      "generated_value": {
+        "coefficient_of_variation": 0.8888423417709542,
+        "count": 486,
+        "maximum": 405.0,
+        "mean": 69.559670781893,
+        "median": 52.0,
+        "minimum": 2.0,
+        "p10": 8.5,
+        "p90": 155.0,
+        "variance": 3822.6497315788583
+      },
+      "limitations": [
+        "Only source repetition-distance quantiles are available."
+      ],
+      "metric_id": "motif_repetition_distance",
+      "qualification_weight": "moderate",
+      "source_artifact": "phase5l_non_repetition_novelty_audit",
+      "source_field": "modes.baseline_stochastic_texture",
+      "source_scope": "baseline_sessions_1_4",
+      "source_value": {
+        "p10": 1.0,
+        "p50": 1.0,
+        "p90": 90.0
+      }
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "comparison_method": "not_assessable",
+      "comparison_result": "not_assessable",
+      "generated_value": {
+        "entropy_bits": 6.293730462309381,
+        "maximum_share": 0.02456140350877193,
+        "unique": 84
+      },
+      "limitations": [
+        "No source entropy or maximum motif-share metric is present."
+      ],
+      "metric_id": "motif_usage_entropy_and_maximum_share",
+      "qualification_weight": "none",
+      "source_artifact": "phase5l_non_repetition_novelty_audit",
+      "source_field": "modes.baseline_stochastic_texture",
+      "source_scope": "baseline_sessions_1_4",
+      "source_value": "source entropy and maximum-share evidence unavailable"
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "binding_structural",
+      "comparison_method": "binding_mode_architecture_check",
+      "comparison_result": "within_source_reference",
+      "generated_value": {
+        "event_count": 570,
+        "inactive_gap_seconds": 0.0,
+        "macro_state_occupancy": 1.0,
+        "maximum_concurrency": 3,
+        "packet_count": 119,
+        "packet_span_seconds": {
+          "coefficient_of_variation": 0.5895167007165891,
+          "count": 119,
+          "maximum": 0.159125,
+          "mean": 0.08710276610644259,
+          "median": 0.10964583333333333,
+          "minimum": 0.0027291666666666666,
+          "p10": 0.01745,
+          "p90": 0.14569583333333333,
+          "variance": 0.0026366720772867972
+        }
+      },
+      "limitations": [
+        "No permitted source 60-second density windows exist."
+      ],
+      "metric_id": "density_structure",
+      "qualification_weight": "major",
+      "source_artifact": "x_alpha_closure:data/macro_density_analysis.json",
+      "source_field": "recommendation.standard_modes",
+      "source_scope": "baseline_mode",
+      "source_value": "Baseline Mode: no mandatory deep macro gates"
+    }
+  ]
+}
