@@ -135,6 +135,14 @@ def build_parser() -> argparse.ArgumentParser:
         command = qualification_commands.add_parser(name)
         command.add_argument("run", type=Path)
         _json_flag(command)
+
+    render = commands.add_parser("render")
+    render_commands = render.add_subparsers(dest="render_command", required=True)
+    audit = render_commands.add_parser("audit")
+    audit.add_argument("audit_action", nargs="?", choices=("validate", "show"))
+    audit.add_argument("--run", type=Path, required=True)
+    audit.add_argument("--interchange-dir", type=Path)
+    _json_flag(audit)
     return parser
 
 
@@ -335,6 +343,20 @@ def _qualification_command(args: argparse.Namespace) -> int:
     return 0
 
 
+def _render_command(args: argparse.Namespace) -> int:
+    from wave_generator_engine.rendering.service import RenderAuditService
+    if args.audit_action == "validate":
+        payload = RenderAuditService.validate(args.run)
+    elif args.audit_action == "show":
+        payload = json.loads(
+            (args.run / "render_audit/render_audit_manifest.json").read_text()
+        )
+    else:
+        payload = RenderAuditService(args.interchange_dir).audit(args.run)
+    _emit(payload, args.json_output)
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     try:
@@ -366,6 +388,8 @@ def main(argv: list[str] | None = None) -> int:
             return _run_command(args)
         if args.command in {"qualify", "qualification"}:
             return _qualification_command(args)
+        if args.command == "render":
+            return _render_command(args)
     except WGEError as exc:
         if args.command == "validate-interchange":
             write_failure_report(args.report_dir, exc)

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema_version", "events_planned", "events_rendered", "array_hashes", "archive_hash", "content_hash"],
+  "properties": {
+    "schema_version": {"const": "wge.render_receipt.v1"},
+    "render_dtype": {"const": "float64"},
+    "playback_intensity_applied": {"const": false},
+    "normalization_applied": {"const": false},
+    "limiter_applied": {"const": false},
+    "transform_path_entered": {"const": false},
+    "content_hash": {"type": "string", "minLength": 64}
+  }
+}

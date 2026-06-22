@@ -1,0 +1,21 @@
+{
+  "audio_created": false,
+  "audit_id": "wge4a_exact_diagnostic_render_audit",
+  "content_hash": "0a1a2321e14bf3298e8f9310092d7a1b8633bcbeb6d22bbcb296c56df38fc928",
+  "document_hashes": {
+    "authority_snapshot": "119eac475465216e8ebadc97d4a4b9297efdaa7cd1d446e94959db448a704ceb",
+    "event_render_trace": "36d4de2395f5f5f3eb0cbc0a6e0d022188df29fc72684ee05df495722bb33936",
+    "headroom_verdict": "1887879873280899808fd6d8250c044f20769ae6f4042f9ed14b0c6db85f28ff",
+    "overlap_metrics": "bcc0aae5a1ec8a007e18ee40d5783aedec31702458aea93a4d91f965197a5e1b",
+    "per_channel_metrics": "c2aa79c2a0d99eaf8c33c79d9834c8f4b0638ba2797a9f21c8aa35241295b118",
+    "render_receipt": "a045315342e0e3882675309da6f041f7c849d31b6cdf161d8a8efdbc9874f825",
+    "true_peak_method": "70d090276054974a5ea28e43b0b2e0de07ef724b25ff6f8733736b9d50668789"
+  },
+  "events_rendered": 960,
+  "headroom_verdict": "headroom_pass",
+  "logical_channel_count": 8,
+  "persistent_waveform_arrays": false,
+  "run_id": "x_alpha_session1_diagnostic_60s",
+  "schema_version": "wge.render_audit_manifest.v1",
+  "wge4b_authorized": true
+}

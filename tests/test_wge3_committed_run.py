@@ -13,7 +13,7 @@ RUN = ROOT / "runs/latest"
 
 def test_committed_run_exists_and_validates() -> None:
     from wave_generator_engine import __version__
-    assert __version__ == "0.4.2"
+    assert __version__ == "0.5.0"
     assert RUN.is_dir()
     manifest = json.loads((RUN / "run_manifest.json").read_text())
     assert validate_content_hash(manifest)

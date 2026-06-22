@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["method_id", "candidate_peak_count", "phase_count", "support_radius_samples", "content_hash"],
+  "properties": {
+    "candidate_peak_count": {"const": 64},
+    "phase_count": {"const": 8},
+    "support_radius_samples": {"const": 16},
+    "content_hash": {"type": "string", "minLength": 64}
+  }
+}

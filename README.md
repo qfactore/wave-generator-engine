@@ -31,3 +31,15 @@ buffer exists. Headroom is not certified before waveform render and overlap
 summation. The current qualification authorizes a future diagnostic WGE-4
 render with documented evidence caveats, but no renderer or audible output is
 implemented here.
+## WGE-4A exact diagnostic rendering
+
+`wge render audit --run runs/latest` evaluates the qualified EventPlan using
+exact frozen motif identities, eight independent ephemeral float64 logical
+channel buses, identity event gain, and the authoritative ×1.1 corpus
+calibration. Same-channel overlaps are summed; different logical channels are
+never summed.
+
+The audit persists receipts, metrics, true-peak method provenance, headroom
+verdict, and non-reconstructive figures under `runs/latest/render_audit/`.
+It does not persist waveform arrays or create audio. Playback intensity,
+normalization, limiting, stereo packaging, and WAV export remain absent.

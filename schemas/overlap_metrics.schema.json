@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema_version", "per_channel", "total_overlap_additions", "maximum_global_logical_channel_concurrency", "content_hash"],
+  "properties": {
+    "schema_version": {"const": "wge.overlap_metrics.v1"},
+    "channels_are_not_summed": {"const": true},
+    "content_hash": {"type": "string", "minLength": 64}
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema_version", "audit_id", "headroom_verdict", "wge4b_authorized", "document_hashes", "content_hash"],
+  "properties": {
+    "schema_version": {"const": "wge.render_audit_manifest.v1"},
+    "headroom_verdict": {"enum": ["headroom_pass", "headroom_fail", "measurement_unavailable"]},
+    "wge4b_authorized": {"type": "boolean"},
+    "persistent_waveform_arrays": {"const": false},
+    "audio_created": {"const": false},
+    "content_hash": {"type": "string", "minLength": 64}
+  }
+}

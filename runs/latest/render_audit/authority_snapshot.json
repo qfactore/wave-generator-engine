@@ -1,0 +1,21 @@
+{
+  "archive_authority_tier": "tier_0",
+  "archive_hash": "7e248804420fdcc75713fd3c232f6c97f5581d01be83526f0ea5770002fc29dd",
+  "asset_manifest": {
+    "artifact_id": "frozen_morphology_asset_manifest",
+    "sha256": "81bddd3b9cf629e69de9bf1fb9fd4794e1523b1242829d98b57af23c1e5d56e8"
+  },
+  "calibration_id": "x_alpha_reference_calibration_v1",
+  "content_hash": "119eac475465216e8ebadc97d4a4b9297efdaa7cd1d446e94959db448a704ceb",
+  "freeze_manifest": {
+    "artifact_id": "frozen_morphology_freeze_manifest",
+    "sha256": "2ba0a81022e862d66a3c4c2573494c118203e72c5462143e3d9c8c09bbe63307"
+  },
+  "qualified_plan_verdict_hash": "dd5aa7c5bb15ee20382dfee59f870fdd5861f8adf3570f0fd1a4fafefb2e4ddc",
+  "renderer_contract": {
+    "artifact_id": "frozen_morphology_renderer_contract",
+    "sha256": "cbb06b9e4d4ba78d57197d6ed9d85f06a92e4ff789f6b4ff9740fdc646088f24"
+  },
+  "schema_version": "wge.render_authority_snapshot.v1",
+  "true_peak_method_artifact": "x_alpha_closure:methods/measurement_methods.md"
+}

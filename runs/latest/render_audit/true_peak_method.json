@@ -1,0 +1,31 @@
+{
+  "boundary_handling": "clip_support_to_available_samples",
+  "candidate_peak_count": 64,
+  "candidate_selection": "largest_absolute_sample_peaks_argpartition",
+  "center_offsets": [
+    -1,
+    0
+  ],
+  "content_hash": "70d090276054974a5ea28e43b0b2e0de07ef724b25ff6f8733736b9d50668789",
+  "duplicate_window_handling": "evaluate_all_candidates_and_take_global_maximum",
+  "input_dtype": "float64",
+  "interpolation_kernel": "numpy_normalized_sinc",
+  "method_id": "x_alpha_eight_phase_windowed_sinc_v1",
+  "phase_count": 8,
+  "phase_positions": [
+    0.0,
+    0.125,
+    0.25,
+    0.375,
+    0.5,
+    0.625,
+    0.75,
+    0.875
+  ],
+  "source_artifact": "x_alpha_closure:methods/measurement_methods.md",
+  "source_hash": "326047f3c8ab0dfdc5b8c74cd0993c9ccdeafb0b661020f73f6a08ae339bf633",
+  "source_implementation": "x_alpha_closure:scripts/run_x_alpha_closure.py",
+  "source_implementation_hash": "63c5d0b1c9d4a71f908abfc7fa8d7dace301cfc3805722df70f5a437366e2dbd",
+  "support_radius_samples": 16,
+  "window": "raised_cosine_0.5_plus_0.5_cos_pi_distance_over_radius"
+}

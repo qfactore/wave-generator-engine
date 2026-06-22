@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema_version", "uncalibrated", "calibrated", "content_hash"],
+  "properties": {
+    "schema_version": {"const": "wge.channel_render_metrics.v1"},
+    "uncalibrated": {"type": "array", "minItems": 8, "maxItems": 8},
+    "calibrated": {"type": "array", "minItems": 8, "maxItems": 8},
+    "content_hash": {"type": "string", "minLength": 64}
+  }
+}

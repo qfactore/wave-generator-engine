@@ -1,0 +1,21 @@
+{
+  "all_channels_finite": true,
+  "all_events_rendered_once": true,
+  "ceiling_dbfs": -3.0,
+  "content_hash": "1887879873280899808fd6d8250c044f20769ae6f4042f9ed14b0c6db85f28ff",
+  "global_maximum_sample_peak_dbfs": -11.642594311616357,
+  "global_maximum_sample_peak_linear": 0.2617401123046875,
+  "global_maximum_true_peak_dbfs": -11.611042022877703,
+  "global_maximum_true_peak_linear": 0.26269263622562733,
+  "identity_verification": "passed",
+  "margin_to_ceiling_db": 8.611042022877703,
+  "margin_to_zero_db": 11.611042022877703,
+  "no_sample_clipping": true,
+  "sample_peak_channel": 0,
+  "sample_peak_index": 2696361,
+  "schema_version": "wge.headroom_verdict.v1",
+  "true_peak_channel": 0,
+  "unauthorized_processing": false,
+  "verdict": "headroom_pass",
+  "wge4b_authorized": true
+}

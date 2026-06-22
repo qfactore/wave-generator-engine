@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema_version", "event_count", "events", "content_hash"],
+  "properties": {
+    "schema_version": {"const": "wge.event_render_trace.v1"},
+    "events": {"type": "array", "items": {"type": "object", "required": ["event_id", "logical_channel", "onset_sample", "end_sample_exclusive", "motif_id", "motif_hash", "source_order", "relative_event_gain", "calibration_id", "calibration_multiplier", "exact_identity_verified", "rendered_once"]}},
+    "content_hash": {"type": "string", "minLength": 64}
+  }
+}

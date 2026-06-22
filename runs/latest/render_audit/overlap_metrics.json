@@ -1,0 +1,119 @@
+{
+  "channels_are_not_summed": true,
+  "content_hash": "bcc0aae5a1ec8a007e18ee40d5783aedec31702458aea93a4d91f965197a5e1b",
+  "global_channel_concurrency_one_second_bins": [
+    1,
+    2,
+    1,
+    1,
+    1,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    1,
+    2,
+    1,
+    2,
+    1,
+    1,
+    2,
+    2,
+    1,
+    1,
+    2,
+    2,
+    1,
+    2,
+    1,
+    1,
+    2,
+    1,
+    2,
+    2,
+    1,
+    1,
+    1,
+    1,
+    2,
+    1,
+    1,
+    2,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    2,
+    1,
+    2,
+    2,
+    1,
+    1,
+    1,
+    1,
+    2,
+    1,
+    1,
+    2,
+    1
+  ],
+  "maximum_global_logical_channel_concurrency": 2,
+  "per_channel": [
+    {
+      "logical_channel": 0,
+      "maximum_same_channel_concurrency": 2,
+      "overlap_fraction": 0.0003951388888888889,
+      "overlap_sample_count": 1138
+    },
+    {
+      "logical_channel": 1,
+      "maximum_same_channel_concurrency": 2,
+      "overlap_fraction": 0.00022395833333333333,
+      "overlap_sample_count": 645
+    },
+    {
+      "logical_channel": 2,
+      "maximum_same_channel_concurrency": 1,
+      "overlap_fraction": 0.0,
+      "overlap_sample_count": 0
+    },
+    {
+      "logical_channel": 3,
+      "maximum_same_channel_concurrency": 1,
+      "overlap_fraction": 0.0,
+      "overlap_sample_count": 0
+    },
+    {
+      "logical_channel": 4,
+      "maximum_same_channel_concurrency": 2,
+      "overlap_fraction": 0.0002854166666666667,
+      "overlap_sample_count": 822
+    },
+    {
+      "logical_channel": 5,
+      "maximum_same_channel_concurrency": 2,
+      "overlap_fraction": 6.631944444444445e-05,
+      "overlap_sample_count": 191
+    },
+    {
+      "logical_channel": 6,
+      "maximum_same_channel_concurrency": 1,
+      "overlap_fraction": 0.0,
+      "overlap_sample_count": 0
+    },
+    {
+      "logical_channel": 7,
+      "maximum_same_channel_concurrency": 2,
+      "overlap_fraction": 0.00016493055555555556,
+      "overlap_sample_count": 475
+    }
+  ],
+  "schema_version": "wge.overlap_metrics.v1",
+  "total_overlap_additions": 3271
+}

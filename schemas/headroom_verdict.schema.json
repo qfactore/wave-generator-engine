@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema_version", "verdict", "ceiling_dbfs", "wge4b_authorized", "content_hash"],
+  "properties": {
+    "schema_version": {"const": "wge.headroom_verdict.v1"},
+    "verdict": {"enum": ["headroom_pass", "headroom_fail", "measurement_unavailable"]},
+    "ceiling_dbfs": {"const": -3.0},
+    "wge4b_authorized": {"type": "boolean"},
+    "content_hash": {"type": "string", "minLength": 64}
+  }
+}
