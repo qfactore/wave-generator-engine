@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["branch_number", "left_logical_channel", "right_logical_channel", "filename", "sample_rate_hz", "frame_count", "encoding", "bit_depth", "wav_sha256", "data_chunk_sha256", "readback_status", "maximum_quantization_error"],
+  "properties": {
+    "branch_number": {"type": "integer", "minimum": 1, "maximum": 4},
+    "sample_rate_hz": {"const": 48000},
+    "encoding": {"const": "signed_pcm16"},
+    "bit_depth": {"const": 16},
+    "wav_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "data_chunk_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "readback_status": {"const": "passed"}
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "report_id": "wge4b2a_deterministic_pcm16_writer_core",
+  "status": "WGE4B2A_WRITER_CORE_READY",
+  "engine_version": "0.5.0",
+  "starting_checkpoint": "eb7e117ba853126238624b4265da1b0a4732541e",
+  "contract_id": "diagnostic_wav_export_contract_v1",
+  "contract_hash": "87dbbea263b6455893f566eff00ec6309e52842a0729fbbe7cef2b391c0eb4cc",
+  "writer_implementation": "minimal_deterministic_standard_riff_wave_pcm16",
+  "quantization": "float64_times_32768_round_nearest_ties_to_even",
+  "accepted_minimum": -1.0,
+  "accepted_maximum": 0.999969482421875,
+  "maximum_quantization_error": 0.0000152587890625,
+  "ties_to_even_fixture_codes": [-32768, -2, -2, 0, 0, 0, 2, 2, 32767],
+  "stereo_interleaving": "L0_R0_L1_R1",
+  "container": {
+    "family": "RIFF_WAVE",
+    "format_code": 1,
+    "channels": 2,
+    "sample_rate_hz": 48000,
+    "bit_depth": 16,
+    "block_alignment": 4,
+    "byte_rate": 192000,
+    "chunks": ["fmt ", "data"]
+  },
+  "readback_independence": "independent_parser_and_reference_quantization",
+  "synthetic_fixture": {
+    "frame_count": 9,
+    "data_byte_count": 36,
+    "wav_sha256": "9e79bddda640825b08e534b9ab2614538fb91dc4fd08444e29ace0c8d86b10fe",
+    "data_chunk_sha256": "1e75325d6e1715b6961044fb3437aee75114acb990159b6c340e517fb714d230",
+    "maximum_quantization_error": 0.0000152587890625
+  },
+  "deterministic_repeated_bytes": true,
+  "test_count": 289,
+  "qualified_plan_rendered": false,
+  "frozen_motif_samples_accessed": false,
+  "persistent_wav_created": false,
+  "persistent_waveform_created": false,
+  "wge4b2b_authorized": true,
+  "wge4b2b_started": false,
+  "wge4c_started": false
+}

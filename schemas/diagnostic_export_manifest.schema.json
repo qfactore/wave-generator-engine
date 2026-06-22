@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema_version", "contract_id", "contract_hash", "source_render_receipt_hash", "source_bus_hashes", "files", "calibration_already_applied", "export_calibration_multiplier", "playback_intensity_applied", "content_hash"],
+  "properties": {
+    "schema_version": {"const": "wge.diagnostic_export_manifest.v1"},
+    "contract_id": {"const": "diagnostic_wav_export_contract_v1"},
+    "files": {"type": "array", "minItems": 4, "maxItems": 4},
+    "calibration_already_applied": {"const": true},
+    "export_calibration_multiplier": {"const": 1.0},
+    "playback_intensity_applied": {"const": false},
+    "content_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

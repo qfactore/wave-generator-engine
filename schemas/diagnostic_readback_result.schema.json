@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema_version", "valid", "frame_count", "wav_sha256", "data_chunk_sha256", "maximum_quantization_error", "content_hash"],
+  "properties": {
+    "schema_version": {"const": "wge.diagnostic_readback_result.v1"},
+    "valid": {"const": true},
+    "wav_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "data_chunk_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "maximum_quantization_error": {"type": "number", "maximum": 0.0000152587890625},
+    "content_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

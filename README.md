@@ -50,3 +50,7 @@ normalization, limiting, stereo packaging, and WAV export remain absent.
 inspect the immutable diagnostic WAV contract. WGE-4B1 defines authoritative
 stereo pairing, diagnostic PCM16 quantization, naming, and later readback
 validation only. It does not provide a WAV-writing command or persist audio.
+
+WGE-4B2A adds a contract-specific PCM16 byte writer and independent readback
+validator for synthetic tests only. It does not expose a real export command,
+render the qualified plan, or create the Session 1 diagnostic files.
