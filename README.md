@@ -43,3 +43,10 @@ The audit persists receipts, metrics, true-peak method provenance, headroom
 verdict, and non-reconstructive figures under `runs/latest/render_audit/`.
 It does not persist waveform arrays or create audio. Playback intensity,
 normalization, limiting, stereo packaging, and WAV export remain absent.
+
+## WGE-4B1 diagnostic export contract
+
+`wge export contract show --json` and `wge export contract validate --json`
+inspect the immutable diagnostic WAV contract. WGE-4B1 defines authoritative
+stereo pairing, diagnostic PCM16 quantization, naming, and later readback
+validation only. It does not provide a WAV-writing command or persist audio.

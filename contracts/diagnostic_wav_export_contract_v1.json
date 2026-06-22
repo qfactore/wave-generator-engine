@@ -1,0 +1,240 @@
+{
+  "contract_id": "diagnostic_wav_export_contract_v1",
+  "contract_version": "1.0.0",
+  "status": "locked_diagnostic_contract",
+  "user_editable": false,
+  "authority_references": [
+    {
+      "artifact_id": "x_alpha_closure:data/calibration_audit.json",
+      "authority_tier": "tier_1",
+      "classification_status": "include",
+      "source_field": "source_format|playback_path",
+      "scope": "source_recording_and_playback_architecture",
+      "sha256": "9c01adeeb4a9aa8cbe8c2296f15be7f9f8b3dc4ed1aa77d80f08568f1bbb1c19"
+    },
+    {
+      "artifact_id": "x_alpha_closure:scripts/run_x_alpha_closure.py",
+      "authority_tier": "tier_1",
+      "classification_status": "include",
+      "source_field": "carrier_analysis.logical_channel|analyze_wav.decode",
+      "scope": "channel_order_and_pcm_decode",
+      "sha256": "63c5d0b1c9d4a71f908abfc7fa8d7dace301cfc3805722df70f5a437366e2dbd"
+    },
+    {
+      "artifact_id": "x_alpha_closure:methods/measurement_methods.md",
+      "authority_tier": "tier_1",
+      "classification_status": "include",
+      "source_field": "Calibration",
+      "scope": "calibration_measurement",
+      "sha256": "326047f3c8ab0dfdc5b8c74cd0993c9ccdeafb0b661020f73f6a08ae339bf633"
+    },
+    {
+      "artifact_id": "frozen_morphology_renderer_contract",
+      "authority_tier": "tier_0",
+      "classification_status": "include",
+      "source_field": "stored_asset_form",
+      "scope": "native_render_input",
+      "sha256": "cbb06b9e4d4ba78d57197d6ed9d85f06a92e4ff789f6b4ff9740fdc646088f24"
+    },
+    {
+      "artifact_id": "wave_gen_interchange_decision_registry",
+      "authority_tier": "tier_1",
+      "classification_status": "include",
+      "source_field": "AD-017|AD-018|AD-028",
+      "scope": "engine_handoff_policy",
+      "sha256": "2019a5427451d1093aeab387f7e6d94aec8d741e60e4fcd524dcc065e31b9f90"
+    },
+    {
+      "artifact_id": "x_alpha_calibration_handoff",
+      "authority_tier": "tier_1",
+      "classification_status": "include",
+      "source_field": "calibration|playback_intensity|delivery",
+      "scope": "engine_handoff_policy",
+      "sha256": "6b85a296dd8c12784618079d012c35219abc5c199152f86a22da636b0fb85c03"
+    },
+    {
+      "artifact_id": "wave_gen_interchange_blocked_behaviors",
+      "authority_tier": "tier_1",
+      "classification_status": "include",
+      "source_field": "playback_intensity|production_wav|24_bit",
+      "scope": "engine_handoff_policy",
+      "sha256": "f9411588908e28d410def73bdc6919cbfb2a4d68ccafbb58e59b2981fe385242"
+    }
+  ],
+  "authority_snapshot_hash": "d293056cc349f2b04c5994a656c084e94c01f8eaa0cf5d60af9c6079b07b22e9",
+  "source_profile_id": "x_alpha_standard_v1",
+  "sample_rate_hz": 48000,
+  "logical_channel_count": 8,
+  "stereo_branch_count": 4,
+  "branch_mappings": [
+    {
+      "branch_id": "branch_01",
+      "source_order": 1,
+      "left_logical_channel": 0,
+      "right_logical_channel": 1,
+      "physical_output_meaning": "independent_output_device_01",
+      "filename_token": "branch_01",
+      "provenance_expression": "(track_in_session - 1) * 2 + stereo_channel_index"
+    },
+    {
+      "branch_id": "branch_02",
+      "source_order": 2,
+      "left_logical_channel": 2,
+      "right_logical_channel": 3,
+      "physical_output_meaning": "independent_output_device_02",
+      "filename_token": "branch_02",
+      "provenance_expression": "(track_in_session - 1) * 2 + stereo_channel_index"
+    },
+    {
+      "branch_id": "branch_03",
+      "source_order": 3,
+      "left_logical_channel": 4,
+      "right_logical_channel": 5,
+      "physical_output_meaning": "independent_output_device_03",
+      "filename_token": "branch_03",
+      "provenance_expression": "(track_in_session - 1) * 2 + stereo_channel_index"
+    },
+    {
+      "branch_id": "branch_04",
+      "source_order": 4,
+      "left_logical_channel": 6,
+      "right_logical_channel": 7,
+      "physical_output_meaning": "independent_output_device_04",
+      "filename_token": "branch_04",
+      "provenance_expression": "(track_in_session - 1) * 2 + stereo_channel_index"
+    }
+  ],
+  "container": {
+    "family": "RIFF_WAVE",
+    "format": "standard_wave_format_pcm",
+    "format_code": 1,
+    "wave_format_extensible": false,
+    "channel_count_per_file": 2,
+    "byte_order": "little_endian",
+    "fmt_chunk_size": 16,
+    "required_chunks_in_order": ["fmt ", "data"],
+    "unknown_chunks": "reject",
+    "block_alignment_bytes": 4,
+    "byte_rate": 192000,
+    "data_chunk_size_rule": "frame_count_times_4_bytes",
+    "riff_chunk_size_rule": "36_plus_data_chunk_size"
+  },
+  "encoding": {
+    "subtype": "signed_pcm16",
+    "bit_depth": 16,
+    "bytes_per_sample": 2,
+    "authority_status": "tier_1_source_equivalent_diagnostic",
+    "diagnostic_only": true,
+    "production_delivery_certified": false,
+    "hardware_player_compatibility": "source_and_legacy_path_evidenced_not_product_certified",
+    "rejected_alternative": "pcm24_is_tier_3_provisional_pending_target_hardware_validation"
+  },
+  "bit_depth": 16,
+  "quantization_policy": {
+    "input_dtype": "float64",
+    "valid_input_minimum": -1.0,
+    "valid_input_maximum": 0.999969482421875,
+    "positive_scale_factor": 32768,
+    "negative_scale_factor": 32768,
+    "rounding": "nearest_integer_ties_to_even",
+    "integer_minimum": -32768,
+    "integer_maximum": 32767,
+    "positive_full_scale_treatment": "positive_1_0_rejected_as_overflow",
+    "negative_full_scale_treatment": "negative_1_0_maps_to_negative_32768",
+    "zero_treatment": "zero_maps_to_zero",
+    "overflow": "reject",
+    "non_finite": "reject",
+    "maximum_absolute_error_normalized": 0.0000152587890625,
+    "decoded_value_equation": "integer_code_divided_by_32768"
+  },
+  "dither_policy": {
+    "mode": "none_prohibited",
+    "randomness_used": false,
+    "rationale": "No authority introduces dither, and deterministic code-equivalence validation prohibits unrecorded noise."
+  },
+  "calibration_stage": {
+    "input": "WGE4A_calibrated_100_percent_float64_bus",
+    "calibration_already_applied": true,
+    "reference_multiplier_already_applied": 1.1,
+    "additional_multiplier_at_export": 1.0,
+    "double_calibration": "prohibited"
+  },
+  "playback_intensity_stage": {
+    "default_reference": 0.8,
+    "stage": "post_export_playback_metadata",
+    "baked_into_samples": false
+  },
+  "duration_policy": {
+    "frame_count_source": "qualified_session_plan_duration_samples",
+    "current_qualified_frame_count": 2880000,
+    "duration_seconds": 60.0,
+    "truncate": false,
+    "pad": false,
+    "wrap": false,
+    "all_branches_same_frame_count": true
+  },
+  "filename_policy": {
+    "pack_directory": "runs/latest/diagnostic_export",
+    "metadata_files": ["export_contract.json", "export_manifest.json"],
+    "audio_subdirectory": "files",
+    "audio_subdirectory_creation_phase": "WGE4B2_only",
+    "template": "x_alpha_session_01_baseline_{filename_token}.wav",
+    "resolved_filenames": [
+      "x_alpha_session_01_baseline_branch_01.wav",
+      "x_alpha_session_01_baseline_branch_02.wav",
+      "x_alpha_session_01_baseline_branch_03.wav",
+      "x_alpha_session_01_baseline_branch_04.wav"
+    ],
+    "collision_policy": "fail_if_any_target_exists",
+    "source_paths_permitted": false,
+    "motif_ids_permitted": false
+  },
+  "metadata_policy": {
+    "required_audio_metadata_chunks": [],
+    "permitted_audio_metadata_chunks": [],
+    "software_identification": "forbidden",
+    "comments": "forbidden",
+    "source_names": "forbidden",
+    "unknown_chunks": "reject",
+    "contract_and_manifest_are_external_json_not_wave_chunks": true
+  },
+  "readback_validation": {
+    "pre_quantization": {
+      "require_wge4a_canonical_bus_hash_match": true,
+      "calibrated_bus_count": 8,
+      "dtype": "float64"
+    },
+    "post_write": {
+      "file_count": 4,
+      "channels_per_file": 2,
+      "sample_rate_hz": 48000,
+      "frame_count_source": "qualified_session_plan_duration_samples",
+      "subtype": "signed_pcm16",
+      "decoded_integer_codes_equal_reference_quantizer": true,
+      "maximum_quantization_error": 0.0000152587890625,
+      "channel_order_matches_branch_mapping": true,
+      "normalization_detected": "fail",
+      "second_calibration_detected": "fail",
+      "playback_intensity_detected": "fail"
+    },
+    "canonical_file_hash": "sha256_over_complete_file_bytes",
+    "export_manifest_hash": "engine_canonical_json_content_hash"
+  },
+  "blocked_processing": [
+    "normalization",
+    "automatic_gain_scaling",
+    "limiting",
+    "compression",
+    "saturation",
+    "soft_clipping",
+    "per_file_peak_matching",
+    "double_calibration",
+    "baked_playback_intensity",
+    "resampling",
+    "channel_swapping",
+    "dither"
+  ],
+  "unresolved_items": [],
+  "wge4b2_authorized": true,
+  "content_hash": "87dbbea263b6455893f566eff00ec6309e52842a0729fbbe7cef2b391c0eb4cc"
+}

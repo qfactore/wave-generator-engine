@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "contract_id", "contract_version", "status", "user_editable",
+    "authority_references", "authority_snapshot_hash", "source_profile_id",
+    "sample_rate_hz", "logical_channel_count", "stereo_branch_count",
+    "branch_mappings", "container", "encoding", "bit_depth",
+    "quantization_policy", "dither_policy", "calibration_stage",
+    "playback_intensity_stage", "duration_policy", "filename_policy",
+    "metadata_policy", "readback_validation", "blocked_processing",
+    "unresolved_items", "wge4b2_authorized", "content_hash"
+  ],
+  "properties": {
+    "contract_id": {"const": "diagnostic_wav_export_contract_v1"},
+    "contract_version": {"const": "1.0.0"},
+    "status": {"const": "locked_diagnostic_contract"},
+    "user_editable": {"const": false},
+    "authority_references": {"type": "array", "minItems": 1},
+    "authority_snapshot_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "source_profile_id": {"const": "x_alpha_standard_v1"},
+    "sample_rate_hz": {"const": 48000},
+    "logical_channel_count": {"const": 8},
+    "stereo_branch_count": {"const": 4},
+    "branch_mappings": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "required": [
+          "branch_id", "source_order", "left_logical_channel",
+          "right_logical_channel", "physical_output_meaning",
+          "filename_token", "provenance_expression"
+        ]
+      }
+    },
+    "container": {
+      "type": "object",
+      "properties": {
+        "family": {"const": "RIFF_WAVE"},
+        "format_code": {"const": 1},
+        "channel_count_per_file": {"const": 2},
+        "byte_order": {"const": "little_endian"}
+      },
+      "required": ["family", "format_code", "channel_count_per_file", "byte_order"]
+    },
+    "encoding": {
+      "type": "object",
+      "properties": {
+        "subtype": {"const": "signed_pcm16"},
+        "bit_depth": {"const": 16},
+        "diagnostic_only": {"const": true},
+        "production_delivery_certified": {"const": false}
+      },
+      "required": ["subtype", "bit_depth", "diagnostic_only", "production_delivery_certified"]
+    },
+    "bit_depth": {"const": 16},
+    "unresolved_items": {"type": "array", "maxItems": 0},
+    "wge4b2_authorized": {"const": true},
+    "content_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

@@ -143,6 +143,17 @@ def build_parser() -> argparse.ArgumentParser:
     audit.add_argument("--run", type=Path, required=True)
     audit.add_argument("--interchange-dir", type=Path)
     _json_flag(audit)
+
+    export = commands.add_parser("export")
+    export_commands = export.add_subparsers(dest="export_command", required=True)
+    contract = export_commands.add_parser("contract")
+    contract_commands = contract.add_subparsers(
+        dest="contract_command", required=True
+    )
+    for name in ("show", "validate"):
+        command = contract_commands.add_parser(name)
+        command.add_argument("--interchange-dir", type=Path)
+        _json_flag(command)
     return parser
 
 
@@ -357,6 +368,20 @@ def _render_command(args: argparse.Namespace) -> int:
     return 0
 
 
+def _export_contract_command(args: argparse.Namespace) -> int:
+    from wave_generator_engine.export_contract.service import (
+        DiagnosticExportContractService,
+    )
+    service = DiagnosticExportContractService()
+    payload = (
+        service.validate(args.interchange_dir)
+        if args.contract_command == "validate"
+        else service.show()
+    )
+    _emit(payload, args.json_output)
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     try:
@@ -390,6 +415,8 @@ def main(argv: list[str] | None = None) -> int:
             return _qualification_command(args)
         if args.command == "render":
             return _render_command(args)
+        if args.command == "export":
+            return _export_contract_command(args)
     except WGEError as exc:
         if args.command == "validate-interchange":
             write_failure_report(args.report_dir, exc)
