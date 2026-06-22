@@ -2,10 +2,10 @@
   "advisory_conformance": {
     "channel_occupancy": "within_reference",
     "continuation_distribution": "near_reference",
-    "event_rate": "not_assessable",
-    "focus_role_density_ratio": "not_assessable",
+    "event_rate": 9.5,
+    "focus_role_density_ratio": 1.0933062880324542,
     "motif_use_distribution": "not_assessable",
-    "packet_rate": "not_assessable",
+    "packet_rate": 1.9833333333333334,
     "packet_span_distribution": "near_reference",
     "pulse_pattern_prevalence": "within_reference",
     "relative_event_gain_distribution": "not_assessable",
@@ -13,26 +13,93 @@
     "tier_2_reference_artifact": "x_alpha_pulse_pattern_grammar_v1",
     "transition_grammar": "within_reference"
   },
-  "content_hash": "42a8d3f341e6261c91e48672a3c45fd52763ae76a9a64e441bf3c58394ee8969",
+  "content_hash": "fe6cb836a50bbcfabb3740cb763bba18a165ac3f934024163e29fd4f5e4f5927",
   "counts": {
     "channel_occupancy": {
-      "0": 64,
-      "1": 68,
-      "2": 78,
-      "3": 65,
+      "0": 67,
+      "1": 77,
+      "2": 77,
+      "3": 61,
       "4": 71,
-      "5": 75,
-      "6": 63,
-      "7": 64
+      "5": 70,
+      "6": 72,
+      "7": 75
     },
-    "events": 548,
-    "packets": 120,
-    "pulse_pattern_prevalence": 0.7166666666666667,
-    "unique_motifs": 83
+    "continuation_count_distribution": {
+      "0": 30,
+      "1": 4,
+      "2": 15,
+      "3": 10,
+      "4": 3,
+      "5": 1,
+      "6": 22,
+      "7": 34
+    },
+    "continuation_spacing_statistics_by_grammar": {
+      "clean_plus_one_sweep": {
+        "count": 238,
+        "maximum_samples": 1056,
+        "median_samples": 821.5,
+        "minimum_samples": 578,
+        "unique_spacing_count": 192
+      },
+      "partial_sweep": {
+        "count": 47,
+        "maximum_samples": 1050,
+        "median_samples": 847,
+        "minimum_samples": 591,
+        "unique_spacing_count": 46
+      },
+      "scattered_packet": {
+        "count": 26,
+        "maximum_samples": 1898,
+        "median_samples": 1593.0,
+        "minimum_samples": 891,
+        "unique_spacing_count": 25
+      },
+      "sweep_with_repeats": {
+        "count": 120,
+        "maximum_samples": 1054,
+        "median_samples": 830.0,
+        "minimum_samples": 578,
+        "unique_spacing_count": 104
+      },
+      "three_impulse_burst": {
+        "count": 16,
+        "maximum_samples": 749,
+        "median_samples": 597.0,
+        "minimum_samples": 391,
+        "unique_spacing_count": 16
+      },
+      "two_impulse_burst": {
+        "count": 4,
+        "maximum_samples": 706,
+        "median_samples": 652.0,
+        "minimum_samples": 503,
+        "unique_spacing_count": 4
+      }
+    },
+    "events": 570,
+    "focus_non_focus_density_ratio": 1.0933062880324542,
+    "invalid_grammar_labelled_packet_count": 0,
+    "maximum_concurrency": 3,
+    "motif_maximum_share": 0.02456140350877193,
+    "motif_use_entropy_bits": 6.293730462309381,
+    "packet_interval_statistics": {
+      "maximum_samples": 31165,
+      "median_samples": 24089.0,
+      "minimum_samples": 17310,
+      "variance_samples_squared": 16404351.937446136
+    },
+    "packets": 119,
+    "pulse_pattern_prevalence": 0.7478991596638656,
+    "unique_motifs": 84
   },
   "hard_checks": {
     "authority_references": "passed",
     "channels": "passed",
+    "continuation_timing_policy": "passed",
+    "diagnostic_data_integrity": "passed_plan_source_contract",
     "event_bounds": "passed",
     "exact_identity_only": "passed",
     "focus_role_bundle": "passed",
@@ -41,11 +108,15 @@
     "no_calibration": "passed",
     "no_playback_intensity": "passed",
     "no_samples": "passed",
+    "packet_timing_variance": "passed",
     "profile_preset_match": "passed",
     "provenance": "passed",
+    "pulse_pattern_realisation": "passed",
+    "random_trace_semantics": "passed",
     "sample_timing": "passed",
     "stage_order": "passed",
-    "supported_mode": "passed"
+    "supported_mode": "passed",
+    "unit_grammar_structure": "passed"
   },
   "hard_validation": "passed",
   "report_id": "session_01_validation",

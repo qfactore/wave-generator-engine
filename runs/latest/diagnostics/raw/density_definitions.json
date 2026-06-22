@@ -3,5 +3,7 @@
   "event_density_over_time": "event onsets per fixed one-second bin",
   "macro_density_over_time": "active macro-state occupancy per one-second bin",
   "meso_density_over_time": "events per fixed five-second bin",
-  "packet_density_over_time": "packet onsets per fixed one-second bin"
+  "packet_density_over_time": "packet onsets per fixed one-second bin",
+  "packet_interval_distribution": "successive packet-onset differences; 12 equal-width bins",
+  "packet_interval_over_time": "successive packet-onset differences in seconds"
 }

@@ -1,11 +1,13 @@
 {
-  "content_hash": "b63737075d1d2db6d05bf6b742856ba70f85248f186172d32ada9085d674224f",
+  "content_hash": "d5cd77ecde13a11bb63977bd122c6e1953ed6fbe45efaca02ad3f58d6cf4e122",
   "figure_files": [
     "figures/timeline_overview.png",
     "figures/macro_state_timeline.png",
     "figures/macro_density_over_time.png",
     "figures/meso_density_over_time.png",
     "figures/packet_density_over_time.png",
+    "figures/packet_interval_over_time.png",
+    "figures/packet_interval_distribution.png",
     "figures/event_density_over_time.png",
     "figures/channel_activity_over_time.png",
     "figures/channel_occupancy.png",
@@ -29,6 +31,8 @@
     "raw/macro_density_over_time.json",
     "raw/meso_density_over_time.json",
     "raw/packet_density_over_time.json",
+    "raw/packet_interval_over_time.json",
+    "raw/packet_interval_distribution.json",
     "raw/event_density_over_time.json",
     "raw/channel_activity_over_time.json",
     "raw/channel_occupancy.json",

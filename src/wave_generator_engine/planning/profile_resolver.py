@@ -85,25 +85,45 @@ class PlanningProfileResolver:
             for key, value in pulse.items()
         }
         provisional_defaults = {
-            "packet_interval_seconds": {
-                "value": 0.5, "unit": "seconds",
-                "reason": "identity-safe diagnostic cadence; no binding runtime cadence exists",
+            "packet_interval_distribution": {
+                "value": {"distribution": "uniform", "minimum": 0.35, "maximum": 0.65},
+                "unit": "seconds",
+                "authority_tier": "provisional_diagnostic",
+                "source_artifact": "canonical_session_mode_profiles",
+                "source_field": "binding_categories.baseline_stochastic_texture",
+                "provisional": True,
+                "reason": "conservative stochastic diagnostic cadence; no certified packet-interval distribution exists",
+                "refinement_required": "compare against authoritative source timing before rendering",
             },
-            "continuation_spacing_seconds": {
-                "value": 0.025, "unit": "seconds",
-                "reason": "positive sample-aligned diagnostic spacing",
+            "continuation_spacing_distributions": {
+                "value": {
+                    "sweep": {"distribution": "uniform", "minimum": 0.012, "maximum": 0.022},
+                    "scattered": {"distribution": "uniform", "minimum": 0.018, "maximum": 0.040},
+                    "burst": {"distribution": "uniform", "minimum": 0.008, "maximum": 0.016},
+                },
+                "unit": "seconds",
+                "authority_tier": "provisional_diagnostic",
+                "source_artifact": "x_alpha_pulse_pattern_grammar_v1",
+                "source_field": "tier_2_mode_profiles.Baseline Mode.cycle_span_median_seconds",
+                "provisional": True,
+                "reason": "grammar-aware ranges centred below the advisory cycle-span median; certified spacing ranges are absent",
+                "refinement_required": "compare by grammar against authoritative source timing before rendering",
             },
             "grammar_weights": {
                 "value": {
-                    "clean_plus_one_sweep": 0.35,
-                    "sweep_with_repeats": 0.15,
-                    "partial_sweep": 0.15,
-                    "scattered_packet": 0.15,
-                    "one_impulse_burst": 0.08,
-                    "two_impulse_burst": 0.07,
-                    "three_impulse_burst": 0.05,
+                    "clean_plus_one_sweep": 0.38,
+                    "sweep_with_repeats": 0.17,
+                    "partial_sweep": 0.17,
+                    "scattered_packet": 0.14,
+                    "two_impulse_burst": 0.08,
+                    "three_impulse_burst": 0.06,
                 },
-                "reason": "diagnostic vocabulary coverage; not source authority",
+                "unit": "relative_weight",
+                "authority_tier": "provisional_diagnostic",
+                "source_artifact": "canonical_unit_grammar_builder_guidance",
+                "source_field": "guidance.clean_sweeps",
+                "provisional": True,
+                "reason": "conditional multi-event grammar coverage; not source-certified probabilities",
             },
             "relative_event_gain": {
                 "value": 1.0, "unit": "identity",
@@ -139,7 +159,7 @@ class PlanningProfileResolver:
             "novelty_repetition_policy": "prevent_immediate_exact_motif_repetition",
             "focus_role_policy": "run_specific_role_bundle",
             "relative_gain_policy": "identity_1_0_provisional_diagnostic",
-            "timing_policy": "sample_positions_authoritative",
+            "timing_policy": "deterministic_sample_aligned_stochastic_diagnostic",
             "macro_stage_policy": "neutral_active_state_for_baseline",
             "numeric_guidance_used": numeric_guidance,
             "provisional_defaults": provisional_defaults,

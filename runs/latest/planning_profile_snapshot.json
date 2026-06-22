@@ -51,7 +51,7 @@
     "tier_4_inputs_used": []
   },
   "channel_grammar_policy": "canonical_unit_grammar_vocabulary",
-  "content_hash": "fd70a235141d344ee3b28527ea2a53a1dbf5328e819e0c9edfb9e559759582fa",
+  "content_hash": "cfafe6734bc01be0e1ede2fa63ec8cc622075a1eabfea4d721910f5b5969d818",
   "focus_role_policy": "run_specific_role_bundle",
   "grammar_categories": [
     "clean_plus_one_sweep",
@@ -113,21 +113,46 @@
   },
   "packet_policy": "stochastic_seeded_packets",
   "provisional_defaults": {
-    "continuation_spacing_seconds": {
-      "reason": "positive sample-aligned diagnostic spacing",
+    "continuation_spacing_distributions": {
+      "authority_tier": "provisional_diagnostic",
+      "provisional": true,
+      "reason": "grammar-aware ranges centred below the advisory cycle-span median; certified spacing ranges are absent",
+      "refinement_required": "compare by grammar against authoritative source timing before rendering",
+      "source_artifact": "x_alpha_pulse_pattern_grammar_v1",
+      "source_field": "tier_2_mode_profiles.Baseline Mode.cycle_span_median_seconds",
       "unit": "seconds",
-      "value": 0.025
+      "value": {
+        "burst": {
+          "distribution": "uniform",
+          "maximum": 0.016,
+          "minimum": 0.008
+        },
+        "scattered": {
+          "distribution": "uniform",
+          "maximum": 0.04,
+          "minimum": 0.018
+        },
+        "sweep": {
+          "distribution": "uniform",
+          "maximum": 0.022,
+          "minimum": 0.012
+        }
+      }
     },
     "grammar_weights": {
-      "reason": "diagnostic vocabulary coverage; not source authority",
+      "authority_tier": "provisional_diagnostic",
+      "provisional": true,
+      "reason": "conditional multi-event grammar coverage; not source-certified probabilities",
+      "source_artifact": "canonical_unit_grammar_builder_guidance",
+      "source_field": "guidance.clean_sweeps",
+      "unit": "relative_weight",
       "value": {
-        "clean_plus_one_sweep": 0.35,
-        "one_impulse_burst": 0.08,
-        "partial_sweep": 0.15,
-        "scattered_packet": 0.15,
-        "sweep_with_repeats": 0.15,
-        "three_impulse_burst": 0.05,
-        "two_impulse_burst": 0.07
+        "clean_plus_one_sweep": 0.38,
+        "partial_sweep": 0.17,
+        "scattered_packet": 0.14,
+        "sweep_with_repeats": 0.17,
+        "three_impulse_burst": 0.06,
+        "two_impulse_burst": 0.08
       }
     },
     "novelty_window": {
@@ -135,10 +160,19 @@
       "unit": "immediate_previous_event",
       "value": 1
     },
-    "packet_interval_seconds": {
-      "reason": "identity-safe diagnostic cadence; no binding runtime cadence exists",
+    "packet_interval_distribution": {
+      "authority_tier": "provisional_diagnostic",
+      "provisional": true,
+      "reason": "conservative stochastic diagnostic cadence; no certified packet-interval distribution exists",
+      "refinement_required": "compare against authoritative source timing before rendering",
+      "source_artifact": "canonical_session_mode_profiles",
+      "source_field": "binding_categories.baseline_stochastic_texture",
       "unit": "seconds",
-      "value": 0.5
+      "value": {
+        "distribution": "uniform",
+        "maximum": 0.65,
+        "minimum": 0.35
+      }
     },
     "relative_event_gain": {
       "reason": "neutral metadata value; no gain distribution is certified",
@@ -150,7 +184,7 @@
   "relative_gain_policy": "identity_1_0_provisional_diagnostic",
   "schema_version": "wge.planning_profile_snapshot.v1",
   "snapshot_id": "baseline_diagnostic_planning_v1",
-  "timing_policy": "sample_positions_authoritative",
+  "timing_policy": "deterministic_sample_aligned_stochastic_diagnostic",
   "unsupported_fields": [
     "carrier_frequency_hz",
     "motif_time_scale_ratio"

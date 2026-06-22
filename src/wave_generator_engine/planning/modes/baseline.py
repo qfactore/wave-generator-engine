@@ -36,6 +36,24 @@ def _channels(grammar: str, start: int, rng) -> list[int]:
     return [start] * burst_count
 
 
+def _seconds_to_samples(value: float, sample_rate_hz: int) -> int:
+    return max(1, round(value * sample_rate_hz))
+
+
+def _draw_range(rng, policy: dict[str, Any], sample_rate_hz: int) -> int:
+    return _seconds_to_samples(
+        rng.uniform(policy["minimum"], policy["maximum"]), sample_rate_hz
+    )
+
+
+def _spacing_family(grammar: str) -> str:
+    if grammar.endswith("_impulse_burst"):
+        return "burst"
+    if grammar == "scattered_packet":
+        return "scattered"
+    return "sweep"
+
+
 class BaselinePlanner:
     mode = "baseline"
 
@@ -51,22 +69,23 @@ class BaselinePlanner:
         motif_metadata: list[dict[str, Any]],
     ) -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]:
         defaults = planning_profile["provisional_defaults"]
-        packet_interval = defaults["packet_interval_seconds"]["value"]
-        spacing = defaults["continuation_spacing_seconds"]["value"]
+        packet_interval_policy = defaults["packet_interval_distribution"]["value"]
+        spacing_policies = defaults["continuation_spacing_distributions"]["value"]
         weights = defaults["grammar_weights"]["value"]
         pulse_fraction = planning_profile["numeric_guidance_used"][
             "fraction_with_trailing_events"
         ]["value"]
-        packet_count = int(duration_seconds / packet_interval)
         duration_samples = duration_seconds * sample_rate_hz
-        packet_seed = derive_seed(root_seed, f"session:{session_id}", "packet_grammar")
+        packet_seed = derive_seed(root_seed, f"session:{session_id}", "packet_timing_and_grammar")
         channel_seed = derive_seed(root_seed, f"session:{session_id}", "channel_grammar")
+        timing_seed = derive_seed(root_seed, f"session:{session_id}", "continuation_timing")
         motif_seed = derive_seed(root_seed, f"session:{session_id}", "motif_selection")
-        pulse_seed = derive_seed(root_seed, f"session:{session_id}", "pulse_pattern")
-        packet_rng = local_rng(root_seed, f"session:{session_id}", "packet_grammar")
+        pulse_seed = derive_seed(root_seed, f"session:{session_id}", "pulse_pattern_presence")
+        packet_rng = local_rng(root_seed, f"session:{session_id}", "packet_timing_and_grammar")
         channel_rng = local_rng(root_seed, f"session:{session_id}", "channel_grammar")
+        timing_rng = local_rng(root_seed, f"session:{session_id}", "continuation_timing")
         motif_rng = local_rng(root_seed, f"session:{session_id}", "motif_selection")
-        pulse_rng = local_rng(root_seed, f"session:{session_id}", "pulse_pattern")
+        pulse_rng = local_rng(root_seed, f"session:{session_id}", "pulse_pattern_presence")
         motifs = {item["motif_id"]: item for item in motif_metadata}
         motif_ids = [item["motif_id"] for item in motif_metadata]
         if len(motif_ids) != 84:
@@ -74,16 +93,29 @@ class BaselinePlanner:
         packets: list[dict[str, Any]] = []
         events: list[dict[str, Any]] = []
         previous_motif: str | None = None
-        for packet_index in range(packet_count):
+        packet_index = 0
+        onset_base = 0
+        while onset_base < duration_samples:
             packet_id = f"s{session_id:02d}_p{packet_index:04d}"
-            grammar = _weighted_choice(packet_rng, weights)
+            has_continuations = pulse_rng.random() < pulse_fraction
+            grammar = (
+                _weighted_choice(packet_rng, weights)
+                if has_continuations else "one_impulse_burst"
+            )
             start_weights = [2.0 if channel == focus_role_target else 1.0 for channel in range(8)]
             start_channel = channel_rng.choices(range(8), weights=start_weights, k=1)[0]
             sequence = _channels(grammar, start_channel, channel_rng)
-            has_continuations = pulse_rng.random() < pulse_fraction
-            if not has_continuations:
-                sequence = sequence[:1]
-            onset_base = round(packet_index * packet_interval * sample_rate_hz)
+            spacing_family = _spacing_family(grammar)
+            spacings = [
+                _draw_range(timing_rng, spacing_policies[spacing_family], sample_rate_hz)
+                for _ in range(max(0, len(sequence) - 1))
+            ]
+            relative_onsets = [0]
+            for spacing in spacings:
+                relative_onsets.append(relative_onsets[-1] + spacing)
+            maximum_motif_duration = max(int(item["shape"][0]) for item in motif_metadata)
+            if onset_base + relative_onsets[-1] + maximum_motif_duration > duration_samples:
+                break
             packet_events: list[str] = []
             for unit_index, channel in enumerate(sequence):
                 candidates = motif_ids if previous_motif is None else [
@@ -91,7 +123,7 @@ class BaselinePlanner:
                 ]
                 motif_id = motif_rng.choice(candidates)
                 metadata = motifs[motif_id]
-                onset = onset_base + round(unit_index * spacing * sample_rate_hz)
+                onset = onset_base + relative_onsets[unit_index]
                 motif_duration = int(metadata["shape"][0])
                 if onset + motif_duration > duration_samples:
                     break
@@ -115,10 +147,11 @@ class BaselinePlanner:
                     "relative_event_gain": 1.0,
                     "gain_source": "provisional_identity_1_0",
                     "random_selection_trace": {
-                        "packet_seed": packet_seed,
-                        "channel_seed": channel_seed,
-                        "motif_seed": motif_seed,
-                        "pulse_seed": pulse_seed,
+                        "packet_stage_seed": packet_seed,
+                        "channel_stage_seed": channel_seed,
+                        "continuation_timing_stage_seed": timing_seed,
+                        "motif_stage_seed": motif_seed,
+                        "pulse_stage_seed": pulse_seed,
                         "packet_index": packet_index,
                         "unit_index": unit_index,
                     },
@@ -141,8 +174,17 @@ class BaselinePlanner:
                 "event_ids": packet_events,
                 "continuation_count": max(0, len(packet_events) - 1),
                 "pulse_pattern_present": len(packet_events) > 1,
+                "continuation_spacings_samples": spacings[:max(0, len(packet_events) - 1)],
+                "timing_policy": {
+                    "packet_interval": "provisional_stochastic_uniform",
+                    "continuation_family": spacing_family,
+                    "continuation_spacing": "provisional_grammar_aware_uniform",
+                },
                 "authority_references": ["canonical_unit_grammar_terms"],
             })
+            interval = _draw_range(packet_rng, packet_interval_policy, sample_rate_hz)
+            onset_base += interval
+            packet_index += 1
         packet_plan = {
             "schema_version": "wge.packet_plan.v1",
             "packet_plan_id": f"session_{session_id:02d}_packets",
@@ -201,9 +243,10 @@ class BaselinePlanner:
             "root_seed": root_seed,
             "session_seed": derive_seed(root_seed, f"session:{session_id}"),
             "stage_seeds": {
-                "packet_grammar": packet_seed,
-                "pulse_pattern": pulse_seed,
+                "packet_timing_and_grammar": packet_seed,
+                "pulse_pattern_presence": pulse_seed,
                 "channel_grammar": channel_seed,
+                "continuation_timing": timing_seed,
                 "motif_selection": motif_seed,
             },
             "seed_derivation": "sha256_first_64_bits",
