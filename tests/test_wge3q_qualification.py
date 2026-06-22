@@ -25,7 +25,7 @@ def test_qualification_is_deterministic_and_core_plans_stay_unchanged(tmp_path: 
     before = service.core_hashes(first)
     one = service.qualify(first, tmp_path / "reports-one")
     two = service.qualify(second, tmp_path / "reports-two")
-    assert one["verdict"] == two["verdict"] == "not_qualified_for_render"
+    assert one["verdict"] == two["verdict"] == "qualified_with_documented_caveats"
     assert service.core_hashes(first) == before
     for relative in CORE_FILES:
         assert (first / relative).read_bytes() == (second / relative).read_bytes()
@@ -57,11 +57,11 @@ def test_role_normalization_and_absent_calibration(tmp_path: Path) -> None:
     assert "playback_intensity_applied" not in text
 
 
-def test_major_divergence_blocks_wge4_and_schema_validates(tmp_path: Path) -> None:
+def test_aligned_committed_run_authorizes_wge4_and_schema_validates(tmp_path: Path) -> None:
     run = _copy_run(tmp_path)
     result = BaselineQualificationService().qualify(run, tmp_path / "reports")
-    assert not result["wge4_authorized"]
-    assert result["major_outside_metrics"]
+    assert result["wge4_authorized"]
+    assert not result["major_outside_metrics"]
     verdict = json.loads((run / "qualification/qualification_verdict.json").read_text())
     schema = json.loads((ROOT / "schemas/qualification_verdict.schema.json").read_text())
     Draft202012Validator(schema).validate(verdict)

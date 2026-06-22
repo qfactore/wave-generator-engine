@@ -10,30 +10,31 @@ def _weighted_choice(rng, weights: dict[str, float]) -> str:
     return rng.choices(names, weights=[weights[name] for name in names], k=1)[0]
 
 
-def _channels(grammar: str, start: int, rng) -> list[int]:
+def _channels(
+    grammar: str, start: int, rng, event_counts: dict[str, list[int]]
+) -> list[int]:
+    length = rng.choice(event_counts[grammar])
     if grammar == "clean_plus_one_sweep":
-        return [(start + offset) % 8 for offset in range(8)]
+        return [(start + offset) % 8 for offset in range(length)]
     if grammar == "sweep_with_repeats":
-        sequence = [(start + offset) % 8 for offset in range(6)]
+        sequence = [(start + offset) % 8 for offset in range(length - 1)]
         sequence.insert(3, sequence[2])
         return sequence
     if grammar == "partial_sweep":
-        length = rng.choice([3, 4, 5, 6, 7])
         return [(start + offset) % 8 for offset in range(length)]
     if grammar == "scattered_packet":
-        length = rng.choice([3, 4, 5])
         result = [start]
+        disruptive_index = rng.randrange(1, length)
         while len(result) < length:
-            candidate = rng.randrange(8)
-            if candidate != result[-1]:
-                result.append(candidate)
+            step = (
+                rng.choice([2, 3, 7]) if len(result) == disruptive_index
+                else rng.choice([0, 1, 1, 1, 2, 7])
+            )
+            result.append((result[-1] + step) % 8)
+        if len(set(result)) < 2:
+            result[-1] = (result[-1] + 2) % 8
         return result
-    burst_count = {
-        "one_impulse_burst": 1,
-        "two_impulse_burst": 2,
-        "three_impulse_burst": 3,
-    }[grammar]
-    return [start] * burst_count
+    return [start] * length
 
 
 def _seconds_to_samples(value: float, sample_rate_hz: int) -> int:
@@ -70,11 +71,12 @@ class BaselinePlanner:
     ) -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]:
         defaults = planning_profile["provisional_defaults"]
         packet_interval_policy = defaults["packet_interval_distribution"]["value"]
+        primary_gap_policy = defaults["primary_to_trailing_gap_distribution"]["value"]
         spacing_policies = defaults["continuation_spacing_distributions"]["value"]
         weights = defaults["grammar_weights"]["value"]
-        pulse_fraction = planning_profile["numeric_guidance_used"][
-            "fraction_with_trailing_events"
-        ]["value"]
+        event_counts = defaults["grammar_event_counts"]["value"]
+        pulse_fraction = defaults["pulse_pattern_prevalence"]["value"]
+        repeat_probability = defaults["immediate_motif_repeat_probability"]["value"]
         duration_samples = duration_seconds * sample_rate_hz
         packet_seed = derive_seed(root_seed, f"session:{session_id}", "packet_timing_and_grammar")
         channel_seed = derive_seed(root_seed, f"session:{session_id}", "channel_grammar")
@@ -104,12 +106,17 @@ class BaselinePlanner:
             )
             start_weights = [2.0 if channel == focus_role_target else 1.0 for channel in range(8)]
             start_channel = channel_rng.choices(range(8), weights=start_weights, k=1)[0]
-            sequence = _channels(grammar, start_channel, channel_rng)
+            sequence = _channels(grammar, start_channel, channel_rng, event_counts)
             spacing_family = _spacing_family(grammar)
-            spacings = [
-                _draw_range(timing_rng, spacing_policies[spacing_family], sample_rate_hz)
-                for _ in range(max(0, len(sequence) - 1))
-            ]
+            spacings = []
+            if len(sequence) > 1:
+                spacings.append(_draw_range(timing_rng, primary_gap_policy, sample_rate_hz))
+                spacings.extend(
+                    _draw_range(
+                        timing_rng, spacing_policies[spacing_family], sample_rate_hz
+                    )
+                    for _ in range(max(0, len(sequence) - 2))
+                )
             relative_onsets = [0]
             for spacing in spacings:
                 relative_onsets.append(relative_onsets[-1] + spacing)
@@ -118,9 +125,15 @@ class BaselinePlanner:
                 break
             packet_events: list[str] = []
             for unit_index, channel in enumerate(sequence):
-                candidates = motif_ids if previous_motif is None else [
-                    item for item in motif_ids if item != previous_motif
-                ]
+                repeat_selected = (
+                    previous_motif is not None
+                    and motif_rng.random() < repeat_probability
+                )
+                candidates = (
+                    [previous_motif] if repeat_selected
+                    else motif_ids if previous_motif is None
+                    else [item for item in motif_ids if item != previous_motif]
+                )
                 motif_id = motif_rng.choice(candidates)
                 metadata = motifs[motif_id]
                 onset = onset_base + relative_onsets[unit_index]
@@ -143,6 +156,10 @@ class BaselinePlanner:
                     "motif_id": motif_id,
                     "motif_hash": metadata["per_motif_sha256"],
                     "motif_source_order": metadata["ordered_index"],
+                    "motif_selection_mode": (
+                        "adjacent_source_guided_repeat"
+                        if repeat_selected else "eligible_identity_draw"
+                    ),
                     "identity_mode": "exact_frozen_identity",
                     "relative_event_gain": 1.0,
                     "gain_source": "provisional_identity_1_0",
@@ -178,7 +195,8 @@ class BaselinePlanner:
                 "timing_policy": {
                     "packet_interval": "provisional_stochastic_uniform",
                     "continuation_family": spacing_family,
-                    "continuation_spacing": "provisional_grammar_aware_uniform",
+                    "primary_to_trailing_gap": "direct_session_profile_uniform",
+                    "continuation_spacing": "direct_session_grammar_aware_uniform",
                 },
                 "authority_references": ["canonical_unit_grammar_terms"],
             })

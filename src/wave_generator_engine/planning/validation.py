@@ -13,7 +13,7 @@ def validate_channel_grammar(packet: dict[str, Any]) -> None:
     if not channels:
         raise ValidationFailure("unit_grammar_structure: packet has no realised events")
     if grammar == "clean_plus_one_sweep":
-        if len(channels) < 7 or len(set(channels)) != len(channels) or any(
+        if len(channels) != 8 or len(set(channels)) != 8 or any(
             channels[index] != (channels[index - 1] + 1) % 8
             for index in range(1, len(channels))
         ):
@@ -33,10 +33,12 @@ def validate_channel_grammar(packet: dict[str, Any]) -> None:
         ):
             raise ValidationFailure("unit_grammar_structure: invalid partial_sweep")
     elif grammar == "scattered_packet":
-        if len(channels) < 2 or len(set(channels)) < 2 or all(
-            channels[index] == (channels[index - 1] + 1) % 8
+        transitions = [
+            (channels[index] - channels[index - 1]) % 8
             for index in range(1, len(channels))
-        ):
+        ]
+        if len(channels) < 2 or len(set(channels)) < 2 or \
+                not any(value not in {0, 1} for value in transitions):
             raise ValidationFailure("unit_grammar_structure: invalid scattered_packet")
     elif grammar.endswith("_impulse_burst"):
         expected = {
@@ -68,7 +70,6 @@ def validate_plans(
         raise ValidationFailure("Macro-state stage does not span the session")
     packet_items = packets["packets"]
     packet_ids = {item["packet_id"] for item in packet_items}
-    previous_motif: str | None = None
     by_event_id = {item["event_id"]: item for item in events["events"]}
     packet_intervals = [
         second["onset_sample"] - first["onset_sample"]
@@ -122,9 +123,6 @@ def validate_plans(
             raise ValidationFailure("Event motif identity is invalid")
         if event["identity_mode"] != "exact_frozen_identity":
             raise ValidationFailure("Only exact frozen identity is permitted")
-        if previous_motif == event["motif_id"]:
-            raise ValidationFailure("Immediate motif repetition violates novelty safeguard")
-        previous_motif = event["motif_id"]
         forbidden = {
             "samples", "waveform", "calibration_multiplier",
             "playback_intensity", "transform", "time_scale",
@@ -149,8 +147,14 @@ def validate_plans(
     reference = pack["authority_snapshot"]["files"]["pulse_pattern"]["artifact_id"]
     duration_seconds = session["duration_seconds"]
     motif_counts = Counter(item["motif_id"] for item in events["events"])
+    if len(motif_counts) < 12:
+        raise ValidationFailure("Motif diversity collapsed below the frozen family count")
     motif_shares = [count / event_count for count in motif_counts.values()]
     motif_entropy = -sum(value * math.log2(value) for value in motif_shares)
+    immediate_repetition = sum(
+        first["motif_id"] == second["motif_id"]
+        for first, second in zip(events["events"], events["events"][1:])
+    ) / max(1, event_count - 1)
     focus = session["focus_role_target"]
     focus_count = sum(item["logical_channel"] == focus for item in events["events"])
     non_focus_mean = (event_count - focus_count) / 7
@@ -179,12 +183,24 @@ def validate_plans(
         }
         for grammar, values in sorted(spacings_by_grammar.items()) if values
     }
+    pulse_reference = pack.get("provisional_defaults", {}).get(
+        "pulse_pattern_prevalence", {}
+    )
+    pulse_reference_value = pulse_reference.get("value")
+    pulse_reference_result = (
+        "within_reference"
+        if isinstance(pulse_reference_value, (int, float))
+        and abs(pulse_prevalence - pulse_reference_value) <= 0.05
+        else "outside_reference"
+        if isinstance(pulse_reference_value, (int, float))
+        else "not_assessable"
+    )
     advisory = {
         "packet_rate": packet_count / duration_seconds,
         "event_rate": event_count / duration_seconds,
-        "pulse_pattern_prevalence": (
-            "within_reference" if 0.65 <= pulse_prevalence <= 0.85 else "outside_reference"
-        ),
+        "pulse_pattern_prevalence": pulse_reference_result,
+        "pulse_pattern_reference_value": pulse_reference_value,
+        "pulse_pattern_reference_scope": pulse_reference.get("source_scope"),
         "continuation_distribution": "near_reference",
         "packet_span_distribution": "near_reference",
         "channel_occupancy": "within_reference",
@@ -237,6 +253,7 @@ def validate_plans(
             "focus_non_focus_density_ratio": focus_ratio,
             "motif_use_entropy_bits": motif_entropy,
             "motif_maximum_share": max(motif_shares),
+            "immediate_motif_repetition_rate": immediate_repetition,
             "maximum_concurrency": concurrency,
             "invalid_grammar_labelled_packet_count": 0,
         },

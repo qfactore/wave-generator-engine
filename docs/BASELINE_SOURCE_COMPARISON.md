@@ -11,7 +11,12 @@ Focus behaviour is compared as a remappable role. Logical channel 2 is the
 diagnostic run target, not a canonical physical source channel. Calibration and
 playback intensity are excluded.
 
-Current qualification finds material differences in Session 1 continuation
-spacing, Session 1 Pulse Pattern prevalence, schedule-spectrum position, and
-Baseline aggregate grammar mix. The verdict is `not_qualified_for_render`;
-WGE-4 remains unauthorized.
+The metric-semantics audit corrected three invalid comparisons: waveform
+activity spectrum is not packet-onset spectrum; descriptive sweep-window
+classes are not local packet labels; and Phase 4D burst rate is not event-row
+rate. The Session 1 overlay aligns the semantically equivalent packet rate,
+Pulse Pattern prevalence, continuation timing, cycle span, event rate, and
+immediate exact-asset repetition.
+
+The verdict is `qualified_with_documented_caveats`; WGE-4 diagnostic rendering
+is authorized, but no rendering implementation exists in WGE-3S.

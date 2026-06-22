@@ -1,0 +1,78 @@
+{
+  "report_id": "wge3s_metric_semantics_audit",
+  "status": "completed",
+  "findings": {
+    "source_packet": {
+      "definition": "A packet_start event followed by zero or more continuation events within the same source block until the next packet_start.",
+      "engine_equivalent": true,
+      "source_artifact": "x_alpha_closure:methods/measurement_methods.md"
+    },
+    "source_event": {
+      "definition": "One row in the training or validation event metadata, carrying packet_position, onset, end, channel, and exact asset identity.",
+      "engine_equivalent": true,
+      "limitation": "The Phase 4D source_burst_rate_per_second field is not this event count and must not be used as the engine event-rate reference."
+    },
+    "clean_plus_one_sweep": {
+      "definition": "Eight-channel coverage with the final seven wrapped transitions equal to +1.",
+      "canonical_engine_event_count": 8,
+      "nine_events_required": false
+    },
+    "canonical_grammar_mappings": {
+      "clean_plus_one_sweep": "Exactly eight events, all eight channels once, with seven circular +1 transitions.",
+      "sweep_with_repeats": "At least four events using only circular +1 and same-channel transitions, with both transition types present.",
+      "partial_sweep": "Two through seven events following circular +1 transitions.",
+      "scattered_packet": "At least two events on at least two channels with at least one transition that is neither same-channel nor circular +1.",
+      "one_impulse_burst": "Exactly one event.",
+      "two_impulse_burst": "Exactly two events on one channel.",
+      "three_impulse_burst": "Exactly three events on one channel."
+    },
+    "continuation_spacing": {
+      "definition": "For each packet with at least two continuation-to-continuation gaps, the median of gaps after the primary-to-first-continuation gap.",
+      "prior_engine_comparison_valid": false,
+      "repair": "Compare the distribution of per-packet trailing-gap medians."
+    },
+    "cycle_span": {
+      "definition": "Final event end sample minus first event onset sample.",
+      "prior_engine_comparison_valid": false,
+      "repair": "Include final motif duration."
+    },
+    "immediate_motif_repetition": {
+      "definition": "Exact asset equality for globally adjacent events within the same session and source block.",
+      "engine_equivalent": true,
+      "scope": "global_adjacent_events_within_run"
+    },
+    "pulse_pattern_prevalence": {
+      "definition": "Packets with at least one continuation divided by all packets.",
+      "engine_equivalent": true
+    },
+    "event_rate": {
+      "definition": "Event rows per source-session duration.",
+      "engine_equivalent": true,
+      "source_session_1_value_per_second": 14.879084967320262,
+      "derivation": "752 packet starts / 0.16516582473094663 packet-start event share / 306 seconds"
+    },
+    "schedule_spectrum": {
+      "source_definition": "Low-frequency FFT peak of signed 10 ms waveform-activity means per channel.",
+      "engine_packet_onset_definition": "FFT peak of a 10 ms packet-onset impulse train.",
+      "engine_equivalent": false,
+      "qualification_action": "not_assessable"
+    },
+    "grammar_categories": {
+      "source_definition": "Descriptive windows ending after eight-channel coverage or 16 events; a window may contain multiple packet starts.",
+      "engine_definition": "One local Pulse Pattern packet.",
+      "one_to_one_mapping": false,
+      "qualification_action": "not_assessable",
+      "planning_use": "provisional Tier 2 weighting guidance only"
+    },
+    "planner_change_support": {
+      "packet_timing": "Direct Session 1 packet count and duration support the target central rate; the interval distribution remains explicitly provisional.",
+      "continuation_timing": "Direct Session 1 primary-gap and trailing-spacing empirical quantiles support the two timing distributions.",
+      "pulse_pattern_prevalence": "Direct Session 1 uses the same packets-with-continuations denominator as the engine.",
+      "event_rate": "The comparable source event-row rate is derived from packet count and packet-start event share; the unrelated burst-rate field is excluded.",
+      "grammar_weights": "Baseline descriptive grammar proportions are used only as provisional builder guidance because the source windows are not one-to-one packet categories.",
+      "motif_repetition": "Baseline exact-asset equality across globally adjacent events is semantically equivalent to the engine run metric."
+    }
+  },
+  "blocked_final_test_accessed": false,
+  "planner_changed_before_audit": false
+}

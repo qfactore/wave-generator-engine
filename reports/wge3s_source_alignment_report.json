@@ -1,0 +1,65 @@
+{
+  "report_id": "wge3s_session1_source_alignment",
+  "status": "WGE3_SESSION1_SOURCE_ALIGNED",
+  "engine_version": "0.4.2",
+  "planning_profile_id": "x_alpha_session_01_baseline_v1",
+  "source_profile_hash": "41eeb636c411de429f316f0b84cbcd1ff0e4598400f4ee2d1e310582f44e0578",
+  "primary_seed": 20260622,
+  "packet_count": 149,
+  "event_count": 960,
+  "packet_rate_per_second": 2.4833333333333334,
+  "event_rate_per_second": 16.0,
+  "packet_interval_statistics_samples": {
+    "minimum": 12513,
+    "median": 19089.5,
+    "maximum": 26366,
+    "variance": 13524946.882167641
+  },
+  "packet_interval_coefficient_of_variation": 0.19062841672065298,
+  "schedule_spectrum_result": "not_assessable_measurement_semantics_mismatch",
+  "primary_to_trailing_gap_median_seconds": 0.047843750000000004,
+  "continuation_spacing_median_seconds": 0.05429166666666667,
+  "cycle_span_median_seconds": 0.3087083333333333,
+  "pulse_pattern_prevalence": 0.9798657718120806,
+  "grammar_proportions": {
+    "clean_plus_one_sweep": 0.09395973154362416,
+    "sweep_with_repeats": 0.026845637583892617,
+    "partial_sweep": 0.40939597315436244,
+    "scattered_packet": 0.44966442953020136,
+    "one_impulse_burst": 0.020134228187919462
+  },
+  "grammar_qualification": "not_assessable_source_window_population_mismatch",
+  "immediate_motif_repetition_rate": 0.5192909280500522,
+  "motif_use_entropy_bits": 6.159014218117189,
+  "motif_maximum_share": 0.03854166666666667,
+  "unique_motifs": 83,
+  "focus_non_focus_ratio": 1.0095351609058403,
+  "maximum_concurrency": 2,
+  "qualification_verdict": "qualified_with_documented_caveats",
+  "wge4_authorized": true,
+  "holdout_seeds": {
+    "20260623": {
+      "packet_rate_per_second": 2.4833333333333334,
+      "event_rate_per_second": 16.016666666666666,
+      "pulse_pattern_prevalence": 1.0,
+      "immediate_motif_repetition_rate": 0.5104166666666666,
+      "unique_motifs": 84,
+      "qualification": "qualified_for_diagnostic_render"
+    },
+    "20260624": {
+      "packet_rate_per_second": 2.466666666666667,
+      "event_rate_per_second": 15.933333333333334,
+      "pulse_pattern_prevalence": 1.0,
+      "immediate_motif_repetition_rate": 0.5099476439790576,
+      "unique_motifs": 84,
+      "qualification": "qualified_for_diagnostic_render"
+    }
+  },
+  "deterministic_rerun_result": "byte_identical_core_plans_raw_diagnostics_and_qualification",
+  "test_count": 241,
+  "audio_generated": false,
+  "wav_generated": false,
+  "renderer_created": false,
+  "exporter_created": false,
+  "wge4_started": false
+}

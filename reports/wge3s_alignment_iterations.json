@@ -1,0 +1,25 @@
+{
+  "report_id": "wge3s_alignment_iterations",
+  "maximum_iterations": 3,
+  "iterations_used": 1,
+  "iterations": [
+    {
+      "iteration": 1,
+      "profile_id": "x_alpha_session_01_baseline_v1",
+      "root_seed": 20260622,
+      "packet_count": 149,
+      "event_count": 960,
+      "packet_rate_per_second": 2.4833333333333334,
+      "event_rate_per_second": 16.0,
+      "pulse_pattern_prevalence": 0.9798657718120806,
+      "continuation_spacing_median_seconds": 0.05429166666666667,
+      "cycle_span_median_seconds": 0.3087083333333333,
+      "immediate_motif_repetition_rate": 0.5192909280500522,
+      "qualification_verdict": "qualified_with_documented_caveats",
+      "wge4_authorized": true,
+      "major_outside_metrics": []
+    }
+  ],
+  "opaque_optimizer_used": false,
+  "post_generation_count_manipulation_used": false
+}

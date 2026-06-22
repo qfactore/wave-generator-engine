@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from wave_generator_engine.config import ENGINE_ROOT
+from wave_generator_engine.config import ENGINE_ROOT, PROFILE_ROOT
 from wave_generator_engine.errors import ValidationFailure
 from wave_generator_engine.interchange.discovery import discover_interchange
 from wave_generator_engine.profiles.hashing import content_hash
@@ -19,6 +19,53 @@ def _json(path: Path) -> dict[str, Any]:
 
 def _file_hash(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def validate_session_overlay(document: dict[str, Any]) -> None:
+    required_parameter_fields = {
+        "value", "unit", "authority_tier", "source_artifact", "source_field",
+        "source_scope", "binding_status", "provisional", "rationale",
+    }
+    for parameter in document.get("parameters", {}).values():
+        if set(parameter) != required_parameter_fields:
+            raise ValidationFailure("Session planning parameter provenance is incomplete")
+    canonical_grammars = {
+        "clean_plus_one_sweep", "sweep_with_repeats", "partial_sweep",
+        "scattered_packet", "two_impulse_burst", "three_impulse_burst",
+    }
+    weights = set(document["parameters"]["grammar_weights"]["value"])
+    if weights != canonical_grammars:
+        raise ValidationFailure("Session planning grammar mapping is ambiguous")
+    count_grammars = set(document["parameters"]["grammar_event_counts"]["value"])
+    if count_grammars != canonical_grammars | {"one_impulse_burst"}:
+        raise ValidationFailure("Session planning grammar event-count mapping is ambiguous")
+
+
+def _session_overlay(
+    source_profile_id: str, source_profile_hash: str, session_id: int, mode: str
+) -> dict[str, Any] | None:
+    registry = _json(PROFILE_ROOT / "planning_profiles/registry.json")
+    matches = [
+        item for item in registry.get("entries", [])
+        if item.get("source_profile_id") == source_profile_id
+        and item.get("source_profile_hash") == source_profile_hash
+        and item.get("session_id") == session_id
+        and item.get("mode") == mode
+    ]
+    if len(matches) > 1:
+        raise ValidationFailure("Ambiguous session planning profile")
+    if not matches:
+        return None
+    entry = matches[0]
+    document = _json(PROFILE_ROOT / "planning_profiles" / entry["path"])
+    if document.get("content_hash") != entry.get("content_hash") or \
+            content_hash(document) != entry.get("content_hash"):
+        raise ValidationFailure("Session planning profile hash mismatch")
+    if document.get("user_editable") is not False or \
+            document.get("status") != "locked_source_reference_overlay":
+        raise ValidationFailure("Session planning profile is not immutable")
+    validate_session_overlay(document)
+    return document
 
 
 class PlanningProfileResolver:
@@ -95,6 +142,28 @@ class PlanningProfileResolver:
                 "reason": "conservative stochastic diagnostic cadence; no certified packet-interval distribution exists",
                 "refinement_required": "compare against authoritative source timing before rendering",
             },
+            "pulse_pattern_prevalence": {
+                "value": pulse["fraction_with_trailing_events"],
+                "unit": "fraction_of_packets",
+                "authority_tier": "tier_2",
+                "source_artifact": "x_alpha_pulse_pattern_grammar_v1",
+                "source_field": "tier_2_mode_profiles.Baseline Mode.fraction_with_trailing_events",
+                "source_scope": "baseline_sessions_1_4",
+                "binding_status": "diagnostic_guidance",
+                "provisional": False,
+                "rationale": "Baseline aggregate fallback for sessions without a direct overlay.",
+            },
+            "primary_to_trailing_gap_distribution": {
+                "value": {"distribution": "uniform", "minimum": 0.018, "maximum": 0.050},
+                "unit": "seconds",
+                "authority_tier": "provisional_diagnostic",
+                "source_artifact": "x_alpha_pulse_pattern_grammar_v1",
+                "source_field": "candidate_controls.primary_to_trailing_gap",
+                "source_scope": "engine_provisional",
+                "binding_status": "provisional",
+                "provisional": True,
+                "rationale": "Fallback only; no direct session overlay is available.",
+            },
             "continuation_spacing_distributions": {
                 "value": {
                     "sweep": {"distribution": "uniform", "minimum": 0.012, "maximum": 0.022},
@@ -125,6 +194,36 @@ class PlanningProfileResolver:
                 "provisional": True,
                 "reason": "conditional multi-event grammar coverage; not source-certified probabilities",
             },
+            "grammar_event_counts": {
+                "value": {
+                    "clean_plus_one_sweep": [8],
+                    "sweep_with_repeats": [7],
+                    "partial_sweep": [3, 4, 5, 6, 7],
+                    "scattered_packet": [3, 4, 5],
+                    "one_impulse_burst": [1],
+                    "two_impulse_burst": [2],
+                    "three_impulse_burst": [3],
+                },
+                "unit": "events",
+                "authority_tier": "provisional_diagnostic",
+                "source_artifact": "canonical_unit_grammar_terms",
+                "source_field": "terms",
+                "source_scope": "engine_provisional",
+                "binding_status": "engine_canonical_realisation",
+                "provisional": True,
+                "rationale": "Fallback canonical event-count choices.",
+            },
+            "immediate_motif_repeat_probability": {
+                "value": 0.0,
+                "unit": "fraction_of_adjacent_events",
+                "authority_tier": "provisional_diagnostic",
+                "source_artifact": "canonical_unit_grammar_builder_guidance",
+                "source_field": "guidance.novelty",
+                "source_scope": "engine_provisional",
+                "binding_status": "fallback_novelty_guardrail",
+                "provisional": True,
+                "rationale": "Fallback only; direct Session 1 uses its source overlay.",
+            },
             "relative_event_gain": {
                 "value": 1.0, "unit": "identity",
                 "reason": "neutral metadata value; no gain distribution is certified",
@@ -134,6 +233,11 @@ class PlanningProfileResolver:
                 "reason": "minimum safeguard against immediate accidental repetition",
             },
         }
+        overlay = _session_overlay(
+            profile["profile_id"], profile["content_hash"], session_id, mode
+        )
+        if overlay is not None:
+            provisional_defaults = overlay["parameters"]
         authority_snapshot = {
             "interchange_manifest_version": _json(
                 self.root / "manifests/canonical_interchange_manifest.json"
@@ -146,23 +250,44 @@ class PlanningProfileResolver:
             "tier_3_inputs_used": [],
             "tier_4_inputs_used": [],
         }
+        if overlay is not None:
+            authority_snapshot["session_planning_profile"] = {
+                "planning_profile_id": overlay["planning_profile_id"],
+                "version": overlay["version"],
+                "content_hash": overlay["content_hash"],
+                "source_profile_hash": overlay["source_profile_hash"],
+                "session_id": overlay["session_id"],
+                "status": overlay["status"],
+            }
         snapshot = {
             "schema_version": "wge.planning_profile_snapshot.v1",
-            "snapshot_id": "baseline_diagnostic_planning_v1",
+            "snapshot_id": (
+                overlay["planning_profile_id"] if overlay is not None
+                else "baseline_diagnostic_planning_v1"
+            ),
             "mode": "baseline",
             "authority_snapshot": authority_snapshot,
             "grammar_categories": sorted(required_terms),
             "packet_policy": "stochastic_seeded_packets",
             "pulse_pattern_policy": documents["pulse_pattern"]["definition"],
             "channel_grammar_policy": "canonical_unit_grammar_vocabulary",
-            "motif_selection_policy": "uniform_exact_frozen_identity_with_immediate_novelty",
-            "novelty_repetition_policy": "prevent_immediate_exact_motif_repetition",
+            "motif_selection_policy": "seeded_exact_frozen_identity_with_profile_repetition",
+            "novelty_repetition_policy": "profile_defined_exact_asset_repetition_with_diversity",
             "focus_role_policy": "run_specific_role_bundle",
             "relative_gain_policy": "identity_1_0_provisional_diagnostic",
             "timing_policy": "deterministic_sample_aligned_stochastic_diagnostic",
             "macro_stage_policy": "neutral_active_state_for_baseline",
             "numeric_guidance_used": numeric_guidance,
             "provisional_defaults": provisional_defaults,
+            "session_planning_profile": (
+                {
+                    "planning_profile_id": overlay["planning_profile_id"],
+                    "content_hash": overlay["content_hash"],
+                    "source_scope": "direct_session_1",
+                    "user_editable": False,
+                }
+                if overlay is not None else None
+            ),
             "unsupported_fields": ["carrier_frequency_hz", "motif_time_scale_ratio"],
             "content_hash": "",
         }

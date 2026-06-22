@@ -47,11 +47,19 @@
       }
     },
     "interchange_manifest_version": "0.8.0",
+    "session_planning_profile": {
+      "content_hash": "8606f30750f942db202728b3e0d50bc13a876728aadcb4500f5ec96eeaf66338",
+      "planning_profile_id": "x_alpha_session_01_baseline_v1",
+      "session_id": 1,
+      "source_profile_hash": "41eeb636c411de429f316f0b84cbcd1ff0e4598400f4ee2d1e310582f44e0578",
+      "status": "locked_source_reference_overlay",
+      "version": "1.0.0"
+    },
     "tier_3_inputs_used": [],
     "tier_4_inputs_used": []
   },
   "channel_grammar_policy": "canonical_unit_grammar_vocabulary",
-  "content_hash": "cfafe6734bc01be0e1ede2fa63ec8cc622075a1eabfea4d721910f5b5969d818",
+  "content_hash": "a44267a34b258bd79232c56b5c357f182c2fca0e8554bcb9dea639f721f2bf12",
   "focus_role_policy": "run_specific_role_bundle",
   "grammar_categories": [
     "clean_plus_one_sweep",
@@ -67,8 +75,8 @@
   ],
   "macro_stage_policy": "neutral_active_state_for_baseline",
   "mode": "baseline",
-  "motif_selection_policy": "uniform_exact_frozen_identity_with_immediate_novelty",
-  "novelty_repetition_policy": "prevent_immediate_exact_motif_repetition",
+  "motif_selection_policy": "seeded_exact_frozen_identity_with_profile_repetition",
+  "novelty_repetition_policy": "profile_defined_exact_asset_repetition_with_diversity",
   "numeric_guidance_used": {
     "cycle_span_median_seconds": {
       "authority_tier": "tier_2",
@@ -114,68 +122,148 @@
   "packet_policy": "stochastic_seeded_packets",
   "provisional_defaults": {
     "continuation_spacing_distributions": {
-      "authority_tier": "provisional_diagnostic",
+      "authority_tier": "tier_2",
+      "binding_status": "grammar_aware_source_quantile_guided_distributions",
       "provisional": true,
-      "reason": "grammar-aware ranges centred below the advisory cycle-span median; certified spacing ranges are absent",
-      "refinement_required": "compare by grammar against authoritative source timing before rendering",
-      "source_artifact": "x_alpha_pulse_pattern_grammar_v1",
-      "source_field": "tier_2_mode_profiles.Baseline Mode.cycle_span_median_seconds",
+      "rationale": "Grammar-aware ranges centre near the direct Session 1 54 ms median without imposing one universal spacing.",
+      "source_artifact": "x_alpha_closure:data/pulse_pattern_analysis.json",
+      "source_field": "by_session.1.trailing_spacing_seconds",
+      "source_scope": "direct_session_1",
       "unit": "seconds",
       "value": {
         "burst": {
           "distribution": "uniform",
-          "maximum": 0.016,
-          "minimum": 0.008
+          "maximum": 0.064,
+          "minimum": 0.03
         },
         "scattered": {
           "distribution": "uniform",
-          "maximum": 0.04,
-          "minimum": 0.018
+          "maximum": 0.07,
+          "minimum": 0.036
         },
         "sweep": {
           "distribution": "uniform",
-          "maximum": 0.022,
-          "minimum": 0.012
+          "maximum": 0.068,
+          "minimum": 0.04
         }
       }
     },
-    "grammar_weights": {
-      "authority_tier": "provisional_diagnostic",
+    "grammar_event_counts": {
+      "authority_tier": "tier_1",
+      "binding_status": "engine_canonical_realisation",
       "provisional": true,
-      "reason": "conditional multi-event grammar coverage; not source-certified probabilities",
-      "source_artifact": "canonical_unit_grammar_builder_guidance",
-      "source_field": "guidance.clean_sweeps",
-      "unit": "relative_weight",
+      "rationale": "Counts preserve canonical structure; variable partial and scattered lengths support the direct Session 1 continuation-count range.",
+      "source_artifact": "canonical_unit_grammar_terms",
+      "source_field": "terms",
+      "source_scope": "baseline_sessions_1_4",
+      "unit": "events",
       "value": {
-        "clean_plus_one_sweep": 0.38,
-        "partial_sweep": 0.17,
-        "scattered_packet": 0.14,
-        "sweep_with_repeats": 0.17,
-        "three_impulse_burst": 0.06,
-        "two_impulse_burst": 0.08
+        "clean_plus_one_sweep": [
+          8
+        ],
+        "one_impulse_burst": [
+          1
+        ],
+        "partial_sweep": [
+          5,
+          6,
+          7
+        ],
+        "scattered_packet": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "sweep_with_repeats": [
+          7
+        ],
+        "three_impulse_burst": [
+          3
+        ],
+        "two_impulse_burst": [
+          2
+        ]
       }
     },
-    "novelty_window": {
-      "reason": "minimum safeguard against immediate accidental repetition",
-      "unit": "immediate_previous_event",
-      "value": 1
+    "grammar_weights": {
+      "authority_tier": "tier_2",
+      "binding_status": "provisional_packet_mapping_from_descriptive_sweep_windows",
+      "provisional": true,
+      "rationale": "Source categories are descriptive sweep windows rather than local packets; weights are provisional builder guidance and qualification does not claim one-to-one equivalence.",
+      "source_artifact": "phase5l_mode_specific_unit_grammar_profiles",
+      "source_field": "profiles.baseline_stochastic_texture.expected_unit_types",
+      "source_scope": "baseline_sessions_1_4",
+      "unit": "relative_weight",
+      "value": {
+        "clean_plus_one_sweep": 0.158,
+        "partial_sweep": 0.347,
+        "scattered_packet": 0.463,
+        "sweep_with_repeats": 0.028,
+        "three_impulse_burst": 0.003,
+        "two_impulse_burst": 0.001
+      }
+    },
+    "immediate_motif_repeat_probability": {
+      "authority_tier": "tier_2",
+      "binding_status": "diagnostic_guidance",
+      "provisional": false,
+      "rationale": "Metric is exact-asset equality for globally adjacent events within source blocks, equivalent to the single generated run.",
+      "source_artifact": "phase5l_non_repetition_novelty_audit",
+      "source_field": "modes.baseline_stochastic_texture.adjacent_asset_repetition_rate",
+      "source_scope": "baseline_sessions_1_4",
+      "unit": "fraction_of_adjacent_events",
+      "value": 0.501749986940396
     },
     "packet_interval_distribution": {
-      "authority_tier": "provisional_diagnostic",
+      "authority_tier": "tier_2",
+      "binding_status": "source_rate_guided_provisional_distribution",
       "provisional": true,
-      "reason": "conservative stochastic diagnostic cadence; no certified packet-interval distribution exists",
-      "refinement_required": "compare against authoritative source timing before rendering",
-      "source_artifact": "canonical_session_mode_profiles",
-      "source_field": "binding_categories.baseline_stochastic_texture",
+      "rationale": "Mean interval targets the measured 752 packets over 306 seconds while preserving stochastic variance; raw source intervals are unavailable.",
+      "source_artifact": "x_alpha_closure:data/pulse_pattern_analysis.json",
+      "source_field": "by_session.1.packet_count",
+      "source_scope": "direct_session_1",
       "unit": "seconds",
       "value": {
         "distribution": "uniform",
-        "maximum": 0.65,
-        "minimum": 0.35
+        "maximum": 0.55,
+        "minimum": 0.26
       }
     },
+    "primary_to_trailing_gap_distribution": {
+      "authority_tier": "tier_2",
+      "binding_status": "source_quantile_guided_provisional_distribution",
+      "provisional": true,
+      "rationale": "Uses the direct Session 1 p10-p90 source interval.",
+      "source_artifact": "x_alpha_closure:data/pulse_pattern_analysis.json",
+      "source_field": "by_session.1.primary_to_trailing_gap_seconds",
+      "source_scope": "direct_session_1",
+      "unit": "seconds",
+      "value": {
+        "distribution": "uniform",
+        "maximum": 0.067,
+        "minimum": 0.028
+      }
+    },
+    "pulse_pattern_prevalence": {
+      "authority_tier": "tier_2",
+      "binding_status": "diagnostic_guidance",
+      "provisional": false,
+      "rationale": "Source and engine use the same packet-start followed by continuations denominator.",
+      "source_artifact": "x_alpha_closure:data/pulse_pattern_analysis.json",
+      "source_field": "by_session.1.fraction_with_trailing_events",
+      "source_scope": "direct_session_1",
+      "unit": "fraction_of_packets",
+      "value": 0.9973404255319149
+    },
     "relative_event_gain": {
-      "reason": "neutral metadata value; no gain distribution is certified",
+      "authority_tier": "engine_provisional",
+      "binding_status": "metadata_only",
+      "provisional": true,
+      "rationale": "Qualification does not apply gain, calibration, or playback intensity.",
+      "source_artifact": "none",
+      "source_field": "none",
+      "source_scope": "engine_provisional",
       "unit": "identity",
       "value": 1.0
     }
@@ -183,7 +271,13 @@
   "pulse_pattern_policy": "a packet start followed by zero or more continuation events until the next packet start",
   "relative_gain_policy": "identity_1_0_provisional_diagnostic",
   "schema_version": "wge.planning_profile_snapshot.v1",
-  "snapshot_id": "baseline_diagnostic_planning_v1",
+  "session_planning_profile": {
+    "content_hash": "8606f30750f942db202728b3e0d50bc13a876728aadcb4500f5ec96eeaf66338",
+    "planning_profile_id": "x_alpha_session_01_baseline_v1",
+    "source_scope": "direct_session_1",
+    "user_editable": false
+  },
+  "snapshot_id": "x_alpha_session_01_baseline_v1",
   "timing_policy": "deterministic_sample_aligned_stochastic_diagnostic",
   "unsupported_fields": [
     "carrier_frequency_hz",

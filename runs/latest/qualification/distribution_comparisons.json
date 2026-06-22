@@ -6,15 +6,15 @@
       "comparison_method": "not_assessable",
       "comparison_result": "not_assessable",
       "generated_value": {
-        "coefficient_of_variation": 0.16710447201440629,
-        "count": 118,
-        "maximum": 0.6492708333333326,
-        "mean": 0.5049521539548022,
-        "median": 0.5018541666666665,
-        "minimum": 0.36062500000000597,
-        "p10": 0.39163541666666574,
-        "p90": 0.6221187499999989,
-        "variance": 0.007119944417294232
+        "coefficient_of_variation": 0.19062841672065298,
+        "count": 148,
+        "maximum": 0.5492916666666687,
+        "mean": 0.4019193412162162,
+        "median": 0.39769791666666876,
+        "minimum": 0.26068750000000307,
+        "p10": 0.2987270833333355,
+        "p90": 0.514470833333333,
+        "variance": 0.005870202639829697
       },
       "limitations": [
         "No permitted raw Session 1 packet-onset schedule or interval quantiles are available."
@@ -30,8 +30,8 @@
       "authority_tier": "tier_2",
       "binding_status": "advisory",
       "comparison_method": "generated_median_against_source_empirical_quantiles",
-      "comparison_result": "outside_source_reference",
-      "generated_value": 0.017291666666666667,
+      "comparison_result": "within_source_reference",
+      "generated_value": 0.05429166666666667,
       "limitations": [
         "Source evidence is aggregate statistics, not raw per-grammar spacings."
       ],
@@ -54,8 +54,8 @@
       "authority_tier": "tier_2",
       "binding_status": "advisory",
       "comparison_method": "generated_median_against_source_empirical_quantiles",
-      "comparison_result": "near_source_reference",
-      "generated_value": 0.017291666666666667,
+      "comparison_result": "within_source_reference",
+      "generated_value": 0.05429166666666667,
       "limitations": [
         "Per-grammar source spacing distributions are unavailable."
       ],
@@ -78,8 +78,8 @@
       "authority_tier": "tier_2",
       "binding_status": "advisory",
       "comparison_method": "generated_median_against_source_empirical_quantiles",
-      "comparison_result": "near_source_reference",
-      "generated_value": 0.09204166666666666,
+      "comparison_result": "within_source_reference",
+      "generated_value": 0.3087083333333333,
       "limitations": [],
       "metric_id": "cycle_span_median_session_1",
       "qualification_weight": "major",
@@ -100,8 +100,8 @@
       "authority_tier": "tier_2",
       "binding_status": "advisory",
       "comparison_method": "generated_median_against_source_empirical_quantiles",
-      "comparison_result": "within_source_reference",
-      "generated_value": 0.09204166666666666,
+      "comparison_result": "near_source_reference",
+      "generated_value": 0.3087083333333333,
       "limitations": [],
       "metric_id": "cycle_span_median_baseline",
       "qualification_weight": "major",

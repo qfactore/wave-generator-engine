@@ -32,7 +32,7 @@ def test_qualify_baseline_cli_is_additive(tmp_path: Path) -> None:
         cwd=ROOT, capture_output=True, text=True,
     )
     assert result.returncode == 0
-    assert json.loads(result.stdout)["verdict"] == "not_qualified_for_render"
+    assert json.loads(result.stdout)["verdict"] == "qualified_with_documented_caveats"
     assert (run / "sessions/session_01/event_plan.json").read_bytes() == before
 
 

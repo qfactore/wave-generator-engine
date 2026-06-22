@@ -4,44 +4,34 @@
     "Packet interval distribution remains not assessable from permitted evidence.",
     "Schedule-spectrum statistics are not carrier frequency."
   ],
-  "content_hash": "762d0fff54e2fa211178cef4d12e62fe63eeefe29b655c1a25dbad2a9c1dc51b",
+  "content_hash": "dd5aa7c5bb15ee20382dfee59f870fdd5861f8adf3570f0fd1a4fafefb2e4ddc",
   "core_plan_hashes_after": {
-    "planning_profile_snapshot.json": "cfafe6734bc01be0e1ede2fa63ec8cc622075a1eabfea4d721910f5b5969d818",
-    "session_pack_plan.json": "805cd0d2a5c01870b3ae518553dd80951847466ff608ed001703362da1f87641",
-    "sessions/session_01/channel_unit_plan.json": "48d638415a1d7899526985b758a6ae92d8e40c9fb248860cadecb838952b8aa1",
-    "sessions/session_01/event_plan.json": "0fc931d61e1696797d855e7df385ba796d0603abb7190c394354c7629818a383",
+    "planning_profile_snapshot.json": "a44267a34b258bd79232c56b5c357f182c2fca0e8554bcb9dea639f721f2bf12",
+    "session_pack_plan.json": "8382e22b8ff1cd8272cfb151fd80a6da4332c3abfc4c5b2f419a0aa39e1833cc",
+    "sessions/session_01/channel_unit_plan.json": "3f62fee237d628b0ea97a5e0368a08ef8323ba991cc031189ab14bbee7a0f421",
+    "sessions/session_01/event_plan.json": "846588ae30a75f8e728d73ce425bb8f10dc6b722791774dc1ff9553c672a8f28",
     "sessions/session_01/macro_state_plan.json": "f84904cb6ca7da36b85b6a38b66894f5cc815bdeef67ec0ea2dee1c6c21c0cfe",
-    "sessions/session_01/packet_plan.json": "8e338ed99473ec445d8708e3143fdc81235986391605ddbdde6e98e936d50d99",
-    "sessions/session_01/pulse_pattern_plan.json": "4788623fe91f904e5a629aeccf154f56bd63dbbb872826b4a69afab857d77564",
-    "sessions/session_01/session_plan.json": "a380f40a6f32095ebdcb9a5d0634dd5e3ba026aa74929b75d798bcccc480585c",
-    "sessions/session_01/validation_report.json": "fe6cb836a50bbcfabb3740cb763bba18a165ac3f934024163e29fd4f5e4f5927"
+    "sessions/session_01/packet_plan.json": "cc67ce765c2334677c1823def640bb3936f47d2ceeb0f3fb5efb3e65339bbf7f",
+    "sessions/session_01/pulse_pattern_plan.json": "e91d06ff014bf8c38eff2824a89e5a599d59eede6d2363c018b32617152910c2",
+    "sessions/session_01/session_plan.json": "46285a619941647135ff77817bb81ae37f1ce5248ebb80d3199e53f2ad6c61e6",
+    "sessions/session_01/validation_report.json": "1d047803f0196b6176337091b3081b8acebc9b6b6efb64c0dec8e6cf5d346ae6"
   },
   "core_plan_hashes_before": {
-    "planning_profile_snapshot.json": "cfafe6734bc01be0e1ede2fa63ec8cc622075a1eabfea4d721910f5b5969d818",
-    "session_pack_plan.json": "805cd0d2a5c01870b3ae518553dd80951847466ff608ed001703362da1f87641",
-    "sessions/session_01/channel_unit_plan.json": "48d638415a1d7899526985b758a6ae92d8e40c9fb248860cadecb838952b8aa1",
-    "sessions/session_01/event_plan.json": "0fc931d61e1696797d855e7df385ba796d0603abb7190c394354c7629818a383",
+    "planning_profile_snapshot.json": "a44267a34b258bd79232c56b5c357f182c2fca0e8554bcb9dea639f721f2bf12",
+    "session_pack_plan.json": "8382e22b8ff1cd8272cfb151fd80a6da4332c3abfc4c5b2f419a0aa39e1833cc",
+    "sessions/session_01/channel_unit_plan.json": "3f62fee237d628b0ea97a5e0368a08ef8323ba991cc031189ab14bbee7a0f421",
+    "sessions/session_01/event_plan.json": "846588ae30a75f8e728d73ce425bb8f10dc6b722791774dc1ff9553c672a8f28",
     "sessions/session_01/macro_state_plan.json": "f84904cb6ca7da36b85b6a38b66894f5cc815bdeef67ec0ea2dee1c6c21c0cfe",
-    "sessions/session_01/packet_plan.json": "8e338ed99473ec445d8708e3143fdc81235986391605ddbdde6e98e936d50d99",
-    "sessions/session_01/pulse_pattern_plan.json": "4788623fe91f904e5a629aeccf154f56bd63dbbb872826b4a69afab857d77564",
-    "sessions/session_01/session_plan.json": "a380f40a6f32095ebdcb9a5d0634dd5e3ba026aa74929b75d798bcccc480585c",
-    "sessions/session_01/validation_report.json": "fe6cb836a50bbcfabb3740cb763bba18a165ac3f934024163e29fd4f5e4f5927"
+    "sessions/session_01/packet_plan.json": "cc67ce765c2334677c1823def640bb3936f47d2ceeb0f3fb5efb3e65339bbf7f",
+    "sessions/session_01/pulse_pattern_plan.json": "e91d06ff014bf8c38eff2824a89e5a599d59eede6d2363c018b32617152910c2",
+    "sessions/session_01/session_plan.json": "46285a619941647135ff77817bb81ae37f1ce5248ebb80d3199e53f2ad6c61e6",
+    "sessions/session_01/validation_report.json": "1d047803f0196b6176337091b3081b8acebc9b6b6efb64c0dec8e6cf5d346ae6"
   },
   "core_plans_unchanged": true,
-  "major_outside_metrics": [
-    "packet_onset_schedule_spectrum",
-    "continuation_spacing_median_session_1",
-    "pulse_pattern_prevalence_session_1",
-    "unit_grammar_distribution_baseline",
-    "event_rate_session_1"
-  ],
-  "required_later_repair": [
-    "Reconcile continuation timing with Session 1 and Baseline source quantiles.",
-    "Reconcile Session 1 Pulse Pattern prevalence without losing common-pipeline design.",
-    "Reconcile canonical grammar mix, especially scattered-packet prevalence."
-  ],
+  "major_outside_metrics": [],
+  "required_later_repair": [],
   "schema_version": "wge.qualification_verdict.v1",
   "tier_1_violations": [],
-  "verdict": "not_qualified_for_render",
-  "wge4_authorized": false
+  "verdict": "qualified_with_documented_caveats",
+  "wge4_authorized": true
 }

@@ -13,7 +13,7 @@ RUN = ROOT / "runs/latest"
 
 def test_committed_run_exists_and_validates() -> None:
     from wave_generator_engine import __version__
-    assert __version__ == "0.4.1"
+    assert __version__ == "0.4.2"
     assert RUN.is_dir()
     manifest = json.loads((RUN / "run_manifest.json").read_text())
     assert validate_content_hash(manifest)
@@ -60,4 +60,4 @@ def test_readiness_report_matches_committed_run() -> None:
     assert readiness["session_pack_plan_hash"] == manifest["core_hashes"]["session_pack_plan"]
     assert readiness["session_plan_hash"] == manifest["core_hashes"]["session_plan"]
     assert readiness["event_plan_hash"] == manifest["core_hashes"]["event_plan"]
-    assert readiness["final_status"] == "WGE3_BASELINE_PLAN_READY"
+    assert readiness["final_status"] == "WGE3_SESSION1_SOURCE_ALIGNED"

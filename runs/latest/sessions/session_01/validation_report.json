@@ -2,98 +2,84 @@
   "advisory_conformance": {
     "channel_occupancy": "within_reference",
     "continuation_distribution": "near_reference",
-    "event_rate": 9.5,
-    "focus_role_density_ratio": 1.0933062880324542,
+    "event_rate": 16.0,
+    "focus_role_density_ratio": 1.0095351609058403,
     "motif_use_distribution": "not_assessable",
-    "packet_rate": 1.9833333333333334,
+    "packet_rate": 2.4833333333333334,
     "packet_span_distribution": "near_reference",
     "pulse_pattern_prevalence": "within_reference",
+    "pulse_pattern_reference_scope": "direct_session_1",
+    "pulse_pattern_reference_value": 0.9973404255319149,
     "relative_event_gain_distribution": "not_assessable",
     "repetition_distance": "within_reference",
     "tier_2_reference_artifact": "x_alpha_pulse_pattern_grammar_v1",
     "transition_grammar": "within_reference"
   },
-  "content_hash": "fe6cb836a50bbcfabb3740cb763bba18a165ac3f934024163e29fd4f5e4f5927",
+  "content_hash": "1d047803f0196b6176337091b3081b8acebc9b6b6efb64c0dec8e6cf5d346ae6",
   "counts": {
     "channel_occupancy": {
-      "0": 67,
-      "1": 77,
-      "2": 77,
-      "3": 61,
-      "4": 71,
-      "5": 70,
-      "6": 72,
-      "7": 75
+      "0": 122,
+      "1": 112,
+      "2": 121,
+      "3": 118,
+      "4": 138,
+      "5": 123,
+      "6": 112,
+      "7": 114
     },
     "continuation_count_distribution": {
-      "0": 30,
-      "1": 4,
-      "2": 15,
-      "3": 10,
-      "4": 3,
-      "5": 1,
-      "6": 22,
-      "7": 34
+      "0": 3,
+      "4": 30,
+      "5": 40,
+      "6": 41,
+      "7": 35
     },
     "continuation_spacing_statistics_by_grammar": {
       "clean_plus_one_sweep": {
-        "count": 238,
-        "maximum_samples": 1056,
-        "median_samples": 821.5,
-        "minimum_samples": 578,
-        "unique_spacing_count": 192
+        "count": 98,
+        "maximum_samples": 3256,
+        "median_samples": 2636.5,
+        "minimum_samples": 1467,
+        "unique_spacing_count": 98
       },
       "partial_sweep": {
-        "count": 47,
-        "maximum_samples": 1050,
-        "median_samples": 847,
-        "minimum_samples": 591,
-        "unique_spacing_count": 46
+        "count": 306,
+        "maximum_samples": 3255,
+        "median_samples": 2552.0,
+        "minimum_samples": 1380,
+        "unique_spacing_count": 272
       },
       "scattered_packet": {
-        "count": 26,
-        "maximum_samples": 1898,
-        "median_samples": 1593.0,
-        "minimum_samples": 891,
-        "unique_spacing_count": 25
+        "count": 383,
+        "maximum_samples": 3355,
+        "median_samples": 2576,
+        "minimum_samples": 1345,
+        "unique_spacing_count": 349
       },
       "sweep_with_repeats": {
-        "count": 120,
-        "maximum_samples": 1054,
-        "median_samples": 830.0,
-        "minimum_samples": 578,
-        "unique_spacing_count": 104
-      },
-      "three_impulse_burst": {
-        "count": 16,
-        "maximum_samples": 749,
-        "median_samples": 597.0,
-        "minimum_samples": 391,
-        "unique_spacing_count": 16
-      },
-      "two_impulse_burst": {
-        "count": 4,
-        "maximum_samples": 706,
-        "median_samples": 652.0,
-        "minimum_samples": 503,
-        "unique_spacing_count": 4
+        "count": 24,
+        "maximum_samples": 3263,
+        "median_samples": 2637.5,
+        "minimum_samples": 1665,
+        "unique_spacing_count": 24
       }
     },
-    "events": 570,
-    "focus_non_focus_density_ratio": 1.0933062880324542,
+    "events": 960,
+    "focus_non_focus_density_ratio": 1.0095351609058403,
+    "immediate_motif_repetition_rate": 0.5192909280500522,
     "invalid_grammar_labelled_packet_count": 0,
-    "maximum_concurrency": 3,
-    "motif_maximum_share": 0.02456140350877193,
-    "motif_use_entropy_bits": 6.293730462309381,
+    "maximum_concurrency": 2,
+    "motif_maximum_share": 0.03854166666666667,
+    "motif_use_entropy_bits": 6.159014218117189,
     "packet_interval_statistics": {
-      "maximum_samples": 31165,
-      "median_samples": 24089.0,
-      "minimum_samples": 17310,
-      "variance_samples_squared": 16404351.937446136
+      "maximum_samples": 26366,
+      "median_samples": 19089.5,
+      "minimum_samples": 12513,
+      "variance_samples_squared": 13524946.882167641
     },
-    "packets": 119,
-    "pulse_pattern_prevalence": 0.7478991596638656,
-    "unique_motifs": 84
+    "packets": 149,
+    "pulse_pattern_prevalence": 0.9798657718120806,
+    "unique_motifs": 83
   },
   "hard_checks": {
     "authority_references": "passed",

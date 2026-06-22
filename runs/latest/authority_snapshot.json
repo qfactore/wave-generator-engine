@@ -46,6 +46,14 @@
     }
   },
   "interchange_manifest_version": "0.8.0",
+  "session_planning_profile": {
+    "content_hash": "8606f30750f942db202728b3e0d50bc13a876728aadcb4500f5ec96eeaf66338",
+    "planning_profile_id": "x_alpha_session_01_baseline_v1",
+    "session_id": 1,
+    "source_profile_hash": "41eeb636c411de429f316f0b84cbcd1ff0e4598400f4ee2d1e310582f44e0578",
+    "status": "locked_source_reference_overlay",
+    "version": "1.0.0"
+  },
   "tier_3_inputs_used": [],
   "tier_4_inputs_used": []
 }

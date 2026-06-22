@@ -55,7 +55,7 @@ def test_event_plan_is_metadata_only_and_in_bounds(result) -> None:
         assert not {"samples", "waveform", "calibration_multiplier", "playback_intensity"} & set(event)
 
 
-def test_motif_identity_and_novelty_are_preserved(result) -> None:
+def test_motif_identity_and_source_guided_repetition_are_preserved(result) -> None:
     index = json.loads(
         (ROOT.parent / "wave-gen-interchange/bank/frozen_assets/frozen_motif_identity_index.json").read_text()
     )
@@ -64,7 +64,9 @@ def test_motif_identity_and_novelty_are_preserved(result) -> None:
     for event in result.event_plan["events"]:
         assert motifs[event["motif_id"]] == event["motif_hash"]
         ids.append(event["motif_id"])
-    assert all(first != second for first, second in zip(ids, ids[1:]))
+    repetition = sum(first == second for first, second in zip(ids, ids[1:]))
+    assert repetition > 0
+    assert len(set(ids)) >= 12
 
 
 def test_pulse_pattern_grouping_and_not_forced(result) -> None:

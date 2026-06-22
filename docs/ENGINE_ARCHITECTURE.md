@@ -16,3 +16,9 @@ WGE-3Q adds an orthogonal, read-only qualification layer. It reads committed
 plans and manifest-permitted source statistics, writes only additive
 qualification artifacts, and verifies core plan hashes before and after. The
 qualification layer has no renderer or waveform access path.
+
+WGE-3S adds locked session-planning overlays beneath the common Baseline
+planner. Selection is performed by profile registry data using source-profile
+ID, content hash, logical session, and mode. No Session 1 scheduler branch
+exists. Overlay parameters carry source scope, authority, binding status, and
+provisional status.

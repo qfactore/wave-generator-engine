@@ -1,7 +1,7 @@
 # Wave Generator Engine
 
-Version 0.4.1 implements WGE-3Q source-reference qualification above the
-deterministic, metadata-only Baseline Mode planner.
+Version 0.4.2 implements source-aligned, deterministic Session 1 Baseline
+planning plus read-only source-reference qualification.
 
 The committed diagnostic run follows one common pipeline:
 
@@ -28,5 +28,6 @@ not a profile default.
 
 No renderer, audio exporter, transform executor, WAV, playback JSON, or audio
 buffer exists. Headroom is not certified before waveform render and overlap
-summation. The current source qualification does not authorize WGE-4; no
-audible diagnostic render is implemented.
+summation. The current qualification authorizes a future diagnostic WGE-4
+render with documented evidence caveats, but no renderer or audible output is
+implemented here.

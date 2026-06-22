@@ -6,15 +6,15 @@
       "comparison_method": "not_assessable",
       "comparison_result": "not_assessable",
       "generated_value": {
-        "coefficient_of_variation": 0.16710447201440629,
-        "count": 118,
-        "maximum": 0.6492708333333326,
-        "mean": 0.5049521539548022,
-        "median": 0.5018541666666665,
-        "minimum": 0.36062500000000597,
-        "p10": 0.39163541666666574,
-        "p90": 0.6221187499999989,
-        "variance": 0.007119944417294232
+        "coefficient_of_variation": 0.19062841672065298,
+        "count": 148,
+        "maximum": 0.5492916666666687,
+        "mean": 0.4019193412162162,
+        "median": 0.39769791666666876,
+        "minimum": 0.26068750000000307,
+        "p10": 0.2987270833333355,
+        "p90": 0.514470833333333,
+        "variance": 0.005870202639829697
       },
       "limitations": [
         "No permitted raw Session 1 packet-onset schedule or interval quantiles are available."
@@ -29,17 +29,19 @@
     {
       "authority_tier": "tier_2",
       "binding_status": "advisory",
-      "comparison_method": "dominant_schedule_frequency_against_empirical_source_band",
-      "comparison_result": "outside_source_reference",
+      "comparison_method": "not_assessable_measurement_semantics_mismatch",
+      "comparison_result": "not_assessable",
       "generated_value": {
-        "dominant_schedule_frequency_hz": 2.033333333333333,
-        "peak_power_fraction": 0.037780579834274346
+        "dominant_schedule_frequency_hz": 2.6166666666666667,
+        "peak_power_fraction": 0.016592080722704516
       },
       "limitations": [
-        "Schedule spectrum is packet timing, not carrier frequency."
+        "Generated spectrum uses a packet-onset impulse train.",
+        "Source spectrum uses signed 10 ms waveform-activity means per channel.",
+        "Both are schedule timing, not carrier frequency, but they are not directly comparable."
       ],
       "metric_id": "packet_onset_schedule_spectrum",
-      "qualification_weight": "major",
+      "qualification_weight": "none",
       "source_artifact": "x_alpha_closure:data/carrier_frequency_analysis.json",
       "source_field": "source_low_frequency_schedule_spectrum",
       "source_scope": "source_session_1",
@@ -56,21 +58,23 @@
     {
       "authority_tier": "tier_2",
       "binding_status": "advisory",
-      "comparison_method": "jensen_shannon_divergence",
-      "comparison_result": "outside_source_reference",
+      "comparison_method": "not_assessable_category_population_mismatch",
+      "comparison_result": "not_assessable",
+      "contextual_jensen_shannon_divergence": 0.010264152779425245,
       "generated_value": {
-        "burst cluster": 0.35294117647058826,
-        "clean sweep": 0.2857142857142857,
-        "partial sweep": 0.11764705882352941,
-        "scattered packet": 0.07563025210084033,
-        "sweep with repeats": 0.16806722689075632
+        "burst cluster": 0.020134228187919462,
+        "clean sweep": 0.09395973154362416,
+        "partial sweep": 0.40939597315436244,
+        "scattered packet": 0.44966442953020136,
+        "sweep with repeats": 0.026845637583892617
       },
-      "jensen_shannon_divergence": 0.36248314472252635,
       "limitations": [
-        "0.05/0.1 bands are provisional diagnostic interpretation, not binding tolerances."
+        "Engine categories label local Pulse Pattern packets.",
+        "Source categories label descriptive windows ending at eight-channel coverage or 16 events and may contain multiple packet starts.",
+        "The source proportions guide the planning profile provisionally but cannot qualify packet-label proportions one-to-one."
       ],
       "metric_id": "unit_grammar_distribution_baseline",
-      "qualification_weight": "major",
+      "qualification_weight": "none",
       "source_artifact": "phase5l_mode_specific_unit_grammar_profiles",
       "source_field": "profiles.baseline_stochastic_texture",
       "source_scope": "baseline_sessions_1_4",
@@ -85,19 +89,20 @@
     {
       "authority_tier": "tier_2",
       "binding_status": "advisory",
-      "comparison_method": "category_mapping_and_absolute_difference",
-      "comparison_result": "near_source_reference",
+      "comparison_method": "not_assessable_transition_population_mismatch",
+      "comparison_result": "not_assessable",
       "generated_value": {
-        "plus_one_circular": 0.7100175746924429,
-        "reverse": 0.029876977152899824,
-        "same_channel": 0.10017574692442882,
-        "skip_or_scattered": 0.15992970123022848
+        "plus_one_circular": 0.6152241918665277,
+        "reverse": 0.0948905109489051,
+        "same_channel": 0.08237747653806048,
+        "skip_or_scattered": 0.20750782064650677
       },
       "limitations": [
-        "Source categories include signed wrapped steps; engine summary groups skips."
+        "Source wrapped steps are measured over globally ordered source events.",
+        "Engine values currently summarize adjacent generated events across packet boundaries."
       ],
       "metric_id": "wrapped_transition_mix_baseline",
-      "qualification_weight": "moderate",
+      "qualification_weight": "none",
       "source_artifact": "phase5l_mode_specific_unit_grammar_profiles",
       "source_field": "profiles.baseline_stochastic_texture",
       "source_scope": "baseline_sessions_1_4",
@@ -119,15 +124,15 @@
       "comparison_method": "quantile_context_only",
       "comparison_result": "near_source_reference",
       "generated_value": {
-        "coefficient_of_variation": 0.8888423417709542,
-        "count": 486,
-        "maximum": 405.0,
-        "mean": 69.559670781893,
-        "median": 52.0,
-        "minimum": 2.0,
-        "p10": 8.5,
-        "p90": 155.0,
-        "variance": 3822.6497315788583
+        "coefficient_of_variation": 1.8915200701181938,
+        "count": 877,
+        "maximum": 843.0,
+        "mean": 63.30900798175599,
+        "median": 1.0,
+        "minimum": 1.0,
+        "p10": 1.0,
+        "p90": 207.79999999999995,
+        "variance": 14340.124582482262
       },
       "limitations": [
         "Only source repetition-distance quantiles are available."
@@ -149,9 +154,9 @@
       "comparison_method": "not_assessable",
       "comparison_result": "not_assessable",
       "generated_value": {
-        "entropy_bits": 6.293730462309381,
-        "maximum_share": 0.02456140350877193,
-        "unique": 84
+        "entropy_bits": 6.159014218117189,
+        "maximum_share": 0.03854166666666667,
+        "unique": 83
       },
       "limitations": [
         "No source entropy or maximum motif-share metric is present."
@@ -169,21 +174,21 @@
       "comparison_method": "binding_mode_architecture_check",
       "comparison_result": "within_source_reference",
       "generated_value": {
-        "event_count": 570,
+        "event_count": 960,
         "inactive_gap_seconds": 0.0,
         "macro_state_occupancy": 1.0,
-        "maximum_concurrency": 3,
-        "packet_count": 119,
+        "maximum_concurrency": 2,
+        "packet_count": 149,
         "packet_span_seconds": {
-          "coefficient_of_variation": 0.5895167007165891,
-          "count": 119,
-          "maximum": 0.159125,
-          "mean": 0.08710276610644259,
-          "median": 0.10964583333333333,
-          "minimum": 0.0027291666666666666,
-          "p10": 0.01745,
-          "p90": 0.14569583333333333,
-          "variance": 0.0026366720772867972
+          "coefficient_of_variation": 0.24287549661679278,
+          "count": 149,
+          "maximum": 0.44016666666666665,
+          "mean": 0.30721224832214766,
+          "median": 0.3087083333333333,
+          "minimum": 0.009895833333333333,
+          "p10": 0.2271125,
+          "p90": 0.39761250000000004,
+          "variance": 0.00556729785007182
         }
       },
       "limitations": [

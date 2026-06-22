@@ -1,0 +1,18 @@
+{
+  "schema_version": "wge.planning_profile_registry.v1",
+  "registry_version": "1.0.0",
+  "entries": [
+    {
+      "id": "x_alpha_session_01_baseline_v1",
+      "path": "x_alpha_session_01_baseline_v1.json",
+      "source_profile_id": "x_alpha_standard_v1",
+      "source_profile_hash": "41eeb636c411de429f316f0b84cbcd1ff0e4598400f4ee2d1e310582f44e0578",
+      "session_id": 1,
+      "mode": "baseline",
+      "status": "locked_source_reference_overlay",
+      "content_hash": "8606f30750f942db202728b3e0d50bc13a876728aadcb4500f5ec96eeaf66338",
+      "selectable": false,
+      "user_editable": false
+    }
+  ]
+}

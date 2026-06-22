@@ -1,9 +1,7 @@
 {
-  "clean_plus_one_sweep": 34,
-  "one_impulse_burst": 30,
-  "partial_sweep": 14,
-  "scattered_packet": 9,
-  "sweep_with_repeats": 20,
-  "three_impulse_burst": 8,
-  "two_impulse_burst": 4
+  "clean_plus_one_sweep": 14,
+  "one_impulse_burst": 3,
+  "partial_sweep": 61,
+  "scattered_packet": 67,
+  "sweep_with_repeats": 4
 }

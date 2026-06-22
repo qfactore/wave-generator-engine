@@ -8,9 +8,15 @@ The macro stage is a neutral active state spanning the diagnostic duration; no
 Complex Mode gaps are invented. Tier 2 Pulse Pattern values retain provenance.
 Packet cadence, continuation spacing, grammar weights, novelty window, and
 identity gain are declared provisional diagnostic defaults rather than source
-authority. Packet intervals are deterministic, sample-aligned stochastic draws
-from 0.35–0.65 seconds. This range is not source-certified and requires later
-source-comparison refinement.
+authority. The generic Baseline fallback uses deterministic, sample-aligned
+stochastic intervals from 0.35–0.65 seconds.
+
+Session 1 now resolves the immutable
+`x_alpha_session_01_baseline_v1` planning overlay through data selectors keyed
+to the locked source-profile hash and logical session. Its packet-rate centre,
+Pulse Pattern prevalence, primary gap, continuation timing, and exact-asset
+repetition parameters are source-referenced. Sessions 2–4 retain the generic
+Baseline fallback and do not inherit Session 1 direct values.
 
 Grammar is selected before its channel sequence and event count are realised.
 Pulse Pattern presence and continuation count are derived from that realised

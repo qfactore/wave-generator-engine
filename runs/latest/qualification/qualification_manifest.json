@@ -1,6 +1,6 @@
 {
   "audio_created": false,
-  "content_hash": "7c7730ad0b6234a87356eb81f674dce0ab6627efb169185f253a30e1af8239f0",
+  "content_hash": "44afcd8bd806bd5d97f818206aa9b120e74e51c61f7d43c664df224086cf92a3",
   "core_plans_unchanged": true,
   "figure_files": [
     "figures/channel_occupancy_comparison.png",
@@ -18,7 +18,7 @@
     "figures/repetition_distance_comparison.png",
     "figures/unit_grammar_comparison.png"
   ],
-  "metric_comparison_count": 21,
+  "metric_comparison_count": 22,
   "qualification_id": "wge3q_baseline_source_qualification",
   "raw_files": [
     "raw/generated_plan_metrics.json",
@@ -27,6 +27,6 @@
   "run_id": "x_alpha_session1_diagnostic_60s",
   "schema_version": "wge.qualification_manifest.v1",
   "source_reference_count": 10,
-  "verdict": "not_qualified_for_render",
-  "wge4_authorized": false
+  "verdict": "qualified_with_documented_caveats",
+  "wge4_authorized": true
 }

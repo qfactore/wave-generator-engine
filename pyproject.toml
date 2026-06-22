@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "wave-generator-engine"
-version = "0.4.1"
-description = "WGE-3 deterministic planning with source-reference qualification"
+version = "0.4.2"
+description = "WGE-3 source-aligned deterministic Session 1 planning"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = ["jsonschema>=4.18,<5", "numpy>=2.0,<3", "matplotlib>=3.9,<4"]
