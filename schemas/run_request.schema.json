@@ -6,6 +6,7 @@
   "required": ["schema_version", "source_profile_id", "delivery_preset_id", "selected_session_ids", "requested_duration_seconds", "requested_export_target"],
   "properties": {
     "schema_version": {"const": "wge.run_request.v1"},
+    "request_id": {"type": "string"},
     "source_profile_id": {"type": "string"},
     "delivery_preset_id": {"type": "string"},
     "selected_session_ids": {"type": "array", "minItems": 1, "maxItems": 7, "items": {"type": "integer"}},
@@ -14,6 +15,8 @@
     "playback_default_override": {"type": ["number", "null"]},
     "requested_export_target": {"enum": ["diagnostic_wav", "playback_json", "analysis_report", "assembled_stereo_wav_pack"]},
     "random_seed": {"type": ["integer", "null"]},
+    "root_seed": {"type": ["integer", "null"]},
+    "focus_role_target": {"type": ["integer", "null"], "minimum": 0, "maximum": 7},
     "motif_time_scale_ratio": {"type": ["number", "null"]},
     "carrier_frequency_hz": {"type": ["number", "null"]},
     "notes": {"type": "array", "items": {"type": "string"}}

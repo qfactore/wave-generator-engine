@@ -1,0 +1,18 @@
+{
+  "schema_version": "wge.run_request.v1",
+  "request_id": "x_alpha_session1_diagnostic_60s",
+  "source_profile_id": "x_alpha_standard_v1",
+  "delivery_preset_id": "diagnostic_60s_v1",
+  "selected_session_ids": [1],
+  "requested_duration_seconds": 60,
+  "focus_role_target": 2,
+  "playback_default_override": null,
+  "requested_export_target": "analysis_report",
+  "root_seed": 20260622,
+  "random_seed": null,
+  "motif_time_scale_ratio": null,
+  "carrier_frequency_hz": null,
+  "notes": [
+    "Focus Role target is run-specific and does not become a profile default."
+  ]
+}

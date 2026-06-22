@@ -1,0 +1,158 @@
+{
+  "authority_snapshot": {
+    "files": {
+      "calibration": {
+        "artifact_id": "x_alpha_reference_calibration_v1",
+        "sha256": "485933b33d601bfe642b5cadf0c1c0af4a22f3a7842c18fa40c09897b816720d"
+      },
+      "carrier": {
+        "artifact_id": "x_alpha_carrier_frequency_policy_v1",
+        "sha256": "05a89e935394759c924de24e9bd765722a9eb1dd0a7c091cd226a3c2b4a96991"
+      },
+      "decision_registry": {
+        "artifact_id": null,
+        "sha256": "2019a5427451d1093aeab387f7e6d94aec8d741e60e4fcd524dcc065e31b9f90"
+      },
+      "fixture_catalog": {
+        "artifact_id": "canonical_diagnostic_fixture_catalog",
+        "sha256": "9ddc80cadbfba5f29fac0266761aa0a66874fcf9cf687016b1593d17a1c62183"
+      },
+      "hum_putput": {
+        "artifact_id": "canonical_hum_putput_grammar",
+        "sha256": "0ff5725acc4713323362636e7e15d689fd58d1489c80a7cfcbb5d31f69844627"
+      },
+      "macro_density": {
+        "artifact_id": "x_alpha_macro_density_state_model_v1",
+        "sha256": "2710dc1015822b0277345cbf01f987715178260e71c2ab66e39b15851305c663"
+      },
+      "mode_profiles": {
+        "artifact_id": "canonical_session_mode_profiles",
+        "sha256": "9bd04c460c5ef04d21bf0c3c319904e7d4c5abe86a304d7105b45bded2aff14e"
+      },
+      "pulse_pattern": {
+        "artifact_id": "x_alpha_pulse_pattern_grammar_v1",
+        "sha256": "bd1276da6087b87bd89e9a53c93f8ba451dc04db802ebfa287772808712b0fbf"
+      },
+      "timing_dependencies": {
+        "artifact_id": "x_alpha_timing_dependency_policy_v1",
+        "sha256": "7f36fdfb0257a27adadaea3e42bfd7d1d6e8d39e2cf73d42c472ebe8d6a99136"
+      },
+      "unit_guidance": {
+        "artifact_id": "canonical_unit_grammar_builder_guidance",
+        "sha256": "d2b13a9acf00335f2a41aae50de5c72cc22218a05df7202336eaa52a731e0a53"
+      },
+      "unit_terms": {
+        "artifact_id": "canonical_unit_grammar_terms",
+        "sha256": "34002dfb2636766211f806047b7d18fa78472342c11cf494082d88a925ec7ae8"
+      }
+    },
+    "interchange_manifest_version": "0.8.0",
+    "tier_3_inputs_used": [],
+    "tier_4_inputs_used": []
+  },
+  "channel_grammar_policy": "canonical_unit_grammar_vocabulary",
+  "content_hash": "fd70a235141d344ee3b28527ea2a53a1dbf5328e819e0c9edfb9e559759582fa",
+  "focus_role_policy": "run_specific_role_bundle",
+  "grammar_categories": [
+    "clean_plus_one_sweep",
+    "novelty_non_repetition",
+    "one_impulse_burst",
+    "packet_continuation",
+    "packet_start",
+    "partial_sweep",
+    "scattered_packet",
+    "sweep_with_repeats",
+    "three_impulse_burst",
+    "two_impulse_burst"
+  ],
+  "macro_stage_policy": "neutral_active_state_for_baseline",
+  "mode": "baseline",
+  "motif_selection_policy": "uniform_exact_frozen_identity_with_immediate_novelty",
+  "novelty_repetition_policy": "prevent_immediate_exact_motif_repetition",
+  "numeric_guidance_used": {
+    "cycle_span_median_seconds": {
+      "authority_tier": "tier_2",
+      "binding_status": "diagnostic_guidance",
+      "source_artifact": "x_alpha_pulse_pattern_grammar_v1",
+      "source_field": "tier_2_mode_profiles.Baseline Mode.cycle_span_median_seconds",
+      "unit": "seconds",
+      "value": 0.08952083333333333
+    },
+    "fraction_with_trailing_events": {
+      "authority_tier": "tier_2",
+      "binding_status": "diagnostic_guidance",
+      "source_artifact": "x_alpha_pulse_pattern_grammar_v1",
+      "source_field": "tier_2_mode_profiles.Baseline Mode.fraction_with_trailing_events",
+      "unit": "fraction",
+      "value": 0.7468913612565445
+    },
+    "packet_count": {
+      "authority_tier": "tier_2",
+      "binding_status": "diagnostic_guidance",
+      "source_artifact": "x_alpha_pulse_pattern_grammar_v1",
+      "source_field": "tier_2_mode_profiles.Baseline Mode.packet_count",
+      "unit": "count",
+      "value": 6112
+    },
+    "trailing_event_count_median": {
+      "authority_tier": "tier_2",
+      "binding_status": "diagnostic_guidance",
+      "source_artifact": "x_alpha_pulse_pattern_grammar_v1",
+      "source_field": "tier_2_mode_profiles.Baseline Mode.trailing_event_count_median",
+      "unit": "count",
+      "value": 2
+    },
+    "trailing_event_count_p90": {
+      "authority_tier": "tier_2",
+      "binding_status": "diagnostic_guidance",
+      "source_artifact": "x_alpha_pulse_pattern_grammar_v1",
+      "source_field": "tier_2_mode_profiles.Baseline Mode.trailing_event_count_p90",
+      "unit": "count",
+      "value": 5
+    }
+  },
+  "packet_policy": "stochastic_seeded_packets",
+  "provisional_defaults": {
+    "continuation_spacing_seconds": {
+      "reason": "positive sample-aligned diagnostic spacing",
+      "unit": "seconds",
+      "value": 0.025
+    },
+    "grammar_weights": {
+      "reason": "diagnostic vocabulary coverage; not source authority",
+      "value": {
+        "clean_plus_one_sweep": 0.35,
+        "one_impulse_burst": 0.08,
+        "partial_sweep": 0.15,
+        "scattered_packet": 0.15,
+        "sweep_with_repeats": 0.15,
+        "three_impulse_burst": 0.05,
+        "two_impulse_burst": 0.07
+      }
+    },
+    "novelty_window": {
+      "reason": "minimum safeguard against immediate accidental repetition",
+      "unit": "immediate_previous_event",
+      "value": 1
+    },
+    "packet_interval_seconds": {
+      "reason": "identity-safe diagnostic cadence; no binding runtime cadence exists",
+      "unit": "seconds",
+      "value": 0.5
+    },
+    "relative_event_gain": {
+      "reason": "neutral metadata value; no gain distribution is certified",
+      "unit": "identity",
+      "value": 1.0
+    }
+  },
+  "pulse_pattern_policy": "a packet start followed by zero or more continuation events until the next packet start",
+  "relative_gain_policy": "identity_1_0_provisional_diagnostic",
+  "schema_version": "wge.planning_profile_snapshot.v1",
+  "snapshot_id": "baseline_diagnostic_planning_v1",
+  "timing_policy": "sample_positions_authoritative",
+  "unsupported_fields": [
+    "carrier_frequency_hz",
+    "motif_time_scale_ratio"
+  ]
+}

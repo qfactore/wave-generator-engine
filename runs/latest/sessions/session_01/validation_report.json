@@ -1,0 +1,53 @@
+{
+  "advisory_conformance": {
+    "channel_occupancy": "within_reference",
+    "continuation_distribution": "near_reference",
+    "event_rate": "not_assessable",
+    "focus_role_density_ratio": "not_assessable",
+    "motif_use_distribution": "not_assessable",
+    "packet_rate": "not_assessable",
+    "packet_span_distribution": "near_reference",
+    "pulse_pattern_prevalence": "within_reference",
+    "relative_event_gain_distribution": "not_assessable",
+    "repetition_distance": "within_reference",
+    "tier_2_reference_artifact": "x_alpha_pulse_pattern_grammar_v1",
+    "transition_grammar": "within_reference"
+  },
+  "content_hash": "42a8d3f341e6261c91e48672a3c45fd52763ae76a9a64e441bf3c58394ee8969",
+  "counts": {
+    "channel_occupancy": {
+      "0": 64,
+      "1": 68,
+      "2": 78,
+      "3": 65,
+      "4": 71,
+      "5": 75,
+      "6": 63,
+      "7": 64
+    },
+    "events": 548,
+    "packets": 120,
+    "pulse_pattern_prevalence": 0.7166666666666667,
+    "unique_motifs": 83
+  },
+  "hard_checks": {
+    "authority_references": "passed",
+    "channels": "passed",
+    "event_bounds": "passed",
+    "exact_identity_only": "passed",
+    "focus_role_bundle": "passed",
+    "hashes": "passed",
+    "motif_identity": "passed",
+    "no_calibration": "passed",
+    "no_playback_intensity": "passed",
+    "no_samples": "passed",
+    "profile_preset_match": "passed",
+    "provenance": "passed",
+    "sample_timing": "passed",
+    "stage_order": "passed",
+    "supported_mode": "passed"
+  },
+  "hard_validation": "passed",
+  "report_id": "session_01_validation",
+  "schema_version": "wge.plan_validation_report.v1"
+}

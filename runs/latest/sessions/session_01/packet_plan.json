@@ -1,0 +1,4906 @@
+{
+  "channel_unit_plan": {
+    "channel_convention": "zero_based_0_7",
+    "content_hash": "d80aa8a6f2ee48d9a7b82675feb79979ad175abff950590f9c1ad38daf45124a",
+    "schema_version": "wge.channel_unit_plan.v1",
+    "units": [
+      {
+        "channel_sequence": [
+          5,
+          6,
+          7,
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "packet_id": "s01_p0000",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          3,
+          4,
+          5,
+          5,
+          6,
+          7,
+          0
+        ],
+        "packet_id": "s01_p0001",
+        "unit_grammar": "sweep_with_repeats"
+      },
+      {
+        "channel_sequence": [
+          3,
+          3,
+          3
+        ],
+        "packet_id": "s01_p0002",
+        "unit_grammar": "three_impulse_burst"
+      },
+      {
+        "channel_sequence": [
+          6,
+          7,
+          0,
+          0,
+          1,
+          2,
+          3
+        ],
+        "packet_id": "s01_p0003",
+        "unit_grammar": "sweep_with_repeats"
+      },
+      {
+        "channel_sequence": [
+          4
+        ],
+        "packet_id": "s01_p0004",
+        "unit_grammar": "partial_sweep"
+      },
+      {
+        "channel_sequence": [
+          2
+        ],
+        "packet_id": "s01_p0005",
+        "unit_grammar": "sweep_with_repeats"
+      },
+      {
+        "channel_sequence": [
+          2
+        ],
+        "packet_id": "s01_p0006",
+        "unit_grammar": "partial_sweep"
+      },
+      {
+        "channel_sequence": [
+          2
+        ],
+        "packet_id": "s01_p0007",
+        "unit_grammar": "partial_sweep"
+      },
+      {
+        "channel_sequence": [
+          7,
+          4,
+          2,
+          5
+        ],
+        "packet_id": "s01_p0008",
+        "unit_grammar": "scattered_packet"
+      },
+      {
+        "channel_sequence": [
+          5,
+          5,
+          5
+        ],
+        "packet_id": "s01_p0009",
+        "unit_grammar": "three_impulse_burst"
+      },
+      {
+        "channel_sequence": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          0,
+          1,
+          2
+        ],
+        "packet_id": "s01_p0010",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          0,
+          1,
+          2
+        ],
+        "packet_id": "s01_p0011",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "packet_id": "s01_p0012",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          6
+        ],
+        "packet_id": "s01_p0013",
+        "unit_grammar": "sweep_with_repeats"
+      },
+      {
+        "channel_sequence": [
+          6,
+          7,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "packet_id": "s01_p0014",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          5,
+          6,
+          7,
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "packet_id": "s01_p0015",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          7
+        ],
+        "packet_id": "s01_p0016",
+        "unit_grammar": "three_impulse_burst"
+      },
+      {
+        "channel_sequence": [
+          0
+        ],
+        "packet_id": "s01_p0017",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          0,
+          1,
+          2
+        ],
+        "packet_id": "s01_p0018",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          2
+        ],
+        "packet_id": "s01_p0019",
+        "unit_grammar": "scattered_packet"
+      },
+      {
+        "channel_sequence": [
+          6,
+          7,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "packet_id": "s01_p0020",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          2
+        ],
+        "packet_id": "s01_p0021",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          5,
+          6,
+          7,
+          7,
+          0,
+          1,
+          2
+        ],
+        "packet_id": "s01_p0022",
+        "unit_grammar": "sweep_with_repeats"
+      },
+      {
+        "channel_sequence": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          0
+        ],
+        "packet_id": "s01_p0023",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          7,
+          0,
+          1,
+          1,
+          2,
+          3,
+          4
+        ],
+        "packet_id": "s01_p0024",
+        "unit_grammar": "sweep_with_repeats"
+      },
+      {
+        "channel_sequence": [
+          6,
+          7,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "packet_id": "s01_p0025",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          5,
+          7,
+          1,
+          3
+        ],
+        "packet_id": "s01_p0026",
+        "unit_grammar": "scattered_packet"
+      },
+      {
+        "channel_sequence": [
+          5,
+          6,
+          7,
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "packet_id": "s01_p0027",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          4,
+          4,
+          4
+        ],
+        "packet_id": "s01_p0028",
+        "unit_grammar": "three_impulse_burst"
+      },
+      {
+        "channel_sequence": [
+          7
+        ],
+        "packet_id": "s01_p0029",
+        "unit_grammar": "one_impulse_burst"
+      },
+      {
+        "channel_sequence": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          0,
+          1,
+          2
+        ],
+        "packet_id": "s01_p0030",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          0
+        ],
+        "packet_id": "s01_p0031",
+        "unit_grammar": "partial_sweep"
+      },
+      {
+        "channel_sequence": [
+          4,
+          5,
+          6,
+          6,
+          7,
+          0,
+          1
+        ],
+        "packet_id": "s01_p0032",
+        "unit_grammar": "sweep_with_repeats"
+      },
+      {
+        "channel_sequence": [
+          5
+        ],
+        "packet_id": "s01_p0033",
+        "unit_grammar": "sweep_with_repeats"
+      },
+      {
+        "channel_sequence": [
+          0,
+          0
+        ],
+        "packet_id": "s01_p0034",
+        "unit_grammar": "two_impulse_burst"
+      },
+      {
+        "channel_sequence": [
+          2,
+          4,
+          5,
+          7
+        ],
+        "packet_id": "s01_p0035",
+        "unit_grammar": "scattered_packet"
+      },
+      {
+        "channel_sequence": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "packet_id": "s01_p0036",
+        "unit_grammar": "partial_sweep"
+      },
+      {
+        "channel_sequence": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          0,
+          1
+        ],
+        "packet_id": "s01_p0037",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          4,
+          4,
+          4
+        ],
+        "packet_id": "s01_p0038",
+        "unit_grammar": "three_impulse_burst"
+      },
+      {
+        "channel_sequence": [
+          5,
+          5
+        ],
+        "packet_id": "s01_p0039",
+        "unit_grammar": "two_impulse_burst"
+      },
+      {
+        "channel_sequence": [
+          2,
+          2
+        ],
+        "packet_id": "s01_p0040",
+        "unit_grammar": "two_impulse_burst"
+      },
+      {
+        "channel_sequence": [
+          4
+        ],
+        "packet_id": "s01_p0041",
+        "unit_grammar": "two_impulse_burst"
+      },
+      {
+        "channel_sequence": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          0,
+          1
+        ],
+        "packet_id": "s01_p0042",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          2
+        ],
+        "packet_id": "s01_p0043",
+        "unit_grammar": "partial_sweep"
+      },
+      {
+        "channel_sequence": [
+          6,
+          7,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "packet_id": "s01_p0044",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          7
+        ],
+        "packet_id": "s01_p0045",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          6
+        ],
+        "packet_id": "s01_p0046",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          5,
+          1,
+          4
+        ],
+        "packet_id": "s01_p0047",
+        "unit_grammar": "scattered_packet"
+      },
+      {
+        "channel_sequence": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          0
+        ],
+        "packet_id": "s01_p0048",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          6,
+          1,
+          0,
+          5,
+          1
+        ],
+        "packet_id": "s01_p0049",
+        "unit_grammar": "scattered_packet"
+      },
+      {
+        "channel_sequence": [
+          7,
+          0,
+          1,
+          1,
+          2,
+          3,
+          4
+        ],
+        "packet_id": "s01_p0050",
+        "unit_grammar": "sweep_with_repeats"
+      },
+      {
+        "channel_sequence": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          0,
+          1
+        ],
+        "packet_id": "s01_p0051",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "packet_id": "s01_p0052",
+        "unit_grammar": "partial_sweep"
+      },
+      {
+        "channel_sequence": [
+          4,
+          5,
+          6,
+          7,
+          0,
+          1
+        ],
+        "packet_id": "s01_p0053",
+        "unit_grammar": "partial_sweep"
+      },
+      {
+        "channel_sequence": [
+          5,
+          6,
+          7,
+          0,
+          1,
+          2
+        ],
+        "packet_id": "s01_p0054",
+        "unit_grammar": "partial_sweep"
+      },
+      {
+        "channel_sequence": [
+          7,
+          0,
+          1,
+          2
+        ],
+        "packet_id": "s01_p0055",
+        "unit_grammar": "partial_sweep"
+      },
+      {
+        "channel_sequence": [
+          1,
+          3,
+          1,
+          2,
+          6
+        ],
+        "packet_id": "s01_p0056",
+        "unit_grammar": "scattered_packet"
+      },
+      {
+        "channel_sequence": [
+          1,
+          2,
+          3
+        ],
+        "packet_id": "s01_p0057",
+        "unit_grammar": "partial_sweep"
+      },
+      {
+        "channel_sequence": [
+          1,
+          3,
+          2
+        ],
+        "packet_id": "s01_p0058",
+        "unit_grammar": "scattered_packet"
+      },
+      {
+        "channel_sequence": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          0,
+          1,
+          2
+        ],
+        "packet_id": "s01_p0059",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          2
+        ],
+        "packet_id": "s01_p0060",
+        "unit_grammar": "scattered_packet"
+      },
+      {
+        "channel_sequence": [
+          4
+        ],
+        "packet_id": "s01_p0061",
+        "unit_grammar": "one_impulse_burst"
+      },
+      {
+        "channel_sequence": [
+          4,
+          5,
+          6,
+          7,
+          0
+        ],
+        "packet_id": "s01_p0062",
+        "unit_grammar": "partial_sweep"
+      },
+      {
+        "channel_sequence": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "packet_id": "s01_p0063",
+        "unit_grammar": "partial_sweep"
+      },
+      {
+        "channel_sequence": [
+          6,
+          6
+        ],
+        "packet_id": "s01_p0064",
+        "unit_grammar": "two_impulse_burst"
+      },
+      {
+        "channel_sequence": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          0,
+          1
+        ],
+        "packet_id": "s01_p0065",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          0,
+          1,
+          2,
+          2,
+          3,
+          4,
+          5
+        ],
+        "packet_id": "s01_p0066",
+        "unit_grammar": "sweep_with_repeats"
+      },
+      {
+        "channel_sequence": [
+          4,
+          4
+        ],
+        "packet_id": "s01_p0067",
+        "unit_grammar": "two_impulse_burst"
+      },
+      {
+        "channel_sequence": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "packet_id": "s01_p0068",
+        "unit_grammar": "partial_sweep"
+      },
+      {
+        "channel_sequence": [
+          5
+        ],
+        "packet_id": "s01_p0069",
+        "unit_grammar": "sweep_with_repeats"
+      },
+      {
+        "channel_sequence": [
+          5,
+          1,
+          0,
+          1,
+          5
+        ],
+        "packet_id": "s01_p0070",
+        "unit_grammar": "scattered_packet"
+      },
+      {
+        "channel_sequence": [
+          7
+        ],
+        "packet_id": "s01_p0071",
+        "unit_grammar": "one_impulse_burst"
+      },
+      {
+        "channel_sequence": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "packet_id": "s01_p0072",
+        "unit_grammar": "partial_sweep"
+      },
+      {
+        "channel_sequence": [
+          3,
+          5,
+          7,
+          6
+        ],
+        "packet_id": "s01_p0073",
+        "unit_grammar": "scattered_packet"
+      },
+      {
+        "channel_sequence": [
+          1
+        ],
+        "packet_id": "s01_p0074",
+        "unit_grammar": "partial_sweep"
+      },
+      {
+        "channel_sequence": [
+          4
+        ],
+        "packet_id": "s01_p0075",
+        "unit_grammar": "partial_sweep"
+      },
+      {
+        "channel_sequence": [
+          0,
+          0,
+          0
+        ],
+        "packet_id": "s01_p0076",
+        "unit_grammar": "three_impulse_burst"
+      },
+      {
+        "channel_sequence": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          0
+        ],
+        "packet_id": "s01_p0077",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          6,
+          7,
+          0,
+          0,
+          1,
+          2,
+          3
+        ],
+        "packet_id": "s01_p0078",
+        "unit_grammar": "sweep_with_repeats"
+      },
+      {
+        "channel_sequence": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "packet_id": "s01_p0079",
+        "unit_grammar": "partial_sweep"
+      },
+      {
+        "channel_sequence": [
+          6
+        ],
+        "packet_id": "s01_p0080",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          6,
+          7,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "packet_id": "s01_p0081",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          5
+        ],
+        "packet_id": "s01_p0082",
+        "unit_grammar": "sweep_with_repeats"
+      },
+      {
+        "channel_sequence": [
+          5,
+          6,
+          7,
+          0,
+          1,
+          2
+        ],
+        "packet_id": "s01_p0083",
+        "unit_grammar": "partial_sweep"
+      },
+      {
+        "channel_sequence": [
+          4,
+          5,
+          6,
+          7,
+          0,
+          1,
+          2,
+          3
+        ],
+        "packet_id": "s01_p0084",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          5,
+          6,
+          7,
+          0,
+          1,
+          2,
+          3
+        ],
+        "packet_id": "s01_p0085",
+        "unit_grammar": "partial_sweep"
+      },
+      {
+        "channel_sequence": [
+          4,
+          5,
+          6,
+          7,
+          0,
+          1,
+          2,
+          3
+        ],
+        "packet_id": "s01_p0086",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "packet_id": "s01_p0087",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          3
+        ],
+        "packet_id": "s01_p0088",
+        "unit_grammar": "scattered_packet"
+      },
+      {
+        "channel_sequence": [
+          4,
+          5,
+          6,
+          6,
+          7,
+          0,
+          1
+        ],
+        "packet_id": "s01_p0089",
+        "unit_grammar": "sweep_with_repeats"
+      },
+      {
+        "channel_sequence": [
+          3
+        ],
+        "packet_id": "s01_p0090",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          2,
+          5,
+          3,
+          1,
+          5
+        ],
+        "packet_id": "s01_p0091",
+        "unit_grammar": "scattered_packet"
+      },
+      {
+        "channel_sequence": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          0,
+          1,
+          2
+        ],
+        "packet_id": "s01_p0092",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          1
+        ],
+        "packet_id": "s01_p0093",
+        "unit_grammar": "partial_sweep"
+      },
+      {
+        "channel_sequence": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          0
+        ],
+        "packet_id": "s01_p0094",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "packet_id": "s01_p0095",
+        "unit_grammar": "partial_sweep"
+      },
+      {
+        "channel_sequence": [
+          7,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "packet_id": "s01_p0096",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "packet_id": "s01_p0097",
+        "unit_grammar": "partial_sweep"
+      },
+      {
+        "channel_sequence": [
+          2,
+          2
+        ],
+        "packet_id": "s01_p0098",
+        "unit_grammar": "two_impulse_burst"
+      },
+      {
+        "channel_sequence": [
+          5,
+          6,
+          7,
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "packet_id": "s01_p0099",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          1,
+          0,
+          3,
+          4,
+          2
+        ],
+        "packet_id": "s01_p0100",
+        "unit_grammar": "scattered_packet"
+      },
+      {
+        "channel_sequence": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          0,
+          1
+        ],
+        "packet_id": "s01_p0101",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          6
+        ],
+        "packet_id": "s01_p0102",
+        "unit_grammar": "sweep_with_repeats"
+      },
+      {
+        "channel_sequence": [
+          5,
+          6,
+          7,
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "packet_id": "s01_p0103",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          3,
+          4,
+          5,
+          5,
+          6,
+          7,
+          0
+        ],
+        "packet_id": "s01_p0104",
+        "unit_grammar": "sweep_with_repeats"
+      },
+      {
+        "channel_sequence": [
+          2
+        ],
+        "packet_id": "s01_p0105",
+        "unit_grammar": "scattered_packet"
+      },
+      {
+        "channel_sequence": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          0,
+          1,
+          2
+        ],
+        "packet_id": "s01_p0106",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          2
+        ],
+        "packet_id": "s01_p0107",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          0
+        ],
+        "packet_id": "s01_p0108",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          1
+        ],
+        "packet_id": "s01_p0109",
+        "unit_grammar": "one_impulse_burst"
+      },
+      {
+        "channel_sequence": [
+          4,
+          5,
+          6,
+          7,
+          0,
+          1
+        ],
+        "packet_id": "s01_p0110",
+        "unit_grammar": "partial_sweep"
+      },
+      {
+        "channel_sequence": [
+          7
+        ],
+        "packet_id": "s01_p0111",
+        "unit_grammar": "scattered_packet"
+      },
+      {
+        "channel_sequence": [
+          2
+        ],
+        "packet_id": "s01_p0112",
+        "unit_grammar": "scattered_packet"
+      },
+      {
+        "channel_sequence": [
+          2,
+          3,
+          4,
+          4,
+          5,
+          6,
+          7
+        ],
+        "packet_id": "s01_p0113",
+        "unit_grammar": "sweep_with_repeats"
+      },
+      {
+        "channel_sequence": [
+          7,
+          2,
+          1
+        ],
+        "packet_id": "s01_p0114",
+        "unit_grammar": "scattered_packet"
+      },
+      {
+        "channel_sequence": [
+          2,
+          2,
+          2
+        ],
+        "packet_id": "s01_p0115",
+        "unit_grammar": "three_impulse_burst"
+      },
+      {
+        "channel_sequence": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "packet_id": "s01_p0116",
+        "unit_grammar": "partial_sweep"
+      },
+      {
+        "channel_sequence": [
+          2,
+          3,
+          4,
+          4,
+          5,
+          6,
+          7
+        ],
+        "packet_id": "s01_p0117",
+        "unit_grammar": "sweep_with_repeats"
+      },
+      {
+        "channel_sequence": [
+          7
+        ],
+        "packet_id": "s01_p0118",
+        "unit_grammar": "clean_plus_one_sweep"
+      },
+      {
+        "channel_sequence": [
+          1,
+          2,
+          3,
+          3,
+          4,
+          5,
+          6
+        ],
+        "packet_id": "s01_p0119",
+        "unit_grammar": "sweep_with_repeats"
+      }
+    ]
+  },
+  "content_hash": "d42f201cfbc38550d361a2f0f1c8af9712e5763e25591af857cb2f2bcf2974b0",
+  "mode": "baseline",
+  "packet_plan_id": "session_01_packets",
+  "packets": [
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        5,
+        6,
+        7,
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "continuation_count": 7,
+      "event_ids": [
+        "s01_p0000_e00",
+        "s01_p0000_e01",
+        "s01_p0000_e02",
+        "s01_p0000_e03",
+        "s01_p0000_e04",
+        "s01_p0000_e05",
+        "s01_p0000_e06",
+        "s01_p0000_e07"
+      ],
+      "onset_sample": 0,
+      "packet_id": "s01_p0000",
+      "packet_index": 0,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        3,
+        4,
+        5,
+        5,
+        6,
+        7,
+        0
+      ],
+      "continuation_count": 6,
+      "event_ids": [
+        "s01_p0001_e00",
+        "s01_p0001_e01",
+        "s01_p0001_e02",
+        "s01_p0001_e03",
+        "s01_p0001_e04",
+        "s01_p0001_e05",
+        "s01_p0001_e06"
+      ],
+      "onset_sample": 24000,
+      "packet_id": "s01_p0001",
+      "packet_index": 1,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "sweep_with_repeats"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        3,
+        3,
+        3
+      ],
+      "continuation_count": 2,
+      "event_ids": [
+        "s01_p0002_e00",
+        "s01_p0002_e01",
+        "s01_p0002_e02"
+      ],
+      "onset_sample": 48000,
+      "packet_id": "s01_p0002",
+      "packet_index": 2,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "three_impulse_burst"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        6,
+        7,
+        0,
+        0,
+        1,
+        2,
+        3
+      ],
+      "continuation_count": 6,
+      "event_ids": [
+        "s01_p0003_e00",
+        "s01_p0003_e01",
+        "s01_p0003_e02",
+        "s01_p0003_e03",
+        "s01_p0003_e04",
+        "s01_p0003_e05",
+        "s01_p0003_e06"
+      ],
+      "onset_sample": 72000,
+      "packet_id": "s01_p0003",
+      "packet_index": 3,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "sweep_with_repeats"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        4
+      ],
+      "continuation_count": 0,
+      "event_ids": [
+        "s01_p0004_e00"
+      ],
+      "onset_sample": 96000,
+      "packet_id": "s01_p0004",
+      "packet_index": 4,
+      "pulse_pattern_present": false,
+      "session_id": 1,
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        2
+      ],
+      "continuation_count": 0,
+      "event_ids": [
+        "s01_p0005_e00"
+      ],
+      "onset_sample": 120000,
+      "packet_id": "s01_p0005",
+      "packet_index": 5,
+      "pulse_pattern_present": false,
+      "session_id": 1,
+      "unit_grammar": "sweep_with_repeats"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        2
+      ],
+      "continuation_count": 0,
+      "event_ids": [
+        "s01_p0006_e00"
+      ],
+      "onset_sample": 144000,
+      "packet_id": "s01_p0006",
+      "packet_index": 6,
+      "pulse_pattern_present": false,
+      "session_id": 1,
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        2
+      ],
+      "continuation_count": 0,
+      "event_ids": [
+        "s01_p0007_e00"
+      ],
+      "onset_sample": 168000,
+      "packet_id": "s01_p0007",
+      "packet_index": 7,
+      "pulse_pattern_present": false,
+      "session_id": 1,
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        7,
+        4,
+        2,
+        5
+      ],
+      "continuation_count": 3,
+      "event_ids": [
+        "s01_p0008_e00",
+        "s01_p0008_e01",
+        "s01_p0008_e02",
+        "s01_p0008_e03"
+      ],
+      "onset_sample": 192000,
+      "packet_id": "s01_p0008",
+      "packet_index": 8,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "scattered_packet"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        5,
+        5,
+        5
+      ],
+      "continuation_count": 2,
+      "event_ids": [
+        "s01_p0009_e00",
+        "s01_p0009_e01",
+        "s01_p0009_e02"
+      ],
+      "onset_sample": 216000,
+      "packet_id": "s01_p0009",
+      "packet_index": 9,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "three_impulse_burst"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        0,
+        1,
+        2
+      ],
+      "continuation_count": 7,
+      "event_ids": [
+        "s01_p0010_e00",
+        "s01_p0010_e01",
+        "s01_p0010_e02",
+        "s01_p0010_e03",
+        "s01_p0010_e04",
+        "s01_p0010_e05",
+        "s01_p0010_e06",
+        "s01_p0010_e07"
+      ],
+      "onset_sample": 240000,
+      "packet_id": "s01_p0010",
+      "packet_index": 10,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        0,
+        1,
+        2
+      ],
+      "continuation_count": 7,
+      "event_ids": [
+        "s01_p0011_e00",
+        "s01_p0011_e01",
+        "s01_p0011_e02",
+        "s01_p0011_e03",
+        "s01_p0011_e04",
+        "s01_p0011_e05",
+        "s01_p0011_e06",
+        "s01_p0011_e07"
+      ],
+      "onset_sample": 264000,
+      "packet_id": "s01_p0011",
+      "packet_index": 11,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "continuation_count": 7,
+      "event_ids": [
+        "s01_p0012_e00",
+        "s01_p0012_e01",
+        "s01_p0012_e02",
+        "s01_p0012_e03",
+        "s01_p0012_e04",
+        "s01_p0012_e05",
+        "s01_p0012_e06",
+        "s01_p0012_e07"
+      ],
+      "onset_sample": 288000,
+      "packet_id": "s01_p0012",
+      "packet_index": 12,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        6
+      ],
+      "continuation_count": 0,
+      "event_ids": [
+        "s01_p0013_e00"
+      ],
+      "onset_sample": 312000,
+      "packet_id": "s01_p0013",
+      "packet_index": 13,
+      "pulse_pattern_present": false,
+      "session_id": 1,
+      "unit_grammar": "sweep_with_repeats"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        6,
+        7,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "continuation_count": 7,
+      "event_ids": [
+        "s01_p0014_e00",
+        "s01_p0014_e01",
+        "s01_p0014_e02",
+        "s01_p0014_e03",
+        "s01_p0014_e04",
+        "s01_p0014_e05",
+        "s01_p0014_e06",
+        "s01_p0014_e07"
+      ],
+      "onset_sample": 336000,
+      "packet_id": "s01_p0014",
+      "packet_index": 14,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        5,
+        6,
+        7,
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "continuation_count": 7,
+      "event_ids": [
+        "s01_p0015_e00",
+        "s01_p0015_e01",
+        "s01_p0015_e02",
+        "s01_p0015_e03",
+        "s01_p0015_e04",
+        "s01_p0015_e05",
+        "s01_p0015_e06",
+        "s01_p0015_e07"
+      ],
+      "onset_sample": 360000,
+      "packet_id": "s01_p0015",
+      "packet_index": 15,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        7
+      ],
+      "continuation_count": 0,
+      "event_ids": [
+        "s01_p0016_e00"
+      ],
+      "onset_sample": 384000,
+      "packet_id": "s01_p0016",
+      "packet_index": 16,
+      "pulse_pattern_present": false,
+      "session_id": 1,
+      "unit_grammar": "three_impulse_burst"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        0
+      ],
+      "continuation_count": 0,
+      "event_ids": [
+        "s01_p0017_e00"
+      ],
+      "onset_sample": 408000,
+      "packet_id": "s01_p0017",
+      "packet_index": 17,
+      "pulse_pattern_present": false,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        0,
+        1,
+        2
+      ],
+      "continuation_count": 7,
+      "event_ids": [
+        "s01_p0018_e00",
+        "s01_p0018_e01",
+        "s01_p0018_e02",
+        "s01_p0018_e03",
+        "s01_p0018_e04",
+        "s01_p0018_e05",
+        "s01_p0018_e06",
+        "s01_p0018_e07"
+      ],
+      "onset_sample": 432000,
+      "packet_id": "s01_p0018",
+      "packet_index": 18,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        2
+      ],
+      "continuation_count": 0,
+      "event_ids": [
+        "s01_p0019_e00"
+      ],
+      "onset_sample": 456000,
+      "packet_id": "s01_p0019",
+      "packet_index": 19,
+      "pulse_pattern_present": false,
+      "session_id": 1,
+      "unit_grammar": "scattered_packet"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        6,
+        7,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "continuation_count": 7,
+      "event_ids": [
+        "s01_p0020_e00",
+        "s01_p0020_e01",
+        "s01_p0020_e02",
+        "s01_p0020_e03",
+        "s01_p0020_e04",
+        "s01_p0020_e05",
+        "s01_p0020_e06",
+        "s01_p0020_e07"
+      ],
+      "onset_sample": 480000,
+      "packet_id": "s01_p0020",
+      "packet_index": 20,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        2
+      ],
+      "continuation_count": 0,
+      "event_ids": [
+        "s01_p0021_e00"
+      ],
+      "onset_sample": 504000,
+      "packet_id": "s01_p0021",
+      "packet_index": 21,
+      "pulse_pattern_present": false,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        5,
+        6,
+        7,
+        7,
+        0,
+        1,
+        2
+      ],
+      "continuation_count": 6,
+      "event_ids": [
+        "s01_p0022_e00",
+        "s01_p0022_e01",
+        "s01_p0022_e02",
+        "s01_p0022_e03",
+        "s01_p0022_e04",
+        "s01_p0022_e05",
+        "s01_p0022_e06"
+      ],
+      "onset_sample": 528000,
+      "packet_id": "s01_p0022",
+      "packet_index": 22,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "sweep_with_repeats"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        0
+      ],
+      "continuation_count": 7,
+      "event_ids": [
+        "s01_p0023_e00",
+        "s01_p0023_e01",
+        "s01_p0023_e02",
+        "s01_p0023_e03",
+        "s01_p0023_e04",
+        "s01_p0023_e05",
+        "s01_p0023_e06",
+        "s01_p0023_e07"
+      ],
+      "onset_sample": 552000,
+      "packet_id": "s01_p0023",
+      "packet_index": 23,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        7,
+        0,
+        1,
+        1,
+        2,
+        3,
+        4
+      ],
+      "continuation_count": 6,
+      "event_ids": [
+        "s01_p0024_e00",
+        "s01_p0024_e01",
+        "s01_p0024_e02",
+        "s01_p0024_e03",
+        "s01_p0024_e04",
+        "s01_p0024_e05",
+        "s01_p0024_e06"
+      ],
+      "onset_sample": 576000,
+      "packet_id": "s01_p0024",
+      "packet_index": 24,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "sweep_with_repeats"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        6,
+        7,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "continuation_count": 7,
+      "event_ids": [
+        "s01_p0025_e00",
+        "s01_p0025_e01",
+        "s01_p0025_e02",
+        "s01_p0025_e03",
+        "s01_p0025_e04",
+        "s01_p0025_e05",
+        "s01_p0025_e06",
+        "s01_p0025_e07"
+      ],
+      "onset_sample": 600000,
+      "packet_id": "s01_p0025",
+      "packet_index": 25,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        5,
+        7,
+        1,
+        3
+      ],
+      "continuation_count": 3,
+      "event_ids": [
+        "s01_p0026_e00",
+        "s01_p0026_e01",
+        "s01_p0026_e02",
+        "s01_p0026_e03"
+      ],
+      "onset_sample": 624000,
+      "packet_id": "s01_p0026",
+      "packet_index": 26,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "scattered_packet"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        5,
+        6,
+        7,
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "continuation_count": 7,
+      "event_ids": [
+        "s01_p0027_e00",
+        "s01_p0027_e01",
+        "s01_p0027_e02",
+        "s01_p0027_e03",
+        "s01_p0027_e04",
+        "s01_p0027_e05",
+        "s01_p0027_e06",
+        "s01_p0027_e07"
+      ],
+      "onset_sample": 648000,
+      "packet_id": "s01_p0027",
+      "packet_index": 27,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        4,
+        4,
+        4
+      ],
+      "continuation_count": 2,
+      "event_ids": [
+        "s01_p0028_e00",
+        "s01_p0028_e01",
+        "s01_p0028_e02"
+      ],
+      "onset_sample": 672000,
+      "packet_id": "s01_p0028",
+      "packet_index": 28,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "three_impulse_burst"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        7
+      ],
+      "continuation_count": 0,
+      "event_ids": [
+        "s01_p0029_e00"
+      ],
+      "onset_sample": 696000,
+      "packet_id": "s01_p0029",
+      "packet_index": 29,
+      "pulse_pattern_present": false,
+      "session_id": 1,
+      "unit_grammar": "one_impulse_burst"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        0,
+        1,
+        2
+      ],
+      "continuation_count": 7,
+      "event_ids": [
+        "s01_p0030_e00",
+        "s01_p0030_e01",
+        "s01_p0030_e02",
+        "s01_p0030_e03",
+        "s01_p0030_e04",
+        "s01_p0030_e05",
+        "s01_p0030_e06",
+        "s01_p0030_e07"
+      ],
+      "onset_sample": 720000,
+      "packet_id": "s01_p0030",
+      "packet_index": 30,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        0
+      ],
+      "continuation_count": 0,
+      "event_ids": [
+        "s01_p0031_e00"
+      ],
+      "onset_sample": 744000,
+      "packet_id": "s01_p0031",
+      "packet_index": 31,
+      "pulse_pattern_present": false,
+      "session_id": 1,
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        4,
+        5,
+        6,
+        6,
+        7,
+        0,
+        1
+      ],
+      "continuation_count": 6,
+      "event_ids": [
+        "s01_p0032_e00",
+        "s01_p0032_e01",
+        "s01_p0032_e02",
+        "s01_p0032_e03",
+        "s01_p0032_e04",
+        "s01_p0032_e05",
+        "s01_p0032_e06"
+      ],
+      "onset_sample": 768000,
+      "packet_id": "s01_p0032",
+      "packet_index": 32,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "sweep_with_repeats"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        5
+      ],
+      "continuation_count": 0,
+      "event_ids": [
+        "s01_p0033_e00"
+      ],
+      "onset_sample": 792000,
+      "packet_id": "s01_p0033",
+      "packet_index": 33,
+      "pulse_pattern_present": false,
+      "session_id": 1,
+      "unit_grammar": "sweep_with_repeats"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        0,
+        0
+      ],
+      "continuation_count": 1,
+      "event_ids": [
+        "s01_p0034_e00",
+        "s01_p0034_e01"
+      ],
+      "onset_sample": 816000,
+      "packet_id": "s01_p0034",
+      "packet_index": 34,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "two_impulse_burst"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        2,
+        4,
+        5,
+        7
+      ],
+      "continuation_count": 3,
+      "event_ids": [
+        "s01_p0035_e00",
+        "s01_p0035_e01",
+        "s01_p0035_e02",
+        "s01_p0035_e03"
+      ],
+      "onset_sample": 840000,
+      "packet_id": "s01_p0035",
+      "packet_index": 35,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "scattered_packet"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "continuation_count": 5,
+      "event_ids": [
+        "s01_p0036_e00",
+        "s01_p0036_e01",
+        "s01_p0036_e02",
+        "s01_p0036_e03",
+        "s01_p0036_e04",
+        "s01_p0036_e05"
+      ],
+      "onset_sample": 864000,
+      "packet_id": "s01_p0036",
+      "packet_index": 36,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        0,
+        1
+      ],
+      "continuation_count": 7,
+      "event_ids": [
+        "s01_p0037_e00",
+        "s01_p0037_e01",
+        "s01_p0037_e02",
+        "s01_p0037_e03",
+        "s01_p0037_e04",
+        "s01_p0037_e05",
+        "s01_p0037_e06",
+        "s01_p0037_e07"
+      ],
+      "onset_sample": 888000,
+      "packet_id": "s01_p0037",
+      "packet_index": 37,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        4,
+        4,
+        4
+      ],
+      "continuation_count": 2,
+      "event_ids": [
+        "s01_p0038_e00",
+        "s01_p0038_e01",
+        "s01_p0038_e02"
+      ],
+      "onset_sample": 912000,
+      "packet_id": "s01_p0038",
+      "packet_index": 38,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "three_impulse_burst"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        5,
+        5
+      ],
+      "continuation_count": 1,
+      "event_ids": [
+        "s01_p0039_e00",
+        "s01_p0039_e01"
+      ],
+      "onset_sample": 936000,
+      "packet_id": "s01_p0039",
+      "packet_index": 39,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "two_impulse_burst"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        2,
+        2
+      ],
+      "continuation_count": 1,
+      "event_ids": [
+        "s01_p0040_e00",
+        "s01_p0040_e01"
+      ],
+      "onset_sample": 960000,
+      "packet_id": "s01_p0040",
+      "packet_index": 40,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "two_impulse_burst"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        4
+      ],
+      "continuation_count": 0,
+      "event_ids": [
+        "s01_p0041_e00"
+      ],
+      "onset_sample": 984000,
+      "packet_id": "s01_p0041",
+      "packet_index": 41,
+      "pulse_pattern_present": false,
+      "session_id": 1,
+      "unit_grammar": "two_impulse_burst"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        0,
+        1
+      ],
+      "continuation_count": 7,
+      "event_ids": [
+        "s01_p0042_e00",
+        "s01_p0042_e01",
+        "s01_p0042_e02",
+        "s01_p0042_e03",
+        "s01_p0042_e04",
+        "s01_p0042_e05",
+        "s01_p0042_e06",
+        "s01_p0042_e07"
+      ],
+      "onset_sample": 1008000,
+      "packet_id": "s01_p0042",
+      "packet_index": 42,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        2
+      ],
+      "continuation_count": 0,
+      "event_ids": [
+        "s01_p0043_e00"
+      ],
+      "onset_sample": 1032000,
+      "packet_id": "s01_p0043",
+      "packet_index": 43,
+      "pulse_pattern_present": false,
+      "session_id": 1,
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        6,
+        7,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "continuation_count": 7,
+      "event_ids": [
+        "s01_p0044_e00",
+        "s01_p0044_e01",
+        "s01_p0044_e02",
+        "s01_p0044_e03",
+        "s01_p0044_e04",
+        "s01_p0044_e05",
+        "s01_p0044_e06",
+        "s01_p0044_e07"
+      ],
+      "onset_sample": 1056000,
+      "packet_id": "s01_p0044",
+      "packet_index": 44,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        7
+      ],
+      "continuation_count": 0,
+      "event_ids": [
+        "s01_p0045_e00"
+      ],
+      "onset_sample": 1080000,
+      "packet_id": "s01_p0045",
+      "packet_index": 45,
+      "pulse_pattern_present": false,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        6
+      ],
+      "continuation_count": 0,
+      "event_ids": [
+        "s01_p0046_e00"
+      ],
+      "onset_sample": 1104000,
+      "packet_id": "s01_p0046",
+      "packet_index": 46,
+      "pulse_pattern_present": false,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        5,
+        1,
+        4
+      ],
+      "continuation_count": 2,
+      "event_ids": [
+        "s01_p0047_e00",
+        "s01_p0047_e01",
+        "s01_p0047_e02"
+      ],
+      "onset_sample": 1128000,
+      "packet_id": "s01_p0047",
+      "packet_index": 47,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "scattered_packet"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        0
+      ],
+      "continuation_count": 7,
+      "event_ids": [
+        "s01_p0048_e00",
+        "s01_p0048_e01",
+        "s01_p0048_e02",
+        "s01_p0048_e03",
+        "s01_p0048_e04",
+        "s01_p0048_e05",
+        "s01_p0048_e06",
+        "s01_p0048_e07"
+      ],
+      "onset_sample": 1152000,
+      "packet_id": "s01_p0048",
+      "packet_index": 48,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        6,
+        1,
+        0,
+        5,
+        1
+      ],
+      "continuation_count": 4,
+      "event_ids": [
+        "s01_p0049_e00",
+        "s01_p0049_e01",
+        "s01_p0049_e02",
+        "s01_p0049_e03",
+        "s01_p0049_e04"
+      ],
+      "onset_sample": 1176000,
+      "packet_id": "s01_p0049",
+      "packet_index": 49,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "scattered_packet"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        7,
+        0,
+        1,
+        1,
+        2,
+        3,
+        4
+      ],
+      "continuation_count": 6,
+      "event_ids": [
+        "s01_p0050_e00",
+        "s01_p0050_e01",
+        "s01_p0050_e02",
+        "s01_p0050_e03",
+        "s01_p0050_e04",
+        "s01_p0050_e05",
+        "s01_p0050_e06"
+      ],
+      "onset_sample": 1200000,
+      "packet_id": "s01_p0050",
+      "packet_index": 50,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "sweep_with_repeats"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        0,
+        1
+      ],
+      "continuation_count": 7,
+      "event_ids": [
+        "s01_p0051_e00",
+        "s01_p0051_e01",
+        "s01_p0051_e02",
+        "s01_p0051_e03",
+        "s01_p0051_e04",
+        "s01_p0051_e05",
+        "s01_p0051_e06",
+        "s01_p0051_e07"
+      ],
+      "onset_sample": 1224000,
+      "packet_id": "s01_p0051",
+      "packet_index": 51,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "continuation_count": 3,
+      "event_ids": [
+        "s01_p0052_e00",
+        "s01_p0052_e01",
+        "s01_p0052_e02",
+        "s01_p0052_e03"
+      ],
+      "onset_sample": 1248000,
+      "packet_id": "s01_p0052",
+      "packet_index": 52,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        4,
+        5,
+        6,
+        7,
+        0,
+        1
+      ],
+      "continuation_count": 5,
+      "event_ids": [
+        "s01_p0053_e00",
+        "s01_p0053_e01",
+        "s01_p0053_e02",
+        "s01_p0053_e03",
+        "s01_p0053_e04",
+        "s01_p0053_e05"
+      ],
+      "onset_sample": 1272000,
+      "packet_id": "s01_p0053",
+      "packet_index": 53,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        5,
+        6,
+        7,
+        0,
+        1,
+        2
+      ],
+      "continuation_count": 5,
+      "event_ids": [
+        "s01_p0054_e00",
+        "s01_p0054_e01",
+        "s01_p0054_e02",
+        "s01_p0054_e03",
+        "s01_p0054_e04",
+        "s01_p0054_e05"
+      ],
+      "onset_sample": 1296000,
+      "packet_id": "s01_p0054",
+      "packet_index": 54,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        7,
+        0,
+        1,
+        2
+      ],
+      "continuation_count": 3,
+      "event_ids": [
+        "s01_p0055_e00",
+        "s01_p0055_e01",
+        "s01_p0055_e02",
+        "s01_p0055_e03"
+      ],
+      "onset_sample": 1320000,
+      "packet_id": "s01_p0055",
+      "packet_index": 55,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        1,
+        3,
+        1,
+        2,
+        6
+      ],
+      "continuation_count": 4,
+      "event_ids": [
+        "s01_p0056_e00",
+        "s01_p0056_e01",
+        "s01_p0056_e02",
+        "s01_p0056_e03",
+        "s01_p0056_e04"
+      ],
+      "onset_sample": 1344000,
+      "packet_id": "s01_p0056",
+      "packet_index": 56,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "scattered_packet"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        1,
+        2,
+        3
+      ],
+      "continuation_count": 2,
+      "event_ids": [
+        "s01_p0057_e00",
+        "s01_p0057_e01",
+        "s01_p0057_e02"
+      ],
+      "onset_sample": 1368000,
+      "packet_id": "s01_p0057",
+      "packet_index": 57,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        1,
+        3,
+        2
+      ],
+      "continuation_count": 2,
+      "event_ids": [
+        "s01_p0058_e00",
+        "s01_p0058_e01",
+        "s01_p0058_e02"
+      ],
+      "onset_sample": 1392000,
+      "packet_id": "s01_p0058",
+      "packet_index": 58,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "scattered_packet"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        0,
+        1,
+        2
+      ],
+      "continuation_count": 7,
+      "event_ids": [
+        "s01_p0059_e00",
+        "s01_p0059_e01",
+        "s01_p0059_e02",
+        "s01_p0059_e03",
+        "s01_p0059_e04",
+        "s01_p0059_e05",
+        "s01_p0059_e06",
+        "s01_p0059_e07"
+      ],
+      "onset_sample": 1416000,
+      "packet_id": "s01_p0059",
+      "packet_index": 59,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        2
+      ],
+      "continuation_count": 0,
+      "event_ids": [
+        "s01_p0060_e00"
+      ],
+      "onset_sample": 1440000,
+      "packet_id": "s01_p0060",
+      "packet_index": 60,
+      "pulse_pattern_present": false,
+      "session_id": 1,
+      "unit_grammar": "scattered_packet"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        4
+      ],
+      "continuation_count": 0,
+      "event_ids": [
+        "s01_p0061_e00"
+      ],
+      "onset_sample": 1464000,
+      "packet_id": "s01_p0061",
+      "packet_index": 61,
+      "pulse_pattern_present": false,
+      "session_id": 1,
+      "unit_grammar": "one_impulse_burst"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        4,
+        5,
+        6,
+        7,
+        0
+      ],
+      "continuation_count": 4,
+      "event_ids": [
+        "s01_p0062_e00",
+        "s01_p0062_e01",
+        "s01_p0062_e02",
+        "s01_p0062_e03",
+        "s01_p0062_e04"
+      ],
+      "onset_sample": 1488000,
+      "packet_id": "s01_p0062",
+      "packet_index": 62,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "continuation_count": 5,
+      "event_ids": [
+        "s01_p0063_e00",
+        "s01_p0063_e01",
+        "s01_p0063_e02",
+        "s01_p0063_e03",
+        "s01_p0063_e04",
+        "s01_p0063_e05"
+      ],
+      "onset_sample": 1512000,
+      "packet_id": "s01_p0063",
+      "packet_index": 63,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        6,
+        6
+      ],
+      "continuation_count": 1,
+      "event_ids": [
+        "s01_p0064_e00",
+        "s01_p0064_e01"
+      ],
+      "onset_sample": 1536000,
+      "packet_id": "s01_p0064",
+      "packet_index": 64,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "two_impulse_burst"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        0,
+        1
+      ],
+      "continuation_count": 7,
+      "event_ids": [
+        "s01_p0065_e00",
+        "s01_p0065_e01",
+        "s01_p0065_e02",
+        "s01_p0065_e03",
+        "s01_p0065_e04",
+        "s01_p0065_e05",
+        "s01_p0065_e06",
+        "s01_p0065_e07"
+      ],
+      "onset_sample": 1560000,
+      "packet_id": "s01_p0065",
+      "packet_index": 65,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        0,
+        1,
+        2,
+        2,
+        3,
+        4,
+        5
+      ],
+      "continuation_count": 6,
+      "event_ids": [
+        "s01_p0066_e00",
+        "s01_p0066_e01",
+        "s01_p0066_e02",
+        "s01_p0066_e03",
+        "s01_p0066_e04",
+        "s01_p0066_e05",
+        "s01_p0066_e06"
+      ],
+      "onset_sample": 1584000,
+      "packet_id": "s01_p0066",
+      "packet_index": 66,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "sweep_with_repeats"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        4,
+        4
+      ],
+      "continuation_count": 1,
+      "event_ids": [
+        "s01_p0067_e00",
+        "s01_p0067_e01"
+      ],
+      "onset_sample": 1608000,
+      "packet_id": "s01_p0067",
+      "packet_index": 67,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "two_impulse_burst"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "continuation_count": 4,
+      "event_ids": [
+        "s01_p0068_e00",
+        "s01_p0068_e01",
+        "s01_p0068_e02",
+        "s01_p0068_e03",
+        "s01_p0068_e04"
+      ],
+      "onset_sample": 1632000,
+      "packet_id": "s01_p0068",
+      "packet_index": 68,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        5
+      ],
+      "continuation_count": 0,
+      "event_ids": [
+        "s01_p0069_e00"
+      ],
+      "onset_sample": 1656000,
+      "packet_id": "s01_p0069",
+      "packet_index": 69,
+      "pulse_pattern_present": false,
+      "session_id": 1,
+      "unit_grammar": "sweep_with_repeats"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        5,
+        1,
+        0,
+        1,
+        5
+      ],
+      "continuation_count": 4,
+      "event_ids": [
+        "s01_p0070_e00",
+        "s01_p0070_e01",
+        "s01_p0070_e02",
+        "s01_p0070_e03",
+        "s01_p0070_e04"
+      ],
+      "onset_sample": 1680000,
+      "packet_id": "s01_p0070",
+      "packet_index": 70,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "scattered_packet"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        7
+      ],
+      "continuation_count": 0,
+      "event_ids": [
+        "s01_p0071_e00"
+      ],
+      "onset_sample": 1704000,
+      "packet_id": "s01_p0071",
+      "packet_index": 71,
+      "pulse_pattern_present": false,
+      "session_id": 1,
+      "unit_grammar": "one_impulse_burst"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "continuation_count": 3,
+      "event_ids": [
+        "s01_p0072_e00",
+        "s01_p0072_e01",
+        "s01_p0072_e02",
+        "s01_p0072_e03"
+      ],
+      "onset_sample": 1728000,
+      "packet_id": "s01_p0072",
+      "packet_index": 72,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        3,
+        5,
+        7,
+        6
+      ],
+      "continuation_count": 3,
+      "event_ids": [
+        "s01_p0073_e00",
+        "s01_p0073_e01",
+        "s01_p0073_e02",
+        "s01_p0073_e03"
+      ],
+      "onset_sample": 1752000,
+      "packet_id": "s01_p0073",
+      "packet_index": 73,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "scattered_packet"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        1
+      ],
+      "continuation_count": 0,
+      "event_ids": [
+        "s01_p0074_e00"
+      ],
+      "onset_sample": 1776000,
+      "packet_id": "s01_p0074",
+      "packet_index": 74,
+      "pulse_pattern_present": false,
+      "session_id": 1,
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        4
+      ],
+      "continuation_count": 0,
+      "event_ids": [
+        "s01_p0075_e00"
+      ],
+      "onset_sample": 1800000,
+      "packet_id": "s01_p0075",
+      "packet_index": 75,
+      "pulse_pattern_present": false,
+      "session_id": 1,
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        0,
+        0,
+        0
+      ],
+      "continuation_count": 2,
+      "event_ids": [
+        "s01_p0076_e00",
+        "s01_p0076_e01",
+        "s01_p0076_e02"
+      ],
+      "onset_sample": 1824000,
+      "packet_id": "s01_p0076",
+      "packet_index": 76,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "three_impulse_burst"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        0
+      ],
+      "continuation_count": 7,
+      "event_ids": [
+        "s01_p0077_e00",
+        "s01_p0077_e01",
+        "s01_p0077_e02",
+        "s01_p0077_e03",
+        "s01_p0077_e04",
+        "s01_p0077_e05",
+        "s01_p0077_e06",
+        "s01_p0077_e07"
+      ],
+      "onset_sample": 1848000,
+      "packet_id": "s01_p0077",
+      "packet_index": 77,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        6,
+        7,
+        0,
+        0,
+        1,
+        2,
+        3
+      ],
+      "continuation_count": 6,
+      "event_ids": [
+        "s01_p0078_e00",
+        "s01_p0078_e01",
+        "s01_p0078_e02",
+        "s01_p0078_e03",
+        "s01_p0078_e04",
+        "s01_p0078_e05",
+        "s01_p0078_e06"
+      ],
+      "onset_sample": 1872000,
+      "packet_id": "s01_p0078",
+      "packet_index": 78,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "sweep_with_repeats"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "continuation_count": 3,
+      "event_ids": [
+        "s01_p0079_e00",
+        "s01_p0079_e01",
+        "s01_p0079_e02",
+        "s01_p0079_e03"
+      ],
+      "onset_sample": 1896000,
+      "packet_id": "s01_p0079",
+      "packet_index": 79,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        6
+      ],
+      "continuation_count": 0,
+      "event_ids": [
+        "s01_p0080_e00"
+      ],
+      "onset_sample": 1920000,
+      "packet_id": "s01_p0080",
+      "packet_index": 80,
+      "pulse_pattern_present": false,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        6,
+        7,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "continuation_count": 7,
+      "event_ids": [
+        "s01_p0081_e00",
+        "s01_p0081_e01",
+        "s01_p0081_e02",
+        "s01_p0081_e03",
+        "s01_p0081_e04",
+        "s01_p0081_e05",
+        "s01_p0081_e06",
+        "s01_p0081_e07"
+      ],
+      "onset_sample": 1944000,
+      "packet_id": "s01_p0081",
+      "packet_index": 81,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        5
+      ],
+      "continuation_count": 0,
+      "event_ids": [
+        "s01_p0082_e00"
+      ],
+      "onset_sample": 1968000,
+      "packet_id": "s01_p0082",
+      "packet_index": 82,
+      "pulse_pattern_present": false,
+      "session_id": 1,
+      "unit_grammar": "sweep_with_repeats"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        5,
+        6,
+        7,
+        0,
+        1,
+        2
+      ],
+      "continuation_count": 5,
+      "event_ids": [
+        "s01_p0083_e00",
+        "s01_p0083_e01",
+        "s01_p0083_e02",
+        "s01_p0083_e03",
+        "s01_p0083_e04",
+        "s01_p0083_e05"
+      ],
+      "onset_sample": 1992000,
+      "packet_id": "s01_p0083",
+      "packet_index": 83,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        4,
+        5,
+        6,
+        7,
+        0,
+        1,
+        2,
+        3
+      ],
+      "continuation_count": 7,
+      "event_ids": [
+        "s01_p0084_e00",
+        "s01_p0084_e01",
+        "s01_p0084_e02",
+        "s01_p0084_e03",
+        "s01_p0084_e04",
+        "s01_p0084_e05",
+        "s01_p0084_e06",
+        "s01_p0084_e07"
+      ],
+      "onset_sample": 2016000,
+      "packet_id": "s01_p0084",
+      "packet_index": 84,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        5,
+        6,
+        7,
+        0,
+        1,
+        2,
+        3
+      ],
+      "continuation_count": 6,
+      "event_ids": [
+        "s01_p0085_e00",
+        "s01_p0085_e01",
+        "s01_p0085_e02",
+        "s01_p0085_e03",
+        "s01_p0085_e04",
+        "s01_p0085_e05",
+        "s01_p0085_e06"
+      ],
+      "onset_sample": 2040000,
+      "packet_id": "s01_p0085",
+      "packet_index": 85,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        4,
+        5,
+        6,
+        7,
+        0,
+        1,
+        2,
+        3
+      ],
+      "continuation_count": 7,
+      "event_ids": [
+        "s01_p0086_e00",
+        "s01_p0086_e01",
+        "s01_p0086_e02",
+        "s01_p0086_e03",
+        "s01_p0086_e04",
+        "s01_p0086_e05",
+        "s01_p0086_e06",
+        "s01_p0086_e07"
+      ],
+      "onset_sample": 2064000,
+      "packet_id": "s01_p0086",
+      "packet_index": 86,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "continuation_count": 7,
+      "event_ids": [
+        "s01_p0087_e00",
+        "s01_p0087_e01",
+        "s01_p0087_e02",
+        "s01_p0087_e03",
+        "s01_p0087_e04",
+        "s01_p0087_e05",
+        "s01_p0087_e06",
+        "s01_p0087_e07"
+      ],
+      "onset_sample": 2088000,
+      "packet_id": "s01_p0087",
+      "packet_index": 87,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        3
+      ],
+      "continuation_count": 0,
+      "event_ids": [
+        "s01_p0088_e00"
+      ],
+      "onset_sample": 2112000,
+      "packet_id": "s01_p0088",
+      "packet_index": 88,
+      "pulse_pattern_present": false,
+      "session_id": 1,
+      "unit_grammar": "scattered_packet"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        4,
+        5,
+        6,
+        6,
+        7,
+        0,
+        1
+      ],
+      "continuation_count": 6,
+      "event_ids": [
+        "s01_p0089_e00",
+        "s01_p0089_e01",
+        "s01_p0089_e02",
+        "s01_p0089_e03",
+        "s01_p0089_e04",
+        "s01_p0089_e05",
+        "s01_p0089_e06"
+      ],
+      "onset_sample": 2136000,
+      "packet_id": "s01_p0089",
+      "packet_index": 89,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "sweep_with_repeats"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        3
+      ],
+      "continuation_count": 0,
+      "event_ids": [
+        "s01_p0090_e00"
+      ],
+      "onset_sample": 2160000,
+      "packet_id": "s01_p0090",
+      "packet_index": 90,
+      "pulse_pattern_present": false,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        2,
+        5,
+        3,
+        1,
+        5
+      ],
+      "continuation_count": 4,
+      "event_ids": [
+        "s01_p0091_e00",
+        "s01_p0091_e01",
+        "s01_p0091_e02",
+        "s01_p0091_e03",
+        "s01_p0091_e04"
+      ],
+      "onset_sample": 2184000,
+      "packet_id": "s01_p0091",
+      "packet_index": 91,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "scattered_packet"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        0,
+        1,
+        2
+      ],
+      "continuation_count": 7,
+      "event_ids": [
+        "s01_p0092_e00",
+        "s01_p0092_e01",
+        "s01_p0092_e02",
+        "s01_p0092_e03",
+        "s01_p0092_e04",
+        "s01_p0092_e05",
+        "s01_p0092_e06",
+        "s01_p0092_e07"
+      ],
+      "onset_sample": 2208000,
+      "packet_id": "s01_p0092",
+      "packet_index": 92,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        1
+      ],
+      "continuation_count": 0,
+      "event_ids": [
+        "s01_p0093_e00"
+      ],
+      "onset_sample": 2232000,
+      "packet_id": "s01_p0093",
+      "packet_index": 93,
+      "pulse_pattern_present": false,
+      "session_id": 1,
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        0
+      ],
+      "continuation_count": 7,
+      "event_ids": [
+        "s01_p0094_e00",
+        "s01_p0094_e01",
+        "s01_p0094_e02",
+        "s01_p0094_e03",
+        "s01_p0094_e04",
+        "s01_p0094_e05",
+        "s01_p0094_e06",
+        "s01_p0094_e07"
+      ],
+      "onset_sample": 2256000,
+      "packet_id": "s01_p0094",
+      "packet_index": 94,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "continuation_count": 6,
+      "event_ids": [
+        "s01_p0095_e00",
+        "s01_p0095_e01",
+        "s01_p0095_e02",
+        "s01_p0095_e03",
+        "s01_p0095_e04",
+        "s01_p0095_e05",
+        "s01_p0095_e06"
+      ],
+      "onset_sample": 2280000,
+      "packet_id": "s01_p0095",
+      "packet_index": 95,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        7,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "continuation_count": 7,
+      "event_ids": [
+        "s01_p0096_e00",
+        "s01_p0096_e01",
+        "s01_p0096_e02",
+        "s01_p0096_e03",
+        "s01_p0096_e04",
+        "s01_p0096_e05",
+        "s01_p0096_e06",
+        "s01_p0096_e07"
+      ],
+      "onset_sample": 2304000,
+      "packet_id": "s01_p0096",
+      "packet_index": 96,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "continuation_count": 3,
+      "event_ids": [
+        "s01_p0097_e00",
+        "s01_p0097_e01",
+        "s01_p0097_e02",
+        "s01_p0097_e03"
+      ],
+      "onset_sample": 2328000,
+      "packet_id": "s01_p0097",
+      "packet_index": 97,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        2,
+        2
+      ],
+      "continuation_count": 1,
+      "event_ids": [
+        "s01_p0098_e00",
+        "s01_p0098_e01"
+      ],
+      "onset_sample": 2352000,
+      "packet_id": "s01_p0098",
+      "packet_index": 98,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "two_impulse_burst"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        5,
+        6,
+        7,
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "continuation_count": 7,
+      "event_ids": [
+        "s01_p0099_e00",
+        "s01_p0099_e01",
+        "s01_p0099_e02",
+        "s01_p0099_e03",
+        "s01_p0099_e04",
+        "s01_p0099_e05",
+        "s01_p0099_e06",
+        "s01_p0099_e07"
+      ],
+      "onset_sample": 2376000,
+      "packet_id": "s01_p0099",
+      "packet_index": 99,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        1,
+        0,
+        3,
+        4,
+        2
+      ],
+      "continuation_count": 4,
+      "event_ids": [
+        "s01_p0100_e00",
+        "s01_p0100_e01",
+        "s01_p0100_e02",
+        "s01_p0100_e03",
+        "s01_p0100_e04"
+      ],
+      "onset_sample": 2400000,
+      "packet_id": "s01_p0100",
+      "packet_index": 100,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "scattered_packet"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        0,
+        1
+      ],
+      "continuation_count": 7,
+      "event_ids": [
+        "s01_p0101_e00",
+        "s01_p0101_e01",
+        "s01_p0101_e02",
+        "s01_p0101_e03",
+        "s01_p0101_e04",
+        "s01_p0101_e05",
+        "s01_p0101_e06",
+        "s01_p0101_e07"
+      ],
+      "onset_sample": 2424000,
+      "packet_id": "s01_p0101",
+      "packet_index": 101,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        6
+      ],
+      "continuation_count": 0,
+      "event_ids": [
+        "s01_p0102_e00"
+      ],
+      "onset_sample": 2448000,
+      "packet_id": "s01_p0102",
+      "packet_index": 102,
+      "pulse_pattern_present": false,
+      "session_id": 1,
+      "unit_grammar": "sweep_with_repeats"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        5,
+        6,
+        7,
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "continuation_count": 7,
+      "event_ids": [
+        "s01_p0103_e00",
+        "s01_p0103_e01",
+        "s01_p0103_e02",
+        "s01_p0103_e03",
+        "s01_p0103_e04",
+        "s01_p0103_e05",
+        "s01_p0103_e06",
+        "s01_p0103_e07"
+      ],
+      "onset_sample": 2472000,
+      "packet_id": "s01_p0103",
+      "packet_index": 103,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        3,
+        4,
+        5,
+        5,
+        6,
+        7,
+        0
+      ],
+      "continuation_count": 6,
+      "event_ids": [
+        "s01_p0104_e00",
+        "s01_p0104_e01",
+        "s01_p0104_e02",
+        "s01_p0104_e03",
+        "s01_p0104_e04",
+        "s01_p0104_e05",
+        "s01_p0104_e06"
+      ],
+      "onset_sample": 2496000,
+      "packet_id": "s01_p0104",
+      "packet_index": 104,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "sweep_with_repeats"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        2
+      ],
+      "continuation_count": 0,
+      "event_ids": [
+        "s01_p0105_e00"
+      ],
+      "onset_sample": 2520000,
+      "packet_id": "s01_p0105",
+      "packet_index": 105,
+      "pulse_pattern_present": false,
+      "session_id": 1,
+      "unit_grammar": "scattered_packet"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        0,
+        1,
+        2
+      ],
+      "continuation_count": 7,
+      "event_ids": [
+        "s01_p0106_e00",
+        "s01_p0106_e01",
+        "s01_p0106_e02",
+        "s01_p0106_e03",
+        "s01_p0106_e04",
+        "s01_p0106_e05",
+        "s01_p0106_e06",
+        "s01_p0106_e07"
+      ],
+      "onset_sample": 2544000,
+      "packet_id": "s01_p0106",
+      "packet_index": 106,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        2
+      ],
+      "continuation_count": 0,
+      "event_ids": [
+        "s01_p0107_e00"
+      ],
+      "onset_sample": 2568000,
+      "packet_id": "s01_p0107",
+      "packet_index": 107,
+      "pulse_pattern_present": false,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        0
+      ],
+      "continuation_count": 7,
+      "event_ids": [
+        "s01_p0108_e00",
+        "s01_p0108_e01",
+        "s01_p0108_e02",
+        "s01_p0108_e03",
+        "s01_p0108_e04",
+        "s01_p0108_e05",
+        "s01_p0108_e06",
+        "s01_p0108_e07"
+      ],
+      "onset_sample": 2592000,
+      "packet_id": "s01_p0108",
+      "packet_index": 108,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        1
+      ],
+      "continuation_count": 0,
+      "event_ids": [
+        "s01_p0109_e00"
+      ],
+      "onset_sample": 2616000,
+      "packet_id": "s01_p0109",
+      "packet_index": 109,
+      "pulse_pattern_present": false,
+      "session_id": 1,
+      "unit_grammar": "one_impulse_burst"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        4,
+        5,
+        6,
+        7,
+        0,
+        1
+      ],
+      "continuation_count": 5,
+      "event_ids": [
+        "s01_p0110_e00",
+        "s01_p0110_e01",
+        "s01_p0110_e02",
+        "s01_p0110_e03",
+        "s01_p0110_e04",
+        "s01_p0110_e05"
+      ],
+      "onset_sample": 2640000,
+      "packet_id": "s01_p0110",
+      "packet_index": 110,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        7
+      ],
+      "continuation_count": 0,
+      "event_ids": [
+        "s01_p0111_e00"
+      ],
+      "onset_sample": 2664000,
+      "packet_id": "s01_p0111",
+      "packet_index": 111,
+      "pulse_pattern_present": false,
+      "session_id": 1,
+      "unit_grammar": "scattered_packet"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        2
+      ],
+      "continuation_count": 0,
+      "event_ids": [
+        "s01_p0112_e00"
+      ],
+      "onset_sample": 2688000,
+      "packet_id": "s01_p0112",
+      "packet_index": 112,
+      "pulse_pattern_present": false,
+      "session_id": 1,
+      "unit_grammar": "scattered_packet"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        2,
+        3,
+        4,
+        4,
+        5,
+        6,
+        7
+      ],
+      "continuation_count": 6,
+      "event_ids": [
+        "s01_p0113_e00",
+        "s01_p0113_e01",
+        "s01_p0113_e02",
+        "s01_p0113_e03",
+        "s01_p0113_e04",
+        "s01_p0113_e05",
+        "s01_p0113_e06"
+      ],
+      "onset_sample": 2712000,
+      "packet_id": "s01_p0113",
+      "packet_index": 113,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "sweep_with_repeats"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        7,
+        2,
+        1
+      ],
+      "continuation_count": 2,
+      "event_ids": [
+        "s01_p0114_e00",
+        "s01_p0114_e01",
+        "s01_p0114_e02"
+      ],
+      "onset_sample": 2736000,
+      "packet_id": "s01_p0114",
+      "packet_index": 114,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "scattered_packet"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        2,
+        2,
+        2
+      ],
+      "continuation_count": 2,
+      "event_ids": [
+        "s01_p0115_e00",
+        "s01_p0115_e01",
+        "s01_p0115_e02"
+      ],
+      "onset_sample": 2760000,
+      "packet_id": "s01_p0115",
+      "packet_index": 115,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "three_impulse_burst"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "continuation_count": 3,
+      "event_ids": [
+        "s01_p0116_e00",
+        "s01_p0116_e01",
+        "s01_p0116_e02",
+        "s01_p0116_e03"
+      ],
+      "onset_sample": 2784000,
+      "packet_id": "s01_p0116",
+      "packet_index": 116,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        2,
+        3,
+        4,
+        4,
+        5,
+        6,
+        7
+      ],
+      "continuation_count": 6,
+      "event_ids": [
+        "s01_p0117_e00",
+        "s01_p0117_e01",
+        "s01_p0117_e02",
+        "s01_p0117_e03",
+        "s01_p0117_e04",
+        "s01_p0117_e05",
+        "s01_p0117_e06"
+      ],
+      "onset_sample": 2808000,
+      "packet_id": "s01_p0117",
+      "packet_index": 117,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "sweep_with_repeats"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        7
+      ],
+      "continuation_count": 0,
+      "event_ids": [
+        "s01_p0118_e00"
+      ],
+      "onset_sample": 2832000,
+      "packet_id": "s01_p0118",
+      "packet_index": 118,
+      "pulse_pattern_present": false,
+      "session_id": 1,
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "authority_references": [
+        "canonical_unit_grammar_terms"
+      ],
+      "channel_sequence": [
+        1,
+        2,
+        3,
+        3,
+        4,
+        5,
+        6
+      ],
+      "continuation_count": 6,
+      "event_ids": [
+        "s01_p0119_e00",
+        "s01_p0119_e01",
+        "s01_p0119_e02",
+        "s01_p0119_e03",
+        "s01_p0119_e04",
+        "s01_p0119_e05",
+        "s01_p0119_e06"
+      ],
+      "onset_sample": 2856000,
+      "packet_id": "s01_p0119",
+      "packet_index": 119,
+      "pulse_pattern_present": true,
+      "session_id": 1,
+      "unit_grammar": "sweep_with_repeats"
+    }
+  ],
+  "pulse_pattern_plan": {
+    "content_hash": "c0dfa3de4f49a0a3c76c8eb60acecf941f0963d1fbf72b5f2bf8fe58748af0ba",
+    "definition": "packet start followed by zero or more continuation events until the next packet start",
+    "packet_roles": [
+      {
+        "continuation_count": 7,
+        "packet_id": "s01_p0000",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 6,
+        "packet_id": "s01_p0001",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 2,
+        "packet_id": "s01_p0002",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 6,
+        "packet_id": "s01_p0003",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 0,
+        "packet_id": "s01_p0004",
+        "pulse_pattern_present": false
+      },
+      {
+        "continuation_count": 0,
+        "packet_id": "s01_p0005",
+        "pulse_pattern_present": false
+      },
+      {
+        "continuation_count": 0,
+        "packet_id": "s01_p0006",
+        "pulse_pattern_present": false
+      },
+      {
+        "continuation_count": 0,
+        "packet_id": "s01_p0007",
+        "pulse_pattern_present": false
+      },
+      {
+        "continuation_count": 3,
+        "packet_id": "s01_p0008",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 2,
+        "packet_id": "s01_p0009",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 7,
+        "packet_id": "s01_p0010",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 7,
+        "packet_id": "s01_p0011",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 7,
+        "packet_id": "s01_p0012",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 0,
+        "packet_id": "s01_p0013",
+        "pulse_pattern_present": false
+      },
+      {
+        "continuation_count": 7,
+        "packet_id": "s01_p0014",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 7,
+        "packet_id": "s01_p0015",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 0,
+        "packet_id": "s01_p0016",
+        "pulse_pattern_present": false
+      },
+      {
+        "continuation_count": 0,
+        "packet_id": "s01_p0017",
+        "pulse_pattern_present": false
+      },
+      {
+        "continuation_count": 7,
+        "packet_id": "s01_p0018",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 0,
+        "packet_id": "s01_p0019",
+        "pulse_pattern_present": false
+      },
+      {
+        "continuation_count": 7,
+        "packet_id": "s01_p0020",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 0,
+        "packet_id": "s01_p0021",
+        "pulse_pattern_present": false
+      },
+      {
+        "continuation_count": 6,
+        "packet_id": "s01_p0022",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 7,
+        "packet_id": "s01_p0023",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 6,
+        "packet_id": "s01_p0024",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 7,
+        "packet_id": "s01_p0025",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 3,
+        "packet_id": "s01_p0026",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 7,
+        "packet_id": "s01_p0027",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 2,
+        "packet_id": "s01_p0028",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 0,
+        "packet_id": "s01_p0029",
+        "pulse_pattern_present": false
+      },
+      {
+        "continuation_count": 7,
+        "packet_id": "s01_p0030",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 0,
+        "packet_id": "s01_p0031",
+        "pulse_pattern_present": false
+      },
+      {
+        "continuation_count": 6,
+        "packet_id": "s01_p0032",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 0,
+        "packet_id": "s01_p0033",
+        "pulse_pattern_present": false
+      },
+      {
+        "continuation_count": 1,
+        "packet_id": "s01_p0034",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 3,
+        "packet_id": "s01_p0035",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 5,
+        "packet_id": "s01_p0036",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 7,
+        "packet_id": "s01_p0037",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 2,
+        "packet_id": "s01_p0038",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 1,
+        "packet_id": "s01_p0039",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 1,
+        "packet_id": "s01_p0040",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 0,
+        "packet_id": "s01_p0041",
+        "pulse_pattern_present": false
+      },
+      {
+        "continuation_count": 7,
+        "packet_id": "s01_p0042",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 0,
+        "packet_id": "s01_p0043",
+        "pulse_pattern_present": false
+      },
+      {
+        "continuation_count": 7,
+        "packet_id": "s01_p0044",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 0,
+        "packet_id": "s01_p0045",
+        "pulse_pattern_present": false
+      },
+      {
+        "continuation_count": 0,
+        "packet_id": "s01_p0046",
+        "pulse_pattern_present": false
+      },
+      {
+        "continuation_count": 2,
+        "packet_id": "s01_p0047",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 7,
+        "packet_id": "s01_p0048",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 4,
+        "packet_id": "s01_p0049",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 6,
+        "packet_id": "s01_p0050",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 7,
+        "packet_id": "s01_p0051",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 3,
+        "packet_id": "s01_p0052",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 5,
+        "packet_id": "s01_p0053",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 5,
+        "packet_id": "s01_p0054",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 3,
+        "packet_id": "s01_p0055",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 4,
+        "packet_id": "s01_p0056",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 2,
+        "packet_id": "s01_p0057",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 2,
+        "packet_id": "s01_p0058",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 7,
+        "packet_id": "s01_p0059",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 0,
+        "packet_id": "s01_p0060",
+        "pulse_pattern_present": false
+      },
+      {
+        "continuation_count": 0,
+        "packet_id": "s01_p0061",
+        "pulse_pattern_present": false
+      },
+      {
+        "continuation_count": 4,
+        "packet_id": "s01_p0062",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 5,
+        "packet_id": "s01_p0063",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 1,
+        "packet_id": "s01_p0064",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 7,
+        "packet_id": "s01_p0065",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 6,
+        "packet_id": "s01_p0066",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 1,
+        "packet_id": "s01_p0067",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 4,
+        "packet_id": "s01_p0068",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 0,
+        "packet_id": "s01_p0069",
+        "pulse_pattern_present": false
+      },
+      {
+        "continuation_count": 4,
+        "packet_id": "s01_p0070",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 0,
+        "packet_id": "s01_p0071",
+        "pulse_pattern_present": false
+      },
+      {
+        "continuation_count": 3,
+        "packet_id": "s01_p0072",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 3,
+        "packet_id": "s01_p0073",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 0,
+        "packet_id": "s01_p0074",
+        "pulse_pattern_present": false
+      },
+      {
+        "continuation_count": 0,
+        "packet_id": "s01_p0075",
+        "pulse_pattern_present": false
+      },
+      {
+        "continuation_count": 2,
+        "packet_id": "s01_p0076",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 7,
+        "packet_id": "s01_p0077",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 6,
+        "packet_id": "s01_p0078",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 3,
+        "packet_id": "s01_p0079",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 0,
+        "packet_id": "s01_p0080",
+        "pulse_pattern_present": false
+      },
+      {
+        "continuation_count": 7,
+        "packet_id": "s01_p0081",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 0,
+        "packet_id": "s01_p0082",
+        "pulse_pattern_present": false
+      },
+      {
+        "continuation_count": 5,
+        "packet_id": "s01_p0083",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 7,
+        "packet_id": "s01_p0084",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 6,
+        "packet_id": "s01_p0085",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 7,
+        "packet_id": "s01_p0086",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 7,
+        "packet_id": "s01_p0087",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 0,
+        "packet_id": "s01_p0088",
+        "pulse_pattern_present": false
+      },
+      {
+        "continuation_count": 6,
+        "packet_id": "s01_p0089",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 0,
+        "packet_id": "s01_p0090",
+        "pulse_pattern_present": false
+      },
+      {
+        "continuation_count": 4,
+        "packet_id": "s01_p0091",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 7,
+        "packet_id": "s01_p0092",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 0,
+        "packet_id": "s01_p0093",
+        "pulse_pattern_present": false
+      },
+      {
+        "continuation_count": 7,
+        "packet_id": "s01_p0094",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 6,
+        "packet_id": "s01_p0095",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 7,
+        "packet_id": "s01_p0096",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 3,
+        "packet_id": "s01_p0097",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 1,
+        "packet_id": "s01_p0098",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 7,
+        "packet_id": "s01_p0099",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 4,
+        "packet_id": "s01_p0100",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 7,
+        "packet_id": "s01_p0101",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 0,
+        "packet_id": "s01_p0102",
+        "pulse_pattern_present": false
+      },
+      {
+        "continuation_count": 7,
+        "packet_id": "s01_p0103",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 6,
+        "packet_id": "s01_p0104",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 0,
+        "packet_id": "s01_p0105",
+        "pulse_pattern_present": false
+      },
+      {
+        "continuation_count": 7,
+        "packet_id": "s01_p0106",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 0,
+        "packet_id": "s01_p0107",
+        "pulse_pattern_present": false
+      },
+      {
+        "continuation_count": 7,
+        "packet_id": "s01_p0108",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 0,
+        "packet_id": "s01_p0109",
+        "pulse_pattern_present": false
+      },
+      {
+        "continuation_count": 5,
+        "packet_id": "s01_p0110",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 0,
+        "packet_id": "s01_p0111",
+        "pulse_pattern_present": false
+      },
+      {
+        "continuation_count": 0,
+        "packet_id": "s01_p0112",
+        "pulse_pattern_present": false
+      },
+      {
+        "continuation_count": 6,
+        "packet_id": "s01_p0113",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 2,
+        "packet_id": "s01_p0114",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 2,
+        "packet_id": "s01_p0115",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 3,
+        "packet_id": "s01_p0116",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 6,
+        "packet_id": "s01_p0117",
+        "pulse_pattern_present": true
+      },
+      {
+        "continuation_count": 0,
+        "packet_id": "s01_p0118",
+        "pulse_pattern_present": false
+      },
+      {
+        "continuation_count": 6,
+        "packet_id": "s01_p0119",
+        "pulse_pattern_present": true
+      }
+    ],
+    "schema_version": "wge.pulse_pattern_plan.v1"
+  },
+  "schema_version": "wge.packet_plan.v1"
+}

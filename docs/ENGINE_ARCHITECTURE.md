@@ -1,16 +1,13 @@
 # Engine Architecture
 
-WGE-2 adds a read-only authority boundary beneath the WGE-1 profile system:
+WGE-3 adds deterministic metadata planning above the WGE-2 identity bank:
 
-`Interchange authority → hash gate → Frozen Motif Bank → Exact Identity Access`
+`Authority → Source Profile → Delivery Preset → Planning Snapshot → common stage pipeline → validated diagnostic plans`
 
-The bank verifies the whole archive before waveform access and returns immutable
-copies with identity metadata. Exact access bypasses transforms and randomness.
-Metrics and calibration preflight inspect values without persisting altered
-arrays.
+One pipeline serves Baseline, Dense, and Complex registrations. Baseline is
+implemented; Dense and Complex return a structured unsupported-mode error.
 
-The future flow remains:
-
-`Source Profile → SessionPackPlan → SessionPlan → RenderPlan → Exporter`
-
-None of those planning or output stages is implemented in WGE-2.
+Planning uses identity-index metadata rather than waveform samples. The event
+plan contains sample-aligned timing, logical channels, grammar, roles, exact
+motif IDs and hashes, and neutral relative-gain metadata. It is explicitly
+non-executable for rendering.

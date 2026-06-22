@@ -1,30 +1,28 @@
 # Wave Generator Engine
 
-Version 0.3.0 implements WGE-2: secure, read-only access to the Frozen Alpha
-Motif Corpus and non-rendering calibration preflight.
+Version 0.4.0 implements WGE-3: deterministic, metadata-only Baseline Mode
+planning and diagnostic graphs.
 
-The archive is resolved only through included Tier 0 Interchange authority. Its
-whole-file SHA-256 is verified before `np.load(..., allow_pickle=False)` is
-entered. All 84 IDs, order positions, shapes, dtypes, and per-motif hashes are
-validated. Returned authoritative arrays are immutable.
+The committed diagnostic run follows one common pipeline:
+
+`Run Request → profile and preset → planning snapshot → macro state → packet grammar → Pulse Pattern → channel grammar → exact motif selection → EventPlan → validation → diagnostics`
+
+Session 1 receives Baseline Mode through X-Alpha Standard profile data. The
+planner never branches on Session 1. Dense and Complex Mode are registered but
+fail closed as unsupported in WGE-3.
 
 ```bash
-wge validate-interchange
-wge profiles validate
-wge motifs validate
-wge motifs list --json
-wge motifs show medoid_64_000 --json
-wge motifs verify-exact medoid_64_000 --json
-wge motifs summarize --json
-wge calibration inspect --json
-wge calibration preflight --json
+wge plans build --request examples/run_requests/x_alpha_session1_diagnostic_60s.json
+wge plans validate runs/latest/session_pack_plan.json
+wge runs show latest --json
+wge diagnostics generate --plan runs/latest
 ```
 
-Exact Identity Access is a direct no-op lookup, not a renderer or transform. It
-uses no randomness, normalization, gain, resampling, conversion, or operation
-pipeline. Motif metrics and calibration projections are diagnostics only.
+`runs/latest` contains plans, CSV, diagnostic JSON, and PNG figures only. Events
+reference exact frozen motif identities; no waveform samples are embedded or
+accessed during planning. Focus Role target `2` is explicit and run-specific,
+not a profile default.
 
-WGE-2 creates no plans or audio. No scheduler, renderer, transform executor,
-WAV exporter, playback JSON exporter, or generator exists. X-Alpha Standard
-remains locked and non-executable. The first audible render is planned for
-WGE-4; WGE-3 has not started.
+No renderer, audio exporter, transform executor, WAV, playback JSON, or audio
+buffer exists. Headroom is not certified before waveform render and overlap
+summation. WGE-4 will produce the first audible diagnostic render.

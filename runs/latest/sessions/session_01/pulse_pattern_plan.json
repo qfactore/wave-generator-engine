@@ -1,0 +1,607 @@
+{
+  "content_hash": "c0dfa3de4f49a0a3c76c8eb60acecf941f0963d1fbf72b5f2bf8fe58748af0ba",
+  "definition": "packet start followed by zero or more continuation events until the next packet start",
+  "packet_roles": [
+    {
+      "continuation_count": 7,
+      "packet_id": "s01_p0000",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 6,
+      "packet_id": "s01_p0001",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 2,
+      "packet_id": "s01_p0002",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 6,
+      "packet_id": "s01_p0003",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 0,
+      "packet_id": "s01_p0004",
+      "pulse_pattern_present": false
+    },
+    {
+      "continuation_count": 0,
+      "packet_id": "s01_p0005",
+      "pulse_pattern_present": false
+    },
+    {
+      "continuation_count": 0,
+      "packet_id": "s01_p0006",
+      "pulse_pattern_present": false
+    },
+    {
+      "continuation_count": 0,
+      "packet_id": "s01_p0007",
+      "pulse_pattern_present": false
+    },
+    {
+      "continuation_count": 3,
+      "packet_id": "s01_p0008",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 2,
+      "packet_id": "s01_p0009",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 7,
+      "packet_id": "s01_p0010",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 7,
+      "packet_id": "s01_p0011",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 7,
+      "packet_id": "s01_p0012",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 0,
+      "packet_id": "s01_p0013",
+      "pulse_pattern_present": false
+    },
+    {
+      "continuation_count": 7,
+      "packet_id": "s01_p0014",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 7,
+      "packet_id": "s01_p0015",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 0,
+      "packet_id": "s01_p0016",
+      "pulse_pattern_present": false
+    },
+    {
+      "continuation_count": 0,
+      "packet_id": "s01_p0017",
+      "pulse_pattern_present": false
+    },
+    {
+      "continuation_count": 7,
+      "packet_id": "s01_p0018",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 0,
+      "packet_id": "s01_p0019",
+      "pulse_pattern_present": false
+    },
+    {
+      "continuation_count": 7,
+      "packet_id": "s01_p0020",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 0,
+      "packet_id": "s01_p0021",
+      "pulse_pattern_present": false
+    },
+    {
+      "continuation_count": 6,
+      "packet_id": "s01_p0022",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 7,
+      "packet_id": "s01_p0023",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 6,
+      "packet_id": "s01_p0024",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 7,
+      "packet_id": "s01_p0025",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 3,
+      "packet_id": "s01_p0026",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 7,
+      "packet_id": "s01_p0027",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 2,
+      "packet_id": "s01_p0028",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 0,
+      "packet_id": "s01_p0029",
+      "pulse_pattern_present": false
+    },
+    {
+      "continuation_count": 7,
+      "packet_id": "s01_p0030",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 0,
+      "packet_id": "s01_p0031",
+      "pulse_pattern_present": false
+    },
+    {
+      "continuation_count": 6,
+      "packet_id": "s01_p0032",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 0,
+      "packet_id": "s01_p0033",
+      "pulse_pattern_present": false
+    },
+    {
+      "continuation_count": 1,
+      "packet_id": "s01_p0034",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 3,
+      "packet_id": "s01_p0035",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 5,
+      "packet_id": "s01_p0036",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 7,
+      "packet_id": "s01_p0037",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 2,
+      "packet_id": "s01_p0038",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 1,
+      "packet_id": "s01_p0039",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 1,
+      "packet_id": "s01_p0040",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 0,
+      "packet_id": "s01_p0041",
+      "pulse_pattern_present": false
+    },
+    {
+      "continuation_count": 7,
+      "packet_id": "s01_p0042",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 0,
+      "packet_id": "s01_p0043",
+      "pulse_pattern_present": false
+    },
+    {
+      "continuation_count": 7,
+      "packet_id": "s01_p0044",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 0,
+      "packet_id": "s01_p0045",
+      "pulse_pattern_present": false
+    },
+    {
+      "continuation_count": 0,
+      "packet_id": "s01_p0046",
+      "pulse_pattern_present": false
+    },
+    {
+      "continuation_count": 2,
+      "packet_id": "s01_p0047",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 7,
+      "packet_id": "s01_p0048",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 4,
+      "packet_id": "s01_p0049",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 6,
+      "packet_id": "s01_p0050",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 7,
+      "packet_id": "s01_p0051",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 3,
+      "packet_id": "s01_p0052",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 5,
+      "packet_id": "s01_p0053",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 5,
+      "packet_id": "s01_p0054",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 3,
+      "packet_id": "s01_p0055",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 4,
+      "packet_id": "s01_p0056",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 2,
+      "packet_id": "s01_p0057",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 2,
+      "packet_id": "s01_p0058",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 7,
+      "packet_id": "s01_p0059",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 0,
+      "packet_id": "s01_p0060",
+      "pulse_pattern_present": false
+    },
+    {
+      "continuation_count": 0,
+      "packet_id": "s01_p0061",
+      "pulse_pattern_present": false
+    },
+    {
+      "continuation_count": 4,
+      "packet_id": "s01_p0062",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 5,
+      "packet_id": "s01_p0063",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 1,
+      "packet_id": "s01_p0064",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 7,
+      "packet_id": "s01_p0065",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 6,
+      "packet_id": "s01_p0066",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 1,
+      "packet_id": "s01_p0067",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 4,
+      "packet_id": "s01_p0068",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 0,
+      "packet_id": "s01_p0069",
+      "pulse_pattern_present": false
+    },
+    {
+      "continuation_count": 4,
+      "packet_id": "s01_p0070",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 0,
+      "packet_id": "s01_p0071",
+      "pulse_pattern_present": false
+    },
+    {
+      "continuation_count": 3,
+      "packet_id": "s01_p0072",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 3,
+      "packet_id": "s01_p0073",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 0,
+      "packet_id": "s01_p0074",
+      "pulse_pattern_present": false
+    },
+    {
+      "continuation_count": 0,
+      "packet_id": "s01_p0075",
+      "pulse_pattern_present": false
+    },
+    {
+      "continuation_count": 2,
+      "packet_id": "s01_p0076",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 7,
+      "packet_id": "s01_p0077",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 6,
+      "packet_id": "s01_p0078",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 3,
+      "packet_id": "s01_p0079",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 0,
+      "packet_id": "s01_p0080",
+      "pulse_pattern_present": false
+    },
+    {
+      "continuation_count": 7,
+      "packet_id": "s01_p0081",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 0,
+      "packet_id": "s01_p0082",
+      "pulse_pattern_present": false
+    },
+    {
+      "continuation_count": 5,
+      "packet_id": "s01_p0083",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 7,
+      "packet_id": "s01_p0084",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 6,
+      "packet_id": "s01_p0085",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 7,
+      "packet_id": "s01_p0086",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 7,
+      "packet_id": "s01_p0087",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 0,
+      "packet_id": "s01_p0088",
+      "pulse_pattern_present": false
+    },
+    {
+      "continuation_count": 6,
+      "packet_id": "s01_p0089",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 0,
+      "packet_id": "s01_p0090",
+      "pulse_pattern_present": false
+    },
+    {
+      "continuation_count": 4,
+      "packet_id": "s01_p0091",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 7,
+      "packet_id": "s01_p0092",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 0,
+      "packet_id": "s01_p0093",
+      "pulse_pattern_present": false
+    },
+    {
+      "continuation_count": 7,
+      "packet_id": "s01_p0094",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 6,
+      "packet_id": "s01_p0095",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 7,
+      "packet_id": "s01_p0096",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 3,
+      "packet_id": "s01_p0097",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 1,
+      "packet_id": "s01_p0098",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 7,
+      "packet_id": "s01_p0099",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 4,
+      "packet_id": "s01_p0100",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 7,
+      "packet_id": "s01_p0101",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 0,
+      "packet_id": "s01_p0102",
+      "pulse_pattern_present": false
+    },
+    {
+      "continuation_count": 7,
+      "packet_id": "s01_p0103",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 6,
+      "packet_id": "s01_p0104",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 0,
+      "packet_id": "s01_p0105",
+      "pulse_pattern_present": false
+    },
+    {
+      "continuation_count": 7,
+      "packet_id": "s01_p0106",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 0,
+      "packet_id": "s01_p0107",
+      "pulse_pattern_present": false
+    },
+    {
+      "continuation_count": 7,
+      "packet_id": "s01_p0108",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 0,
+      "packet_id": "s01_p0109",
+      "pulse_pattern_present": false
+    },
+    {
+      "continuation_count": 5,
+      "packet_id": "s01_p0110",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 0,
+      "packet_id": "s01_p0111",
+      "pulse_pattern_present": false
+    },
+    {
+      "continuation_count": 0,
+      "packet_id": "s01_p0112",
+      "pulse_pattern_present": false
+    },
+    {
+      "continuation_count": 6,
+      "packet_id": "s01_p0113",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 2,
+      "packet_id": "s01_p0114",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 2,
+      "packet_id": "s01_p0115",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 3,
+      "packet_id": "s01_p0116",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 6,
+      "packet_id": "s01_p0117",
+      "pulse_pattern_present": true
+    },
+    {
+      "continuation_count": 0,
+      "packet_id": "s01_p0118",
+      "pulse_pattern_present": false
+    },
+    {
+      "continuation_count": 6,
+      "packet_id": "s01_p0119",
+      "pulse_pattern_present": true
+    }
+  ],
+  "schema_version": "wge.pulse_pattern_plan.v1"
+}

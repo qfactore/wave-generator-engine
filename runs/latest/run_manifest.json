@@ -1,0 +1,19 @@
+{
+  "analysis_report_only": true,
+  "audio_directory_created": false,
+  "content_hash": "24c214bb35baac18409590ba5bb92c3581efb5fdd4721a73e939e49e29d156ba",
+  "core_hashes": {
+    "event_plan": "7b2be3a9c6c7cfa729bcf9e7c84f460240788d0909a3e71afb2c17c60b713934",
+    "macro_state_plan": "f84904cb6ca7da36b85b6a38b66894f5cc815bdeef67ec0ea2dee1c6c21c0cfe",
+    "packet_plan": "d42f201cfbc38550d361a2f0f1c8af9712e5763e25591af857cb2f2bcf2974b0",
+    "planning_profile": "fd70a235141d344ee3b28527ea2a53a1dbf5328e819e0c9edfb9e559759582fa",
+    "request": "f48463a12b8973542a3483bcf477fba61019240d91dcd851d2f628ce8939fbb3",
+    "session_pack_plan": "a0146da3e85d323e8da2469a00b3c4046c93c9ad64d2ae93d308038a01f7aff7",
+    "session_plan": "bfe20741356a067f0ef928ecb7b45f72b1577b513d7184f9e4ef6d129901d26d",
+    "validation_report": "42a8d3f341e6261c91e48672a3c45fd52763ae76a9a64e441bf3c58394ee8969"
+  },
+  "diagnostic_manifest_hash": "b63737075d1d2db6d05bf6b742856ba70f85248f186172d32ada9085d674224f",
+  "headroom_status": "not_certified_without_waveform_render_and_overlap_sum",
+  "run_id": "x_alpha_session1_diagnostic_60s",
+  "schema_version": "wge.run_manifest.v1"
+}

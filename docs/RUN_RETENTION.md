@@ -1,10 +1,10 @@
 # Run Retention
 
-Future policy:
+`runs/latest` is atomically replaced scratch output. `runs/saved/<safe-id>` is
+created only with an explicit safe identifier and refuses overwrite unless
+requested. Path traversal is rejected.
 
-- `runs/latest`: overwritten scratch preview.
-- `runs/saved`: explicitly retained runs.
-- `runs/archived`: historical retained runs.
-
-Saved runs will snapshot source profile, delivery preset, selected sessions,
-resolved plan, validation, and provenance. WGE-0 has no operational run handling.
+Each run snapshots the request, authority, source profile, delivery preset,
+planning profile, core plans, validation, diagnostic manifest, raw arrays, and
+figures. WGE-3 creates no audio directory. Archived-run lifecycle remains future
+work.

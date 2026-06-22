@@ -85,6 +85,39 @@ def build_parser() -> argparse.ArgumentParser:
         command = calibration_commands.add_parser(name)
         command.add_argument("--interchange-dir", type=Path)
         _json_flag(command)
+
+    plans = commands.add_parser("plans")
+    plan_commands = plans.add_subparsers(dest="plan_command", required=True)
+    plan_build = plan_commands.add_parser("build")
+    plan_build.add_argument("--request", type=Path, required=True)
+    plan_build.add_argument("--output", choices=["latest"], default="latest")
+    plan_build.add_argument("--save-as")
+    plan_build.add_argument("--overwrite", action="store_true")
+    plan_build.add_argument("--interchange-dir", type=Path)
+    plan_build.add_argument("--runs-dir", type=Path)
+    _json_flag(plan_build)
+    for name in ("validate", "show"):
+        command = plan_commands.add_parser(name)
+        command.add_argument("path", type=Path)
+        _json_flag(command)
+
+    diagnostics = commands.add_parser("diagnostics")
+    diagnostic_commands = diagnostics.add_subparsers(
+        dest="diagnostic_command", required=True
+    )
+    diagnostic_generate = diagnostic_commands.add_parser("generate")
+    diagnostic_generate.add_argument("--plan", type=Path, required=True)
+    _json_flag(diagnostic_generate)
+
+    runs = commands.add_parser("runs")
+    run_commands = runs.add_subparsers(dest="run_command", required=True)
+    run_show = run_commands.add_parser("show")
+    run_show.add_argument("run_id")
+    run_show.add_argument("--runs-dir", type=Path)
+    _json_flag(run_show)
+    run_list = run_commands.add_parser("list")
+    run_list.add_argument("--runs-dir", type=Path)
+    _json_flag(run_list)
     return parser
 
 
@@ -198,6 +231,77 @@ def _calibration_command(args: argparse.Namespace) -> int:
     return 0
 
 
+def _plan_command(args: argparse.Namespace) -> int:
+    from wave_generator_engine.planning.service import PlanningService
+    from wave_generator_engine.runs.storage import RunStorage
+    from wave_generator_engine.profiles.hashing import validate_content_hash
+
+    if args.plan_command == "build":
+        result = PlanningService(args.interchange_dir).build_file(args.request)
+        storage = RunStorage(args.runs_dir)
+        target = (
+            storage.write_saved(args.save_as, result, args.overwrite)
+            if args.save_as else storage.write_latest(result)
+        )
+        _emit({
+            "valid": True,
+            "run": target.name if not args.save_as else f"saved/{args.save_as}",
+            "core_hashes": PlanningService.core_hashes(result),
+            "executable_for_rendering": False,
+        }, args.json_output)
+        return 0
+    document = json.loads(args.path.read_text(encoding="utf-8"))
+    if args.plan_command == "validate":
+        if not validate_content_hash(document):
+            raise ValidationFailure("Plan content hash mismatch")
+        _emit({"valid": True, "content_hash": document["content_hash"]}, args.json_output)
+    else:
+        _emit(document, args.json_output)
+    return 0
+
+
+def _load_result_from_run(path: Path):
+    from wave_generator_engine.planning.models import PlanningResult
+    session_dirs = sorted((path / "sessions").glob("session_*"))
+    if len(session_dirs) != 1:
+        raise ValidationFailure("WGE-3 diagnostic run must contain one session")
+    session = session_dirs[0]
+    load = lambda p: json.loads(p.read_text(encoding="utf-8"))
+    return PlanningResult(
+        load(path / "request.json"),
+        load(path / "authority_snapshot.json"),
+        load(path / "source_profile_snapshot.json"),
+        load(path / "delivery_preset_snapshot.json"),
+        load(path / "planning_profile_snapshot.json"),
+        load(path / "session_pack_plan.json"),
+        load(session / "session_plan.json"),
+        load(session / "macro_state_plan.json"),
+        load(session / "packet_plan.json"),
+        load(session / "event_plan.json"),
+        load(session / "validation_report.json"),
+    )
+
+
+def _diagnostic_command(args: argparse.Namespace) -> int:
+    from wave_generator_engine.diagnostics.service import generate_diagnostics
+    result = _load_result_from_run(args.plan)
+    manifest = generate_diagnostics(result, args.plan / "diagnostics")
+    _emit(manifest, args.json_output)
+    return 0
+
+
+def _run_command(args: argparse.Namespace) -> int:
+    from wave_generator_engine.runs.storage import RunStorage
+    storage = RunStorage(args.runs_dir)
+    if args.run_command == "list":
+        _emit(storage.list_runs(), args.json_output)
+    else:
+        path = storage.resolve(args.run_id)
+        manifest = json.loads((path / "run_manifest.json").read_text())
+        _emit(manifest, args.json_output)
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     try:
@@ -221,6 +325,12 @@ def main(argv: list[str] | None = None) -> int:
             return _motif_command(args)
         if args.command == "calibration":
             return _calibration_command(args)
+        if args.command == "plans":
+            return _plan_command(args)
+        if args.command == "diagnostics":
+            return _diagnostic_command(args)
+        if args.command == "runs":
+            return _run_command(args)
     except WGEError as exc:
         if args.command == "validate-interchange":
             write_failure_report(args.report_dir, exc)

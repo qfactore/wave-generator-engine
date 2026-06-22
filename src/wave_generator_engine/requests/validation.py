@@ -38,6 +38,11 @@ def validate_run_request(document: dict[str, Any], registry: Registry) -> dict[s
         if document["focus_role_override"]["target_logical_channel"] not in \
                 profile["channel_topology"]["logical_channel_ids"]:
             raise ValidationFailure("Focus Role target is not a logical channel")
+    if document.get("focus_role_target") is not None:
+        if document["requested_export_target"] != "analysis_report":
+            raise ValidationFailure("Run-specific Focus Role target is diagnostic-only")
+        if document["focus_role_target"] not in profile["channel_topology"]["logical_channel_ids"]:
+            raise ValidationFailure("Focus Role target is not a logical channel")
     if document.get("motif_time_scale_ratio") is not None or \
             document.get("carrier_frequency_hz") is not None:
         raise ValidationFailure("Exact profiles reject timing and carrier overrides")

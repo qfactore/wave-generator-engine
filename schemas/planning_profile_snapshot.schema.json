@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","required":["schema_version","snapshot_id","mode","authority_snapshot","numeric_guidance_used","provisional_defaults","content_hash"],"properties":{"schema_version":{"const":"wge.planning_profile_snapshot.v1"},"mode":{"const":"baseline"},"content_hash":{"type":"string","pattern":"^[0-9a-f]{64}$"}}}

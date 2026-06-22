@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","required":["schema_version","manifest_id","label","raw_files","figure_files","waveform_access_required","content_hash"],"properties":{"schema_version":{"const":"wge.diagnostic_manifest.v1"},"waveform_access_required":{"const":false},"content_hash":{"type":"string","pattern":"^[0-9a-f]{64}$"}}}

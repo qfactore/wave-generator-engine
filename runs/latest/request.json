@@ -1,0 +1,20 @@
+{
+  "carrier_frequency_hz": null,
+  "delivery_preset_id": "diagnostic_60s_v1",
+  "focus_role_target": 2,
+  "motif_time_scale_ratio": null,
+  "notes": [
+    "Focus Role target is run-specific and does not become a profile default."
+  ],
+  "playback_default_override": null,
+  "random_seed": null,
+  "request_id": "x_alpha_session1_diagnostic_60s",
+  "requested_duration_seconds": 60,
+  "requested_export_target": "analysis_report",
+  "root_seed": 20260622,
+  "schema_version": "wge.run_request.v1",
+  "selected_session_ids": [
+    1
+  ],
+  "source_profile_id": "x_alpha_standard_v1"
+}

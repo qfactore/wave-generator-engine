@@ -1,0 +1,1275 @@
+{
+  "channel_convention": "zero_based_0_7",
+  "content_hash": "d80aa8a6f2ee48d9a7b82675feb79979ad175abff950590f9c1ad38daf45124a",
+  "schema_version": "wge.channel_unit_plan.v1",
+  "units": [
+    {
+      "channel_sequence": [
+        5,
+        6,
+        7,
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "packet_id": "s01_p0000",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        3,
+        4,
+        5,
+        5,
+        6,
+        7,
+        0
+      ],
+      "packet_id": "s01_p0001",
+      "unit_grammar": "sweep_with_repeats"
+    },
+    {
+      "channel_sequence": [
+        3,
+        3,
+        3
+      ],
+      "packet_id": "s01_p0002",
+      "unit_grammar": "three_impulse_burst"
+    },
+    {
+      "channel_sequence": [
+        6,
+        7,
+        0,
+        0,
+        1,
+        2,
+        3
+      ],
+      "packet_id": "s01_p0003",
+      "unit_grammar": "sweep_with_repeats"
+    },
+    {
+      "channel_sequence": [
+        4
+      ],
+      "packet_id": "s01_p0004",
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "channel_sequence": [
+        2
+      ],
+      "packet_id": "s01_p0005",
+      "unit_grammar": "sweep_with_repeats"
+    },
+    {
+      "channel_sequence": [
+        2
+      ],
+      "packet_id": "s01_p0006",
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "channel_sequence": [
+        2
+      ],
+      "packet_id": "s01_p0007",
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "channel_sequence": [
+        7,
+        4,
+        2,
+        5
+      ],
+      "packet_id": "s01_p0008",
+      "unit_grammar": "scattered_packet"
+    },
+    {
+      "channel_sequence": [
+        5,
+        5,
+        5
+      ],
+      "packet_id": "s01_p0009",
+      "unit_grammar": "three_impulse_burst"
+    },
+    {
+      "channel_sequence": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        0,
+        1,
+        2
+      ],
+      "packet_id": "s01_p0010",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        0,
+        1,
+        2
+      ],
+      "packet_id": "s01_p0011",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "packet_id": "s01_p0012",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        6
+      ],
+      "packet_id": "s01_p0013",
+      "unit_grammar": "sweep_with_repeats"
+    },
+    {
+      "channel_sequence": [
+        6,
+        7,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "packet_id": "s01_p0014",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        5,
+        6,
+        7,
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "packet_id": "s01_p0015",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        7
+      ],
+      "packet_id": "s01_p0016",
+      "unit_grammar": "three_impulse_burst"
+    },
+    {
+      "channel_sequence": [
+        0
+      ],
+      "packet_id": "s01_p0017",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        0,
+        1,
+        2
+      ],
+      "packet_id": "s01_p0018",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        2
+      ],
+      "packet_id": "s01_p0019",
+      "unit_grammar": "scattered_packet"
+    },
+    {
+      "channel_sequence": [
+        6,
+        7,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "packet_id": "s01_p0020",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        2
+      ],
+      "packet_id": "s01_p0021",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        5,
+        6,
+        7,
+        7,
+        0,
+        1,
+        2
+      ],
+      "packet_id": "s01_p0022",
+      "unit_grammar": "sweep_with_repeats"
+    },
+    {
+      "channel_sequence": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        0
+      ],
+      "packet_id": "s01_p0023",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        7,
+        0,
+        1,
+        1,
+        2,
+        3,
+        4
+      ],
+      "packet_id": "s01_p0024",
+      "unit_grammar": "sweep_with_repeats"
+    },
+    {
+      "channel_sequence": [
+        6,
+        7,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "packet_id": "s01_p0025",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        5,
+        7,
+        1,
+        3
+      ],
+      "packet_id": "s01_p0026",
+      "unit_grammar": "scattered_packet"
+    },
+    {
+      "channel_sequence": [
+        5,
+        6,
+        7,
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "packet_id": "s01_p0027",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        4,
+        4,
+        4
+      ],
+      "packet_id": "s01_p0028",
+      "unit_grammar": "three_impulse_burst"
+    },
+    {
+      "channel_sequence": [
+        7
+      ],
+      "packet_id": "s01_p0029",
+      "unit_grammar": "one_impulse_burst"
+    },
+    {
+      "channel_sequence": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        0,
+        1,
+        2
+      ],
+      "packet_id": "s01_p0030",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        0
+      ],
+      "packet_id": "s01_p0031",
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "channel_sequence": [
+        4,
+        5,
+        6,
+        6,
+        7,
+        0,
+        1
+      ],
+      "packet_id": "s01_p0032",
+      "unit_grammar": "sweep_with_repeats"
+    },
+    {
+      "channel_sequence": [
+        5
+      ],
+      "packet_id": "s01_p0033",
+      "unit_grammar": "sweep_with_repeats"
+    },
+    {
+      "channel_sequence": [
+        0,
+        0
+      ],
+      "packet_id": "s01_p0034",
+      "unit_grammar": "two_impulse_burst"
+    },
+    {
+      "channel_sequence": [
+        2,
+        4,
+        5,
+        7
+      ],
+      "packet_id": "s01_p0035",
+      "unit_grammar": "scattered_packet"
+    },
+    {
+      "channel_sequence": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "packet_id": "s01_p0036",
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "channel_sequence": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        0,
+        1
+      ],
+      "packet_id": "s01_p0037",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        4,
+        4,
+        4
+      ],
+      "packet_id": "s01_p0038",
+      "unit_grammar": "three_impulse_burst"
+    },
+    {
+      "channel_sequence": [
+        5,
+        5
+      ],
+      "packet_id": "s01_p0039",
+      "unit_grammar": "two_impulse_burst"
+    },
+    {
+      "channel_sequence": [
+        2,
+        2
+      ],
+      "packet_id": "s01_p0040",
+      "unit_grammar": "two_impulse_burst"
+    },
+    {
+      "channel_sequence": [
+        4
+      ],
+      "packet_id": "s01_p0041",
+      "unit_grammar": "two_impulse_burst"
+    },
+    {
+      "channel_sequence": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        0,
+        1
+      ],
+      "packet_id": "s01_p0042",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        2
+      ],
+      "packet_id": "s01_p0043",
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "channel_sequence": [
+        6,
+        7,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "packet_id": "s01_p0044",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        7
+      ],
+      "packet_id": "s01_p0045",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        6
+      ],
+      "packet_id": "s01_p0046",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        5,
+        1,
+        4
+      ],
+      "packet_id": "s01_p0047",
+      "unit_grammar": "scattered_packet"
+    },
+    {
+      "channel_sequence": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        0
+      ],
+      "packet_id": "s01_p0048",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        6,
+        1,
+        0,
+        5,
+        1
+      ],
+      "packet_id": "s01_p0049",
+      "unit_grammar": "scattered_packet"
+    },
+    {
+      "channel_sequence": [
+        7,
+        0,
+        1,
+        1,
+        2,
+        3,
+        4
+      ],
+      "packet_id": "s01_p0050",
+      "unit_grammar": "sweep_with_repeats"
+    },
+    {
+      "channel_sequence": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        0,
+        1
+      ],
+      "packet_id": "s01_p0051",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "packet_id": "s01_p0052",
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "channel_sequence": [
+        4,
+        5,
+        6,
+        7,
+        0,
+        1
+      ],
+      "packet_id": "s01_p0053",
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "channel_sequence": [
+        5,
+        6,
+        7,
+        0,
+        1,
+        2
+      ],
+      "packet_id": "s01_p0054",
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "channel_sequence": [
+        7,
+        0,
+        1,
+        2
+      ],
+      "packet_id": "s01_p0055",
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "channel_sequence": [
+        1,
+        3,
+        1,
+        2,
+        6
+      ],
+      "packet_id": "s01_p0056",
+      "unit_grammar": "scattered_packet"
+    },
+    {
+      "channel_sequence": [
+        1,
+        2,
+        3
+      ],
+      "packet_id": "s01_p0057",
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "channel_sequence": [
+        1,
+        3,
+        2
+      ],
+      "packet_id": "s01_p0058",
+      "unit_grammar": "scattered_packet"
+    },
+    {
+      "channel_sequence": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        0,
+        1,
+        2
+      ],
+      "packet_id": "s01_p0059",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        2
+      ],
+      "packet_id": "s01_p0060",
+      "unit_grammar": "scattered_packet"
+    },
+    {
+      "channel_sequence": [
+        4
+      ],
+      "packet_id": "s01_p0061",
+      "unit_grammar": "one_impulse_burst"
+    },
+    {
+      "channel_sequence": [
+        4,
+        5,
+        6,
+        7,
+        0
+      ],
+      "packet_id": "s01_p0062",
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "channel_sequence": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "packet_id": "s01_p0063",
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "channel_sequence": [
+        6,
+        6
+      ],
+      "packet_id": "s01_p0064",
+      "unit_grammar": "two_impulse_burst"
+    },
+    {
+      "channel_sequence": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        0,
+        1
+      ],
+      "packet_id": "s01_p0065",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        0,
+        1,
+        2,
+        2,
+        3,
+        4,
+        5
+      ],
+      "packet_id": "s01_p0066",
+      "unit_grammar": "sweep_with_repeats"
+    },
+    {
+      "channel_sequence": [
+        4,
+        4
+      ],
+      "packet_id": "s01_p0067",
+      "unit_grammar": "two_impulse_burst"
+    },
+    {
+      "channel_sequence": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "packet_id": "s01_p0068",
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "channel_sequence": [
+        5
+      ],
+      "packet_id": "s01_p0069",
+      "unit_grammar": "sweep_with_repeats"
+    },
+    {
+      "channel_sequence": [
+        5,
+        1,
+        0,
+        1,
+        5
+      ],
+      "packet_id": "s01_p0070",
+      "unit_grammar": "scattered_packet"
+    },
+    {
+      "channel_sequence": [
+        7
+      ],
+      "packet_id": "s01_p0071",
+      "unit_grammar": "one_impulse_burst"
+    },
+    {
+      "channel_sequence": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "packet_id": "s01_p0072",
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "channel_sequence": [
+        3,
+        5,
+        7,
+        6
+      ],
+      "packet_id": "s01_p0073",
+      "unit_grammar": "scattered_packet"
+    },
+    {
+      "channel_sequence": [
+        1
+      ],
+      "packet_id": "s01_p0074",
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "channel_sequence": [
+        4
+      ],
+      "packet_id": "s01_p0075",
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "channel_sequence": [
+        0,
+        0,
+        0
+      ],
+      "packet_id": "s01_p0076",
+      "unit_grammar": "three_impulse_burst"
+    },
+    {
+      "channel_sequence": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        0
+      ],
+      "packet_id": "s01_p0077",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        6,
+        7,
+        0,
+        0,
+        1,
+        2,
+        3
+      ],
+      "packet_id": "s01_p0078",
+      "unit_grammar": "sweep_with_repeats"
+    },
+    {
+      "channel_sequence": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "packet_id": "s01_p0079",
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "channel_sequence": [
+        6
+      ],
+      "packet_id": "s01_p0080",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        6,
+        7,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "packet_id": "s01_p0081",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        5
+      ],
+      "packet_id": "s01_p0082",
+      "unit_grammar": "sweep_with_repeats"
+    },
+    {
+      "channel_sequence": [
+        5,
+        6,
+        7,
+        0,
+        1,
+        2
+      ],
+      "packet_id": "s01_p0083",
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "channel_sequence": [
+        4,
+        5,
+        6,
+        7,
+        0,
+        1,
+        2,
+        3
+      ],
+      "packet_id": "s01_p0084",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        5,
+        6,
+        7,
+        0,
+        1,
+        2,
+        3
+      ],
+      "packet_id": "s01_p0085",
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "channel_sequence": [
+        4,
+        5,
+        6,
+        7,
+        0,
+        1,
+        2,
+        3
+      ],
+      "packet_id": "s01_p0086",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "packet_id": "s01_p0087",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        3
+      ],
+      "packet_id": "s01_p0088",
+      "unit_grammar": "scattered_packet"
+    },
+    {
+      "channel_sequence": [
+        4,
+        5,
+        6,
+        6,
+        7,
+        0,
+        1
+      ],
+      "packet_id": "s01_p0089",
+      "unit_grammar": "sweep_with_repeats"
+    },
+    {
+      "channel_sequence": [
+        3
+      ],
+      "packet_id": "s01_p0090",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        2,
+        5,
+        3,
+        1,
+        5
+      ],
+      "packet_id": "s01_p0091",
+      "unit_grammar": "scattered_packet"
+    },
+    {
+      "channel_sequence": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        0,
+        1,
+        2
+      ],
+      "packet_id": "s01_p0092",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        1
+      ],
+      "packet_id": "s01_p0093",
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "channel_sequence": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        0
+      ],
+      "packet_id": "s01_p0094",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "packet_id": "s01_p0095",
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "channel_sequence": [
+        7,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "packet_id": "s01_p0096",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "packet_id": "s01_p0097",
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "channel_sequence": [
+        2,
+        2
+      ],
+      "packet_id": "s01_p0098",
+      "unit_grammar": "two_impulse_burst"
+    },
+    {
+      "channel_sequence": [
+        5,
+        6,
+        7,
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "packet_id": "s01_p0099",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        1,
+        0,
+        3,
+        4,
+        2
+      ],
+      "packet_id": "s01_p0100",
+      "unit_grammar": "scattered_packet"
+    },
+    {
+      "channel_sequence": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        0,
+        1
+      ],
+      "packet_id": "s01_p0101",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        6
+      ],
+      "packet_id": "s01_p0102",
+      "unit_grammar": "sweep_with_repeats"
+    },
+    {
+      "channel_sequence": [
+        5,
+        6,
+        7,
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "packet_id": "s01_p0103",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        3,
+        4,
+        5,
+        5,
+        6,
+        7,
+        0
+      ],
+      "packet_id": "s01_p0104",
+      "unit_grammar": "sweep_with_repeats"
+    },
+    {
+      "channel_sequence": [
+        2
+      ],
+      "packet_id": "s01_p0105",
+      "unit_grammar": "scattered_packet"
+    },
+    {
+      "channel_sequence": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        0,
+        1,
+        2
+      ],
+      "packet_id": "s01_p0106",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        2
+      ],
+      "packet_id": "s01_p0107",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        0
+      ],
+      "packet_id": "s01_p0108",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        1
+      ],
+      "packet_id": "s01_p0109",
+      "unit_grammar": "one_impulse_burst"
+    },
+    {
+      "channel_sequence": [
+        4,
+        5,
+        6,
+        7,
+        0,
+        1
+      ],
+      "packet_id": "s01_p0110",
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "channel_sequence": [
+        7
+      ],
+      "packet_id": "s01_p0111",
+      "unit_grammar": "scattered_packet"
+    },
+    {
+      "channel_sequence": [
+        2
+      ],
+      "packet_id": "s01_p0112",
+      "unit_grammar": "scattered_packet"
+    },
+    {
+      "channel_sequence": [
+        2,
+        3,
+        4,
+        4,
+        5,
+        6,
+        7
+      ],
+      "packet_id": "s01_p0113",
+      "unit_grammar": "sweep_with_repeats"
+    },
+    {
+      "channel_sequence": [
+        7,
+        2,
+        1
+      ],
+      "packet_id": "s01_p0114",
+      "unit_grammar": "scattered_packet"
+    },
+    {
+      "channel_sequence": [
+        2,
+        2,
+        2
+      ],
+      "packet_id": "s01_p0115",
+      "unit_grammar": "three_impulse_burst"
+    },
+    {
+      "channel_sequence": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "packet_id": "s01_p0116",
+      "unit_grammar": "partial_sweep"
+    },
+    {
+      "channel_sequence": [
+        2,
+        3,
+        4,
+        4,
+        5,
+        6,
+        7
+      ],
+      "packet_id": "s01_p0117",
+      "unit_grammar": "sweep_with_repeats"
+    },
+    {
+      "channel_sequence": [
+        7
+      ],
+      "packet_id": "s01_p0118",
+      "unit_grammar": "clean_plus_one_sweep"
+    },
+    {
+      "channel_sequence": [
+        1,
+        2,
+        3,
+        3,
+        4,
+        5,
+        6
+      ],
+      "packet_id": "s01_p0119",
+      "unit_grammar": "sweep_with_repeats"
+    }
+  ]
+}
