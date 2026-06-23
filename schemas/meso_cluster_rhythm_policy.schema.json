@@ -1,0 +1,293 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "policy_id",
+    "policy_version",
+    "status",
+    "executable",
+    "engine_version",
+    "authority_references",
+    "source_packet_start_population",
+    "phrase_state_model",
+    "source_supported_parameters",
+    "temporal_scales",
+    "cluster_detection",
+    "cluster_size_distribution",
+    "within_cluster_interval_model",
+    "between_cluster_gap_model",
+    "cluster_duration_model",
+    "density_state_linkage",
+    "rhythmic_phrase_categories",
+    "phrase_selection_weights",
+    "repetition_rules",
+    "channel_coupling_rules",
+    "overlap_constraints",
+    "transition_rules",
+    "session_boundary_handling",
+    "seed_and_determinism",
+    "provisional_fields",
+    "unresolved_fields",
+    "blocked_interpretations",
+    "future_acceptance_gates",
+    "wge5b_meso_cluster_implementation_authorized",
+    "authorization_blockers",
+    "content_hash"
+  ],
+  "properties": {
+    "schema_version": {"const": "wge.meso_cluster_rhythm_policy.v1"},
+    "policy_id": {"const": "x_alpha_meso_cluster_rhythm_policy_v1"},
+    "policy_version": {"const": "1.0.0"},
+    "status": {"const": "advisory_non_executable_qualified"},
+    "executable": {"const": false},
+    "engine_version": {"const": "0.5.1"},
+    "authority_references": {
+      "type": "array",
+      "minItems": 8,
+      "items": {"$ref": "#/$defs/authorityReference"}
+    },
+    "source_packet_start_population": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "definition",
+        "channel_handling",
+        "overlap_handling",
+        "session_1",
+        "baseline_sessions_1_4",
+        "source_files"
+      ],
+      "properties": {
+        "definition": {"type": "string", "minLength": 1},
+        "channel_handling": {"type": "string", "minLength": 1},
+        "overlap_handling": {"type": "string", "minLength": 1},
+        "session_1": {"$ref": "#/$defs/population"},
+        "baseline_sessions_1_4": {"$ref": "#/$defs/population"},
+        "source_files": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {"$ref": "#/$defs/sourceFile"}
+        }
+      }
+    },
+    "phrase_state_model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model_type",
+        "phrase_window",
+        "reference_dictionary_scope",
+        "validation_rule",
+        "runtime_boundary",
+        "cluster_rule"
+      ],
+      "properties": {
+        "model_type": {"const": "probabilistic_recurrent_interval_phrase_state"},
+        "phrase_window": {"type": "string", "minLength": 1},
+        "reference_dictionary_scope": {"type": "string", "minLength": 1},
+        "validation_rule": {"type": "string", "minLength": 1},
+        "runtime_boundary": {"type": "string", "minLength": 1},
+        "cluster_rule": {"type": "string", "minLength": 1}
+      }
+    },
+    "source_supported_parameters": {
+      "type": "array",
+      "minItems": 16,
+      "items": {"$ref": "#/$defs/parameter"}
+    },
+    "temporal_scales": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["micro", "packet", "meso", "macro"],
+      "properties": {
+        "micro": {"$ref": "#/$defs/scale"},
+        "packet": {"$ref": "#/$defs/scale"},
+        "meso": {"$ref": "#/$defs/scale"},
+        "macro": {"$ref": "#/$defs/scale"}
+      }
+    },
+    "cluster_detection": {"$ref": "#/$defs/policySection"},
+    "cluster_size_distribution": {"$ref": "#/$defs/policySection"},
+    "within_cluster_interval_model": {"$ref": "#/$defs/policySection"},
+    "between_cluster_gap_model": {"$ref": "#/$defs/policySection"},
+    "cluster_duration_model": {"$ref": "#/$defs/policySection"},
+    "density_state_linkage": {"$ref": "#/$defs/policySection"},
+    "rhythmic_phrase_categories": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "definition",
+          "authority_tier",
+          "source_scope",
+          "status"
+        ],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "definition": {"type": "string", "minLength": 1},
+          "authority_tier": {"enum": ["tier_1", "tier_2", "engine_provisional"]},
+          "source_scope": {"type": "string", "minLength": 1},
+          "status": {"enum": ["binding_vocabulary", "advisory", "provisional"]}
+        }
+      }
+    },
+    "phrase_selection_weights": {"$ref": "#/$defs/policySection"},
+    "repetition_rules": {"$ref": "#/$defs/policySection"},
+    "channel_coupling_rules": {"$ref": "#/$defs/policySection"},
+    "overlap_constraints": {"$ref": "#/$defs/policySection"},
+    "transition_rules": {"$ref": "#/$defs/policySection"},
+    "session_boundary_handling": {"$ref": "#/$defs/policySection"},
+    "seed_and_determinism": {"$ref": "#/$defs/policySection"},
+    "provisional_fields": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "unresolved_fields": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "blocked_interpretations": {
+      "type": "array",
+      "minItems": 6,
+      "contains": {"const": "continuous_carrier_without_direct_permitted_evidence"},
+      "items": {"type": "string", "minLength": 1}
+    },
+    "future_acceptance_gates": {
+      "type": "array",
+      "minItems": 12,
+      "items": {"$ref": "#/$defs/gate"}
+    },
+    "wge5b_meso_cluster_implementation_authorized": {"const": true},
+    "authorization_blockers": {
+      "type": "array",
+      "maxItems": 0,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "content_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "$defs": {
+    "authorityReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_id",
+        "authority_tier",
+        "classification_status",
+        "source_scope",
+        "source_field",
+        "permitted_use"
+      ],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "authority_tier": {"enum": ["tier_0", "tier_1", "tier_2"]},
+        "classification_status": {"const": "include"},
+        "source_scope": {"type": "string", "minLength": 1},
+        "source_field": {"type": "string", "minLength": 1},
+        "permitted_use": {"type": "string", "minLength": 1}
+      }
+    },
+    "population": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "packet_start_count",
+        "training_count",
+        "validation_count",
+        "source_block_count",
+        "simultaneous_duplicate_start_count"
+      ],
+      "properties": {
+        "packet_start_count": {"type": "integer", "minimum": 1},
+        "training_count": {"type": "integer", "minimum": 1},
+        "validation_count": {"type": "integer", "minimum": 1},
+        "source_block_count": {"type": "integer", "minimum": 1},
+        "simultaneous_duplicate_start_count": {"const": 0}
+      }
+    },
+    "sourceFile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["relative_path", "sha256", "classification", "parent_artifact"],
+      "properties": {
+        "relative_path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "classification": {"const": "audit-only"},
+        "parent_artifact": {"const": "phase5l_unit_grammar_audit_report"}
+      }
+    },
+    "parameter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "parameter_id",
+        "value",
+        "unit",
+        "source_scope",
+        "authority_tier",
+        "source_artifact",
+        "source_field",
+        "measurement_method",
+        "binding_status",
+        "provisional"
+      ],
+      "properties": {
+        "parameter_id": {"type": "string", "minLength": 1},
+        "value": {},
+        "unit": {"type": "string", "minLength": 1},
+        "source_scope": {"type": "string", "minLength": 1},
+        "authority_tier": {"enum": ["tier_1", "tier_2"]},
+        "source_artifact": {"type": "string", "minLength": 1},
+        "source_field": {"type": "string", "minLength": 1},
+        "measurement_method": {"type": "string", "minLength": 1},
+        "binding_status": {"enum": ["binding", "advisory"]},
+        "provisional": {"type": "boolean"}
+      }
+    },
+    "scale": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["definition", "boundary", "status", "authority"],
+      "properties": {
+        "definition": {"type": "string", "minLength": 1},
+        "boundary": {
+          "type": ["object", "string"],
+          "minProperties": 1
+        },
+        "status": {"enum": ["binding", "advisory", "provisional", "unresolved"]},
+        "authority": {"type": "string", "minLength": 1}
+      }
+    },
+    "policySection": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["status", "authority_tier", "source_scope", "definition"],
+      "properties": {
+        "status": {
+          "enum": ["binding", "advisory", "provisional", "not_assessable", "unresolved"]
+        },
+        "authority_tier": {"enum": ["tier_1", "tier_2", "engine_provisional"]},
+        "source_scope": {"type": "string", "minLength": 1},
+        "definition": {"type": "string", "minLength": 1}
+      }
+    },
+    "gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["metric_id", "status", "requirement", "source_scope"],
+      "properties": {
+        "metric_id": {"type": "string", "minLength": 1},
+        "status": {"enum": ["binding", "advisory", "provisional", "not_assessable"]},
+        "requirement": {"type": "string", "minLength": 1},
+        "source_scope": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

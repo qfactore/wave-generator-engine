@@ -1,0 +1,298 @@
+{
+  "analysis_id": "wge5a1_source_packet_start_cluster_statistics",
+  "analysis_version": "1.0.0",
+  "status": "complete",
+  "engine_version": "0.5.1",
+  "authority": {
+    "parent_artifact": "phase5l_unit_grammar_audit_report",
+    "authority_tier": "tier_2",
+    "classification_status": "include",
+    "permitted_use": "Builder evidence for unit types, mode differences, novelty, packet grammar, and diagnostic fixture planning.",
+    "blocked_final_test_accessed": false,
+    "source_files": [
+      {
+        "relative_path": "outputs/phase_5c_a_relative_digital_gain/gain_event_table_training.csv",
+        "classification": "audit-only",
+        "sha256": "5531ed99667fb53deab43e96376a41125cf15e108e015fabdf7b9016339ac8ec"
+      },
+      {
+        "relative_path": "outputs/phase_5c_a_relative_digital_gain/gain_event_table_validation.csv",
+        "classification": "audit-only",
+        "sha256": "e81adbbc869e39cbef8482ce8437305cb6af07703304c002efaf821da1748463"
+      }
+    ]
+  },
+  "packet_start_semantics": {
+    "definition": "A packet_start row begins one source packet. Following continuation rows belong to it until the next packet_start in the same source block.",
+    "engine_comparability": "comparable",
+    "channel_handling": "All channel rows are merged and sorted within each source block.",
+    "overlap_handling": "Event overlap does not create or merge packet starts.",
+    "session_boundary_handling": "No interval, phrase window, or cluster crosses a source-block or session boundary.",
+    "prohibited_threshold_samples": 12376,
+    "prohibited_threshold_reason": "This threshold groups same-channel source bursts into source packets and is not a packet-to-cluster boundary."
+  },
+  "populations": {
+    "direct_session_1": {
+      "packet_start_count": 752,
+      "training_count": 413,
+      "validation_count": 339,
+      "source_block_count": 8,
+      "simultaneous_duplicate_start_count": 0
+    },
+    "baseline_sessions_1_4": {
+      "packet_start_count": 6112,
+      "training_count": 3418,
+      "validation_count": 2694,
+      "source_block_count": 32,
+      "simultaneous_duplicate_start_count": 0
+    },
+    "generated_session_1": {
+      "packet_start_count": 149,
+      "duration_seconds": 60,
+      "source": "runs/latest/packet_plan.json"
+    }
+  },
+  "cluster_boundary_analysis": {
+    "fixed_threshold_verdict": "not_supported",
+    "method": "Inter-packet quantiles, deterministic log-Gaussian mixture BIC comparison, component-intersection sensitivity, and threshold sensitivity.",
+    "finding": "Direct Session 1 intervals are mostly unimodal and mixture intersections move materially as component count changes. Baseline pooling is heterogeneous across sessions. No stable empirical valley supports a binary universal threshold.",
+    "selected_model": "probabilistic_recurrent_interval_phrase_state",
+    "phrase_window": "Three exact sample-aligned packet intervals spanning four packet starts.",
+    "validation_rule": "A validation phrase window is active when its exact interval triple occurred in the corresponding training population.",
+    "cluster_rule": "Merge overlapping or adjacent active-window packet spans within each source block.",
+    "runtime_boundary": "Future runtime may use aggregate state transitions and distributions only; source tuples and block sequences may not be embedded or replayed."
+  },
+  "interval_distributions": {
+    "direct_session_1_seconds": {
+      "count": 744,
+      "minimum": 0.0329375,
+      "p10": 0.21314583333333334,
+      "p25": 0.23004166666666666,
+      "median": 0.2813333333333333,
+      "mean": 0.2801783994171147,
+      "p75": 0.32197916666666666,
+      "p90": 0.35180625,
+      "maximum": 0.4918125,
+      "coefficient_of_variation": 0.204388225
+    },
+    "baseline_sessions_1_4_seconds": {
+      "count": 6080,
+      "minimum": 0.000125,
+      "p10": 0.035020833333333334,
+      "p25": 0.06589583333333333,
+      "median": 0.11860416666666667,
+      "mean": 0.1376306983,
+      "p75": 0.20102083333333334,
+      "p90": 0.25798125,
+      "maximum": 0.551875,
+      "coefficient_of_variation": 0.642877
+    }
+  },
+  "phrase_recurrence": {
+    "direct_session_1": {
+      "all_source_repeated_occurrence_share": 0.5494505494505495,
+      "validation_matched_training_count": 130,
+      "validation_window_count": 327,
+      "validation_matched_training_share": 0.39755351681957185,
+      "unique_exact_triples": 473,
+      "repeated_exact_triple_types": 145,
+      "maximum_exact_triple_count": 11
+    },
+    "baseline_sessions_1_4": {
+      "all_source_repeated_occurrence_share": 0.7125997340425532,
+      "validation_matched_training_count": 1724,
+      "validation_window_count": 2646,
+      "validation_matched_training_share": 0.6515495086923658,
+      "unique_exact_triples": 2915,
+      "repeated_exact_triple_types": 1186,
+      "maximum_exact_triple_count": 16
+    },
+    "generated_session_1": {
+      "window_count": 146,
+      "self_repeated_occurrence_share": 0,
+      "direct_session_1_source_match_count": 0,
+      "direct_session_1_source_match_share": 0,
+      "comparison_result": "outside_source_reference"
+    }
+  },
+  "direct_session_1_validation": {
+    "phrase_state_transition_counts": {
+      "inactive_to_inactive": 143,
+      "inactive_to_active": 52,
+      "active_to_inactive": 50,
+      "active_to_active": 78
+    },
+    "phrase_state_transition_probabilities": {
+      "inactive_to_active": 0.26666666666666666,
+      "active_to_active": 0.609375
+    },
+    "cluster_count": 24,
+    "observed_support_seconds": 93.57441666666666,
+    "clusters_per_observed_minute": 15.388821552899516,
+    "cluster_size_packets": {
+      "minimum": 4,
+      "p10": 4,
+      "median": 6,
+      "p90": 17.4,
+      "maximum": 68
+    },
+    "cluster_duration_seconds": {
+      "minimum": 0.6879166666666666,
+      "p10": 0.82128125,
+      "median": 1.58203125,
+      "p90": 4.667639583333333,
+      "maximum": 19.045833333333334
+    },
+    "within_cluster_interval_seconds": {
+      "minimum": 0.19214583333333332,
+      "p10": 0.21531458333333334,
+      "median": 0.28191666666666665,
+      "p90": 0.35114375,
+      "maximum": 0.3918125
+    },
+    "between_cluster_gap_seconds": {
+      "count": 20,
+      "minimum": 0.42310416666666667,
+      "p10": 0.44219375,
+      "median": 0.7834687499999999,
+      "p90": 2.206200000000001,
+      "maximum": 4.514125
+    },
+    "cluster_onset_span_occupancy": 0.7045421959171533,
+    "quiet_gap_span_occupancy": 0.2527841032048467,
+    "events_per_cluster": {
+      "minimum": 21,
+      "p10": 24.2,
+      "median": 40,
+      "p90": 106.7,
+      "maximum": 416
+    },
+    "adjacent_motif_repetition_rate": 0.6915167095115681,
+    "channel_transition_rates": {
+      "same": 0.8444730077120822,
+      "plus_one": 0.14974293059125965,
+      "reverse": 0.003213367609254499,
+      "skip": 0.002570694087403599
+    },
+    "maximum_concurrency": 3,
+    "overlap_duration_seconds": 0.27041666666666664
+  },
+  "baseline_validation": {
+    "phrase_state_transition_counts": {
+      "inactive_to_inactive": 613,
+      "inactive_to_active": 303,
+      "active_to_inactive": 294,
+      "active_to_active": 1420
+    },
+    "phrase_state_transition_probabilities": {
+      "inactive_to_active": 0.3307860262008734,
+      "active_to_active": 0.8284714119019837
+    },
+    "cluster_count": 97,
+    "observed_support_seconds": 370.31966666666665,
+    "clusters_per_observed_minute": 15.7161515411,
+    "cluster_size_packets": {
+      "minimum": 4,
+      "p10": 4,
+      "median": 12,
+      "p90": 65,
+      "maximum": 177
+    },
+    "cluster_duration_seconds": {
+      "minimum": 0.19304166666666666,
+      "p10": 0.5879708333333333,
+      "median": 1.5820416666666667,
+      "p90": 6.9895375,
+      "maximum": 29.58225
+    },
+    "within_cluster_interval_seconds": {
+      "minimum": 0.0011458333333333333,
+      "p10": 0.035020833333333334,
+      "median": 0.108,
+      "p90": 0.24097916666666667,
+      "maximum": 0.3918125
+    },
+    "between_cluster_gap_seconds": {
+      "minimum": 0.026833333333333334,
+      "p10": 0.10395833333333333,
+      "median": 0.4349375,
+      "p90": 1.78575,
+      "maximum": 4.514125
+    },
+    "cluster_onset_span_occupancy": 0.824400923,
+    "quiet_gap_span_occupancy": 0.14483399,
+    "events_per_cluster": {
+      "minimum": 4,
+      "p10": 17,
+      "median": 41,
+      "p90": 167.8,
+      "maximum": 658
+    },
+    "adjacent_motif_repetition_rate": 0.49268562,
+    "channel_transition_rates": {
+      "same": 0.66864477,
+      "plus_one": 0.30361579,
+      "reverse": 0.00703837,
+      "skip": 0.02070108
+    },
+    "maximum_concurrency": 3,
+    "overlap_duration_seconds": 2.8369583333333334
+  },
+  "rhythmic_phrase_findings": {
+    "direct_session_1_interval_lag_correlations": {
+      "lag_1": 0.2289646334,
+      "lag_2": -0.1787869342,
+      "lag_3": -0.0851594996,
+      "lag_4": -0.473184681
+    },
+    "generated_interval_lag_correlations": {
+      "lag_1": 0.0668883751,
+      "lag_2": 0.0791422,
+      "lag_3": 0.0791432,
+      "lag_4": -0.1075071
+    },
+    "direct_session_1_rolling_five_interval_cv": {
+      "p10": 0.0990353,
+      "median": 0.1615976,
+      "p90": 0.245497
+    },
+    "generated_rolling_five_interval_cv": {
+      "p10": 0.10119,
+      "median": 0.151479,
+      "p90": 0.216931
+    },
+    "direct_session_1_long_short_alternation_rate": 0.271870794,
+    "generated_long_short_alternation_rate": 0.4557823129,
+    "interpretation": {
+      "primary": "repeated packet phrase",
+      "secondary": "dense discrete packet texture",
+      "continuous_component": "unsupported"
+    }
+  },
+  "generated_plan_comparison": {
+    "cluster_count": 0,
+    "cluster_recurrence": "outside_source_reference",
+    "packet_interval_distribution": "outside_source_reference",
+    "local_interval_variability": "within_source_reference",
+    "serial_dependence": "outside_source_reference",
+    "overall": "outside_source_reference",
+    "finding": "The generated plan is stochastic but has no recurrent exact three-interval phrase, no source-matched Session 1 phrase window, and no cluster under the selected held-out state model."
+  },
+  "authorization": {
+    "wge5b_meso_cluster_implementation_authorized": true,
+    "basis": [
+      "Source-equivalent packet-start semantics are established.",
+      "A held-out probabilistic recurrent-phrase state model avoids an arbitrary threshold.",
+      "Direct Session 1 and Baseline validation distributions are available.",
+      "All runtime parameters are advisory and provenance-recorded.",
+      "Future acceptance gates are measurable without source-sequence replay.",
+      "No carrier or fixed global rhythm is required."
+    ],
+    "limitations": [
+      "The state model is Tier 2 advisory rather than binding source authority.",
+      "Runtime must not embed exact source interval tuples or source block sequences.",
+      "Perceptual, target-headset, production-duration, and binding-tolerance qualification remain unresolved."
+    ]
+  },
+  "content_hash": "8b63a6996246d42fc7b6e6be644d879b44c8088d603b956ccb393e9ba97ae468"
+}

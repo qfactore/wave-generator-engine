@@ -1,0 +1,91 @@
+{
+  "audit_id": "wge5a_meso_cluster_rhythm_evidence_audit",
+  "audit_version": "1.1.0",
+  "status": "WGE5A_MESO_CLUSTER_POLICY_READY",
+  "engine_version": "0.5.1",
+  "authorization": {
+    "wge5b_meso_cluster_implementation_authorized": true,
+    "blockers": [],
+    "basis": "WGE-5A1 established comparable packet-start semantics, a held-out recurrent phrase-state model, direct Session 1 and Baseline validation distributions, testable future gates, and a runtime prohibition on exact source replay."
+  },
+  "blocked_final_test_accessed": false,
+  "source_cluster_analysis": {
+    "report": "reports/wge5a1_source_cluster_statistics.json",
+    "parent_artifact": "phase5l_unit_grammar_audit_report",
+    "authority_tier": "tier_2",
+    "classification_status": "include",
+    "source_packet_semantics": "packet_start plus following continuations until the next packet_start in the same source block",
+    "cluster_model": "probabilistic_recurrent_interval_phrase_state",
+    "fixed_gap_threshold_supported": false,
+    "prohibited_source_packet_threshold_samples": 12376,
+    "direct_session_1_phrase_active_share": 0.39755351681957185,
+    "baseline_phrase_active_share": 0.6515495086923658
+  },
+  "generated_plan_comparison": {
+    "packet_count": 149,
+    "event_count": 960,
+    "packet_density_1s": {
+      "minimum": 2,
+      "median": 2,
+      "maximum": 4,
+      "zero_bins": 0,
+      "coefficient_of_variation": 0.21424013019479687
+    },
+    "event_density_5s": {
+      "minimum": 68,
+      "median": 81,
+      "maximum": 88,
+      "zero_bins": 0,
+      "coefficient_of_variation": 0.07089458136322314
+    },
+    "packet_interval_seconds": {
+      "minimum": 0.2606875,
+      "p10": 0.2987270833333333,
+      "median": 0.39769791666666665,
+      "mean": 0.4019193412162162,
+      "p90": 0.5144708333333333,
+      "maximum": 0.5492916666666666,
+      "coefficient_of_variation": 0.19062841672065312,
+      "lag_1_correlation": 0.06688837510811328
+    },
+    "phrase_window_count": 146,
+    "self_recurrent_phrase_count": 0,
+    "source_matched_phrase_count": 0,
+    "phrase_state_cluster_count": 0,
+    "phrase_recurrence_comparison": "outside_source_reference",
+    "packet_interval_comparison": "outside_source_reference",
+    "local_interval_variability_comparison": "within_source_reference",
+    "serial_dependence_comparison": "outside_source_reference",
+    "adjacent_motif_repetition_rate": 0.5192909280500522,
+    "maximum_concurrency": 2,
+    "summary": "The unchanged generated plan is stochastic but meso-flat: its interval triples do not recur and do not match the direct Session 1 training phrase population."
+  },
+  "hum_put_put_interpretation": {
+    "classification": "repeated packet phrase",
+    "secondary_texture": "dense discrete packet texture",
+    "continuous_component_supported": false,
+    "confidence": "moderate"
+  },
+  "policy": {
+    "path": "policies/meso_cluster_rhythm_policy_v1.json",
+    "status": "advisory_non_executable_qualified",
+    "executable": false
+  },
+  "protected_artifacts": {
+    "diagnostic_pack_hash": "67209fbe2e18fb070647b1f0d94e533bace77489155d900cd2e7211b57bd6d9d",
+    "interchange_tree_hash": "a825c3d4b2630a3d932a535def46ffacb4c2b569f87d151d437e1ef0756cd17a",
+    "wav_hashes": [
+      "9c5ed5994f9e4d8ec15dac91851f788508df106185b4816ddc11054ae2170747",
+      "28472051eea75634ef0dae74eb3cab7f214b09c47e89e35487f7168113057d9c",
+      "4954c3e6ac8e01fed500b85bcdd46e4cb29dc62e336787aed7ce5c9df726d9e4",
+      "9b1dbdf3eb955c80bd37203c8ef6d0bfabbeee551ed84e73460143863ec6df61"
+    ]
+  },
+  "unresolved_evidence": [
+    "perceptual identity of individual phrase categories",
+    "target-headset validation",
+    "production-duration qualification",
+    "binding tolerances beyond observed training/validation empirical bands"
+  ],
+  "content_hash": "f648cae9604c623638f6f6e832817901de4dc99b30999d8fe39b68de3bbaf6c4"
+}
