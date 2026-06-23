@@ -54,3 +54,15 @@ validation only. It does not provide a WAV-writing command or persist audio.
 WGE-4B2A adds a contract-specific PCM16 byte writer and independent readback
 validator for synthetic tests only. It does not expose a real export command,
 render the qualified plan, or create the Session 1 diagnostic files.
+
+## WGE-4B2B first diagnostic listening pack
+
+`wge export diagnostic --run runs/latest` atomically creates the authorized
+four-file Session 1 diagnostic PCM16 pack. It rerenders exact calibrated buses,
+verifies WGE-4A canonical hashes, writes contract-defined stereo branches, and
+requires exact independent PCM-code readback. `validate` and `show` subcommands
+inspect the completed pack.
+
+The files are diagnostic-only. No playback metadata, upload payload,
+encryption, production packaging, PCM24 path, normalization, limiter, or
+second calibration is included.

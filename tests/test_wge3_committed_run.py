@@ -13,7 +13,7 @@ RUN = ROOT / "runs/latest"
 
 def test_committed_run_exists_and_validates() -> None:
     from wave_generator_engine import __version__
-    assert __version__ == "0.5.0"
+    assert __version__ == "0.5.1"
     assert RUN.is_dir()
     manifest = json.loads((RUN / "run_manifest.json").read_text())
     assert validate_content_hash(manifest)
@@ -45,7 +45,12 @@ def test_committed_core_hashes_match_rebuild(tmp_path: Path) -> None:
 
 def test_committed_run_has_no_audio_or_upstream_paths() -> None:
     assert not (RUN / "audio").exists()
-    assert not list(RUN.rglob("*.wav"))
+    assert {
+        path.relative_to(RUN) for path in RUN.rglob("*.wav")
+    } == {
+        Path(f"diagnostic_export/files/x_alpha_session_01_baseline_branch_{index:02d}.wav")
+        for index in range(1, 5)
+    }
     for path in RUN.rglob("*"):
         if path.is_file() and path.suffix in {".json", ".csv"}:
             text = path.read_text()

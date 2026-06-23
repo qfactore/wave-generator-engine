@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema_version", "all_files_passed", "exact_pcm_code_equality", "files", "content_hash"],
+  "properties": {
+    "schema_version": {"const": "wge.diagnostic_pack_readback.v1"},
+    "all_files_passed": {"const": true},
+    "exact_pcm_code_equality": {"const": true},
+    "files": {"type": "array", "minItems": 4, "maxItems": 4},
+    "content_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

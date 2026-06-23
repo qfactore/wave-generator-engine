@@ -145,7 +145,7 @@ def test_filename_policy_is_neutral_unique_and_path_safe() -> None:
 
 
 def test_wge4b1_creates_no_audio_or_waveform_artifact() -> None:
-    for root in (ROOT / "runs", ROOT / "reports", ROOT / "contracts"):
+    for root in (ROOT / "reports", ROOT / "contracts"):
         assert not list(root.rglob("*.wav"))
         assert not list(root.rglob("*.wave"))
         assert not list(root.rglob("*.aiff"))
@@ -154,11 +154,12 @@ def test_wge4b1_creates_no_audio_or_waveform_artifact() -> None:
         assert not list(root.rglob("*.ogg"))
         assert not list(root.rglob("*.npy"))
         assert not list(root.rglob("*.npz"))
-    assert not (ROOT / "runs/latest/diagnostic_export/files").exists()
 
 
 def test_cli_contract_commands_are_read_only_json() -> None:
     executable = ROOT / ".venv/bin/wge"
+    manifest_path = ROOT / "runs/latest/diagnostic_export/export_manifest.json"
+    before = manifest_path.read_bytes() if manifest_path.exists() else None
     shown = subprocess.run(
         [str(executable), "export", "contract", "show", "--json"],
         cwd=ROOT, text=True, capture_output=True, check=True,
@@ -170,4 +171,4 @@ def test_cli_contract_commands_are_read_only_json() -> None:
     assert json.loads(shown.stdout)["contract_id"] == \
         "diagnostic_wav_export_contract_v1"
     assert json.loads(validated.stdout)["wge4b2_authorized"]
-    assert not (ROOT / "runs/latest/diagnostic_export").exists()
+    assert (manifest_path.read_bytes() if manifest_path.exists() else None) == before

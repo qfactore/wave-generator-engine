@@ -1,0 +1,68 @@
+{
+  "report_id": "wge4b2b_first_diagnostic_session1_export",
+  "status": "WGE4B2B_DIAGNOSTIC_EXPORT_READY",
+  "engine_version": "0.5.1",
+  "starting_checkpoint": "ab8b1ffe9dfbe85e2841eedc2e6d7dd5690ca3b1",
+  "source_profile_id": "x_alpha_standard_v1",
+  "session_id": 1,
+  "mode": "baseline",
+  "root_seed": 20260622,
+  "packet_count": 149,
+  "event_count": 960,
+  "focus_role_target": 2,
+  "render_receipt_hash": "a045315342e0e3882675309da6f041f7c849d31b6cdf161d8a8efdbc9874f825",
+  "all_wge4a_bus_hashes_matched": true,
+  "representation_conversion": "native_pcm_code_units_divided_by_32768",
+  "calibration_reapplied": false,
+  "export_multiplier": 1.0,
+  "playback_intensity_applied": false,
+  "branch_mappings": [[0, 1], [2, 3], [4, 5], [6, 7]],
+  "file_count": 4,
+  "frame_count_per_file": 2880000,
+  "data_bytes_per_file": 11520000,
+  "file_size_bytes": 11520044,
+  "encoding": "signed_pcm16",
+  "sample_rate_hz": 48000,
+  "files": [
+    {
+      "filename": "x_alpha_session_01_baseline_branch_01.wav",
+      "wav_sha256": "9c5ed5994f9e4d8ec15dac91851f788508df106185b4816ddc11054ae2170747",
+      "data_sha256": "759ea8ff786ef7362ea09d3a69f73dd38f0f4d0e1d0075057bb810c076c0361f",
+      "minimum_pcm_code": -7438,
+      "maximum_pcm_code": 8577
+    },
+    {
+      "filename": "x_alpha_session_01_baseline_branch_02.wav",
+      "wav_sha256": "28472051eea75634ef0dae74eb3cab7f214b09c47e89e35487f7168113057d9c",
+      "data_sha256": "723d5a80496f0b4a23c687cb4d518bcdd872c93bc4d81d9ea840fc45593212b0",
+      "minimum_pcm_code": -7438,
+      "maximum_pcm_code": 8577
+    },
+    {
+      "filename": "x_alpha_session_01_baseline_branch_03.wav",
+      "wav_sha256": "4954c3e6ac8e01fed500b85bcdd46e4cb29dc62e336787aed7ce5c9df726d9e4",
+      "data_sha256": "ff395e7aa48f8a0913001923b8c9218d73ee9755458a8db3f7c630a896d80c18",
+      "minimum_pcm_code": -7416,
+      "maximum_pcm_code": 8439
+    },
+    {
+      "filename": "x_alpha_session_01_baseline_branch_04.wav",
+      "wav_sha256": "9b1dbdf3eb955c80bd37203c8ef6d0bfabbeee551ed84e73460143863ec6df61",
+      "data_sha256": "a35d77a00d2beb9625c4460707e75f595f0d00a3eb4f185daa086aa50d9f50f5",
+      "minimum_pcm_code": -7438,
+      "maximum_pcm_code": 8577
+    }
+  ],
+  "exact_readback_pcm_code_equality": true,
+  "global_maximum_quantization_error": 0.0000152587890625,
+  "global_mean_absolute_quantization_error": 2.7206129497952033e-7,
+  "global_maximum_decoded_level": 0.261749267578125,
+  "pack_hash": "67209fbe2e18fb070647b1f0d94e533bace77489155d900cd2e7211b57bd6d9d",
+  "deterministic_duplicate_export": "passed_byte_identical",
+  "test_count": 304,
+  "diagnostic_only": true,
+  "production_certified": false,
+  "target_hardware_certified": false,
+  "wge4c_authorized": true,
+  "wge4c_started": false
+}

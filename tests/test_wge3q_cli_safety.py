@@ -40,6 +40,13 @@ def test_no_render_export_or_wge4_modules_exist() -> None:
     source = ROOT / "src/wave_generator_engine"
     names = {path.name.lower() for path in source.rglob("*") if path.is_file()}
     assert not {"renderer.py", "exporter.py", "wge4.py"} & names
-    assert not list(ROOT.rglob("*.wav"))
+    assert {
+        path.relative_to(ROOT) for path in ROOT.rglob("*.wav")
+        if ".venv" not in path.parts
+    } == {
+        Path(f"runs/latest/diagnostic_export/files/"
+             f"x_alpha_session_01_baseline_branch_{index:02d}.wav")
+        for index in range(1, 5)
+    }
     assert not list(ROOT.rglob("*playback*.json"))
     assert not list(ROOT.rglob("*upload*.json"))

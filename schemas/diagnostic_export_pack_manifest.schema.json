@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema_version", "manifest_id", "diagnostic_only", "engine_version", "source_profile_id", "session_id", "mode", "duration_seconds", "sample_rate_hz", "frame_count", "event_count", "packet_count", "focus_role_target", "root_seed", "qualification_verdict", "qualification_hash", "render_receipt_hash", "source_bus_hashes", "export_contract_id", "export_contract_hash", "calibration_already_applied", "calibration_multiplier_previously_applied", "export_multiplier", "playback_intensity_applied", "dither", "branch_mappings", "files", "pack_hash", "deterministic_duplicate_export", "wge4c_authorized", "content_hash"],
+  "properties": {
+    "schema_version": {"const": "wge.diagnostic_export_manifest.v2"},
+    "diagnostic_only": {"const": true},
+    "engine_version": {"const": "0.5.1"},
+    "source_profile_id": {"const": "x_alpha_standard_v1"},
+    "session_id": {"const": 1},
+    "mode": {"const": "baseline"},
+    "sample_rate_hz": {"const": 48000},
+    "frame_count": {"const": 2880000},
+    "event_count": {"const": 960},
+    "packet_count": {"const": 149},
+    "calibration_already_applied": {"const": true},
+    "calibration_multiplier_previously_applied": {"const": 1.1},
+    "export_multiplier": {"const": 1.0},
+    "playback_intensity_applied": {"const": false},
+    "dither": {"const": "none"},
+    "files": {"type": "array", "minItems": 4, "maxItems": 4},
+    "deterministic_duplicate_export": {"const": "passed_byte_identical"},
+    "wge4c_authorized": {"const": true},
+    "content_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

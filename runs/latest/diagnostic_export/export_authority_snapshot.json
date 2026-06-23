@@ -1,0 +1,21 @@
+{
+  "archive_hash": "7e248804420fdcc75713fd3c232f6c97f5581d01be83526f0ea5770002fc29dd",
+  "content_hash": "b2facb15105ea0d178ec10706ab96366742040be7bd54db228a17616f576213d",
+  "contract_hash": "87dbbea263b6455893f566eff00ec6309e52842a0729fbbe7cef2b391c0eb4cc",
+  "core_plan_hashes": {
+    "planning_profile_snapshot.json": "a44267a34b258bd79232c56b5c357f182c2fca0e8554bcb9dea639f721f2bf12",
+    "session_pack_plan.json": "8382e22b8ff1cd8272cfb151fd80a6da4332c3abfc4c5b2f419a0aa39e1833cc",
+    "sessions/session_01/channel_unit_plan.json": "3f62fee237d628b0ea97a5e0368a08ef8323ba991cc031189ab14bbee7a0f421",
+    "sessions/session_01/event_plan.json": "846588ae30a75f8e728d73ce425bb8f10dc6b722791774dc1ff9553c672a8f28",
+    "sessions/session_01/macro_state_plan.json": "f84904cb6ca7da36b85b6a38b66894f5cc815bdeef67ec0ea2dee1c6c21c0cfe",
+    "sessions/session_01/packet_plan.json": "cc67ce765c2334677c1823def640bb3936f47d2ceeb0f3fb5efb3e65339bbf7f",
+    "sessions/session_01/pulse_pattern_plan.json": "e91d06ff014bf8c38eff2824a89e5a599d59eede6d2363c018b32617152910c2",
+    "sessions/session_01/session_plan.json": "46285a619941647135ff77817bb81ae37f1ce5248ebb80d3199e53f2ad6c61e6",
+    "sessions/session_01/validation_report.json": "1d047803f0196b6176337091b3081b8acebc9b6b6efb64c0dec8e6cf5d346ae6"
+  },
+  "interchange_tree_hash": "a825c3d4b2630a3d932a535def46ffacb4c2b569f87d151d437e1ef0756cd17a",
+  "qualification_verdict_hash": "dd5aa7c5bb15ee20382dfee59f870fdd5861f8adf3570f0fd1a4fafefb2e4ddc",
+  "render_receipt_hash": "a045315342e0e3882675309da6f041f7c849d31b6cdf161d8a8efdbc9874f825",
+  "schema_version": "wge.diagnostic_export_authority.v1",
+  "wge4a_authority_snapshot_hash": "119eac475465216e8ebadc97d4a4b9297efdaa7cd1d446e94959db448a704ceb"
+}

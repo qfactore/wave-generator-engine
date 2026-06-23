@@ -1,0 +1,18 @@
+{
+  "all_bus_hashes_matched": true,
+  "all_quantization_errors_within_bound": true,
+  "all_readback_codes_matched": true,
+  "calibration_reapplied": false,
+  "content_hash": "9c9bb0c8179f05e42581c9b2fb6c15d0cde30a2195106b7078e4113ccb8258b3",
+  "file_count": 4,
+  "limiter_applied": false,
+  "no_clipping_or_saturation": true,
+  "no_dither": true,
+  "normalization_applied": false,
+  "pack_hash": "67209fbe2e18fb070647b1f0d94e533bace77489155d900cd2e7211b57bd6d9d",
+  "playback_intensity_applied": false,
+  "representation_conversion": "native_pcm_code_units_divided_by_32768",
+  "schema_version": "wge.diagnostic_export_validation.v1",
+  "valid": true,
+  "wge4c_authorized": true
+}

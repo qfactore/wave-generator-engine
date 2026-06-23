@@ -14,7 +14,10 @@ RUN = ROOT / "runs/latest"
 
 def _copy_run(tmp_path: Path) -> Path:
     target = tmp_path / "run"
-    shutil.copytree(RUN, target, ignore=shutil.ignore_patterns("qualification"))
+    shutil.copytree(
+        RUN, target,
+        ignore=shutil.ignore_patterns("qualification", "diagnostic_export"),
+    )
     return target
 
 

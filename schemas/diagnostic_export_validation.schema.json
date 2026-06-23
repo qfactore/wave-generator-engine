@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema_version", "valid", "file_count", "all_bus_hashes_matched", "all_readback_codes_matched", "all_quantization_errors_within_bound", "no_clipping_or_saturation", "no_dither", "calibration_reapplied", "playback_intensity_applied", "normalization_applied", "limiter_applied", "pack_hash", "wge4c_authorized", "content_hash"],
+  "properties": {
+    "schema_version": {"const": "wge.diagnostic_export_validation.v1"},
+    "valid": {"const": true},
+    "file_count": {"const": 4},
+    "all_bus_hashes_matched": {"const": true},
+    "all_readback_codes_matched": {"const": true},
+    "all_quantization_errors_within_bound": {"const": true},
+    "no_clipping_or_saturation": {"const": true},
+    "no_dither": {"const": true},
+    "calibration_reapplied": {"const": false},
+    "playback_intensity_applied": {"const": false},
+    "normalization_applied": {"const": false},
+    "limiter_applied": {"const": false},
+    "wge4c_authorized": {"const": true},
+    "content_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

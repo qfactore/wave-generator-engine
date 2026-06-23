@@ -154,6 +154,12 @@ def build_parser() -> argparse.ArgumentParser:
         command = contract_commands.add_parser(name)
         command.add_argument("--interchange-dir", type=Path)
         _json_flag(command)
+    diagnostic = export_commands.add_parser("diagnostic")
+    diagnostic.add_argument("diagnostic_action", nargs="?", choices=("validate", "show"))
+    diagnostic.add_argument("--run", type=Path, required=True)
+    diagnostic.add_argument("--interchange-dir", type=Path)
+    diagnostic.add_argument("--replace", action="store_true")
+    _json_flag(diagnostic)
     return parser
 
 
@@ -369,6 +375,20 @@ def _render_command(args: argparse.Namespace) -> int:
 
 
 def _export_contract_command(args: argparse.Namespace) -> int:
+    if args.export_command == "diagnostic":
+        from wave_generator_engine.export_contract.diagnostic import (
+            DiagnosticSessionExportService,
+        )
+        if args.diagnostic_action == "validate":
+            payload = DiagnosticSessionExportService.validate(args.run)
+        elif args.diagnostic_action == "show":
+            payload = DiagnosticSessionExportService.show(args.run)
+        else:
+            payload = DiagnosticSessionExportService(args.interchange_dir).export(
+                args.run, replace=args.replace
+            )
+        _emit(payload, args.json_output)
+        return 0
     from wave_generator_engine.export_contract.service import (
         DiagnosticExportContractService,
     )

@@ -166,7 +166,13 @@ def test_renderer_has_no_random_transform_export_or_audio_path() -> None:
     source = inspect.getsource(RenderAuditService)
     forbidden = ("random.", "normalize(", "resample(", "wave.open", "soundfile")
     assert not any(item in source.casefold() for item in forbidden)
+    assert {
+        path.relative_to(ROOT) for path in (ROOT / "runs").rglob("*.wav")
+    } == {
+        Path(f"runs/latest/diagnostic_export/files/"
+             f"x_alpha_session_01_baseline_branch_{index:02d}.wav")
+        for index in range(1, 5)
+    }
     for root in (ROOT / "runs", ROOT / "reports"):
-        assert not list(root.rglob("*.wav"))
         assert not list(root.rglob("*.npy"))
         assert not list(root.rglob("*.npz"))

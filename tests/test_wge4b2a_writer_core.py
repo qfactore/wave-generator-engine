@@ -275,4 +275,3 @@ def test_writer_core_has_no_source_render_or_frozen_motif_dependency() -> None:
         "calibration_multiplier *", "playback_intensity *",
     ):
         assert forbidden not in sources
-    assert not (ROOT / "runs/latest/diagnostic_export").exists()

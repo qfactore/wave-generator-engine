@@ -1,0 +1,56 @@
+{
+  "all_files_passed": true,
+  "content_hash": "a6d8939eb729f6c5a2db3c021bc9a7471146b5d97064dc9409b7e8d9d20a803b",
+  "exact_pcm_code_equality": true,
+  "files": [
+    {
+      "branch_number": 1,
+      "data_chunk_sha256": "759ea8ff786ef7362ea09d3a69f73dd38f0f4d0e1d0075057bb810c076c0361f",
+      "exact_pcm_code_equality": true,
+      "filename": "x_alpha_session_01_baseline_branch_01.wav",
+      "frame_count": 2880000,
+      "left_right_order_verified": true,
+      "maximum_quantization_error": 1.52587890625e-05,
+      "schema_version": "wge.diagnostic_readback_result.v1",
+      "valid": true,
+      "wav_sha256": "9c5ed5994f9e4d8ec15dac91851f788508df106185b4816ddc11054ae2170747"
+    },
+    {
+      "branch_number": 2,
+      "data_chunk_sha256": "723d5a80496f0b4a23c687cb4d518bcdd872c93bc4d81d9ea840fc45593212b0",
+      "exact_pcm_code_equality": true,
+      "filename": "x_alpha_session_01_baseline_branch_02.wav",
+      "frame_count": 2880000,
+      "left_right_order_verified": true,
+      "maximum_quantization_error": 1.52587890625e-05,
+      "schema_version": "wge.diagnostic_readback_result.v1",
+      "valid": true,
+      "wav_sha256": "28472051eea75634ef0dae74eb3cab7f214b09c47e89e35487f7168113057d9c"
+    },
+    {
+      "branch_number": 3,
+      "data_chunk_sha256": "ff395e7aa48f8a0913001923b8c9218d73ee9755458a8db3f7c630a896d80c18",
+      "exact_pcm_code_equality": true,
+      "filename": "x_alpha_session_01_baseline_branch_03.wav",
+      "frame_count": 2880000,
+      "left_right_order_verified": true,
+      "maximum_quantization_error": 1.52587890625e-05,
+      "schema_version": "wge.diagnostic_readback_result.v1",
+      "valid": true,
+      "wav_sha256": "4954c3e6ac8e01fed500b85bcdd46e4cb29dc62e336787aed7ce5c9df726d9e4"
+    },
+    {
+      "branch_number": 4,
+      "data_chunk_sha256": "a35d77a00d2beb9625c4460707e75f595f0d00a3eb4f185daa086aa50d9f50f5",
+      "exact_pcm_code_equality": true,
+      "filename": "x_alpha_session_01_baseline_branch_04.wav",
+      "frame_count": 2880000,
+      "left_right_order_verified": true,
+      "maximum_quantization_error": 1.52587890625e-05,
+      "schema_version": "wge.diagnostic_readback_result.v1",
+      "valid": true,
+      "wav_sha256": "9b1dbdf3eb955c80bd37203c8ef6d0bfabbeee551ed84e73460143863ec6df61"
+    }
+  ],
+  "schema_version": "wge.diagnostic_pack_readback.v1"
+}
