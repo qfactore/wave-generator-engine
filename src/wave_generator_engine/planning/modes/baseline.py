@@ -1,6 +1,12 @@
 from typing import Any
 
 from wave_generator_engine.errors import ValidationFailure
+from wave_generator_engine.meso import (
+    MesoPhraseScheduler,
+    MesoScheduleRequest,
+    load_meso_policy,
+    validate_meso_schedule,
+)
 from wave_generator_engine.planning.hashing import content_hash
 from wave_generator_engine.planning.seeds import derive_seed, local_rng
 
@@ -78,6 +84,30 @@ class BaselinePlanner:
         pulse_fraction = defaults["pulse_pattern_prevalence"]["value"]
         repeat_probability = defaults["immediate_motif_repeat_probability"]["value"]
         duration_samples = duration_seconds * sample_rate_hz
+        meso_config = planning_profile.get("meso_scheduler")
+        meso_result = None
+        meso_policy = None
+        meso_substream_root = None
+        if meso_config is not None and meso_config.get("enabled") is True:
+            meso_policy = load_meso_policy(meso_config["source_scope"])
+            if meso_config["meso_policy_id"] != meso_policy.policy_id or \
+                    meso_config["meso_policy_hash"] != meso_policy.content_hash:
+                raise ValidationFailure("Meso scheduler policy identity mismatch")
+            meso_substream_root = derive_seed(
+                root_seed, meso_config["seed_namespace"]
+            )
+            meso_request = MesoScheduleRequest(
+                duration_samples=duration_samples,
+                sample_rate_hz=sample_rate_hz,
+                root_seed=meso_substream_root,
+                policy_id=meso_policy.policy_id,
+                source_scope=meso_config["source_scope"],
+                target_packet_rate_hz=meso_config["target_packet_rate_hz"],
+            )
+            meso_result = MesoPhraseScheduler().schedule(
+                meso_request, policy=meso_policy
+            )
+            validate_meso_schedule(meso_request, meso_result, meso_policy)
         packet_seed = derive_seed(root_seed, f"session:{session_id}", "packet_timing_and_grammar")
         channel_seed = derive_seed(root_seed, f"session:{session_id}", "channel_grammar")
         timing_seed = derive_seed(root_seed, f"session:{session_id}", "continuation_timing")
@@ -97,7 +127,16 @@ class BaselinePlanner:
         previous_motif: str | None = None
         packet_index = 0
         onset_base = 0
-        while onset_base < duration_samples:
+        maximum_motif_duration = max(
+            int(item["shape"][0]) for item in motif_metadata
+        )
+        meso_onsets = list(meso_result.onset_samples) if meso_result else None
+        while (
+            packet_index < len(meso_onsets)
+            if meso_onsets is not None else onset_base < duration_samples
+        ):
+            if meso_onsets is not None:
+                onset_base = meso_onsets[packet_index]
             packet_id = f"s{session_id:02d}_p{packet_index:04d}"
             has_continuations = pulse_rng.random() < pulse_fraction
             grammar = (
@@ -120,8 +159,11 @@ class BaselinePlanner:
             relative_onsets = [0]
             for spacing in spacings:
                 relative_onsets.append(relative_onsets[-1] + spacing)
-            maximum_motif_duration = max(int(item["shape"][0]) for item in motif_metadata)
             if onset_base + relative_onsets[-1] + maximum_motif_duration > duration_samples:
+                if meso_result is not None:
+                    raise ValidationFailure(
+                        "Meso packet onset leaves insufficient event-boundary margin"
+                    )
                 break
             packet_events: list[str] = []
             for unit_index, channel in enumerate(sequence):
@@ -181,7 +223,7 @@ class BaselinePlanner:
                 events.append(event)
                 packet_events.append(event_id)
                 previous_motif = motif_id
-            packets.append({
+            packet = {
                 "packet_id": packet_id,
                 "session_id": session_id,
                 "packet_index": packet_index,
@@ -199,10 +241,17 @@ class BaselinePlanner:
                     "continuation_spacing": "direct_session_grammar_aware_uniform",
                 },
                 "authority_references": ["canonical_unit_grammar_terms"],
-            })
+            }
+            if meso_result is not None:
+                packet["meso_phrase_state"] = meso_result.phrase_states[packet_index]
+                packet["meso_phrase_id"] = meso_result.packet_phrase_ids[packet_index]
+            packets.append(packet)
             interval = _draw_range(packet_rng, packet_interval_policy, sample_rate_hz)
-            onset_base += interval
+            if meso_result is None:
+                onset_base += interval
             packet_index += 1
+        if meso_result is not None and len(packets) != len(meso_result.onset_samples):
+            raise ValidationFailure("Meso scheduler packet count was not preserved")
         packet_plan = {
             "schema_version": "wge.packet_plan.v1",
             "packet_plan_id": f"session_{session_id:02d}_packets",
@@ -236,6 +285,49 @@ class BaselinePlanner:
             },
             "content_hash": "",
         }
+        if meso_result is not None:
+            packet_plan["meso_schedule"] = {
+                "enabled": True,
+                "policy_id": meso_policy.policy_id,
+                "policy_hash": meso_policy.content_hash,
+                "scheduler_result_hash": meso_result.content_hash,
+                "phrase_state_model_id": meso_policy.document[
+                    "cluster_detection"
+                ]["model_type"],
+                "source_scope": meso_config["source_scope"],
+                "root_seed": root_seed,
+                "scheduler_substream_root_seed": meso_substream_root,
+                "scheduler_seed": meso_result.provenance["scheduler_seed"],
+                "phrase_count": meso_result.metrics["phrase_count"],
+                "phrase_active_share": meso_result.metrics[
+                    "phrase_active_window_share"
+                ],
+                "membership_summary": {
+                    "phrase_active_packets": sum(
+                        state == "phrase_active"
+                        for state in meso_result.phrase_states
+                    ),
+                    "background_packets": sum(
+                        state == "background"
+                        for state in meso_result.phrase_states
+                    ),
+                },
+                "anti_lattice_validation": {
+                    "unique_interval_count": meso_result.metrics[
+                        "unique_interval_count"
+                    ],
+                    "interval_coefficient_of_variation": meso_result.metrics[
+                        "interval_coefficient_of_variation"
+                    ],
+                    "maximum_identical_interval_run": meso_result.metrics[
+                        "maximum_identical_interval_run"
+                    ],
+                    "schedule_spectrum_peak_power_fraction": meso_result.metrics[
+                        "schedule_spectrum"
+                    ]["peak_power_fraction"],
+                    "status": "passed",
+                },
+            }
         packet_plan["pulse_pattern_plan"]["content_hash"] = content_hash(
             packet_plan["pulse_pattern_plan"]
         )
@@ -269,4 +361,13 @@ class BaselinePlanner:
             },
             "seed_derivation": "sha256_first_64_bits",
         }
+        if meso_result is not None:
+            seeds["stage_seeds"]["meso_phrase_scheduler"] = \
+                meso_result.provenance["scheduler_seed"]
+            seeds["meso_scheduler"] = {
+                "seed_namespace": meso_config["seed_namespace"],
+                "substream_root_seed": meso_substream_root,
+                "scheduler_seed": meso_result.provenance["scheduler_seed"],
+                "result_hash": meso_result.content_hash,
+            }
         return packet_plan, event_plan, seeds

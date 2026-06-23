@@ -121,6 +121,16 @@ class PlanningPipeline:
             "headroom_status": "not_certified_without_waveform_render_and_overlap_sum",
             "content_hash": "",
         }
+        if "meso_schedule" in packet_plan:
+            session_plan["meso_schedule"] = {
+                key: packet_plan["meso_schedule"][key]
+                for key in (
+                    "enabled", "policy_id", "policy_hash",
+                    "scheduler_result_hash", "phrase_state_model_id",
+                    "source_scope", "phrase_count", "phrase_active_share",
+                    "anti_lattice_validation",
+                )
+            }
         session_plan["content_hash"] = content_hash(session_plan)
         pack = {
             "schema_version": "wge.session_pack_plan.v1",

@@ -1,0 +1,170 @@
+{
+  "report_id": "wge5b1b_planner_integration_report",
+  "report_version": "1.0.0",
+  "status": "WGE5B1B_PLANNER_INTEGRATION_READY",
+  "engine_version": "0.5.2",
+  "starting_checkpoint": "6a45bdaea648235bd576585d8bcad01e5ca0e6c1",
+  "integration_architecture": {
+    "pipeline": [
+      "SessionPackProfile",
+      "Session 1 planning profile",
+      "meso phrase scheduler",
+      "packet onset skeleton",
+      "existing packet grammar and content planner",
+      "candidate SessionPlan and EventPlan"
+    ],
+    "production_run_replaced": false,
+    "candidate_plans_persisted": false,
+    "timing_fields_changed": [
+      "packet onset samples",
+      "inter-packet intervals",
+      "phrase-state annotations",
+      "packet-to-phrase membership",
+      "derived event onset and end samples",
+      "derived overlap and concurrency"
+    ],
+    "content_fields_preserved": [
+      "packet count",
+      "packet IDs",
+      "grammar labels",
+      "continuation offsets",
+      "motif identities",
+      "relative gains",
+      "channel assignments",
+      "Focus Role"
+    ]
+  },
+  "profile_resolution": {
+    "planning_profile_id": "x_alpha_session_01_baseline_v1",
+    "planning_profile_hash": "23d0b8e321b6b9ffd9d666d78cc8acb1098322dd05125e3d5c9a9081145459b2",
+    "activation_data_driven": true,
+    "meso_policy_id": "x_alpha_meso_cluster_rhythm_policy_v1",
+    "meso_policy_hash": "6297addcf7129b177f11c9fae23e3ae4a85f20ae6fa83d1c392d291608699e32",
+    "source_scope": "direct_session_1",
+    "scheduler_mode": "probabilistic_recurrent_interval_phrase_state",
+    "seed_namespace": "meso_phrase_scheduler",
+    "packet_count_reconciliation": "caller_rate_exact_count",
+    "target_packet_rate_hz": 2.4833333333333334,
+    "sessions_2_to_4_meso_enabled": false
+  },
+  "rng_stream_isolation": {
+    "content_stream_preserved": true,
+    "meso_substream_owned": true,
+    "meso_substream_derivation": "sha256_first_64_bits from root seed and profile seed namespace, followed by scheduler policy-scoped derivation",
+    "legacy_packet_interval_draw_consumed_for_content_compatibility": true,
+    "timing_namespace_change_preserves_content": true,
+    "global_rng_used": false
+  },
+  "primary_candidate": {
+    "root_seed": 20260622,
+    "packet_plan_hash": "49f6c968309d8411a5b3316ca4d9c55a7512e71311b25afe659b2f1505e02aa6",
+    "event_plan_hash": "59ce92ffc82170944b7f68846d2ee38025e573f80fed63903bfdf7fa399a2501",
+    "scheduler_result_hash": "c057df01e4467de2107dff1f036cb4a9233c501fa6b58e6d84be2f582da280ba",
+    "packet_count": 149,
+    "event_count": 960,
+    "packet_rate_hz": 2.4833333333333334,
+    "event_rate_hz": 16,
+    "phrase_count": 15,
+    "phrases_per_minute": 15,
+    "phrase_active_share": 0.3972602739726027,
+    "phrase_size_median_packets": 7,
+    "phrase_duration_median_seconds": 1.7031041666666666,
+    "within_phrase_interval_median_seconds": 0.2795625,
+    "between_phrase_gap_median_seconds": 1.8118854166666667,
+    "interval_lag_1_correlation": 0.5345934369924334,
+    "unique_interval_count": 147,
+    "interval_coefficient_of_variation": 0.8247541409616632,
+    "repeated_10ms_cell_prevalence": 0.8040540540540541,
+    "maximum_identical_interval_run": 1,
+    "schedule_spectrum_peak_power_fraction": 0.017783722698549633,
+    "pulse_pattern_prevalence": 0.9798657718120806,
+    "unique_motifs": 83,
+    "motif_entropy_bits": 6.159014218117189,
+    "motif_maximum_share": 0.03854166666666667,
+    "immediate_motif_repetition_rate": 0.5192909280500522,
+    "focus_non_focus_ratio": 1.0095351609058403,
+    "maximum_concurrency": 3,
+    "validation": "passed"
+  },
+  "holdout_candidates": [
+    {
+      "root_seed": 20260623,
+      "packet_plan_hash": "2f1bad7925ae8b90c1fed95136bc3dd8d8b91152e8ff1b808fb87c86611d1db7",
+      "event_plan_hash": "fbbf25f5732535a292e63fbf4d77fa4fa7af359cc79145e684a8163ce70fc06a",
+      "scheduler_result_hash": "80e5a378bc350ad5df0487748aaff5b0439861d12033cdecedeef9c5d2470dca",
+      "packet_count": 149,
+      "event_count": 961,
+      "phrase_count": 15,
+      "phrase_active_share": 0.3972602739726027,
+      "phrase_duration_median_seconds": 1.5892083333333333,
+      "within_phrase_interval_median_seconds": 0.2661041666666667,
+      "between_phrase_gap_median_seconds": 2.5005208333333337,
+      "unique_interval_count": 147,
+      "interval_coefficient_of_variation": 0.8662423788639526,
+      "maximum_concurrency": 4,
+      "validation": "passed"
+    },
+    {
+      "root_seed": 20260624,
+      "packet_plan_hash": "06b9f32c2af9903d93bad537b7b15f1dd6df0f7bd0d412034985d8d30503373d",
+      "event_plan_hash": "d2726214cadfbcb69514bfa5b4b925510c043ce4b5c243d5161f7071c6f7c881",
+      "scheduler_result_hash": "24dcdc21e9c33c56db406b5f7745aa309e9dd6efec40ba909a44fd618c45f8d7",
+      "packet_count": 149,
+      "event_count": 963,
+      "phrase_count": 15,
+      "phrase_active_share": 0.3972602739726027,
+      "phrase_duration_median_seconds": 1.5876041666666667,
+      "within_phrase_interval_median_seconds": 0.27470833333333333,
+      "between_phrase_gap_median_seconds": 2.146802083333333,
+      "unique_interval_count": 147,
+      "interval_coefficient_of_variation": 0.9508720032888031,
+      "maximum_concurrency": 4,
+      "validation": "passed"
+    }
+  ],
+  "candidate_vs_current_content_invariance": {
+    "current_content_signature": "e3945f374c1daaf740a54903eb865d0e44aefe2dbc44a16b2ed1831ddab90307",
+    "candidate_content_signature": "e3945f374c1daaf740a54903eb865d0e44aefe2dbc44a16b2ed1831ddab90307",
+    "content_equal": true,
+    "packet_content_records_equal": 149,
+    "event_content_records_equal": 960,
+    "changed_packet_onset_count": 148,
+    "changed_event_onset_count": 952
+  },
+  "existing_plan_guardrails": {
+    "primary_packet_count_149": true,
+    "primary_event_count_960": true,
+    "canonical_grammar_valid": true,
+    "pulse_pattern_within_reference": true,
+    "grammar_sequence_preserved": true,
+    "motif_sequence_preserved": true,
+    "motif_diversity_preserved": true,
+    "relative_gains_preserved": true,
+    "channels_preserved": true,
+    "focus_role_preserved": true,
+    "event_bounds_valid": true,
+    "anti_lattice_valid": true,
+    "maximum_concurrency_valid": true
+  },
+  "determinism": {
+    "same_seed_byte_identical": true,
+    "different_seeds_differ": true,
+    "primary_and_holdouts_valid": true
+  },
+  "test_results": {
+    "complete_test_count": 364,
+    "status": "passed"
+  },
+  "authorization": {
+    "wge5b2_candidate_regeneration_authorized": true,
+    "basis": [
+      "Activation is profile-driven and policy hashes validate.",
+      "The meso scheduler changes timing and annotations only.",
+      "Content RNG decisions are invariant to meso timing changes.",
+      "Primary and holdout candidates pass policy and planner validation.",
+      "Existing non-meso qualification guardrails remain valid.",
+      "Current runs/latest plans and diagnostic WAVs remain unchanged."
+    ]
+  },
+  "content_hash": "9464224d543c41a7e6b771b5e1b62b619897b430042349ddfe59a44ce208d655"
+}

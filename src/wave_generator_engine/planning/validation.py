@@ -77,6 +77,13 @@ def validate_plans(
     ]
     if len(packet_intervals) > 1 and len(set(packet_intervals)) == 1:
         raise ValidationFailure("packet_timing_variance: stochastic Baseline intervals are fixed")
+    if any(value <= 0 for value in packet_intervals):
+        raise ValidationFailure("Packet onsets must be strictly increasing")
+    if packet_items and (
+        packet_items[0]["onset_sample"] < 0
+        or packet_items[-1]["onset_sample"] >= session["duration_samples"]
+    ):
+        raise ValidationFailure("Packet onsets are outside session bounds")
     all_spacings: list[int] = []
     spacings_by_grammar: dict[str, list[int]] = defaultdict(list)
     for packet in packet_items:
@@ -91,6 +98,8 @@ def validate_plans(
         if not roles or roles[0] != "packet_start" or \
                 any(role != "packet_continuation" for role in roles[1:]):
             raise ValidationFailure("pulse_pattern_realisation: event roles are invalid")
+        if selected[0]["onset_sample"] != packet["onset_sample"]:
+            raise ValidationFailure("Packet start event does not match packet onset")
         actual_spacings = [
             second["onset_sample"] - first["onset_sample"]
             for first, second in zip(selected, selected[1:])
@@ -103,6 +112,36 @@ def validate_plans(
         spacings_by_grammar[packet["unit_grammar"]].extend(actual_spacings)
     if len(all_spacings) > 1 and len(set(all_spacings)) == 1:
         raise ValidationFailure("continuation_timing_policy: universal fixed spacing")
+    meso = packets.get("meso_schedule")
+    if meso is not None:
+        if meso.get("enabled") is not True or \
+                meso.get("source_scope") != "direct_session_1" or \
+                meso.get("anti_lattice_validation", {}).get("status") != "passed":
+            raise ValidationFailure("Meso scheduler metadata is invalid")
+        if any(
+            "meso_phrase_state" not in packet or "meso_phrase_id" not in packet
+            for packet in packet_items
+        ):
+            raise ValidationFailure("Meso packet membership metadata is incomplete")
+        active = sum(
+            packet["meso_phrase_state"] == "phrase_active"
+            for packet in packet_items
+        )
+        background = sum(
+            packet["meso_phrase_state"] == "background"
+            for packet in packet_items
+        )
+        summary = meso.get("membership_summary", {})
+        if active != summary.get("phrase_active_packets") or \
+                background != summary.get("background_packets") or \
+                active + background != len(packet_items):
+            raise ValidationFailure("Meso packet membership summary is invalid")
+        phrase_ids = [
+            packet["meso_phrase_id"] for packet in packet_items
+            if packet["meso_phrase_id"] is not None
+        ]
+        if len(set(phrase_ids)) != meso.get("phrase_count"):
+            raise ValidationFailure("Meso phrase count metadata is invalid")
     for event in events["events"]:
         if not all(isinstance(event[key], int) for key in (
             "onset_sample", "duration_samples", "end_sample_exclusive",
@@ -237,6 +276,9 @@ def validate_plans(
             "pulse_pattern_realisation": "passed",
             "random_trace_semantics": "passed",
             "diagnostic_data_integrity": "passed_plan_source_contract",
+            "meso_scheduler_integration": (
+                "passed" if meso is not None else "not_present_legacy_plan"
+            ),
         },
         "advisory_conformance": advisory,
         "counts": {

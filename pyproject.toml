@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "wave-generator-engine"
-version = "0.5.1"
+version = "0.5.2"
 description = "Exact diagnostic rendering and headroom audit for qualified plans"
 readme = "README.md"
 requires-python = ">=3.11"

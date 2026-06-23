@@ -6,6 +6,7 @@ from typing import Any
 from wave_generator_engine.config import ENGINE_ROOT, PROFILE_ROOT
 from wave_generator_engine.errors import ValidationFailure
 from wave_generator_engine.interchange.discovery import discover_interchange
+from wave_generator_engine.meso.policy import load_meso_policy
 from wave_generator_engine.profiles.hashing import content_hash
 from wave_generator_engine.profiles.registry import Registry
 
@@ -39,6 +40,29 @@ def validate_session_overlay(document: dict[str, Any]) -> None:
     count_grammars = set(document["parameters"]["grammar_event_counts"]["value"])
     if count_grammars != canonical_grammars | {"one_impulse_burst"}:
         raise ValidationFailure("Session planning grammar event-count mapping is ambiguous")
+    meso = document.get("meso_scheduler")
+    if meso is not None:
+        required = {
+            "enabled", "meso_policy_id", "meso_policy_hash", "scheduler_mode",
+            "source_scope", "seed_namespace", "packet_count_reconciliation",
+            "target_packet_rate_hz", "authority_tier", "source_artifact",
+            "source_field", "provisional", "rationale",
+        }
+        if set(meso) != required or meso["enabled"] is not True:
+            raise ValidationFailure("Meso scheduler profile activation is incomplete")
+        policy = load_meso_policy(meso["source_scope"])
+        if meso["meso_policy_id"] != policy.policy_id or \
+                meso["meso_policy_hash"] != policy.content_hash:
+            raise ValidationFailure("Meso scheduler policy hash mismatch")
+        if meso["scheduler_mode"] != \
+                policy.document["cluster_detection"]["model_type"]:
+            raise ValidationFailure("Meso scheduler mode does not match policy")
+        if meso["seed_namespace"] != "meso_phrase_scheduler":
+            raise ValidationFailure("Meso scheduler seed namespace is invalid")
+        if meso["packet_count_reconciliation"] != "caller_rate_exact_count" or \
+                not isinstance(meso["target_packet_rate_hz"], (int, float)) or \
+                meso["target_packet_rate_hz"] <= 0:
+            raise ValidationFailure("Meso packet-count reconciliation is invalid")
 
 
 def _session_overlay(
@@ -287,6 +311,9 @@ class PlanningProfileResolver:
                     "user_editable": False,
                 }
                 if overlay is not None else None
+            ),
+            "meso_scheduler": (
+                overlay.get("meso_scheduler") if overlay is not None else None
             ),
             "unsupported_fields": ["carrier_frequency_hz", "motif_time_scale_ratio"],
             "content_hash": "",

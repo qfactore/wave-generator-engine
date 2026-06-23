@@ -8,6 +8,21 @@
   "session_id": 1,
   "mode": "baseline",
   "user_editable": false,
+  "meso_scheduler": {
+    "enabled": true,
+    "meso_policy_id": "x_alpha_meso_cluster_rhythm_policy_v1",
+    "meso_policy_hash": "6297addcf7129b177f11c9fae23e3ae4a85f20ae6fa83d1c392d291608699e32",
+    "scheduler_mode": "probabilistic_recurrent_interval_phrase_state",
+    "source_scope": "direct_session_1",
+    "seed_namespace": "meso_phrase_scheduler",
+    "packet_count_reconciliation": "caller_rate_exact_count",
+    "target_packet_rate_hz": 2.4833333333333334,
+    "authority_tier": "engine_qualified_integration",
+    "source_artifact": "wge5b1a_meso_scheduler_core_report",
+    "source_field": "synthetic_request.target_packet_count|authorization",
+    "provisional": true,
+    "rationale": "Preserve the qualified 149-packet 60-second Session 1 diagnostic rate while replacing only packet-onset timing with the authorized meso scheduler."
+  },
   "parameters": {
     "packet_interval_distribution": {
       "value": {"distribution": "uniform", "minimum": 0.26, "maximum": 0.55},
@@ -117,5 +132,5 @@
       "rationale": "Qualification does not apply gain, calibration, or playback intensity."
     }
   },
-  "content_hash": "8606f30750f942db202728b3e0d50bc13a876728aadcb4500f5ec96eeaf66338"
+  "content_hash": "23d0b8e321b6b9ffd9d666d78cc8acb1098322dd05125e3d5c9a9081145459b2"
 }

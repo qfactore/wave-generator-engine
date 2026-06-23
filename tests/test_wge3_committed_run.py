@@ -5,7 +5,6 @@ from jsonschema import Draft202012Validator
 
 from wave_generator_engine.planning.service import PlanningService
 from wave_generator_engine.profiles.hashing import validate_content_hash
-from wave_generator_engine.runs.storage import RunStorage
 
 ROOT = Path(__file__).resolve().parents[1]
 RUN = ROOT / "runs/latest"
@@ -13,7 +12,7 @@ RUN = ROOT / "runs/latest"
 
 def test_committed_run_exists_and_validates() -> None:
     from wave_generator_engine import __version__
-    assert __version__ == "0.5.1"
+    assert __version__ == "0.5.2"
     assert RUN.is_dir()
     manifest = json.loads((RUN / "run_manifest.json").read_text())
     assert validate_content_hash(manifest)
@@ -23,24 +22,32 @@ def test_committed_run_exists_and_validates() -> None:
     assert not manifest["audio_directory_created"]
 
 
-def test_committed_core_hashes_match_rebuild(tmp_path: Path) -> None:
+def test_committed_core_hashes_remain_frozen_while_candidate_rebuild_differs(
+    tmp_path: Path,
+) -> None:
+    stored = json.loads((RUN / "run_manifest.json").read_text())
+    paths = {
+        "planning_profile": "planning_profile_snapshot.json",
+        "session_pack_plan": "session_pack_plan.json",
+        "session_plan": "sessions/session_01/session_plan.json",
+        "macro_state_plan": "sessions/session_01/macro_state_plan.json",
+        "packet_plan": "sessions/session_01/packet_plan.json",
+        "event_plan": "sessions/session_01/event_plan.json",
+        "validation_report": "sessions/session_01/validation_report.json",
+    }
+    for key, relative in paths.items():
+        document = json.loads((RUN / relative).read_text())
+        assert validate_content_hash(document)
+        assert document["content_hash"] == stored["core_hashes"][key]
     request = json.loads(
         (ROOT / "examples/run_requests/x_alpha_session1_diagnostic_60s.json").read_text()
     )
     result = PlanningService().build(request)
-    stored = json.loads((RUN / "run_manifest.json").read_text())
-    assert PlanningService.core_hashes(result) == stored["core_hashes"]
-    rebuilt = RunStorage(tmp_path / "runs").write_latest(result)
-    for relative in (
-        "session_pack_plan.json",
-        "planning_profile_snapshot.json",
-        "sessions/session_01/session_plan.json",
-        "sessions/session_01/packet_plan.json",
-        "sessions/session_01/event_plan.json",
-    ):
-        assert (RUN / relative).read_bytes() == (rebuilt / relative).read_bytes()
-    for source in sorted((RUN / "diagnostics/raw").glob("*")):
-        assert source.read_bytes() == (rebuilt / "diagnostics/raw" / source.name).read_bytes()
+    candidate_hashes = PlanningService.core_hashes(result)
+    assert candidate_hashes["request"] == stored["core_hashes"]["request"]
+    assert candidate_hashes["packet_plan"] != stored["core_hashes"]["packet_plan"]
+    assert result.packet_plan["meso_schedule"]["enabled"]
+    assert list(tmp_path.iterdir()) == []
 
 
 def test_committed_run_has_no_audio_or_upstream_paths() -> None:

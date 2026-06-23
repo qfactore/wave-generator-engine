@@ -1,3 +1,4 @@
+import hashlib
 import random
 from dataclasses import asdict
 from typing import Any
@@ -11,8 +12,12 @@ from wave_generator_engine.meso.models import (
     MesoScheduleResult,
 )
 from wave_generator_engine.meso.policy import MesoPolicy, load_meso_policy
-from wave_generator_engine.planning.seeds import derive_seed
 from wave_generator_engine.profiles.hashing import content_hash
+
+
+def _derive_seed(root_seed: int, *labels: str) -> int:
+    payload = ":".join((str(root_seed), *labels)).encode("utf-8")
+    return int.from_bytes(hashlib.sha256(payload).digest()[:8], "big")
 
 
 def _piecewise_quantile(rng: random.Random, values: dict[str, float]) -> float:
@@ -99,7 +104,7 @@ class MesoPhraseScheduler:
         policy = policy or load_meso_policy(request.source_scope)
         if request.policy_id != policy.policy_id:
             raise ValidationFailure("Meso request policy identity mismatch")
-        seed = derive_seed(
+        seed = _derive_seed(
             request.root_seed,
             "meso_phrase_scheduler",
             policy.content_hash,
