@@ -1,0 +1,264 @@
+{
+  "authority_snapshot": {
+    "files": {
+      "calibration": {
+        "artifact_id": "x_alpha_reference_calibration_v1",
+        "sha256": "485933b33d601bfe642b5cadf0c1c0af4a22f3a7842c18fa40c09897b816720d"
+      },
+      "carrier": {
+        "artifact_id": "x_alpha_carrier_frequency_policy_v1",
+        "sha256": "05a89e935394759c924de24e9bd765722a9eb1dd0a7c091cd226a3c2b4a96991"
+      },
+      "decision_registry": {
+        "artifact_id": null,
+        "sha256": "2019a5427451d1093aeab387f7e6d94aec8d741e60e4fcd524dcc065e31b9f90"
+      },
+      "fixture_catalog": {
+        "artifact_id": "canonical_diagnostic_fixture_catalog",
+        "sha256": "9ddc80cadbfba5f29fac0266761aa0a66874fcf9cf687016b1593d17a1c62183"
+      },
+      "hum_putput": {
+        "artifact_id": "canonical_hum_putput_grammar",
+        "sha256": "0ff5725acc4713323362636e7e15d689fd58d1489c80a7cfcbb5d31f69844627"
+      },
+      "macro_density": {
+        "artifact_id": "x_alpha_macro_density_state_model_v1",
+        "sha256": "2710dc1015822b0277345cbf01f987715178260e71c2ab66e39b15851305c663"
+      },
+      "mode_profiles": {
+        "artifact_id": "canonical_session_mode_profiles",
+        "sha256": "9bd04c460c5ef04d21bf0c3c319904e7d4c5abe86a304d7105b45bded2aff14e"
+      },
+      "pulse_pattern": {
+        "artifact_id": "x_alpha_pulse_pattern_grammar_v1",
+        "sha256": "bd1276da6087b87bd89e9a53c93f8ba451dc04db802ebfa287772808712b0fbf"
+      },
+      "timing_dependencies": {
+        "artifact_id": "x_alpha_timing_dependency_policy_v1",
+        "sha256": "7f36fdfb0257a27adadaea3e42bfd7d1d6e8d39e2cf73d42c472ebe8d6a99136"
+      },
+      "unit_guidance": {
+        "artifact_id": "canonical_unit_grammar_builder_guidance",
+        "sha256": "d2b13a9acf00335f2a41aae50de5c72cc22218a05df7202336eaa52a731e0a53"
+      },
+      "unit_terms": {
+        "artifact_id": "canonical_unit_grammar_terms",
+        "sha256": "34002dfb2636766211f806047b7d18fa78472342c11cf494082d88a925ec7ae8"
+      }
+    },
+    "interchange_manifest_version": "0.8.0",
+    "session_planning_profile": {
+      "content_hash": "23d0b8e321b6b9ffd9d666d78cc8acb1098322dd05125e3d5c9a9081145459b2",
+      "planning_profile_id": "x_alpha_session_01_baseline_v1",
+      "session_id": 1,
+      "source_profile_hash": "41eeb636c411de429f316f0b84cbcd1ff0e4598400f4ee2d1e310582f44e0578",
+      "status": "locked_source_reference_overlay",
+      "version": "1.0.0"
+    },
+    "tier_3_inputs_used": [],
+    "tier_4_inputs_used": []
+  },
+  "channel_convention": "zero_based_0_7",
+  "content_hash": "0b6c3cb92096137fe375a5255a7a8b43fb52a83fb0cd440587fcbcea4031310b",
+  "delivery_preset_hash": "a4ef29ecfa9c9d5f672565711e11a177cce67004afff7991f57da6feb2752426",
+  "delivery_preset_id": "diagnostic_60s_v1",
+  "executable_for_rendering": false,
+  "focus_role_mapping": {
+    "associated_density_emphasis": true,
+    "calibration_changed": false,
+    "focus_role_source": "diagnostic_run_request",
+    "playback_intensity_changed": false,
+    "profile_default": false,
+    "target_logical_channel": 2
+  },
+  "implementation_phase": "WGE-3",
+  "plan_id": "x_alpha_session_pack_diagnostic",
+  "planning_profile_snapshots": [
+    "x_alpha_session_01_baseline_v1"
+  ],
+  "provisional_defaults": {
+    "continuation_spacing_distributions": {
+      "authority_tier": "tier_2",
+      "binding_status": "grammar_aware_source_quantile_guided_distributions",
+      "provisional": true,
+      "rationale": "Grammar-aware ranges centre near the direct Session 1 54 ms median without imposing one universal spacing.",
+      "source_artifact": "x_alpha_closure:data/pulse_pattern_analysis.json",
+      "source_field": "by_session.1.trailing_spacing_seconds",
+      "source_scope": "direct_session_1",
+      "unit": "seconds",
+      "value": {
+        "burst": {
+          "distribution": "uniform",
+          "maximum": 0.064,
+          "minimum": 0.03
+        },
+        "scattered": {
+          "distribution": "uniform",
+          "maximum": 0.07,
+          "minimum": 0.036
+        },
+        "sweep": {
+          "distribution": "uniform",
+          "maximum": 0.068,
+          "minimum": 0.04
+        }
+      }
+    },
+    "grammar_event_counts": {
+      "authority_tier": "tier_1",
+      "binding_status": "engine_canonical_realisation",
+      "provisional": true,
+      "rationale": "Counts preserve canonical structure; variable partial and scattered lengths support the direct Session 1 continuation-count range.",
+      "source_artifact": "canonical_unit_grammar_terms",
+      "source_field": "terms",
+      "source_scope": "baseline_sessions_1_4",
+      "unit": "events",
+      "value": {
+        "clean_plus_one_sweep": [
+          8
+        ],
+        "one_impulse_burst": [
+          1
+        ],
+        "partial_sweep": [
+          5,
+          6,
+          7
+        ],
+        "scattered_packet": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "sweep_with_repeats": [
+          7
+        ],
+        "three_impulse_burst": [
+          3
+        ],
+        "two_impulse_burst": [
+          2
+        ]
+      }
+    },
+    "grammar_weights": {
+      "authority_tier": "tier_2",
+      "binding_status": "provisional_packet_mapping_from_descriptive_sweep_windows",
+      "provisional": true,
+      "rationale": "Source categories are descriptive sweep windows rather than local packets; weights are provisional builder guidance and qualification does not claim one-to-one equivalence.",
+      "source_artifact": "phase5l_mode_specific_unit_grammar_profiles",
+      "source_field": "profiles.baseline_stochastic_texture.expected_unit_types",
+      "source_scope": "baseline_sessions_1_4",
+      "unit": "relative_weight",
+      "value": {
+        "clean_plus_one_sweep": 0.158,
+        "partial_sweep": 0.347,
+        "scattered_packet": 0.463,
+        "sweep_with_repeats": 0.028,
+        "three_impulse_burst": 0.003,
+        "two_impulse_burst": 0.001
+      }
+    },
+    "immediate_motif_repeat_probability": {
+      "authority_tier": "tier_2",
+      "binding_status": "diagnostic_guidance",
+      "provisional": false,
+      "rationale": "Metric is exact-asset equality for globally adjacent events within source blocks, equivalent to the single generated run.",
+      "source_artifact": "phase5l_non_repetition_novelty_audit",
+      "source_field": "modes.baseline_stochastic_texture.adjacent_asset_repetition_rate",
+      "source_scope": "baseline_sessions_1_4",
+      "unit": "fraction_of_adjacent_events",
+      "value": 0.501749986940396
+    },
+    "packet_interval_distribution": {
+      "authority_tier": "tier_2",
+      "binding_status": "source_rate_guided_provisional_distribution",
+      "provisional": true,
+      "rationale": "Mean interval targets the measured 752 packets over 306 seconds while preserving stochastic variance; raw source intervals are unavailable.",
+      "source_artifact": "x_alpha_closure:data/pulse_pattern_analysis.json",
+      "source_field": "by_session.1.packet_count",
+      "source_scope": "direct_session_1",
+      "unit": "seconds",
+      "value": {
+        "distribution": "uniform",
+        "maximum": 0.55,
+        "minimum": 0.26
+      }
+    },
+    "primary_to_trailing_gap_distribution": {
+      "authority_tier": "tier_2",
+      "binding_status": "source_quantile_guided_provisional_distribution",
+      "provisional": true,
+      "rationale": "Uses the direct Session 1 p10-p90 source interval.",
+      "source_artifact": "x_alpha_closure:data/pulse_pattern_analysis.json",
+      "source_field": "by_session.1.primary_to_trailing_gap_seconds",
+      "source_scope": "direct_session_1",
+      "unit": "seconds",
+      "value": {
+        "distribution": "uniform",
+        "maximum": 0.067,
+        "minimum": 0.028
+      }
+    },
+    "pulse_pattern_prevalence": {
+      "authority_tier": "tier_2",
+      "binding_status": "diagnostic_guidance",
+      "provisional": false,
+      "rationale": "Source and engine use the same packet-start followed by continuations denominator.",
+      "source_artifact": "x_alpha_closure:data/pulse_pattern_analysis.json",
+      "source_field": "by_session.1.fraction_with_trailing_events",
+      "source_scope": "direct_session_1",
+      "unit": "fraction_of_packets",
+      "value": 0.9973404255319149
+    },
+    "relative_event_gain": {
+      "authority_tier": "engine_provisional",
+      "binding_status": "metadata_only",
+      "provisional": true,
+      "rationale": "Qualification does not apply gain, calibration, or playback intensity.",
+      "source_artifact": "none",
+      "source_field": "none",
+      "source_scope": "engine_provisional",
+      "unit": "identity",
+      "value": 1.0
+    }
+  },
+  "randomness_policy": {
+    "meso_scheduler": {
+      "result_hash": "c057df01e4467de2107dff1f036cb4a9233c501fa6b58e6d84be2f582da280ba",
+      "scheduler_seed": 3434618074625002469,
+      "seed_namespace": "meso_phrase_scheduler",
+      "substream_root_seed": 6353068119585202576
+    },
+    "random_algorithm": "python_random_mt19937_local",
+    "root_seed": 20260622,
+    "seed_derivation": "sha256_first_64_bits",
+    "session_seed": 13713822120817140622,
+    "stage_seeds": {
+      "channel_grammar": 10790682124776126523,
+      "continuation_timing": 2604362816205164434,
+      "meso_phrase_scheduler": 3434618074625002469,
+      "motif_selection": 17576750127934247021,
+      "packet_timing_and_grammar": 16968374968354258566,
+      "pulse_pattern_presence": 6585675016901362022
+    }
+  },
+  "requested_duration_seconds": 60,
+  "root_seed": 20260622,
+  "run_request_hash": "a97feffa95b9402d19da42fe1268e37eb7e458d9d35e065633112c0e80caf4ca",
+  "run_request_id": "session_01_baseline_clustered_60s_v1",
+  "sample_rate_hz": 48000,
+  "schema_version": "wge.session_pack_plan.v1",
+  "selected_session_ids": [
+    1
+  ],
+  "session_plan_ids": [
+    "session_01_plan"
+  ],
+  "source_profile_hash": "41eeb636c411de429f316f0b84cbcd1ff0e4598400f4ee2d1e310582f44e0578",
+  "source_profile_id": "x_alpha_standard_v1",
+  "warnings": [
+    "Tier 2 numeric guidance is diagnostic and non-binding."
+  ]
+}

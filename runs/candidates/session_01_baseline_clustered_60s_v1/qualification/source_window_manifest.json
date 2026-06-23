@@ -1,0 +1,13 @@
+{
+  "aggregate_only_sources": [
+    "source_session_1_pulse_statistics",
+    "baseline_sessions_1_4_aggregate_profiles"
+  ],
+  "content_hash": "56fc223e3ba21ac66d21eeff00923710377e7dd0e9b9e6dfb42ceccd2bbbc9d5",
+  "overlapping": false,
+  "requested_window_seconds": 60,
+  "schema_version": "wge.source_window_manifest.v1",
+  "selection_method": "not_assessable_no_permitted_raw_source_schedule",
+  "session_boundaries_preserved": true,
+  "source_window_count": 0
+}

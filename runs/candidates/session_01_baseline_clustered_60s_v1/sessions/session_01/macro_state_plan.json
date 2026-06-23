@@ -1,0 +1,15 @@
+{
+  "content_hash": "f84904cb6ca7da36b85b6a38b66894f5cc815bdeef67ec0ea2dee1c6c21c0cfe",
+  "macro_state_plan_id": "session_01_macro",
+  "mode": "baseline",
+  "schema_version": "wge.macro_state_plan.v1",
+  "states": [
+    {
+      "authority_status": "identity_safe_baseline_representation",
+      "end_sample_exclusive": 2880000,
+      "start_sample": 0,
+      "state_category": "neutral_active",
+      "state_id": "baseline_active_000"
+    }
+  ]
+}

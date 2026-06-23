@@ -1,0 +1,111 @@
+{
+  "advisory_conformance": {
+    "channel_occupancy": "within_reference",
+    "continuation_distribution": "near_reference",
+    "event_rate": 16.0,
+    "focus_role_density_ratio": 1.0095351609058403,
+    "motif_use_distribution": "not_assessable",
+    "packet_rate": 2.4833333333333334,
+    "packet_span_distribution": "near_reference",
+    "pulse_pattern_prevalence": "within_reference",
+    "pulse_pattern_reference_scope": "direct_session_1",
+    "pulse_pattern_reference_value": 0.9973404255319149,
+    "relative_event_gain_distribution": "not_assessable",
+    "repetition_distance": "within_reference",
+    "tier_2_reference_artifact": "x_alpha_pulse_pattern_grammar_v1",
+    "transition_grammar": "within_reference"
+  },
+  "content_hash": "2cd42357f9cf964c75ed61172dd862a4a93048fdd1640c64d3de4412dfb7fc68",
+  "counts": {
+    "channel_occupancy": {
+      "0": 122,
+      "1": 112,
+      "2": 121,
+      "3": 118,
+      "4": 138,
+      "5": 123,
+      "6": 112,
+      "7": 114
+    },
+    "continuation_count_distribution": {
+      "0": 3,
+      "4": 30,
+      "5": 40,
+      "6": 41,
+      "7": 35
+    },
+    "continuation_spacing_statistics_by_grammar": {
+      "clean_plus_one_sweep": {
+        "count": 98,
+        "maximum_samples": 3256,
+        "median_samples": 2636.5,
+        "minimum_samples": 1467,
+        "unique_spacing_count": 98
+      },
+      "partial_sweep": {
+        "count": 306,
+        "maximum_samples": 3255,
+        "median_samples": 2552.0,
+        "minimum_samples": 1380,
+        "unique_spacing_count": 272
+      },
+      "scattered_packet": {
+        "count": 383,
+        "maximum_samples": 3355,
+        "median_samples": 2576,
+        "minimum_samples": 1345,
+        "unique_spacing_count": 349
+      },
+      "sweep_with_repeats": {
+        "count": 24,
+        "maximum_samples": 3263,
+        "median_samples": 2637.5,
+        "minimum_samples": 1665,
+        "unique_spacing_count": 24
+      }
+    },
+    "events": 960,
+    "focus_non_focus_density_ratio": 1.0095351609058403,
+    "immediate_motif_repetition_rate": 0.5192909280500522,
+    "invalid_grammar_labelled_packet_count": 0,
+    "maximum_concurrency": 3,
+    "motif_maximum_share": 0.03854166666666667,
+    "motif_use_entropy_bits": 6.159014218117189,
+    "packet_interval_statistics": {
+      "maximum_samples": 116831,
+      "median_samples": 14522.0,
+      "minimum_samples": 5376,
+      "variance_samples_squared": 254133377.87363037
+    },
+    "packets": 149,
+    "pulse_pattern_prevalence": 0.9798657718120806,
+    "unique_motifs": 83
+  },
+  "hard_checks": {
+    "authority_references": "passed",
+    "channels": "passed",
+    "continuation_timing_policy": "passed",
+    "diagnostic_data_integrity": "passed_plan_source_contract",
+    "event_bounds": "passed",
+    "exact_identity_only": "passed",
+    "focus_role_bundle": "passed",
+    "hashes": "passed",
+    "meso_scheduler_integration": "passed",
+    "motif_identity": "passed",
+    "no_calibration": "passed",
+    "no_playback_intensity": "passed",
+    "no_samples": "passed",
+    "packet_timing_variance": "passed",
+    "profile_preset_match": "passed",
+    "provenance": "passed",
+    "pulse_pattern_realisation": "passed",
+    "random_trace_semantics": "passed",
+    "sample_timing": "passed",
+    "stage_order": "passed",
+    "supported_mode": "passed",
+    "unit_grammar_structure": "passed"
+  },
+  "hard_validation": "passed",
+  "report_id": "session_01_validation",
+  "schema_version": "wge.plan_validation_report.v1"
+}

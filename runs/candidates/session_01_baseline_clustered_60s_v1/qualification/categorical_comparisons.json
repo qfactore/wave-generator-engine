@@ -1,0 +1,60 @@
+{
+  "comparisons": [
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "comparison_method": "exact approved-plan invariance",
+      "comparison_result": "within_source_reference",
+      "generated_value": {
+        "clean_plus_one_sweep": 14,
+        "one_impulse_burst": 3,
+        "partial_sweep": 61,
+        "scattered_packet": 67,
+        "sweep_with_repeats": 4
+      },
+      "limitations": [],
+      "metric_id": "grammar_mix",
+      "source_artifact": "x_alpha_meso_cluster_rhythm_policy_v1",
+      "source_field": "grammar_mix",
+      "source_scope": "direct_session_1_validation",
+      "source_value": {
+        "clean_plus_one_sweep": 14,
+        "one_impulse_burst": 3,
+        "partial_sweep": 61,
+        "scattered_packet": 67,
+        "sweep_with_repeats": 4
+      }
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "comparison_method": "exact approved-plan invariance",
+      "comparison_result": "within_source_reference",
+      "generated_value": {
+        "0": 122,
+        "1": 112,
+        "2": 121,
+        "3": 118,
+        "4": 138,
+        "5": 123,
+        "6": 112,
+        "7": 114
+      },
+      "limitations": [],
+      "metric_id": "channel_occupancy",
+      "source_artifact": "x_alpha_meso_cluster_rhythm_policy_v1",
+      "source_field": "channel_occupancy",
+      "source_scope": "direct_session_1_validation",
+      "source_value": {
+        "0": 122,
+        "1": 112,
+        "2": 121,
+        "3": 118,
+        "4": 138,
+        "5": 123,
+        "6": 112,
+        "7": 114
+      }
+    }
+  ]
+}

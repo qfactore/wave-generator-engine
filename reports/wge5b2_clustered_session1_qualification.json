@@ -1,0 +1,1049 @@
+{
+  "approved_run_tree_hash": "6395db43482a2f62f29611cf85fdf8935b412e64db2d9a0766ed5339360eb20a",
+  "approved_run_unchanged": true,
+  "approved_vs_candidate": {
+    "approved": {
+      "channel_occupancy": {
+        "0": 122,
+        "1": 112,
+        "2": 121,
+        "3": 118,
+        "4": 138,
+        "5": 123,
+        "6": 112,
+        "7": 114
+      },
+      "event_count": 960,
+      "event_rate_hz": 16.0,
+      "five_second_event_density": [
+        82,
+        68,
+        79,
+        79,
+        75,
+        88,
+        72,
+        86,
+        81,
+        83,
+        81,
+        86
+      ],
+      "five_second_packet_density": [
+        13,
+        11,
+        13,
+        12,
+        13,
+        12,
+        12,
+        14,
+        12,
+        13,
+        12,
+        12
+      ],
+      "grammar_counts": {
+        "clean_plus_one_sweep": 14,
+        "one_impulse_burst": 3,
+        "partial_sweep": 61,
+        "scattered_packet": 67,
+        "sweep_with_repeats": 4
+      },
+      "interval_lag_correlations": {
+        "lag_1": 0.06688837510811325,
+        "lag_2": 0.07914220295792095,
+        "lag_3": 0.07914322958338953,
+        "lag_4": -0.10750713466565173
+      },
+      "local_interval_variability": {
+        "coefficient_of_variation": 0.19062841672065312,
+        "maximum_identical_interval_run": 1,
+        "unique_interval_count": 148
+      },
+      "maximum_concurrency": 2,
+      "motif_repetition_rate": 0.5192909280500522,
+      "packet_count": 149,
+      "packet_interval_seconds": {
+        "coefficient_of_variation": 0.19062841672065312,
+        "count": 148,
+        "maximum": 0.5492916666666666,
+        "mean": 0.4019193412162162,
+        "median": 0.39769791666666665,
+        "minimum": 0.2606875,
+        "p10": 0.2987270833333333,
+        "p90": 0.5144708333333333,
+        "variance": 0.005870202639829705
+      },
+      "packet_rate_hz": 2.4833333333333334,
+      "phrase_active_share": 0.0,
+      "phrase_count": 0,
+      "schedule_spectrum": {
+        "dominant_frequency_hz": 2.6166666666666667,
+        "peak_power_fraction": 0.016592080722704516
+      },
+      "unique_motifs": 83
+    },
+    "candidate": {
+      "channel_occupancy": {
+        "0": 122,
+        "1": 112,
+        "2": 121,
+        "3": 118,
+        "4": 138,
+        "5": 123,
+        "6": 112,
+        "7": 114
+      },
+      "event_count": 960,
+      "event_rate_hz": 16.0,
+      "five_second_event_density": [
+        95,
+        75,
+        43,
+        67,
+        30,
+        115,
+        80,
+        92,
+        45,
+        70,
+        101,
+        147
+      ],
+      "five_second_packet_density": [
+        15,
+        12,
+        7,
+        11,
+        5,
+        17,
+        12,
+        16,
+        6,
+        11,
+        16,
+        21
+      ],
+      "grammar_counts": {
+        "clean_plus_one_sweep": 14,
+        "one_impulse_burst": 3,
+        "partial_sweep": 61,
+        "scattered_packet": 67,
+        "sweep_with_repeats": 4
+      },
+      "interval_lag_correlations": {
+        "lag_1": 0.5345934369924334,
+        "lag_2": 0.15905323233389165,
+        "lag_3": -0.00514882422542951,
+        "lag_4": -0.0858050512679138
+      },
+      "maximum_concurrency": 3,
+      "motif_repetition_rate": 0.5192909280500522,
+      "packet_count": 149,
+      "packet_interval_seconds": {
+        "coefficient_of_variation": 0.8247541409616632,
+        "count": 148,
+        "maximum": 2.4339791666666666,
+        "mean": 0.40268468468468466,
+        "median": 0.30254166666666665,
+        "minimum": 0.112,
+        "p10": 0.23071458333333333,
+        "p90": 0.6753833333333334,
+        "variance": 0.11030094525765208
+      },
+      "packet_rate_hz": 2.4833333333333334,
+      "phrase_active_share": 0.3972602739726027,
+      "phrase_count": 15,
+      "schedule_spectrum": {
+        "dominant_frequency_hz": 8.166666666666666,
+        "peak_power_fraction": 0.017783722698549633
+      },
+      "unique_motifs": 83
+    }
+  },
+  "candidate_core_hashes": {
+    "planning_profile_snapshot.json": "b4ff70726d8f3e301a163b75525b0369782ab291f423b99ebd2f7c2d522efa0e",
+    "session_pack_plan.json": "0b6c3cb92096137fe375a5255a7a8b43fb52a83fb0cd440587fcbcea4031310b",
+    "sessions/session_01/channel_unit_plan.json": "3f62fee237d628b0ea97a5e0368a08ef8323ba991cc031189ab14bbee7a0f421",
+    "sessions/session_01/event_plan.json": "59ce92ffc82170944b7f68846d2ee38025e573f80fed63903bfdf7fa399a2501",
+    "sessions/session_01/macro_state_plan.json": "f84904cb6ca7da36b85b6a38b66894f5cc815bdeef67ec0ea2dee1c6c21c0cfe",
+    "sessions/session_01/packet_plan.json": "49f6c968309d8411a5b3316ca4d9c55a7512e71311b25afe659b2f1505e02aa6",
+    "sessions/session_01/pulse_pattern_plan.json": "e91d06ff014bf8c38eff2824a89e5a599d59eede6d2363c018b32617152910c2",
+    "sessions/session_01/session_plan.json": "8eed86305b35ddbb4866461ccb36bf4b4f67c5b797e2616ec48f5553b19a5c2c",
+    "sessions/session_01/validation_report.json": "2cd42357f9cf964c75ed61172dd862a4a93048fdd1640c64d3de4412dfb7fc68"
+  },
+  "candidate_id": "session_01_baseline_clustered_60s_v1",
+  "candidate_path": "runs/candidates/session_01_baseline_clustered_60s_v1",
+  "content_hash": "6f7494acf12de99d17227c9c0f3599331dd35684ebb3a55d37a7f1b99cc292eb",
+  "content_invariance": {
+    "approved_signature": "e3945f374c1daaf740a54903eb865d0e44aefe2dbc44a16b2ed1831ddab90307",
+    "candidate_signature": "e3945f374c1daaf740a54903eb865d0e44aefe2dbc44a16b2ed1831ddab90307",
+    "event_count": 960,
+    "packet_count": 149,
+    "passed": true,
+    "required_signature": "e3945f374c1daaf740a54903eb865d0e44aefe2dbc44a16b2ed1831ddab90307"
+  },
+  "determinism": {
+    "primary_independent_reruns_match": true,
+    "qualification_metrics_match": true
+  },
+  "engine_version": "0.5.2",
+  "existing_source_qualification": {
+    "authorized": true,
+    "major_outside_metrics": [],
+    "verdict": "qualified_with_documented_caveats"
+  },
+  "gap_semantics": {
+    "background_span_duration": {
+      "candidate": {
+        "coefficient_of_variation": 0.7236823330912816,
+        "count": 14,
+        "maximum": 3.0553333333333335,
+        "mean": 1.123688988095238,
+        "median": 0.9602604166666666,
+        "minimum": 0.0,
+        "p10": 0.24548958333333334,
+        "p90": 2.1705958333333335,
+        "variance": 0.6612842678859305
+      },
+      "definition": "First to last onset among packets explicitly assigned to background state between two phrases; zero for a singleton.",
+      "source_equivalent": false
+    },
+    "empty_activity_gap": {
+      "candidate": {
+        "coefficient_of_variation": 2.6202939023858964,
+        "count": 345,
+        "maximum": 2.2047708333333333,
+        "mean": 0.0805507850241546,
+        "median": 0.0341875,
+        "minimum": 0.0006666666666666666,
+        "p10": 0.012695833333333333,
+        "p90": 0.08185833333333352,
+        "variance": 0.04454916486376578
+      },
+      "definition": "Positive event-free intervals inside phrase boundaries after unioning event activity.",
+      "source_equivalent": false
+    },
+    "phrase_boundary_packet_gap": {
+      "candidate": {
+        "coefficient_of_variation": 0.6044779273536164,
+        "count": 14,
+        "maximum": 4.514125,
+        "mean": 2.4640714285714287,
+        "median": 1.8118854166666667,
+        "minimum": 0.49754166666666666,
+        "p10": 0.7440458333333334,
+        "p90": 4.514125,
+        "variance": 2.218541107931193
+      },
+      "comparison_result": "near_source_reference",
+      "definition": "Final packet onset of one phrase to first packet onset of the next phrase.",
+      "source_equivalent": true
+    }
+  },
+  "holdout_qualification": [
+    {
+      "deterministic_rerun": true,
+      "event_count": 961,
+      "event_plan_hash": "fbbf25f5732535a292e63fbf4d77fa4fa7af359cc79145e684a8163ce70fc06a",
+      "maximum_concurrency": 4,
+      "packet_count": 149,
+      "packet_plan_hash": "2f1bad7925ae8b90c1fed95136bc3dd8d8b91152e8ff1b808fb87c86611d1db7",
+      "phrase_active_share": 0.3972602739726027,
+      "phrase_boundary_gap_median_seconds": 2.5005208333333337,
+      "phrase_count": 15,
+      "phrase_duration_median_seconds": 1.5892083333333333,
+      "phrase_size_median": 7.0,
+      "scheduler_result_hash": "80e5a378bc350ad5df0487748aaff5b0439861d12033cdecedeef9c5d2470dca",
+      "seed": 20260623,
+      "valid": true,
+      "within_phrase_interval_median_seconds": 0.2661041666666667
+    },
+    {
+      "deterministic_rerun": true,
+      "event_count": 963,
+      "event_plan_hash": "d2726214cadfbcb69514bfa5b4b925510c043ce4b5c243d5161f7071c6f7c881",
+      "maximum_concurrency": 4,
+      "packet_count": 149,
+      "packet_plan_hash": "06b9f32c2af9903d93bad537b7b15f1dd6df0f7bd0d412034985d8d30503373d",
+      "phrase_active_share": 0.3972602739726027,
+      "phrase_boundary_gap_median_seconds": 2.146802083333333,
+      "phrase_count": 15,
+      "phrase_duration_median_seconds": 1.5876041666666667,
+      "phrase_size_median": 7.0,
+      "scheduler_result_hash": "24dcdc21e9c33c56db406b5f7745aa309e9dd6efec40ba909a44fd618c45f8d7",
+      "seed": 20260624,
+      "valid": true,
+      "within_phrase_interval_median_seconds": 0.27470833333333333
+    }
+  ],
+  "meso_comparisons": [
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "comparison_method": "direct validation-block empirical range",
+      "comparison_result": "within_source_reference",
+      "generated_value": 0.3972602739726027,
+      "limitations": [],
+      "metric_id": "phrase_active_share",
+      "source_artifact": "x_alpha_meso_cluster_rhythm_policy_v1",
+      "source_field": "phrase_active_share",
+      "source_scope": "direct_session_1_validation",
+      "source_value": 0.39755351681957185
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "comparison_method": "direct validation-block empirical range",
+      "comparison_result": "within_source_reference",
+      "generated_value": 15.0,
+      "limitations": [],
+      "metric_id": "phrases_per_minute",
+      "source_artifact": "x_alpha_meso_cluster_rhythm_policy_v1",
+      "source_field": "phrases_per_minute",
+      "source_scope": "direct_session_1_validation",
+      "source_value": 15.388821552899516
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "comparison_method": "quantile and full empirical-envelope comparison",
+      "comparison_result": "near_source_reference",
+      "generated_value": {
+        "coefficient_of_variation": 0.15834472262427274,
+        "count": 15,
+        "maximum": 9.0,
+        "mean": 6.866666666666666,
+        "median": 7.0,
+        "minimum": 5.0,
+        "p10": 5.4,
+        "p90": 8.0,
+        "variance": 1.1822222222222223
+      },
+      "limitations": [
+        "The 60-second candidate underrepresents the long source upper tail."
+      ],
+      "metric_id": "phrase_size_distribution",
+      "source_artifact": "x_alpha_meso_cluster_rhythm_policy_v1",
+      "source_field": "phrase_size_distribution",
+      "source_scope": "direct_session_1_validation",
+      "source_value": {
+        "maximum": 68,
+        "median": 6,
+        "minimum": 4,
+        "p10": 4,
+        "p90": 17.4
+      }
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "comparison_method": "source quantile envelope",
+      "comparison_result": "within_source_reference",
+      "generated_value": {
+        "coefficient_of_variation": 0.21673479659268846,
+        "count": 15,
+        "maximum": 2.4716458333333335,
+        "mean": 1.6733555555555557,
+        "median": 1.7031041666666666,
+        "minimum": 1.10525,
+        "p10": 1.2980666666666667,
+        "p90": 2.1168291666666668,
+        "variance": 0.1315327029783951
+      },
+      "limitations": [],
+      "metric_id": "phrase_duration_distribution",
+      "source_artifact": "x_alpha_meso_cluster_rhythm_policy_v1",
+      "source_field": "phrase_duration_distribution",
+      "source_scope": "direct_session_1_validation",
+      "source_value": {
+        "maximum": 19.045833333333334,
+        "median": 1.58203125,
+        "minimum": 0.6879166666666666,
+        "p10": 0.82128125,
+        "p90": 4.667639583333333
+      }
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "comparison_method": "semantically equivalent packet-onset interval quantiles",
+      "comparison_result": "within_source_reference",
+      "generated_value": {
+        "coefficient_of_variation": 0.13458532735985984,
+        "count": 88,
+        "maximum": 0.36325,
+        "mean": 0.2852310606060606,
+        "median": 0.2795625,
+        "minimum": 0.21872916666666667,
+        "p10": 0.2405625,
+        "p90": 0.3491125,
+        "variance": 0.0014736320690929177
+      },
+      "limitations": [],
+      "metric_id": "within_phrase_interval_distribution",
+      "source_artifact": "x_alpha_meso_cluster_rhythm_policy_v1",
+      "source_field": "within_phrase_interval_distribution",
+      "source_scope": "direct_session_1_validation",
+      "source_value": {
+        "maximum": 0.3918125,
+        "median": 0.28191666666666665,
+        "minimum": 0.19214583333333332,
+        "p10": 0.21531458333333334,
+        "p90": 0.35114375
+      }
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "comparison_method": "semantically equivalent final phrase packet onset to next phrase first packet onset",
+      "comparison_result": "near_source_reference",
+      "generated_value": {
+        "coefficient_of_variation": 0.6044779273536164,
+        "count": 14,
+        "maximum": 4.514125,
+        "mean": 2.4640714285714287,
+        "median": 1.8118854166666667,
+        "minimum": 0.49754166666666666,
+        "p10": 0.7440458333333334,
+        "p90": 4.514125,
+        "variance": 2.218541107931193
+      },
+      "limitations": [
+        "The median is within the source p10-p90 band.",
+        "The candidate p90 reaches the source maximum and is retained as a caveat."
+      ],
+      "metric_id": "phrase_boundary_packet_gap",
+      "source_artifact": "x_alpha_meso_cluster_rhythm_policy_v1",
+      "source_field": "phrase_boundary_packet_gap",
+      "source_scope": "direct_session_1_validation",
+      "source_value": {
+        "maximum": 4.514125,
+        "median": 0.7834687499999999,
+        "minimum": 0.42310416666666667,
+        "p10": 0.44219375,
+        "p90": 2.206200000000001
+      }
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "comparison_method": "descriptive candidate-only state span",
+      "comparison_result": "not_assessable",
+      "generated_value": {
+        "coefficient_of_variation": 0.7236823330912816,
+        "count": 14,
+        "maximum": 3.0553333333333335,
+        "mean": 1.123688988095238,
+        "median": 0.9602604166666666,
+        "minimum": 0.0,
+        "p10": 0.24548958333333334,
+        "p90": 2.1705958333333335,
+        "variance": 0.6612842678859305
+      },
+      "limitations": [
+        "This excludes the boundary intervals around background packets and is not the source phrase-boundary gap population."
+      ],
+      "metric_id": "background_span_duration",
+      "source_artifact": "x_alpha_meso_cluster_rhythm_policy_v1",
+      "source_field": "background_span_duration",
+      "source_scope": "direct_session_1_validation",
+      "source_value": null
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "comparison_method": "union of positive gaps between event-activity segments inside phrase boundaries",
+      "comparison_result": "not_assessable",
+      "generated_value": {
+        "coefficient_of_variation": 2.6202939023858964,
+        "count": 345,
+        "maximum": 2.2047708333333333,
+        "mean": 0.0805507850241546,
+        "median": 0.0341875,
+        "minimum": 0.0006666666666666666,
+        "p10": 0.012695833333333333,
+        "p90": 0.08185833333333352,
+        "variance": 0.04454916486376578
+      },
+      "limitations": [
+        "No source-equivalent event-free gap distribution is present in the qualified policy."
+      ],
+      "metric_id": "empty_activity_gap",
+      "source_artifact": "x_alpha_meso_cluster_rhythm_policy_v1",
+      "source_field": "empty_activity_gap",
+      "source_scope": "direct_session_1_validation",
+      "source_value": null
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "comparison_method": "onset-span fraction",
+      "comparison_result": "not_assessable",
+      "generated_value": 0.41833888888888887,
+      "limitations": [
+        "The source occupancy denominator is validation-block packet-start support with a materially different within-support packet rate; it is not directly transferable to the fixed-rate 60-second candidate."
+      ],
+      "metric_id": "dense_run_occupancy",
+      "source_artifact": "x_alpha_meso_cluster_rhythm_policy_v1",
+      "source_field": "dense_run_occupancy",
+      "source_scope": "direct_session_1_validation",
+      "source_value": 0.7045421959171533
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "comparison_method": "candidate background packet onset span fraction",
+      "comparison_result": "not_assessable",
+      "generated_value": 0.2621940972222222,
+      "limitations": [
+        "Candidate background span excludes phrase-boundary transition intervals; source quiet-gap occupancy uses between-cluster onset gaps."
+      ],
+      "metric_id": "background_span_occupancy",
+      "source_artifact": "x_alpha_meso_cluster_rhythm_policy_v1",
+      "source_field": "background_span_occupancy",
+      "source_scope": "direct_session_1_validation",
+      "source_value": 0.2527841032048467
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "comparison_method": "qualified recurrent phrase-state model without exact source tuple replay",
+      "comparison_result": "within_source_reference",
+      "generated_value": {
+        "phrase_active_share": 0.3972602739726027,
+        "phrase_count": 15,
+        "repeated_10ms_cell_prevalence": 0.8040540540540541
+      },
+      "limitations": [],
+      "metric_id": "phrase_recurrence",
+      "source_artifact": "x_alpha_meso_cluster_rhythm_policy_v1",
+      "source_field": "phrase_recurrence",
+      "source_scope": "direct_session_1_validation",
+      "source_value": {
+        "state_model": "probabilistic_recurrent_interval_phrase_state",
+        "validation_matched_training_share": 0.39755351681957185
+      }
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "comparison_method": "lag-correlation direction and nonzero serial dependence",
+      "comparison_result": "near_source_reference",
+      "generated_value": {
+        "lag_1": 0.5345934369924334,
+        "lag_2": 0.15905323233389165,
+        "lag_3": -0.00514882422542951,
+        "lag_4": -0.0858050512679138
+      },
+      "limitations": [
+        "The candidate has stronger positive lag-1 dependence than the direct source diagnostic."
+      ],
+      "metric_id": "interval_serial_dependence",
+      "source_artifact": "wge5a1_source_cluster_statistics",
+      "source_field": "rhythmic_phrase_findings.direct_session_1_interval_lag_correlations",
+      "source_scope": "direct_session_1_validation",
+      "source_value": {
+        "lag_1": 0.2289646334,
+        "lag_2": -0.1787869342,
+        "lag_3": -0.0851594996,
+        "lag_4": -0.473184681
+      }
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "comparison_method": "rolling five-interval coefficient-of-variation quantiles",
+      "comparison_result": "within_source_reference",
+      "generated_value": {
+        "coefficient_of_variation": 0.9670990814664607,
+        "count": 144,
+        "maximum": 1.2312683522649333,
+        "mean": 0.2653321027721599,
+        "median": 0.15338470856684877,
+        "minimum": 0.032840014688596875,
+        "p10": 0.0536271141820682,
+        "p90": 0.6168810311901548,
+        "variance": 0.06584480855712274
+      },
+      "limitations": [],
+      "metric_id": "local_interval_variability",
+      "source_artifact": "wge5a1_source_cluster_statistics",
+      "source_field": "rhythmic_phrase_findings.direct_session_1_rolling_five_interval_cv",
+      "source_scope": "direct_session_1_validation",
+      "source_value": {
+        "median": 0.1615976,
+        "p10": 0.0990353,
+        "p90": 0.245497
+      }
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "comparison_method": "hard engine anti-lattice checks",
+      "comparison_result": "within_source_reference",
+      "generated_value": {
+        "coefficient_of_variation": 0.8247541409616632,
+        "dominant_frequency_hz": 8.166666666666666,
+        "maximum_identical_interval_run": 1,
+        "peak_power_fraction": 0.017783722698549633,
+        "repeated_10ms_cell_prevalence": 0.8040540540540541,
+        "rolling_five_interval_cv": {
+          "coefficient_of_variation": 0.9670990814664607,
+          "count": 144,
+          "maximum": 1.2312683522649333,
+          "mean": 0.2653321027721599,
+          "median": 0.15338470856684877,
+          "minimum": 0.032840014688596875,
+          "p10": 0.0536271141820682,
+          "p90": 0.6168810311901548,
+          "variance": 0.06584480855712274
+        },
+        "unique_interval_count": 147
+      },
+      "limitations": [],
+      "metric_id": "anti_lattice",
+      "source_artifact": "x_alpha_meso_cluster_rhythm_policy_v1",
+      "source_field": "anti_lattice",
+      "source_scope": "direct_session_1_validation",
+      "source_value": null
+    }
+  ],
+  "primary_meso_metrics": {
+    "background_packet_count": {
+      "coefficient_of_variation": 0.3339628586029829,
+      "count": 14,
+      "maximum": 6.0,
+      "mean": 3.2857142857142856,
+      "median": 3.0,
+      "minimum": 1.0,
+      "p10": 2.3,
+      "p90": 4.0,
+      "variance": 1.204081632653061
+    },
+    "background_span_occupancy": 0.2621940972222222,
+    "background_span_seconds": {
+      "coefficient_of_variation": 0.7236823330912816,
+      "count": 14,
+      "maximum": 3.0553333333333335,
+      "mean": 1.123688988095238,
+      "median": 0.9602604166666666,
+      "minimum": 0.0,
+      "p10": 0.24548958333333334,
+      "p90": 2.1705958333333335,
+      "variance": 0.6612842678859305
+    },
+    "channel_occupancy": {
+      "0": 122,
+      "1": 112,
+      "2": 121,
+      "3": 118,
+      "4": 138,
+      "5": 123,
+      "6": 112,
+      "7": 114
+    },
+    "dense_run_onset_span_occupancy": 0.41833888888888887,
+    "empty_activity_gap_occupancy": 0.46316701388888887,
+    "empty_activity_gap_seconds": {
+      "coefficient_of_variation": 2.6202939023858964,
+      "count": 345,
+      "maximum": 2.2047708333333333,
+      "mean": 0.0805507850241546,
+      "median": 0.0341875,
+      "minimum": 0.0006666666666666666,
+      "p10": 0.012695833333333333,
+      "p90": 0.08185833333333352,
+      "variance": 0.04454916486376578
+    },
+    "event_count": 960,
+    "event_rate_hz": 16.0,
+    "five_second_event_density": [
+      95,
+      75,
+      43,
+      67,
+      30,
+      115,
+      80,
+      92,
+      45,
+      70,
+      101,
+      147
+    ],
+    "five_second_packet_density": [
+      15,
+      12,
+      7,
+      11,
+      5,
+      17,
+      12,
+      16,
+      6,
+      11,
+      16,
+      21
+    ],
+    "grammar_counts": {
+      "clean_plus_one_sweep": 14,
+      "one_impulse_burst": 3,
+      "partial_sweep": 61,
+      "scattered_packet": 67,
+      "sweep_with_repeats": 4
+    },
+    "interval_lag_correlations": {
+      "lag_1": 0.5345934369924334,
+      "lag_2": 0.15905323233389165,
+      "lag_3": -0.00514882422542951,
+      "lag_4": -0.0858050512679138
+    },
+    "local_interval_variability": {
+      "coefficient_of_variation": 0.8247541409616632,
+      "maximum_identical_interval_run": 1,
+      "repeated_10ms_cell_prevalence": 0.8040540540540541,
+      "rolling_five_interval_cv": {
+        "coefficient_of_variation": 0.9670990814664607,
+        "count": 144,
+        "maximum": 1.2312683522649333,
+        "mean": 0.2653321027721599,
+        "median": 0.15338470856684877,
+        "minimum": 0.032840014688596875,
+        "p10": 0.0536271141820682,
+        "p90": 0.6168810311901548,
+        "variance": 0.06584480855712274
+      },
+      "unique_interval_count": 147
+    },
+    "maximum_concurrency": 3,
+    "motif_repetition_rate": 0.5192909280500522,
+    "packet_count": 149,
+    "packet_interval_seconds": {
+      "coefficient_of_variation": 0.8247541409616632,
+      "count": 148,
+      "maximum": 2.4339791666666666,
+      "mean": 0.40268468468468466,
+      "median": 0.30254166666666665,
+      "minimum": 0.112,
+      "p10": 0.23071458333333333,
+      "p90": 0.6753833333333334,
+      "variance": 0.11030094525765208
+    },
+    "packet_interval_values_seconds": [
+      0.3620833333333333,
+      0.3103125,
+      0.35972916666666666,
+      0.3484375,
+      0.30514583333333334,
+      0.35233333333333333,
+      0.3706875,
+      0.34477083333333336,
+      0.28247916666666667,
+      0.3322083333333333,
+      0.288125,
+      0.32516666666666666,
+      0.2796666666666667,
+      0.27291666666666664,
+      0.5491458333333333,
+      0.48864583333333333,
+      0.48483333333333334,
+      0.41179166666666667,
+      0.2647083333333333,
+      0.28341666666666665,
+      0.249625,
+      0.23089583333333333,
+      0.26125,
+      0.2754375,
+      0.24339583333333334,
+      0.2493125,
+      2.0801458333333334,
+      2.4339791666666666,
+      0.24597916666666667,
+      0.2779583333333333,
+      0.280875,
+      0.27620833333333333,
+      0.28147916666666667,
+      0.7075625,
+      0.6110208333333333,
+      0.6050625,
+      0.6848333333333333,
+      0.5112708333333333,
+      0.6431458333333333,
+      0.7512291666666666,
+      0.23764583333333333,
+      0.24402083333333333,
+      0.229875,
+      0.2502083333333333,
+      0.26445833333333335,
+      0.2604166666666667,
+      1.8524791666666667,
+      1.3241041666666666,
+      1.3375416666666666,
+      0.3048958333333333,
+      0.2513125,
+      0.2748125,
+      0.2742291666666667,
+      0.13652083333333334,
+      0.12127083333333333,
+      0.12691666666666668,
+      0.11283333333333333,
+      0.23029166666666667,
+      0.237,
+      0.24335416666666668,
+      0.23725,
+      0.2831458333333333,
+      0.21872916666666667,
+      0.25333333333333335,
+      0.5991041666666667,
+      0.7062708333333333,
+      0.7903125,
+      0.616875,
+      0.9297083333333334,
+      0.3082083333333333,
+      0.333875,
+      0.3201875,
+      0.279125,
+      0.29010416666666666,
+      0.3091041666666667,
+      0.33641666666666664,
+      0.4084375,
+      0.3459583333333333,
+      0.3643125,
+      0.3028125,
+      0.2889791666666667,
+      0.2645,
+      0.2805,
+      0.296375,
+      0.27227083333333335,
+      0.4124791666666667,
+      0.3330625,
+      0.309125,
+      0.30485416666666665,
+      0.3212083333333333,
+      0.3561666666666667,
+      0.34070833333333334,
+      0.358625,
+      0.36325,
+      0.33110416666666664,
+      0.3627708333333333,
+      0.35902083333333334,
+      1.1927916666666667,
+      1.1792708333333333,
+      1.0158125,
+      1.12625,
+      0.30391666666666667,
+      0.29725,
+      0.32177083333333334,
+      0.3096041666666667,
+      0.29322916666666665,
+      0.30795833333333333,
+      0.32229166666666664,
+      0.5355416666666667,
+      0.6649166666666667,
+      0.6713333333333333,
+      0.561875,
+      0.28475,
+      0.3416666666666667,
+      0.35079166666666667,
+      0.3022708333333333,
+      0.3506875,
+      0.3062916666666667,
+      0.3078958333333333,
+      0.3960208333333333,
+      0.328875,
+      0.3681041666666667,
+      0.2884583333333333,
+      0.27666666666666667,
+      0.27920833333333334,
+      0.25504166666666667,
+      0.2525625,
+      0.24925,
+      0.25825,
+      0.214625,
+      0.26335416666666667,
+      0.24597916666666667,
+      0.19297916666666667,
+      0.25635416666666666,
+      0.25427083333333333,
+      0.22422916666666667,
+      0.256375,
+      0.2794583333333333,
+      0.2418125,
+      0.14022916666666665,
+      0.13233333333333333,
+      0.112,
+      0.17470833333333333,
+      0.266125,
+      0.2214375,
+      0.28272916666666664,
+      0.24635416666666668,
+      0.2716458333333333
+    ],
+    "packet_rate_hz": 2.4833333333333334,
+    "phrase_active_share": 0.3972602739726027,
+    "phrase_boundary_gap_occupancy": 0.57495,
+    "phrase_boundary_packet_gap_seconds": {
+      "coefficient_of_variation": 0.6044779273536164,
+      "count": 14,
+      "maximum": 4.514125,
+      "mean": 2.4640714285714287,
+      "median": 1.8118854166666667,
+      "minimum": 0.49754166666666666,
+      "p10": 0.7440458333333334,
+      "p90": 4.514125,
+      "variance": 2.218541107931193
+    },
+    "phrase_count": 15,
+    "phrase_duration_seconds": {
+      "coefficient_of_variation": 0.21673479659268846,
+      "count": 15,
+      "maximum": 2.4716458333333335,
+      "mean": 1.6733555555555557,
+      "median": 1.7031041666666666,
+      "minimum": 1.10525,
+      "p10": 1.2980666666666667,
+      "p90": 2.1168291666666668,
+      "variance": 0.1315327029783951
+    },
+    "phrase_records": [
+      {
+        "end_onset_seconds": 1.3805625,
+        "onset_seconds": 0.0,
+        "packet_count": 5,
+        "phrase_id": "phrase_0000"
+      },
+      {
+        "end_onset_seconds": 4.5340625,
+        "onset_seconds": 2.7535,
+        "packet_count": 7,
+        "phrase_id": "phrase_0001"
+      },
+      {
+        "end_onset_seconds": 8.526520833333333,
+        "onset_seconds": 6.468479166666667,
+        "packet_count": 9,
+        "phrase_id": "phrase_0002"
+      },
+      {
+        "end_onset_seconds": 14.403145833333333,
+        "onset_seconds": 13.040645833333333,
+        "packet_count": 6,
+        "phrase_id": "phrase_0003"
+      },
+      {
+        "end_onset_seconds": 20.403895833333333,
+        "onset_seconds": 18.917270833333333,
+        "packet_count": 7,
+        "phrase_id": "phrase_0004"
+      },
+      {
+        "end_onset_seconds": 26.023270833333335,
+        "onset_seconds": 24.918020833333333,
+        "packet_count": 5,
+        "phrase_id": "phrase_0005"
+      },
+      {
+        "end_onset_seconds": 28.223916666666668,
+        "onset_seconds": 26.5208125,
+        "packet_count": 8,
+        "phrase_id": "phrase_0006"
+      },
+      {
+        "end_onset_seconds": 33.70679166666667,
+        "onset_seconds": 31.8661875,
+        "packet_count": 7,
+        "phrase_id": "phrase_0007"
+      },
+      {
+        "end_onset_seconds": 36.867354166666665,
+        "onset_seconds": 35.16191666666667,
+        "packet_count": 7,
+        "phrase_id": "phrase_0008"
+      },
+      {
+        "end_onset_seconds": 41.019729166666664,
+        "onset_seconds": 38.54808333333333,
+        "packet_count": 8,
+        "phrase_id": "phrase_0009"
+      },
+      {
+        "end_onset_seconds": 47.689875,
+        "onset_seconds": 45.533854166666664,
+        "packet_count": 8,
+        "phrase_id": "phrase_0010"
+      },
+      {
+        "end_onset_seconds": 52.06,
+        "onset_seconds": 50.12354166666667,
+        "packet_count": 7,
+        "phrase_id": "phrase_0011"
+      },
+      {
+        "end_onset_seconds": 55.062083333333334,
+        "onset_seconds": 53.74935416666667,
+        "packet_count": 6,
+        "phrase_id": "phrase_0012"
+      },
+      {
+        "end_onset_seconds": 57.749770833333336,
+        "onset_seconds": 56.23727083333333,
+        "packet_count": 7,
+        "phrase_id": "phrase_0013"
+      },
+      {
+        "end_onset_seconds": 59.59733333333333,
+        "onset_seconds": 58.309041666666666,
+        "packet_count": 6,
+        "phrase_id": "phrase_0014"
+      }
+    ],
+    "phrase_size_packets": {
+      "coefficient_of_variation": 0.15834472262427274,
+      "count": 15,
+      "maximum": 9.0,
+      "mean": 6.866666666666666,
+      "median": 7.0,
+      "minimum": 5.0,
+      "p10": 5.4,
+      "p90": 8.0,
+      "variance": 1.1822222222222223
+    },
+    "phrases_per_minute": 15.0,
+    "schedule_spectrum": {
+      "dominant_frequency_hz": 8.166666666666666,
+      "peak_power_fraction": 0.017783722698549633
+    },
+    "unique_motifs": 83,
+    "within_phrase_interval_seconds": {
+      "coefficient_of_variation": 0.13458532735985984,
+      "count": 88,
+      "maximum": 0.36325,
+      "mean": 0.2852310606060606,
+      "median": 0.2795625,
+      "minimum": 0.21872916666666667,
+      "p10": 0.2405625,
+      "p90": 0.3491125,
+      "variance": 0.0014736320690929177
+    }
+  },
+  "qualification_verdict": "qualified_with_documented_caveats",
+  "report_id": "wge5b2_clustered_session1_qualification",
+  "report_version": "1.0.0",
+  "safety": {
+    "audio_created": false,
+    "carrier_introduced": false,
+    "exporter_invoked": false,
+    "full_duration_generated": false,
+    "renderer_invoked": false,
+    "source_tuples_embedded": false
+  },
+  "starting_checkpoint": "ab8b6d3d0780427d72804bdcca764c3c63d86410",
+  "status": "WGE5B2_CLUSTERED_SESSION1_QUALIFIED",
+  "test_results": {
+    "complete_test_count": 375,
+    "status": "passed"
+  },
+  "wge5c_clustered_render_authorized": true
+}

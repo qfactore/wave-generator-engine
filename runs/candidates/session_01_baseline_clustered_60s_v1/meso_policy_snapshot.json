@@ -1,0 +1,735 @@
+{
+  "authority_references": [
+    {
+      "artifact_id": "phase5e:shared_scheduling_model",
+      "authority_tier": "tier_1",
+      "classification_status": "include",
+      "permitted_use": "Shared renewal, rate-trajectory, serial-dependence, packet-boundary, and deterministic-seed semantics.",
+      "source_field": "timing_contract|packet_contract",
+      "source_scope": "shared_scheduler_contract"
+    },
+    {
+      "artifact_id": "phase4d_f:session_1_profile",
+      "authority_tier": "tier_1",
+      "classification_status": "include",
+      "permitted_use": "Direct Session 1 descriptive timing and packet-profile fields without refitting or treating them as a universal script.",
+      "source_field": "timing|packet",
+      "source_scope": "direct_session_1"
+    },
+    {
+      "artifact_id": "phase5e_hum_throb_contract",
+      "authority_tier": "tier_1",
+      "classification_status": "include",
+      "permitted_use": "Coordinated timing, duration, density, gain, and overlap interpretation; timing plus duration is strongest.",
+      "source_field": "coordinated_dimensions|strongest_supported_diagnostic",
+      "source_scope": "shared_hum_throb_contract"
+    },
+    {
+      "artifact_id": "phase5l_unit_grammar_audit_report",
+      "authority_tier": "tier_2",
+      "classification_status": "include",
+      "permitted_use": "Parent authority for hash-inventoried audit-only training and validation event tables used by the Phase 5L packet grammar audit.",
+      "source_field": "training/validation event metadata and generated-file inventory",
+      "source_scope": "direct_session_1_and_baseline_sessions_1_4"
+    },
+    {
+      "artifact_id": "phase5l_hum_putput_unit_interpretation",
+      "authority_tier": "tier_2",
+      "classification_status": "include",
+      "permitted_use": "Cautious structural interpretation of clean stepped runs, continuations, skips, reversals, and short bursts.",
+      "source_field": "candidate_evidence|summary",
+      "source_scope": "baseline_sessions_1_4"
+    },
+    {
+      "artifact_id": "phase5l_mode_specific_unit_grammar_profiles",
+      "authority_tier": "tier_2",
+      "classification_status": "include",
+      "permitted_use": "Baseline continuation texture, motif repetition, and descriptive grammar guidance.",
+      "source_field": "profiles.baseline_stochastic_texture",
+      "source_scope": "baseline_sessions_1_4"
+    },
+    {
+      "artifact_id": "x_alpha_closure:data/pulse_pattern_analysis.json",
+      "authority_tier": "tier_2",
+      "classification_status": "include",
+      "permitted_use": "Session 1 and Baseline packet-cycle, continuation-count, and continuation-spacing distributions.",
+      "source_field": "by_session.1|by_mode.Baseline Mode",
+      "source_scope": "direct_session_1_and_baseline_aggregate"
+    },
+    {
+      "artifact_id": "x_alpha_closure:data/macro_density_analysis.json",
+      "authority_tier": "tier_2",
+      "classification_status": "include",
+      "permitted_use": "Mode-architecture distinction and Complex-only plateau/gap reference; not Baseline cluster targets.",
+      "source_field": "recommendation.standard_modes|authoritative_event_density",
+      "source_scope": "mode_architecture"
+    },
+    {
+      "artifact_id": "x_alpha_closure:data/carrier_frequency_analysis.json",
+      "authority_tier": "tier_2",
+      "classification_status": "include",
+      "permitted_use": "Terminology boundary: schedule spectra do not establish a continuous carrier.",
+      "source_field": "source_low_frequency_schedule_spectrum",
+      "source_scope": "source_schedule_spectrum"
+    },
+    {
+      "artifact_id": "x_alpha_closure:methods/measurement_methods.md",
+      "authority_tier": "tier_1",
+      "classification_status": "include",
+      "permitted_use": "Reproducible packet, density, and schedule-spectrum measurement semantics.",
+      "source_field": "measurement_methods",
+      "source_scope": "reproducibility_method"
+    }
+  ],
+  "authorization_blockers": [],
+  "between_cluster_gap_model": {
+    "authority_tier": "tier_2",
+    "definition": "The onset gap from the final packet start of one merged phrase-active cluster to the first packet start of the next cluster in the same source block.",
+    "source_scope": "direct_session_1_validation",
+    "status": "advisory",
+    "target_quantiles_seconds": {
+      "maximum": 4.514125,
+      "median": 0.7834687499999999,
+      "minimum": 0.42310416666666667,
+      "p10": 0.44219375,
+      "p90": 2.206200000000001
+    }
+  },
+  "blocked_interpretations": [
+    "continuous_carrier_without_direct_permitted_evidence",
+    "schedule_spectrum_as_carrier_frequency",
+    "complex_mode_deep_gates_as_baseline_requirements",
+    "global_fixed_packet_lattice",
+    "exact_source_sequence_replay",
+    "canonical_packet_grammar_replacement",
+    "macro_unit_only_generation",
+    "motif_waveform_transformation",
+    "motif_time_scaling",
+    "calibration_or_normalization_change"
+  ],
+  "channel_coupling_rules": {
+    "authority_tier": "tier_1",
+    "definition": "Phrasing may coordinate packet selection and channel transitions only through canonical grammar and remappable Focus Role semantics. It may not hard-code a physical focus channel.",
+    "preserve_canonical_packet_grammar": true,
+    "preserve_focus_role_bundle": true,
+    "source_scope": "shared_grammar_and_role_contract",
+    "status": "binding"
+  },
+  "cluster_detection": {
+    "authority_tier": "tier_2",
+    "definition": "A phrase-active window contains four packet starts and the three exact sample-aligned inter-packet intervals between them. A validation window is phrase-active when its interval triple occurred in the training population. Overlapping or adjacent active windows are merged into one non-overlapping meso cluster.",
+    "minimum_packets": 4,
+    "model_type": "probabilistic_recurrent_interval_phrase_state",
+    "prohibited_threshold_reuse": {
+      "reason": "The source field defines provisional same-channel packet trains, not gaps between canonical packet starts.",
+      "session_1_source_packet_threshold_samples": 12376
+    },
+    "runtime_rule": "WGE-5B uses aggregate state transitions and distribution targets; it must not embed or replay the source phrase dictionary.",
+    "source_scope": "direct_session_1_training_to_validation",
+    "status": "advisory",
+    "threshold_samples": null
+  },
+  "cluster_duration_model": {
+    "authority_tier": "tier_2",
+    "definition": "The onset span from the first through final packet start in a merged phrase-active cluster.",
+    "source_scope": "direct_session_1_validation",
+    "status": "advisory",
+    "target_quantiles_seconds": {
+      "maximum": 19.045833333333334,
+      "median": 1.58203125,
+      "minimum": 0.6879166666666666,
+      "p10": 0.82128125,
+      "p90": 4.667639583333333
+    }
+  },
+  "cluster_size_distribution": {
+    "authority_tier": "tier_2",
+    "definition": "Packet starts covered by each merged phrase-active cluster.",
+    "source_scope": "direct_session_1_validation",
+    "status": "advisory",
+    "target_quantiles_packets": {
+      "maximum": 68,
+      "median": 6,
+      "minimum": 4,
+      "p10": 4,
+      "p90": 17.4
+    }
+  },
+  "content_hash": "6297addcf7129b177f11c9fae23e3ae4a85f20ae6fa83d1c392d291608699e32",
+  "density_state_linkage": {
+    "authority_tier": "tier_2",
+    "baseline_rule": "Permit local stochastic density modulation using the recurrent phrase state. Direct Session 1 validation has phrase-cluster onset-span occupancy 0.704542 and quiet-gap onset-span occupancy 0.252784; these are advisory observations, not exact runtime quotas.",
+    "complex_mode_rule": "Complex macro states remain a separate architecture and are not imported into Baseline.",
+    "definition": "Meso phrasing may modulate local packet rate and selection within Baseline while remaining distinct from Complex Mode macro gating.",
+    "source_scope": "direct_session_1_validation_and_mode_architecture",
+    "status": "advisory"
+  },
+  "engine_version": "0.5.1",
+  "executable": false,
+  "future_acceptance_gates": [
+    {
+      "metric_id": "canonical_packet_grammar_preserved",
+      "requirement": "Every realised packet continues to pass existing grammar structure validation.",
+      "source_scope": "tier_1_grammar_contract",
+      "status": "binding"
+    },
+    {
+      "metric_id": "deterministic_seed_reproduction",
+      "requirement": "Same profile, duration, and seed produce byte-identical plans and cluster annotations.",
+      "source_scope": "shared_scheduler_contract",
+      "status": "binding"
+    },
+    {
+      "metric_id": "holdout_seed_robustness",
+      "requirement": "Primary and at least two holdout seeds pass structural gates and source comparisons; exact cross-seed equality is forbidden.",
+      "source_scope": "engine_validation",
+      "status": "binding"
+    },
+    {
+      "metric_id": "no_global_fixed_lattice",
+      "requirement": "Packet intervals retain non-zero variance and no phrase category creates a session-wide fixed cadence.",
+      "source_scope": "shared_scheduler_contract",
+      "status": "binding"
+    },
+    {
+      "metric_id": "no_continuous_carrier",
+      "requirement": "No oscillator or carrier control is introduced; schedule periodicity remains neutrally labelled.",
+      "source_scope": "carrier_policy",
+      "status": "binding"
+    },
+    {
+      "metric_id": "cluster_count_per_minute",
+      "requirement": "Compare against direct Session 1 validation 15.3888 clusters per observed minute and its 8.1029-22.3675 per-block empirical band; report Baseline separately.",
+      "source_scope": "direct_session_1_validation",
+      "status": "advisory"
+    },
+    {
+      "metric_id": "cluster_size_quantiles",
+      "requirement": "Generated packet-count quantiles must be compared with direct Session 1 validation p10/p50/p90 of 4/6/17.4 and the observed block ranges.",
+      "source_scope": "direct_session_1_validation",
+      "status": "advisory"
+    },
+    {
+      "metric_id": "within_cluster_interval_quantiles",
+      "requirement": "Generated p10/p50/p90 must be compared using equivalent packet-start semantics with direct Session 1 validation 0.215315/0.281917/0.351144 seconds.",
+      "source_scope": "direct_session_1_validation",
+      "status": "advisory"
+    },
+    {
+      "metric_id": "between_cluster_gap_quantiles",
+      "requirement": "Generated p10/p50/p90 must be compared using equivalent packet-start semantics with direct Session 1 validation 0.442194/0.783469/2.2062 seconds.",
+      "source_scope": "direct_session_1_validation",
+      "status": "advisory"
+    },
+    {
+      "metric_id": "dense_run_and_quiet_gap_occupancy",
+      "requirement": "Compare phrase-cluster onset-span and quiet-gap onset-span occupancy with direct Session 1 validation 0.704542 and 0.252784; do not reuse Complex Mode deep-gap targets.",
+      "source_scope": "direct_session_1_validation",
+      "status": "advisory"
+    },
+    {
+      "metric_id": "phrase_repetition_rate",
+      "requirement": "Validation phrase-active share should be compared with direct Session 1 0.397554 and Baseline aggregate 0.651550 while source interval tuples remain unavailable to runtime.",
+      "source_scope": "direct_session_1_and_baseline_validation",
+      "status": "advisory"
+    },
+    {
+      "metric_id": "local_interval_variability",
+      "requirement": "Each phrase retains stochastic variation and the aggregate avoids a narrow artificial periodicity.",
+      "source_scope": "shared_scheduler_contract",
+      "status": "binding"
+    },
+    {
+      "metric_id": "maximum_artificial_periodicity",
+      "requirement": "Use the same source and generated schedule measurement population; otherwise report not assessable.",
+      "source_scope": "measurement_methods",
+      "status": "binding"
+    },
+    {
+      "metric_id": "motif_repetition_inside_clusters",
+      "requirement": "Monitor exact adjacent repetition and diversity against direct Session 1 validation cluster-conditioned repetition 0.691517.",
+      "source_scope": "direct_session_1_validation",
+      "status": "advisory"
+    },
+    {
+      "metric_id": "channel_transition_distribution_inside_clusters",
+      "requirement": "Preserve canonical grammar and compare same/+1/reverse/skip transition shares with direct Session 1 validation 0.844473/0.149743/0.003213/0.002571.",
+      "source_scope": "direct_session_1_validation",
+      "status": "advisory"
+    },
+    {
+      "metric_id": "maximum_concurrency",
+      "requirement": "Remain finite, reported, and no greater than the direct Session 1 validation observation of 3 unless later authority expands the range; no overlap is added merely to create sustained texture.",
+      "source_scope": "direct_session_1_validation",
+      "status": "advisory"
+    },
+    {
+      "metric_id": "source_comparison_status",
+      "requirement": "No major assessable meso timing or phrase metric may remain outside source reference.",
+      "source_scope": "future_qualification",
+      "status": "binding"
+    }
+  ],
+  "overlap_constraints": {
+    "authority_tier": "tier_2",
+    "definition": "Overlap is a coordinated diagnostic dimension but gain alone or overlap alone cannot define the perceived texture. Frozen samples, calibration, and event gains remain unchanged.",
+    "maximum_concurrency": 3,
+    "numeric_range_status": "direct_session_1_validation_observation_advisory",
+    "overlap_seconds_in_reference_clusters": 0.27041666666666664,
+    "source_scope": "direct_session_1_validation",
+    "status": "advisory"
+  },
+  "phrase_selection_weights": {
+    "authority_tier": "tier_2",
+    "definition": "Session 1 phrase-state occupancy is measured by training-to-validation recurrent three-interval windows. Packet grammar selection remains governed by the existing Session 1 planning profile.",
+    "source_scope": "direct_session_1_validation",
+    "status": "advisory",
+    "weights": {
+      "free_stochastic": 0.6024464831804281,
+      "phrase_active": 0.39755351681957185
+    }
+  },
+  "phrase_state_model": {
+    "cluster_rule": "Convert each active phrase window to its four covered packet starts, then merge overlapping or adjacent packet spans within a source block.",
+    "model_type": "probabilistic_recurrent_interval_phrase_state",
+    "phrase_window": "Three successive exact sample-aligned packet intervals spanning four packet starts.",
+    "reference_dictionary_scope": "Training interval triples are counted separately for direct Session 1 and Baseline Sessions 1-4.",
+    "runtime_boundary": "Runtime uses aggregate state transitions and target distributions only. It must not store, hard-code, or replay source interval triples or source block sequences.",
+    "validation_rule": "A validation phrase window is active when its exact three-interval tuple appeared at least once in the corresponding training population."
+  },
+  "policy_id": "x_alpha_meso_cluster_rhythm_policy_v1",
+  "policy_version": "1.0.0",
+  "provisional_fields": [
+    "runtime phrase-state parameterization from advisory source observations",
+    "runtime phrase-category mapping above canonical packet grammar",
+    "binding tolerances beyond observed training/validation empirical bands",
+    "production-duration density-state behavior"
+  ],
+  "repetition_rules": {
+    "adjacent_asset_repetition_rate_baseline": 0.501749986940396,
+    "adjacent_asset_repetition_rate_session_1_clusters": 0.6915167095115681,
+    "authority_tier": "tier_2",
+    "definition": "Exact motif repetition may contribute to local texture and is permitted. Direct Session 1 validation phrase clusters have 0.691517 exact adjacent asset repetition; diversity safeguards remain active.",
+    "hard_coded_source_sequence_allowed": false,
+    "source_scope": "direct_session_1_validation_and_baseline_sessions_1_4",
+    "status": "advisory"
+  },
+  "rhythmic_phrase_categories": [
+    {
+      "authority_tier": "tier_1",
+      "definition": "Multiple canonical packets sustaining clean circular +1 continuation texture without a global fixed lattice.",
+      "id": "clean_stepped_run",
+      "source_scope": "shared_grammar_contract",
+      "status": "binding_vocabulary"
+    },
+    {
+      "authority_tier": "tier_2",
+      "definition": "A local multi-packet phrase containing scattered continuations, skips, reversals, or short impulse bursts.",
+      "id": "disrupted_put_put_phrase",
+      "source_scope": "baseline_sessions_1_4",
+      "status": "advisory"
+    },
+    {
+      "authority_tier": "tier_2",
+      "definition": "A recurrent four-or-more-packet phrase identified from exact three-interval recurrence in training and measured on held-out validation blocks, with no session-wide lattice.",
+      "id": "compressed_packet_train",
+      "source_scope": "direct_session_1_validation",
+      "status": "advisory"
+    },
+    {
+      "authority_tier": "tier_2",
+      "definition": "A transition from a merged phrase-active packet span to the next phrase-active span; direct Session 1 validation gap median is 0.783469 seconds.",
+      "id": "dense_run_quiet_release",
+      "source_scope": "direct_session_1_validation",
+      "status": "advisory"
+    }
+  ],
+  "schema_version": "wge.meso_cluster_rhythm_policy.v1",
+  "seed_and_determinism": {
+    "authority_tier": "tier_1",
+    "definition": "All phrase, transition, and packet draws use deterministic stage seeds and explicit draw coordinates without global RNG state.",
+    "different_seed_requirement": "Different seeds produce different valid phrase schedules.",
+    "holdout_seed_minimum": 2,
+    "same_seed_requirement": "Byte-identical plan and diagnostic metadata.",
+    "source_scope": "shared_scheduler_contract",
+    "status": "binding"
+  },
+  "session_boundary_handling": {
+    "authority_tier": "tier_1",
+    "definition": "Clusters and phrases may not cross session boundaries. Events remain inside duration and are never compressed against the end boundary.",
+    "source_scope": "shared_scheduler_contract",
+    "status": "binding"
+  },
+  "source_packet_start_population": {
+    "baseline_sessions_1_4": {
+      "packet_start_count": 6112,
+      "simultaneous_duplicate_start_count": 0,
+      "source_block_count": 32,
+      "training_count": 3418,
+      "validation_count": 2694
+    },
+    "channel_handling": "All channel rows are merged and sorted within each source block. Each packet_start row is one source packet start; no simultaneous duplicate starts occur.",
+    "definition": "A packet_start event begins one packet and following continuation rows belong to it until the next packet_start in the same source block.",
+    "overlap_handling": "Overlapping source events remain members of their packet; overlap does not create or merge packet starts.",
+    "session_1": {
+      "packet_start_count": 752,
+      "simultaneous_duplicate_start_count": 0,
+      "source_block_count": 8,
+      "training_count": 413,
+      "validation_count": 339
+    },
+    "source_files": [
+      {
+        "classification": "audit-only",
+        "parent_artifact": "phase5l_unit_grammar_audit_report",
+        "relative_path": "outputs/phase_5c_a_relative_digital_gain/gain_event_table_training.csv",
+        "sha256": "5531ed99667fb53deab43e96376a41125cf15e108e015fabdf7b9016339ac8ec"
+      },
+      {
+        "classification": "audit-only",
+        "parent_artifact": "phase5l_unit_grammar_audit_report",
+        "relative_path": "outputs/phase_5c_a_relative_digital_gain/gain_event_table_validation.csv",
+        "sha256": "e81adbbc869e39cbef8482ce8437305cb6af07703304c002efaf821da1748463"
+      }
+    ]
+  },
+  "source_supported_parameters": [
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "measurement_method": "Count validation three-interval windows whose exact sample tuple appears in direct Session 1 training blocks.",
+      "parameter_id": "session_1_phrase_active_share",
+      "provisional": false,
+      "source_artifact": "phase5l_unit_grammar_audit_report::gain_event_table_training.csv|gain_event_table_validation.csv",
+      "source_field": "packet_position=packet_start,event_start_sample,source_block,split,session=1",
+      "source_scope": "direct_session_1_validation",
+      "unit": "fraction",
+      "value": 0.39755351681957185
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "measurement_method": "Count validation three-interval windows whose exact sample tuple appears in Baseline Sessions 1-4 training blocks.",
+      "parameter_id": "baseline_phrase_active_share",
+      "provisional": false,
+      "source_artifact": "phase5l_unit_grammar_audit_report::gain_event_table_training.csv|gain_event_table_validation.csv",
+      "source_field": "packet_position=packet_start,event_start_sample,source_block,split,sessions=1..4",
+      "source_scope": "baseline_sessions_1_4_validation",
+      "unit": "fraction",
+      "value": 0.6515495086923658
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "measurement_method": "First-order transition count over direct Session 1 validation phrase-state windows, preserving source-block boundaries.",
+      "parameter_id": "session_1_phrase_initiation_probability",
+      "provisional": false,
+      "source_artifact": "phase5l_unit_grammar_audit_report::gain_event_table_validation.csv",
+      "source_field": "inactive_to_active / all inactive transitions",
+      "source_scope": "direct_session_1_validation",
+      "unit": "probability",
+      "value": 0.26666666666666666
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "measurement_method": "First-order transition count over direct Session 1 validation phrase-state windows, preserving source-block boundaries.",
+      "parameter_id": "session_1_phrase_continuation_probability",
+      "provisional": false,
+      "source_artifact": "phase5l_unit_grammar_audit_report::gain_event_table_validation.csv",
+      "source_field": "active_to_active / all active transitions",
+      "source_scope": "direct_session_1_validation",
+      "unit": "probability",
+      "value": 0.609375
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "measurement_method": "Merged phrase-active cluster count divided by summed within-block packet-start support.",
+      "parameter_id": "session_1_clusters_per_observed_minute",
+      "provisional": false,
+      "source_artifact": "phase5l_unit_grammar_audit_report::gain_event_table_validation.csv",
+      "source_field": "session=1 validation packet starts",
+      "source_scope": "direct_session_1_validation",
+      "unit": "clusters_per_observed_minute",
+      "value": 15.388821552899516
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "measurement_method": "Quantiles of packet counts in merged direct Session 1 validation phrase-active clusters.",
+      "parameter_id": "session_1_cluster_size",
+      "provisional": false,
+      "source_artifact": "phase5l_unit_grammar_audit_report::gain_event_table_validation.csv",
+      "source_field": "merged active phrase packet spans",
+      "source_scope": "direct_session_1_validation",
+      "unit": "packets",
+      "value": {
+        "maximum": 68,
+        "median": 6,
+        "minimum": 4,
+        "p10": 4,
+        "p90": 17.4
+      }
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "measurement_method": "Quantiles of final packet-start onset minus first packet-start onset in each merged cluster.",
+      "parameter_id": "session_1_cluster_duration",
+      "provisional": false,
+      "source_artifact": "phase5l_unit_grammar_audit_report::gain_event_table_validation.csv",
+      "source_field": "merged active phrase onset spans",
+      "source_scope": "direct_session_1_validation",
+      "unit": "seconds",
+      "value": {
+        "maximum": 19.045833333333334,
+        "median": 1.58203125,
+        "minimum": 0.6879166666666666,
+        "p10": 0.82128125,
+        "p90": 4.667639583333333
+      }
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "measurement_method": "Quantiles of packet-start intervals whose endpoints lie inside a merged direct Session 1 cluster.",
+      "parameter_id": "session_1_within_cluster_interval",
+      "provisional": false,
+      "source_artifact": "phase5l_unit_grammar_audit_report::gain_event_table_validation.csv",
+      "source_field": "within-cluster packet-start differences",
+      "source_scope": "direct_session_1_validation",
+      "unit": "seconds",
+      "value": {
+        "maximum": 0.3918125,
+        "median": 0.28191666666666665,
+        "minimum": 0.19214583333333332,
+        "p10": 0.21531458333333334,
+        "p90": 0.35114375
+      }
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "measurement_method": "Quantiles of next-cluster first packet onset minus prior-cluster final packet onset within a validation block.",
+      "parameter_id": "session_1_between_cluster_gap",
+      "provisional": false,
+      "source_artifact": "phase5l_unit_grammar_audit_report::gain_event_table_validation.csv",
+      "source_field": "between-cluster packet-start gaps",
+      "source_scope": "direct_session_1_validation",
+      "unit": "seconds",
+      "value": {
+        "maximum": 4.514125,
+        "median": 0.7834687499999999,
+        "minimum": 0.42310416666666667,
+        "p10": 0.44219375,
+        "p90": 2.206200000000001
+      }
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "measurement_method": "Sum cluster onset spans divided by summed within-block packet-start support.",
+      "parameter_id": "session_1_cluster_onset_span_occupancy",
+      "provisional": false,
+      "source_artifact": "phase5l_unit_grammar_audit_report::gain_event_table_validation.csv",
+      "source_field": "merged cluster onset spans",
+      "source_scope": "direct_session_1_validation",
+      "unit": "fraction",
+      "value": 0.7045421959171533
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "measurement_method": "Sum between-cluster onset gaps divided by summed within-block packet-start support.",
+      "parameter_id": "session_1_quiet_gap_span_occupancy",
+      "provisional": false,
+      "source_artifact": "phase5l_unit_grammar_audit_report::gain_event_table_validation.csv",
+      "source_field": "between-cluster packet-start gaps",
+      "source_scope": "direct_session_1_validation",
+      "unit": "fraction",
+      "value": 0.2527841032048467
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "measurement_method": "Quantiles of source metadata event rows assigned to packets inside each merged cluster.",
+      "parameter_id": "session_1_events_per_cluster",
+      "provisional": false,
+      "source_artifact": "phase5l_unit_grammar_audit_report::gain_event_table_validation.csv",
+      "source_field": "events grouped by packet starts inside merged clusters",
+      "source_scope": "direct_session_1_validation",
+      "unit": "events",
+      "value": {
+        "maximum": 416,
+        "median": 40,
+        "minimum": 21,
+        "p10": 24.2,
+        "p90": 106.7
+      }
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "measurement_method": "Exact adjacent asset equality over source event rows within merged clusters.",
+      "parameter_id": "session_1_cluster_motif_adjacent_repeat_rate",
+      "provisional": false,
+      "source_artifact": "phase5l_unit_grammar_audit_report::gain_event_table_validation.csv",
+      "source_field": "asset_id within merged clusters",
+      "source_scope": "direct_session_1_validation",
+      "unit": "fraction",
+      "value": 0.6915167095115681
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "measurement_method": "Adjacent source event channel steps within merged direct Session 1 clusters.",
+      "parameter_id": "session_1_cluster_channel_transition_rates",
+      "provisional": false,
+      "source_artifact": "phase5l_unit_grammar_audit_report::gain_event_table_validation.csv",
+      "source_field": "channel within merged clusters",
+      "source_scope": "direct_session_1_validation",
+      "unit": "fraction_by_category",
+      "value": {
+        "plus_one": 0.14974293059125965,
+        "reverse": 0.003213367609254499,
+        "same": 0.8444730077120822,
+        "skip": 0.002570694087403599
+      }
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "measurement_method": "Maximum sweep-line concurrency of source event onset/end rows inside merged clusters.",
+      "parameter_id": "session_1_cluster_maximum_concurrency",
+      "provisional": false,
+      "source_artifact": "phase5l_unit_grammar_audit_report::gain_event_table_validation.csv",
+      "source_field": "event_start_sample,event_end_sample within merged clusters",
+      "source_scope": "direct_session_1_validation",
+      "unit": "events",
+      "value": 3
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "measurement_method": "Total source duration with concurrency of at least two inside direct Session 1 validation clusters.",
+      "parameter_id": "session_1_cluster_overlap_duration",
+      "provisional": false,
+      "source_artifact": "phase5l_unit_grammar_audit_report::gain_event_table_validation.csv",
+      "source_field": "event_start_sample,event_end_sample within merged clusters",
+      "source_scope": "direct_session_1_validation",
+      "unit": "seconds",
+      "value": 0.27041666666666664
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "measurement_method": "Minimum and maximum across the four direct Session 1 validation source blocks.",
+      "parameter_id": "session_1_validation_block_phrase_active_band",
+      "provisional": false,
+      "source_artifact": "phase5l_unit_grammar_audit_report::gain_event_table_validation.csv",
+      "source_field": "per-block recurrent phrase-window share",
+      "source_scope": "direct_session_1_validation_blocks",
+      "unit": "fraction_range",
+      "value": {
+        "maximum": 0.6666666666666666,
+        "minimum": 0.2980769230769231
+      }
+    },
+    {
+      "authority_tier": "tier_2",
+      "binding_status": "advisory",
+      "measurement_method": "Minimum and maximum cluster rates across the four direct Session 1 validation source blocks.",
+      "parameter_id": "session_1_validation_block_cluster_rate_band",
+      "provisional": false,
+      "source_artifact": "phase5l_unit_grammar_audit_report::gain_event_table_validation.csv",
+      "source_field": "per-block merged cluster count / packet-start support",
+      "source_scope": "direct_session_1_validation_blocks",
+      "unit": "clusters_per_observed_minute_range",
+      "value": {
+        "maximum": 22.367542210969418,
+        "minimum": 8.10286132290465
+      }
+    }
+  ],
+  "status": "advisory_non_executable_qualified",
+  "temporal_scales": {
+    "macro": {
+      "authority": "x_alpha_macro_density_state_model_v1",
+      "boundary": {
+        "complex_gap_seconds": {
+          "maximum": 32,
+          "median": 30,
+          "minimum": 30
+        },
+        "complex_plateau_seconds": {
+          "maximum": 38,
+          "median": 19,
+          "minimum": 4
+        },
+        "density_bin_seconds": 2
+      },
+      "definition": "Longer session density-state evolution. Quantitative plateau/gap values are Complex Mode Tier 2 references and are not Baseline targets.",
+      "status": "advisory"
+    },
+    "meso": {
+      "authority": "WGE-4C human observation plus source scheduler architecture",
+      "boundary": "Four packet starts define a three-interval phrase window; overlapping or adjacent phrase-active windows merge into a cluster.",
+      "definition": "Locally grouped packets, repeated rhythmic phrases, dense runs, and quiet releases above packet grammar and below macro session evolution.",
+      "status": "advisory"
+    },
+    "micro": {
+      "authority": "x_alpha_pulse_pattern_grammar_v1 and direct Session 1 pulse analysis",
+      "boundary": {
+        "session_1_continuation_spacing_seconds": {
+          "p10": 0.028,
+          "p50": 0.054,
+          "p90": 0.067
+        }
+      },
+      "definition": "Immutable motif-internal samples and within-packet event/continuation timing.",
+      "status": "advisory"
+    },
+    "packet": {
+      "authority": "x_alpha_pulse_pattern_grammar_v1 and direct Session 1 pulse analysis",
+      "boundary": {
+        "session_1_cycle_span_seconds": {
+          "maximum": 0.359875,
+          "p10": 0.18952083333333333,
+          "p50": 0.2515833333333333,
+          "p90": 0.326125
+        }
+      },
+      "definition": "One packet start followed by zero or more continuations until the next packet start.",
+      "status": "binding"
+    }
+  },
+  "transition_rules": {
+    "authority_tier": "tier_1",
+    "definition": "Phrase states modulate packet scheduling and selection through a stochastic profile. Transitions use explicit probabilities or duration distributions, preserve serial dependence, and never encode an exact source sequence.",
+    "fixed_global_rhythm_allowed": false,
+    "source_scope": "shared_scheduler_contract",
+    "status": "binding"
+  },
+  "unresolved_fields": [
+    "perceptual identity of individual phrase categories",
+    "target-headset validation of meso phrasing",
+    "production-duration qualification",
+    "binding tolerances beyond observed training/validation empirical bands"
+  ],
+  "wge5b_meso_cluster_implementation_authorized": true,
+  "within_cluster_interval_model": {
+    "authority_tier": "tier_2",
+    "definition": "A stochastic, source-conditioned packet-onset model with phrase-state persistence, rate trajectory, and limited serial dependence. It must not be a fixed interval cell or reuse within-packet continuation spacing.",
+    "numeric_distribution_status": "direct_session_1_validation_quantiles",
+    "source_scope": "direct_session_1_validation",
+    "status": "advisory",
+    "target_quantiles_seconds": {
+      "maximum": 0.3918125,
+      "median": 0.28191666666666665,
+      "minimum": 0.19214583333333332,
+      "p10": 0.21531458333333334,
+      "p90": 0.35114375
+    }
+  }
+}

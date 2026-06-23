@@ -1,0 +1,59 @@
+{
+  "files": {
+    "calibration": {
+      "artifact_id": "x_alpha_reference_calibration_v1",
+      "sha256": "485933b33d601bfe642b5cadf0c1c0af4a22f3a7842c18fa40c09897b816720d"
+    },
+    "carrier": {
+      "artifact_id": "x_alpha_carrier_frequency_policy_v1",
+      "sha256": "05a89e935394759c924de24e9bd765722a9eb1dd0a7c091cd226a3c2b4a96991"
+    },
+    "decision_registry": {
+      "artifact_id": null,
+      "sha256": "2019a5427451d1093aeab387f7e6d94aec8d741e60e4fcd524dcc065e31b9f90"
+    },
+    "fixture_catalog": {
+      "artifact_id": "canonical_diagnostic_fixture_catalog",
+      "sha256": "9ddc80cadbfba5f29fac0266761aa0a66874fcf9cf687016b1593d17a1c62183"
+    },
+    "hum_putput": {
+      "artifact_id": "canonical_hum_putput_grammar",
+      "sha256": "0ff5725acc4713323362636e7e15d689fd58d1489c80a7cfcbb5d31f69844627"
+    },
+    "macro_density": {
+      "artifact_id": "x_alpha_macro_density_state_model_v1",
+      "sha256": "2710dc1015822b0277345cbf01f987715178260e71c2ab66e39b15851305c663"
+    },
+    "mode_profiles": {
+      "artifact_id": "canonical_session_mode_profiles",
+      "sha256": "9bd04c460c5ef04d21bf0c3c319904e7d4c5abe86a304d7105b45bded2aff14e"
+    },
+    "pulse_pattern": {
+      "artifact_id": "x_alpha_pulse_pattern_grammar_v1",
+      "sha256": "bd1276da6087b87bd89e9a53c93f8ba451dc04db802ebfa287772808712b0fbf"
+    },
+    "timing_dependencies": {
+      "artifact_id": "x_alpha_timing_dependency_policy_v1",
+      "sha256": "7f36fdfb0257a27adadaea3e42bfd7d1d6e8d39e2cf73d42c472ebe8d6a99136"
+    },
+    "unit_guidance": {
+      "artifact_id": "canonical_unit_grammar_builder_guidance",
+      "sha256": "d2b13a9acf00335f2a41aae50de5c72cc22218a05df7202336eaa52a731e0a53"
+    },
+    "unit_terms": {
+      "artifact_id": "canonical_unit_grammar_terms",
+      "sha256": "34002dfb2636766211f806047b7d18fa78472342c11cf494082d88a925ec7ae8"
+    }
+  },
+  "interchange_manifest_version": "0.8.0",
+  "session_planning_profile": {
+    "content_hash": "23d0b8e321b6b9ffd9d666d78cc8acb1098322dd05125e3d5c9a9081145459b2",
+    "planning_profile_id": "x_alpha_session_01_baseline_v1",
+    "session_id": 1,
+    "source_profile_hash": "41eeb636c411de429f316f0b84cbcd1ff0e4598400f4ee2d1e310582f44e0578",
+    "status": "locked_source_reference_overlay",
+    "version": "1.0.0"
+  },
+  "tier_3_inputs_used": [],
+  "tier_4_inputs_used": []
+}

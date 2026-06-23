@@ -1,0 +1,25 @@
+{
+  "analysis_report_only": true,
+  "approved_run_unchanged": true,
+  "audio_created": false,
+  "audio_directory_created": false,
+  "candidate_id": "session_01_baseline_clustered_60s_v1",
+  "candidate_path": "runs/candidates/session_01_baseline_clustered_60s_v1",
+  "content_hash": "1f506983b67591c8e19abda9e2ca557670a6b91667eec6adbbe6ec24e5888062",
+  "core_hashes": {
+    "event_plan": "59ce92ffc82170944b7f68846d2ee38025e573f80fed63903bfdf7fa399a2501",
+    "macro_state_plan": "f84904cb6ca7da36b85b6a38b66894f5cc815bdeef67ec0ea2dee1c6c21c0cfe",
+    "packet_plan": "49f6c968309d8411a5b3316ca4d9c55a7512e71311b25afe659b2f1505e02aa6",
+    "planning_profile": "b4ff70726d8f3e301a163b75525b0369782ab291f423b99ebd2f7c2d522efa0e",
+    "request": "a97feffa95b9402d19da42fe1268e37eb7e458d9d35e065633112c0e80caf4ca",
+    "session_pack_plan": "0b6c3cb92096137fe375a5255a7a8b43fb52a83fb0cd440587fcbcea4031310b",
+    "session_plan": "8eed86305b35ddbb4866461ccb36bf4b4f67c5b797e2616ec48f5553b19a5c2c",
+    "validation_report": "2cd42357f9cf964c75ed61172dd862a4a93048fdd1640c64d3de4412dfb7fc68"
+  },
+  "diagnostic_manifest_hash": "d5cd77ecde13a11bb63977bd122c6e1953ed6fbe45efaca02ad3f58d6cf4e122",
+  "headroom_status": "not_certified_without_waveform_render_and_overlap_sum",
+  "qualification_verdict": "qualified_with_documented_caveats",
+  "run_id": "session_01_baseline_clustered_60s_v1",
+  "schema_version": "wge.clustered_candidate_manifest.v1",
+  "wge5c_clustered_render_authorized": true
+}

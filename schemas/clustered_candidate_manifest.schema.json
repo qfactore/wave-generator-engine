@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "candidate_id",
+    "candidate_path",
+    "core_hashes",
+    "qualification_verdict",
+    "wge5c_clustered_render_authorized",
+    "approved_run_unchanged",
+    "audio_created",
+    "content_hash"
+  ],
+  "properties": {
+    "schema_version": {"const": "wge.clustered_candidate_manifest.v1"},
+    "candidate_id": {"const": "session_01_baseline_clustered_60s_v1"},
+    "qualification_verdict": {
+      "enum": [
+        "qualified_for_clustered_diagnostic_render",
+        "qualified_with_documented_caveats",
+        "not_qualified_for_clustered_render"
+      ]
+    },
+    "approved_run_unchanged": {"const": true},
+    "audio_created": {"const": false},
+    "content_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

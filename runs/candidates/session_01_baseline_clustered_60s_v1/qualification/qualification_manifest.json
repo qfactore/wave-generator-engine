@@ -1,0 +1,26 @@
+{
+  "audio_created": false,
+  "content_hash": "dd1b82bac9ae095312bf01c032295d8f612d99939a4ef91b358a3d5493d7f581",
+  "core_plans_unchanged": true,
+  "figure_files": [
+    "figures/phrase_state_timeline.png",
+    "figures/packet_interval_over_time.png",
+    "figures/source_vs_candidate_phrase_metrics.png",
+    "figures/cluster_size_distribution.png",
+    "figures/within_phrase_interval_distribution.png",
+    "figures/between_phrase_gap_distribution.png",
+    "figures/meso_flat_vs_clustered_density.png",
+    "figures/onset_spectrum_comparison.png"
+  ],
+  "metric_comparison_count": 14,
+  "qualification_id": "wge5b2_clustered_session1_qualification",
+  "raw_files": [
+    "generated_plan_metrics.json",
+    "raw/generated_plan_metrics.json",
+    "raw/source_reference_metrics.json"
+  ],
+  "run_id": "session_01_baseline_clustered_60s_v1",
+  "schema_version": "wge.clustered_qualification_manifest.v1",
+  "verdict": "qualified_with_documented_caveats",
+  "wge5c_clustered_render_authorized": true
+}
