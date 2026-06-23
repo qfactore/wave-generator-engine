@@ -1,0 +1,93 @@
+{
+  "audio_chain_integrity": "approved",
+  "automated_validation": {
+    "channels_per_file": 2,
+    "encoding": "signed_pcm16",
+    "file_count": 4,
+    "file_size_bytes": 11520044,
+    "frame_count_per_file": 2880000,
+    "manifest_hashes_matched": true,
+    "readback_records_passed": true,
+    "sample_rate_hz": 48000,
+    "status": "passed",
+    "wge4c_authorized": true
+  },
+  "content_hash": "e2644118a9282144db1cfe7d69ae42c1b2972f9077db26e28682829c2af0a856",
+  "duration_blocker": "missing meso-scale cluster/rhythm organization",
+  "engine_version": "0.5.1",
+  "export_pack_hash": "67209fbe2e18fb070647b1f0d94e533bace77489155d900cd2e7211b57bd6d9d",
+  "first_audio_milestone": "passed",
+  "human_observations": {
+    "branch_01": {
+      "corruption_or_crackle": "none observed",
+      "left_and_right_active": "YES",
+      "level_observation": "level appears plausible and consistent with the diagnostic render",
+      "other_observation": "structurally appears correct",
+      "rhythm_observation": "irregular isolated packets and small groups are audible",
+      "unexpected_start_or_end_pop": "none observed"
+    },
+    "branch_02": {
+      "corruption_or_crackle": "none observed",
+      "left_and_right_active": "YES",
+      "level_observation": "level appears plausible and consistent with the diagnostic render",
+      "other_observation": "structurally appears correct",
+      "rhythm_observation": "irregular isolated packets and small groups are audible",
+      "unexpected_start_or_end_pop": "none observed"
+    },
+    "branch_03": {
+      "corruption_or_crackle": "none observed",
+      "left_and_right_active": "YES",
+      "level_observation": "level appears plausible and consistent with the diagnostic render",
+      "other_observation": "structurally appears correct",
+      "rhythm_observation": "irregular isolated packets and small groups are audible",
+      "unexpected_start_or_end_pop": "none observed"
+    },
+    "branch_04": {
+      "corruption_or_crackle": "none observed",
+      "left_and_right_active": "YES",
+      "level_observation": "level appears plausible and consistent with the diagnostic render",
+      "other_observation": "structurally appears correct",
+      "rhythm_observation": "contains more visibly and audibly grouped burst activity",
+      "unexpected_start_or_end_pop": "none observed"
+    },
+    "overall_notes": "The generated diagnostic files look and sound broadly correct when compared with the source reference. No obvious corruption, clipping, channel failure, digital crackle, or blocking start/end transient was observed.\n\nThe diagnostic validates frozen motif identity, packet-level timing, exact rendering, channel routing, calibration, PCM16 export, and readback integrity.\n\nCompared with the source reference, the generated material has less pronounced meso-scale clustering, recurring rhythmic packet groups, and dense-run/quiet-gap organisation. The source contains clearer grouped \"hum–put put\" rhythmic phrasing. This higher-order temporal organisation has not yet been explicitly implemented or qualified.\n\nThis is not an audio-integrity failure. It is a planning-model limitation that must be addressed before generating 25- or 45-minute Session 1 output."
+  },
+  "human_overall_verdict": "PASS",
+  "limitations": [
+    "Human listening is a diagnostic integrity check, not evidence of therapeutic efficacy.",
+    "Subjective-effect equivalence was not established.",
+    "Target-headset certification was not performed.",
+    "Production readiness and safety certification were not established.",
+    "Twenty-five- and forty-five-minute durations were not validated.",
+    "Meso-scale cluster/rhythm organization remains unimplemented and unqualified."
+  ],
+  "meso_cluster_rhythm_modeling_authorized": true,
+  "ordered_wav_hashes": [
+    {
+      "branch_id": "branch_01",
+      "filename": "x_alpha_session_01_baseline_branch_01.wav",
+      "wav_sha256": "9c5ed5994f9e4d8ec15dac91851f788508df106185b4816ddc11054ae2170747"
+    },
+    {
+      "branch_id": "branch_02",
+      "filename": "x_alpha_session_01_baseline_branch_02.wav",
+      "wav_sha256": "28472051eea75634ef0dae74eb3cab7f214b09c47e89e35487f7168113057d9c"
+    },
+    {
+      "branch_id": "branch_03",
+      "filename": "x_alpha_session_01_baseline_branch_03.wav",
+      "wav_sha256": "4954c3e6ac8e01fed500b85bcdd46e4cb29dc62e336787aed7ce5c9df726d9e4"
+    },
+    {
+      "branch_id": "branch_04",
+      "filename": "x_alpha_session_01_baseline_branch_04.wav",
+      "wav_sha256": "9b1dbdf3eb955c80bd37203c8ef6d0bfabbeee551ed84e73460143863ec6df61"
+    }
+  ],
+  "review_date": "2026-06-23",
+  "review_id": "x_alpha_session_01_baseline_first_audio_review",
+  "review_version": "1.0.0",
+  "schema_version": "wge.human_listening_review.v1",
+  "session1_duration_qualification_authorized": false,
+  "source_export_commit": "e3ccd4248729c6b2dfbc2fc5d0ebbcff12a7b027"
+}

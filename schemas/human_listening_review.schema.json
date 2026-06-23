@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "review_id",
+    "review_version",
+    "review_date",
+    "engine_version",
+    "source_export_commit",
+    "export_pack_hash",
+    "ordered_wav_hashes",
+    "automated_validation",
+    "human_observations",
+    "human_overall_verdict",
+    "audio_chain_integrity",
+    "first_audio_milestone",
+    "session1_duration_qualification_authorized",
+    "duration_blocker",
+    "meso_cluster_rhythm_modeling_authorized",
+    "limitations",
+    "content_hash"
+  ],
+  "properties": {
+    "schema_version": {"const": "wge.human_listening_review.v1"},
+    "review_id": {"const": "x_alpha_session_01_baseline_first_audio_review"},
+    "review_version": {"const": "1.0.0"},
+    "review_date": {"type": "string", "format": "date"},
+    "engine_version": {"const": "0.5.1"},
+    "source_export_commit": {
+      "const": "e3ccd4248729c6b2dfbc2fc5d0ebbcff12a7b027"
+    },
+    "export_pack_hash": {
+      "const": "67209fbe2e18fb070647b1f0d94e533bace77489155d900cd2e7211b57bd6d9d"
+    },
+    "ordered_wav_hashes": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["branch_id", "filename", "wav_sha256"],
+        "properties": {
+          "branch_id": {
+            "enum": ["branch_01", "branch_02", "branch_03", "branch_04"]
+          },
+          "filename": {
+            "type": "string",
+            "pattern": "^x_alpha_session_01_baseline_branch_0[1-4]\\.wav$"
+          },
+          "wav_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "automated_validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "file_count",
+        "sample_rate_hz",
+        "channels_per_file",
+        "encoding",
+        "frame_count_per_file",
+        "file_size_bytes",
+        "manifest_hashes_matched",
+        "readback_records_passed",
+        "wge4c_authorized"
+      ],
+      "properties": {
+        "status": {"const": "passed"},
+        "file_count": {"const": 4},
+        "sample_rate_hz": {"const": 48000},
+        "channels_per_file": {"const": 2},
+        "encoding": {"const": "signed_pcm16"},
+        "frame_count_per_file": {"const": 2880000},
+        "file_size_bytes": {"const": 11520044},
+        "manifest_hashes_matched": {"const": true},
+        "readback_records_passed": {"const": true},
+        "wge4c_authorized": {"const": true}
+      }
+    },
+    "human_observations": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "branch_01",
+        "branch_02",
+        "branch_03",
+        "branch_04",
+        "overall_notes"
+      ],
+      "properties": {
+        "branch_01": {"$ref": "#/$defs/branchObservation"},
+        "branch_02": {"$ref": "#/$defs/branchObservation"},
+        "branch_03": {"$ref": "#/$defs/branchObservation"},
+        "branch_04": {"$ref": "#/$defs/branchObservation"},
+        "overall_notes": {"type": "string", "minLength": 1}
+      }
+    },
+    "human_overall_verdict": {"const": "PASS"},
+    "audio_chain_integrity": {"const": "approved"},
+    "first_audio_milestone": {"const": "passed"},
+    "session1_duration_qualification_authorized": {"const": false},
+    "duration_blocker": {
+      "const": "missing meso-scale cluster/rhythm organization"
+    },
+    "meso_cluster_rhythm_modeling_authorized": {"const": true},
+    "limitations": {
+      "type": "array",
+      "minItems": 6,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "content_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "$defs": {
+    "branchObservation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "left_and_right_active",
+        "corruption_or_crackle",
+        "unexpected_start_or_end_pop",
+        "level_observation",
+        "rhythm_observation",
+        "other_observation"
+      ],
+      "properties": {
+        "left_and_right_active": {"const": "YES"},
+        "corruption_or_crackle": {"const": "none observed"},
+        "unexpected_start_or_end_pop": {"const": "none observed"},
+        "level_observation": {"type": "string", "minLength": 1},
+        "rhythm_observation": {"type": "string", "minLength": 1},
+        "other_observation": {"const": "structurally appears correct"}
+      }
+    }
+  }
+}

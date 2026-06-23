@@ -66,3 +66,11 @@ inspect the completed pack.
 The files are diagnostic-only. No playback metadata, upload payload,
 encryption, production packaging, PCM24 path, normalization, limiter, or
 second calibration is included.
+
+## WGE-4C first-audio closeout
+
+Human diagnostic listening approved the integrity of the first four-file
+Session 1 pack. The first-audio milestone is passed, while 25- or 45-minute
+Session 1 generation remains unauthorized. The explicit blocker is missing
+meso-scale cluster/rhythm organization; modeling that planning layer is
+authorized for a later phase.
