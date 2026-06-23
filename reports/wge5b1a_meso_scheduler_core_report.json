@@ -1,0 +1,167 @@
+{
+  "report_id": "wge5b1a_meso_scheduler_core_report",
+  "report_version": "1.0.0",
+  "status": "WGE5B1A_MESO_SCHEDULER_CORE_READY",
+  "engine_version": "0.5.1",
+  "starting_checkpoint": "eaa6fde42e5c77bc6ff86d6326a5920e85a4f221",
+  "scheduler_architecture": {
+    "package": "wave_generator_engine.meso",
+    "production_planner_integrated": false,
+    "output": "packet-onset skeleton with phrase-state and membership annotations",
+    "controlled_fields": [
+      "packet onset timing",
+      "phrase state",
+      "phrase initiation",
+      "phrase continuation",
+      "phrase termination",
+      "between-phrase gaps",
+      "phrase annotations"
+    ],
+    "excluded_fields": [
+      "packet grammar",
+      "motif selection or samples",
+      "within-packet continuation timing",
+      "channel assignment",
+      "Focus Role",
+      "calibration",
+      "rendering",
+      "export"
+    ]
+  },
+  "policy_consumption": {
+    "policy_id": "x_alpha_meso_cluster_rhythm_policy_v1",
+    "policy_hash": "6297addcf7129b177f11c9fae23e3ae4a85f20ae6fa83d1c392d291608699e32",
+    "source_scope": "direct_session_1",
+    "schema_valid": true,
+    "content_hash_valid": true,
+    "wge5b_authorized": true,
+    "authority_provenance_retained": true,
+    "source_statistics_rederived": false,
+    "source_timing_tables_opened": false
+  },
+  "state_model": {
+    "model": "probabilistic_recurrent_interval_phrase_state",
+    "states": ["background", "phrase_active"],
+    "minimum_phrase_packets": 4,
+    "fixed_gap_threshold_used": false,
+    "exact_source_tuple_lookup_used": false,
+    "source_sequence_replay_used": false,
+    "phrase_count_basis": "Session 1 clusters per observed minute",
+    "phrase_membership_basis": "Session 1 phrase-active share",
+    "size_basis": "Session 1 cluster-size distribution and continuation probability",
+    "timing_basis": "Session 1 within-cluster and between-cluster quantiles"
+  },
+  "rng_and_determinism": {
+    "algorithm": "python_random_mt19937_local",
+    "seed_derivation": "sha256_first_64_bits",
+    "global_rng_used": false,
+    "canonical_serialization": true,
+    "same_seed_byte_identical": true,
+    "different_seed_results_differ": true
+  },
+  "rate_duration_reconciliation": {
+    "packet_count_behavior": "exact",
+    "packet_rate_behavior": "deterministically rounded to an exact count",
+    "method": "Bounded phrase sampling followed by gap-only water-filling.",
+    "global_interval_stretch_used": false,
+    "silent_phrase_truncation": false,
+    "end_compression": false,
+    "final_boundary_margin_samples": 19328
+  },
+  "anti_replay": {
+    "embedded_source_schedules": false,
+    "source_interval_tuple_table": false,
+    "source_block_sequence_dependency": false,
+    "runtime_inputs": "Qualified aggregate policy parameters only."
+  },
+  "anti_lattice": {
+    "one_universal_interval": false,
+    "fixed_repeating_cycle": false,
+    "maximum_identical_interval_run": 1,
+    "minimum_unique_interval_count_across_seeds": 146,
+    "minimum_interval_cv_across_seeds": 0.7393762126428451,
+    "maximum_schedule_spectrum_peak_power_fraction": 0.015460710342492696
+  },
+  "synthetic_request": {
+    "duration_samples": 2880000,
+    "duration_seconds": 60,
+    "sample_rate_hz": 48000,
+    "target_packet_count": 149,
+    "persistent_plan_created": false
+  },
+  "synthetic_results": [
+    {
+      "seed": 20260622,
+      "result_hash": "11c1d2919e9582c6d0e21c3bbf1f734b821f9afe877d9810ac0ca0493741bf1e",
+      "packet_count": 149,
+      "packet_rate_hz": 2.4833333333333334,
+      "phrase_count": 15,
+      "phrases_per_minute": 15,
+      "phrase_active_window_share": 0.3972602739726027,
+      "phrase_size_median_packets": 7,
+      "phrase_duration_median_seconds": 1.65,
+      "within_phrase_interval_median_seconds": 0.27660416666666665,
+      "between_phrase_gap_median_seconds": 1.90284375,
+      "unique_interval_count": 148,
+      "interval_coefficient_of_variation": 0.7699368611397874,
+      "interval_lag_1_correlation": 0.6704633225044194,
+      "repeated_10ms_cell_prevalence": 0.8040540540540541,
+      "schedule_spectrum_peak_power_fraction": 0.011659383933947654,
+      "validation": "pass"
+    },
+    {
+      "seed": 20260623,
+      "result_hash": "533d0e0a4d7af219c69009b51ef2ebb3f625fa81ad3d532c746d6233e033f4eb",
+      "packet_count": 149,
+      "packet_rate_hz": 2.4833333333333334,
+      "phrase_count": 15,
+      "phrases_per_minute": 15,
+      "phrase_active_window_share": 0.3972602739726027,
+      "phrase_size_median_packets": 7,
+      "phrase_duration_median_seconds": 1.6919791666666666,
+      "within_phrase_interval_median_seconds": 0.29890625000000004,
+      "between_phrase_gap_median_seconds": 1.3403749999999999,
+      "unique_interval_count": 146,
+      "interval_coefficient_of_variation": 0.7393762126428451,
+      "interval_lag_1_correlation": 0.6390699094852943,
+      "repeated_10ms_cell_prevalence": 0.777027027027027,
+      "schedule_spectrum_peak_power_fraction": 0.012201911973249954,
+      "validation": "pass"
+    },
+    {
+      "seed": 20260624,
+      "result_hash": "c8be3f43c45ed19474c37645f5c74e6b6685794ea74d58056110e84964de67b1",
+      "packet_count": 149,
+      "packet_rate_hz": 2.4833333333333334,
+      "phrase_count": 15,
+      "phrases_per_minute": 15,
+      "phrase_active_window_share": 0.3972602739726027,
+      "phrase_size_median_packets": 7,
+      "phrase_duration_median_seconds": 1.606375,
+      "within_phrase_interval_median_seconds": 0.28629166666666667,
+      "between_phrase_gap_median_seconds": 1.8368020833333332,
+      "unique_interval_count": 147,
+      "interval_coefficient_of_variation": 0.9632222478507532,
+      "interval_lag_1_correlation": 0.6020511905810696,
+      "repeated_10ms_cell_prevalence": 0.8378378378378378,
+      "schedule_spectrum_peak_power_fraction": 0.015460710342492696,
+      "validation": "pass"
+    }
+  ],
+  "test_results": {
+    "targeted_test_count": 59,
+    "status": "passed"
+  },
+  "authorization": {
+    "wge5b1b_planner_integration_authorized": true,
+    "basis": [
+      "The scheduler consumes the qualified immutable policy.",
+      "State transitions, phrase membership, and boundaries validate.",
+      "Primary and two holdout schedules pass applicable empirical bands.",
+      "Same-seed reruns are byte-identical and holdout seeds differ.",
+      "Anti-replay and anti-lattice validation passes.",
+      "No production plan, renderer, export, or WAV artifact changed."
+    ]
+  },
+  "content_hash": "0f767ff4ebb1faec5a373b2eb7c7091b0e205e0eff5d83d000a8b3dda245c17e"
+}
